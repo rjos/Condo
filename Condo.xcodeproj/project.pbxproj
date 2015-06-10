@@ -18,6 +18,8 @@
 		02E06E021B27970900580B3D /* CommunityFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */; };
 		02FFF6BE1B27A2420085DD1B /* CommunityFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02FFF6BD1B27A2420085DD1B /* CommunityFeedTableViewCell.xib */; };
 		02FFF6C21B27A27E0085DD1B /* CommunityFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FFF6C11B27A27E0085DD1B /* CommunityFeedTableViewCell.swift */; };
+		1BE0E2A81B28B333002BF58E /* CondoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; };
+		1BE0E2A91B28B333002BF58E /* CondoModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +44,28 @@
 			remoteGlobalIDString = 02ABBFFC1B2768BC00E0678B;
 			remoteInfo = Condo;
 		};
+		1BE0E2AA1B28B333002BF58E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02529E191B276980009CF624 /* CondoModel.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 02529DFC1B276980009CF624;
+			remoteInfo = CondoModel;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1BE0E2AC1B28B333002BF58E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1BE0E2A91B28B333002BF58E /* CondoModel.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		02529E191B276980009CF624 /* CondoModel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CondoModel.xcodeproj; path = CondoModel/CondoModel.xcodeproj; sourceTree = "<group>"; };
@@ -67,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BE0E2A81B28B333002BF58E /* CondoModel.framework in Frameworks */,
 				02529E241B276A09009CF624 /* CondoModel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,10 +185,12 @@
 				02ABBFF91B2768BC00E0678B /* Sources */,
 				02ABBFFA1B2768BC00E0678B /* Frameworks */,
 				02ABBFFB1B2768BC00E0678B /* Resources */,
+				1BE0E2AC1B28B333002BF58E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1BE0E2AB1B28B333002BF58E /* PBXTargetDependency */,
 			);
 			name = Condo;
 			productName = Condo;
@@ -299,6 +325,11 @@
 			target = 02ABBFFC1B2768BC00E0678B /* Condo */;
 			targetProxy = 02ABC0131B2768BC00E0678B /* PBXContainerItemProxy */;
 		};
+		1BE0E2AB1B28B333002BF58E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CondoModel;
+			targetProxy = 1BE0E2AA1B28B333002BF58E /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -409,6 +440,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Condo/Info.plist;
+				LD_DYLIB_INSTALL_NAME = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -419,6 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Condo/Info.plist;
+				LD_DYLIB_INSTALL_NAME = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

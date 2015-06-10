@@ -16,13 +16,6 @@ public class Model: NSObject {
     public init(dictionary: Dictionary <String, AnyObject>) {
         self.internalDictionary = dictionary
         self.id = dictionary["id"] as! String
-        var lucas : String? = "dasd"
-        lucas = nil
-        self.method(lucas!)
-        
-    }
-    func method(s: String) {
-        print(s)
     }
 }
 
