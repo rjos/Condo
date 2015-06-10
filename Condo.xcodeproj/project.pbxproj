@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02529E241B276A09009CF624 /* CondoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; };
+		02891C7E1B28811A00FFA118 /* UIColor+Condo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02891C7D1B28811A00FFA118 /* UIColor+Condo.swift */; };
+		02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABC0021B2768BC00E0678B /* AppDelegate.swift */; };
+		02ABC0051B2768BC00E0678B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABC0041B2768BC00E0678B /* ViewController.swift */; };
+		02ABC0081B2768BC00E0678B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02ABC0061B2768BC00E0678B /* Main.storyboard */; };
+		02ABC00A1B2768BC00E0678B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02ABC0091B2768BC00E0678B /* Images.xcassets */; };
+		02ABC00D1B2768BC00E0678B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02ABC00B1B2768BC00E0678B /* LaunchScreen.xib */; };
+		02ABC0191B2768BC00E0678B /* CondoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABC0181B2768BC00E0678B /* CondoTests.swift */; };
+		02E06E021B27970900580B3D /* CommunityFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */; };
+		02FFF6BE1B27A2420085DD1B /* CommunityFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02FFF6BD1B27A2420085DD1B /* CommunityFeedTableViewCell.xib */; };
+		02FFF6C21B27A27E0085DD1B /* CommunityFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FFF6C11B27A27E0085DD1B /* CommunityFeedTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		02529E1E1B276981009CF624 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02529E191B276980009CF624 /* CondoModel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02529DFD1B276980009CF624;
+			remoteInfo = CondoModel;
+		};
+		02529E201B276981009CF624 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02529E191B276980009CF624 /* CondoModel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02529E081B276980009CF624;
+			remoteInfo = CondoModelTests;
+		};
+		02ABC0131B2768BC00E0678B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02ABBFF51B2768BC00E0678B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02ABBFFC1B2768BC00E0678B;
+			remoteInfo = Condo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02529E191B276980009CF624 /* CondoModel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CondoModel.xcodeproj; path = CondoModel/CondoModel.xcodeproj; sourceTree = "<group>"; };
+		02891C7D1B28811A00FFA118 /* UIColor+Condo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Condo.swift"; sourceTree = "<group>"; };
+		02ABBFFD1B2768BC00E0678B /* Condo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Condo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02ABC0011B2768BC00E0678B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02ABC0021B2768BC00E0678B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		02ABC0041B2768BC00E0678B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		02ABC0071B2768BC00E0678B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		02ABC0091B2768BC00E0678B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		02ABC00C1B2768BC00E0678B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		02ABC0121B2768BC00E0678B /* CondoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CondoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02ABC0171B2768BC00E0678B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02ABC0181B2768BC00E0678B /* CondoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CondoTests.swift; sourceTree = "<group>"; };
+		02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityFeedTableViewController.swift; sourceTree = "<group>"; };
+		02FFF6BD1B27A2420085DD1B /* CommunityFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityFeedTableViewCell.xib; sourceTree = "<group>"; };
+		02FFF6C11B27A27E0085DD1B /* CommunityFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityFeedTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		02ABBFFA1B2768BC00E0678B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02529E241B276A09009CF624 /* CondoModel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02ABC00F1B2768BC00E0678B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02529E1A1B276980009CF624 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02529E1F1B276981009CF624 /* CondoModel.framework */,
+				02529E211B276981009CF624 /* CondoModelTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02ABBFF41B2768BC00E0678B = {
+			isa = PBXGroup;
+			children = (
+				02529E191B276980009CF624 /* CondoModel.xcodeproj */,
+				02ABBFFF1B2768BC00E0678B /* Condo */,
+				02ABC0151B2768BC00E0678B /* CondoTests */,
+				02ABBFFE1B2768BC00E0678B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		02ABBFFE1B2768BC00E0678B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02ABBFFD1B2768BC00E0678B /* Condo.app */,
+				02ABC0121B2768BC00E0678B /* CondoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02ABBFFF1B2768BC00E0678B /* Condo */ = {
+			isa = PBXGroup;
+			children = (
+				02ABC0021B2768BC00E0678B /* AppDelegate.swift */,
+				02ABC0041B2768BC00E0678B /* ViewController.swift */,
+				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
+				02FFF6C11B27A27E0085DD1B /* CommunityFeedTableViewCell.swift */,
+				02FFF6BD1B27A2420085DD1B /* CommunityFeedTableViewCell.xib */,
+				02ABC0061B2768BC00E0678B /* Main.storyboard */,
+				02ABC0091B2768BC00E0678B /* Images.xcassets */,
+				02ABC00B1B2768BC00E0678B /* LaunchScreen.xib */,
+				02ABC0001B2768BC00E0678B /* Supporting Files */,
+				02891C7D1B28811A00FFA118 /* UIColor+Condo.swift */,
+			);
+			path = Condo;
+			sourceTree = "<group>";
+		};
+		02ABC0001B2768BC00E0678B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				02ABC0011B2768BC00E0678B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		02ABC0151B2768BC00E0678B /* CondoTests */ = {
+			isa = PBXGroup;
+			children = (
+				02ABC0181B2768BC00E0678B /* CondoTests.swift */,
+				02ABC0161B2768BC00E0678B /* Supporting Files */,
+			);
+			path = CondoTests;
+			sourceTree = "<group>";
+		};
+		02ABC0161B2768BC00E0678B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				02ABC0171B2768BC00E0678B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02ABBFFC1B2768BC00E0678B /* Condo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02ABC01C1B2768BC00E0678B /* Build configuration list for PBXNativeTarget "Condo" */;
+			buildPhases = (
+				02ABBFF91B2768BC00E0678B /* Sources */,
+				02ABBFFA1B2768BC00E0678B /* Frameworks */,
+				02ABBFFB1B2768BC00E0678B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Condo;
+			productName = Condo;
+			productReference = 02ABBFFD1B2768BC00E0678B /* Condo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		02ABC0111B2768BC00E0678B /* CondoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02ABC01F1B2768BC00E0678B /* Build configuration list for PBXNativeTarget "CondoTests" */;
+			buildPhases = (
+				02ABC00E1B2768BC00E0678B /* Sources */,
+				02ABC00F1B2768BC00E0678B /* Frameworks */,
+				02ABC0101B2768BC00E0678B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02ABC0141B2768BC00E0678B /* PBXTargetDependency */,
+			);
+			name = CondoTests;
+			productName = CondoTests;
+			productReference = 02ABC0121B2768BC00E0678B /* CondoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02ABBFF51B2768BC00E0678B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = Condo;
+				TargetAttributes = {
+					02ABBFFC1B2768BC00E0678B = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					02ABC0111B2768BC00E0678B = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 02ABBFFC1B2768BC00E0678B;
+					};
+				};
+			};
+			buildConfigurationList = 02ABBFF81B2768BC00E0678B /* Build configuration list for PBXProject "Condo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 02ABBFF41B2768BC00E0678B;
+			productRefGroup = 02ABBFFE1B2768BC00E0678B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 02529E1A1B276980009CF624 /* Products */;
+					ProjectRef = 02529E191B276980009CF624 /* CondoModel.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				02ABBFFC1B2768BC00E0678B /* Condo */,
+				02ABC0111B2768BC00E0678B /* CondoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		02529E1F1B276981009CF624 /* CondoModel.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CondoModel.framework;
+			remoteRef = 02529E1E1B276981009CF624 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		02529E211B276981009CF624 /* CondoModelTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CondoModelTests.xctest;
+			remoteRef = 02529E201B276981009CF624 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02ABBFFB1B2768BC00E0678B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02ABC0081B2768BC00E0678B /* Main.storyboard in Resources */,
+				02ABC00D1B2768BC00E0678B /* LaunchScreen.xib in Resources */,
+				02ABC00A1B2768BC00E0678B /* Images.xcassets in Resources */,
+				02FFF6BE1B27A2420085DD1B /* CommunityFeedTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02ABC0101B2768BC00E0678B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02ABBFF91B2768BC00E0678B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02891C7E1B28811A00FFA118 /* UIColor+Condo.swift in Sources */,
+				02ABC0051B2768BC00E0678B /* ViewController.swift in Sources */,
+				02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */,
+				02FFF6C21B27A27E0085DD1B /* CommunityFeedTableViewCell.swift in Sources */,
+				02E06E021B27970900580B3D /* CommunityFeedTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02ABC00E1B2768BC00E0678B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02ABC0191B2768BC00E0678B /* CondoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		02ABC0141B2768BC00E0678B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02ABBFFC1B2768BC00E0678B /* Condo */;
+			targetProxy = 02ABC0131B2768BC00E0678B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		02ABC0061B2768BC00E0678B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02ABC0071B2768BC00E0678B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		02ABC00B1B2768BC00E0678B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02ABC00C1B2768BC00E0678B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		02ABC01A1B2768BC00E0678B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		02ABC01B1B2768BC00E0678B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		02ABC01D1B2768BC00E0678B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Condo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		02ABC01E1B2768BC00E0678B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Condo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		02ABC0201B2768BC00E0678B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CondoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Condo.app/Condo";
+			};
+			name = Debug;
+		};
+		02ABC0211B2768BC00E0678B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CondoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Condo.app/Condo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02ABBFF81B2768BC00E0678B /* Build configuration list for PBXProject "Condo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02ABC01A1B2768BC00E0678B /* Debug */,
+				02ABC01B1B2768BC00E0678B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02ABC01C1B2768BC00E0678B /* Build configuration list for PBXNativeTarget "Condo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02ABC01D1B2768BC00E0678B /* Debug */,
+				02ABC01E1B2768BC00E0678B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02ABC01F1B2768BC00E0678B /* Build configuration list for PBXNativeTarget "CondoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02ABC0201B2768BC00E0678B /* Debug */,
+				02ABC0211B2768BC00E0678B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 02ABBFF51B2768BC00E0678B /* Project object */;
+}

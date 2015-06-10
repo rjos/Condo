@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E33b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="A1j-Be-Tkw">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="6Oq-aF-pTx">
+            <objects>
+                <tabBarController id="A1j-Be-Tkw" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="pf9-ot-li2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="xds-Eg-k5G" kind="relationship" relationship="viewControllers" id="mn7-eG-QHt"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iXV-TB-t5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-117" y="637"/>
+        </scene>
+        <!--Condo-->
+        <scene sceneID="7W6-LJ-vHI">
+            <objects>
+                <tableViewController id="0ab-bg-CTn" customClass="CommunityFeedTableViewController" customModule="Condo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="JEG-7s-cs1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="0ab-bg-CTn" id="yuM-zd-042"/>
+                            <outlet property="delegate" destination="0ab-bg-CTn" id="ECL-ao-efa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Condo" id="cEN-MC-FyG"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zms-lr-mmf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1639" y="637"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EpM-k3-DJj">
+            <objects>
+                <navigationController id="xds-Eg-k5G" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="vo3-BH-PF4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AZX-AU-RbV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0ab-bg-CTn" kind="relationship" relationship="rootViewController" id="HQq-IK-UeX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mRP-r5-HWH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818" y="637"/>
+        </scene>
+    </scenes>
+</document>
