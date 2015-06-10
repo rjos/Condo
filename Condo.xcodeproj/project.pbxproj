@@ -137,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				02ABC0021B2768BC00E0678B /* AppDelegate.swift */,
+				02891C7D1B28811A00FFA118 /* UIColor+Condo.swift */,
 				02ABC0041B2768BC00E0678B /* ViewController.swift */,
 				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
 				02FFF6C11B27A27E0085DD1B /* CommunityFeedTableViewCell.swift */,
@@ -145,7 +146,6 @@
 				02ABC0091B2768BC00E0678B /* Images.xcassets */,
 				02ABC00B1B2768BC00E0678B /* LaunchScreen.xib */,
 				02ABC0001B2768BC00E0678B /* Supporting Files */,
-				02891C7D1B28811A00FFA118 /* UIColor+Condo.swift */,
 			);
 			path = Condo;
 			sourceTree = "<group>";
