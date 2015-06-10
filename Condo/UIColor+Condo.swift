@@ -21,4 +21,10 @@ extension UIColor {
     static func condoAnnouncementBackgroundColor() ->UIColor {
         return UIColor.rgba(98, g: 111, b: 178, a: 255)
     }
+    static func condoCommentEvenBackgroundColor() ->UIColor {
+        return UIColor.rgba(51, g: 51, b: 51, a: 255)
+    }
+    static func condoCommentOddBackgroundColor() ->UIColor {
+        return UIColor.rgba(200, g: 200, b: 200, a: 255)
+    }
 }

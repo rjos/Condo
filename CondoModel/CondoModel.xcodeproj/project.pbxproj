@@ -22,6 +22,7 @@
 		02891C7A1B28743300FFA118 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02529E271B276CB4009CF624 /* User.swift */; };
 		02891C7B1B28743300FFA118 /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02529E221B2769C5009CF624 /* Community.swift */; };
 		02891C7C1B28743300FFA118 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02529E2B1B2772E6009CF624 /* Post.swift */; };
+		1BE0E2AE1B28B606002BF58E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0E2AD1B28B606002BF58E /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		02529E2B1B2772E6009CF624 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		02529E2D1B2779DA009CF624 /* DummyModelList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyModelList.swift; sourceTree = "<group>"; };
 		02529E2F1B277A6C009CF624 /* DummyDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyDatabase.swift; sourceTree = "<group>"; };
+		1BE0E2AD1B28B606002BF58E /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				02529E271B276CB4009CF624 /* User.swift */,
 				02529E221B2769C5009CF624 /* Community.swift */,
 				02529E2B1B2772E6009CF624 /* Post.swift */,
+				1BE0E2AD1B28B606002BF58E /* Comment.swift */,
 				02529E001B276980009CF624 /* Supporting Files */,
 			);
 			path = CondoModel;
@@ -236,6 +239,7 @@
 				02529E231B2769C5009CF624 /* Community.swift in Sources */,
 				02529E2E1B2779DA009CF624 /* DummyModelList.swift in Sources */,
 				02529E261B276B06009CF624 /* Model.swift in Sources */,
+				1BE0E2AE1B28B606002BF58E /* Comment.swift in Sources */,
 				02529E281B276CB4009CF624 /* User.swift in Sources */,
 				02529E2C1B2772E6009CF624 /* Post.swift in Sources */,
 				02529E301B277A6C009CF624 /* DummyDatabase.swift in Sources */,
