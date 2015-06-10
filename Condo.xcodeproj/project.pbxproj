@@ -15,6 +15,9 @@
 		02ABC00A1B2768BC00E0678B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02ABC0091B2768BC00E0678B /* Images.xcassets */; };
 		02ABC00D1B2768BC00E0678B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02ABC00B1B2768BC00E0678B /* LaunchScreen.xib */; };
 		02ABC0191B2768BC00E0678B /* CondoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABC0181B2768BC00E0678B /* CondoTests.swift */; };
+		02AD60541B28BAA7000D5210 /* FeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AD60531B28BAA7000D5210 /* FeedPostTableViewCell.swift */; };
+		02AD60571B28BD87000D5210 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AD60561B28BD87000D5210 /* PostView.swift */; };
+		02AD60591B28BDDD000D5210 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AD60581B28BDDD000D5210 /* PostView.xib */; };
 		02E06E021B27970900580B3D /* CommunityFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */; };
 		02FFF6BE1B27A2420085DD1B /* CommunityFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02FFF6BD1B27A2420085DD1B /* CommunityFeedTableViewCell.xib */; };
 		02FFF6C21B27A27E0085DD1B /* CommunityFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FFF6C11B27A27E0085DD1B /* CommunityFeedTableViewCell.swift */; };
@@ -80,6 +83,9 @@
 		02ABC0121B2768BC00E0678B /* CondoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CondoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02ABC0171B2768BC00E0678B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02ABC0181B2768BC00E0678B /* CondoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CondoTests.swift; sourceTree = "<group>"; };
+		02AD60531B28BAA7000D5210 /* FeedPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedPostTableViewCell.swift; sourceTree = "<group>"; };
+		02AD60561B28BD87000D5210 /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		02AD60581B28BDDD000D5210 /* PostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
 		02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityFeedTableViewController.swift; sourceTree = "<group>"; };
 		02FFF6BD1B27A2420085DD1B /* CommunityFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityFeedTableViewCell.xib; sourceTree = "<group>"; };
 		02FFF6C11B27A27E0085DD1B /* CommunityFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityFeedTableViewCell.swift; sourceTree = "<group>"; };
@@ -141,6 +147,9 @@
 				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
 				02FFF6C11B27A27E0085DD1B /* CommunityFeedTableViewCell.swift */,
 				02FFF6BD1B27A2420085DD1B /* CommunityFeedTableViewCell.xib */,
+				02AD60581B28BDDD000D5210 /* PostView.xib */,
+				02AD60561B28BD87000D5210 /* PostView.swift */,
+				02AD60531B28BAA7000D5210 /* FeedPostTableViewCell.swift */,
 				02ABC0061B2768BC00E0678B /* Main.storyboard */,
 				02ABC0091B2768BC00E0678B /* Images.xcassets */,
 				02ABC00B1B2768BC00E0678B /* LaunchScreen.xib */,
@@ -282,6 +291,7 @@
 			files = (
 				02ABC0081B2768BC00E0678B /* Main.storyboard in Resources */,
 				02ABC00D1B2768BC00E0678B /* LaunchScreen.xib in Resources */,
+				02AD60591B28BDDD000D5210 /* PostView.xib in Resources */,
 				02ABC00A1B2768BC00E0678B /* Images.xcassets in Resources */,
 				02FFF6BE1B27A2420085DD1B /* CommunityFeedTableViewCell.xib in Resources */,
 			);
@@ -301,9 +311,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02AD60571B28BD87000D5210 /* PostView.swift in Sources */,
 				02891C7E1B28811A00FFA118 /* UIColor+Condo.swift in Sources */,
 				02ABC0051B2768BC00E0678B /* ViewController.swift in Sources */,
 				02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */,
+				02AD60541B28BAA7000D5210 /* FeedPostTableViewCell.swift in Sources */,
 				02FFF6C21B27A27E0085DD1B /* CommunityFeedTableViewCell.swift in Sources */,
 				02E06E021B27970900580B3D /* CommunityFeedTableViewController.swift in Sources */,
 			);
