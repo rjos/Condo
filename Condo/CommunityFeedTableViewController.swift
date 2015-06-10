@@ -12,6 +12,8 @@ import CondoModel
 
 class CommunityFeedTableViewController: UITableViewController {
     var community: Community?
+    
+    var selectedPost: Post? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         self.community = DummyDatabase().community
@@ -39,7 +41,6 @@ class CommunityFeedTableViewController: UITableViewController {
 //        cell.layoutSubviews()
     }
     
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("post", forIndexPath: indexPath) as! CommunityFeedTableViewCell
         cell.post = self.community!.posts.modelAtIndex(indexPath.row) as? Post
@@ -52,17 +53,22 @@ class CommunityFeedTableViewController: UITableViewController {
 
 
     
-
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.selectedPost = self.community?.posts.modelAtIndex(indexPath.row) as? Post
+        self.performSegueWithIdentifier("showPost", sender: self)
+    }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showPost" {
+            let vc = segue.destinationViewController as! PostDetailTableViewController
+            vc.post = self.selectedPost
+        }
     }
-    */
+
 
 }

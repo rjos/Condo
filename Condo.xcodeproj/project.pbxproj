@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		02529E241B276A09009CF624 /* CondoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; };
 		02891C7E1B28811A00FFA118 /* UIColor+Condo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02891C7D1B28811A00FFA118 /* UIColor+Condo.swift */; };
+		02A9F8F51B28D8E700275606 /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */; };
 		02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABC0021B2768BC00E0678B /* AppDelegate.swift */; };
 		02ABC0051B2768BC00E0678B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABC0041B2768BC00E0678B /* ViewController.swift */; };
 		02ABC0081B2768BC00E0678B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02ABC0061B2768BC00E0678B /* Main.storyboard */; };
@@ -75,6 +76,7 @@
 /* Begin PBXFileReference section */
 		02529E191B276980009CF624 /* CondoModel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CondoModel.xcodeproj; path = CondoModel/CondoModel.xcodeproj; sourceTree = "<group>"; };
 		02891C7D1B28811A00FFA118 /* UIColor+Condo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Condo.swift"; sourceTree = "<group>"; };
+		02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewController.swift; sourceTree = "<group>"; };
 		02ABBFFD1B2768BC00E0678B /* Condo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Condo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02ABC0011B2768BC00E0678B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02ABC0021B2768BC00E0678B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,11 +153,12 @@
 				02ABC0041B2768BC00E0678B /* ViewController.swift */,
 				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
 				02FFF6C11B27A27E0085DD1B /* CommunityFeedTableViewCell.swift */,
-				02FFF6BD1B27A2420085DD1B /* CommunityFeedTableViewCell.xib */,
-				02AD60581B28BDDD000D5210 /* PostView.xib */,
+				02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */,
 				02AD60561B28BD87000D5210 /* PostView.swift */,
 				02AD60531B28BAA7000D5210 /* FeedPostTableViewCell.swift */,
 				1BE0E2AF1B28C6BE002BF58E /* CommentTableViewCell.swift */,
+				02FFF6BD1B27A2420085DD1B /* CommunityFeedTableViewCell.xib */,
+				02AD60581B28BDDD000D5210 /* PostView.xib */,
 				1BE0E2B01B28C6BE002BF58E /* CommentTableViewCell.xib */,
 				02ABC0061B2768BC00E0678B /* Main.storyboard */,
 				02ABC0091B2768BC00E0678B /* Images.xcassets */,
@@ -320,6 +323,7 @@
 			files = (
 				02AD60571B28BD87000D5210 /* PostView.swift in Sources */,
 				02891C7E1B28811A00FFA118 /* UIColor+Condo.swift in Sources */,
+				02A9F8F51B28D8E700275606 /* PostDetailTableViewController.swift in Sources */,
 				1BE0E2B11B28C6BE002BF58E /* CommentTableViewCell.swift in Sources */,
 				02ABC0051B2768BC00E0678B /* ViewController.swift in Sources */,
 				02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */,

@@ -16,28 +16,23 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var lbComment: UILabel!
     @IBOutlet weak var bgComment: UIView!
     
-    var isEven : Bool{
-        get {
-            return self.isEven
-        }
-        set (newIsEven){
-            self.isEven = newIsEven
+    var isEven : Bool = true {
+        didSet {
+            switch (self.isEven){
+            case true:
+                self.bgComment.backgroundColor = UIColor.condoCommentEvenBackgroundColor()
+            default:
+                self.bgComment.backgroundColor = UIColor.condoCommentOddBackgroundColor()
+            }
         }
     }
     
     var comment: Comment?{
         didSet{
             if let comment = self.comment{
+                self.bgComment.layer.cornerRadius = 15.0
                 self.imgProfile.layer.cornerRadius = self.imgProfile.bounds.size.width / 2
                 self.imgProfile.clipsToBounds = true
-                
-                switch (self.isEven){
-                    case true:
-                        self.bgComment.backgroundColor = UIColor.condoCommentEvenBackgroundColor()
-                    default:
-                        self.bgComment.backgroundColor = UIColor.condoCommentOddBackgroundColor()
-                }
-                
                 self.imgProfile.image = UIImage(named: comment.owner.imageName)
                 self.lbName.text      = comment.owner.name
                 self.lbComment.text   = comment.text
