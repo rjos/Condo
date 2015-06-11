@@ -10,6 +10,21 @@
 		0206D6141B2A123100CD3A0E /* ExpensesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206D6131B2A123100CD3A0E /* ExpensesCollectionViewController.swift */; };
 		0206D6181B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206D6161B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift */; };
 		0206D6191B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6171B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib */; };
+		0206D62C1B2A1BEF00CD3A0E /* agua.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D61D1B2A1BEF00CD3A0E /* agua.svg */; };
+		0206D62D1B2A1BEF00CD3A0E /* conta-telefonica.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D61E1B2A1BEF00CD3A0E /* conta-telefonica.svg */; };
+		0206D62E1B2A1BEF00CD3A0E /* dedetizacao.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D61F1B2A1BEF00CD3A0E /* dedetizacao.svg */; };
+		0206D62F1B2A1BEF00CD3A0E /* energia.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6201B2A1BEF00CD3A0E /* energia.svg */; };
+		0206D6301B2A1BEF00CD3A0E /* gas.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6211B2A1BEF00CD3A0E /* gas.svg */; };
+		0206D6311B2A1BEF00CD3A0E /* manutencaoelevador.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6221B2A1BEF00CD3A0E /* manutencaoelevador.svg */; };
+		0206D6321B2A1BEF00CD3A0E /* manutencaogerador.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6231B2A1BEF00CD3A0E /* manutencaogerador.svg */; };
+		0206D6331B2A1BEF00CD3A0E /* manutencaojardim.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6241B2A1BEF00CD3A0E /* manutencaojardim.svg */; };
+		0206D6341B2A1BEF00CD3A0E /* manutencaopocoartesiano.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6251B2A1BEF00CD3A0E /* manutencaopocoartesiano.svg */; };
+		0206D6351B2A1BEF00CD3A0E /* material-de-limpeza-01.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6261B2A1BEF00CD3A0E /* material-de-limpeza-01.svg */; };
+		0206D6361B2A1BEF00CD3A0E /* pessoal.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6271B2A1BEF00CD3A0E /* pessoal.svg */; };
+		0206D6371B2A1BEF00CD3A0E /* pinturaareacomum.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6281B2A1BEF00CD3A0E /* pinturaareacomum.svg */; };
+		0206D6381B2A1BEF00CD3A0E /* seguranca.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6291B2A1BEF00CD3A0E /* seguranca.svg */; };
+		0206D6391B2A1BEF00CD3A0E /* servico-de-limpeza.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D62A1B2A1BEF00CD3A0E /* servico-de-limpeza.svg */; };
+		0206D63A1B2A1BEF00CD3A0E /* taxa-adm.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D62B1B2A1BEF00CD3A0E /* taxa-adm.svg */; };
 		021544191B29121A0057B176 /* CondoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021544181B29121A0057B176 /* CondoUtils.swift */; };
 		0215441E1B291A220057B176 /* AnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215441C1B291A220057B176 /* AnnouncementTableViewCell.swift */; };
 		0215441F1B291A220057B176 /* AnnouncementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0215441D1B291A220057B176 /* AnnouncementTableViewCell.xib */; };
@@ -87,6 +102,21 @@
 		0206D6131B2A123100CD3A0E /* ExpensesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesCollectionViewController.swift; sourceTree = "<group>"; };
 		0206D6161B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCollectionViewCell.swift; sourceTree = "<group>"; };
 		0206D6171B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseCollectionViewCell.xib; sourceTree = "<group>"; };
+		0206D61D1B2A1BEF00CD3A0E /* agua.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = agua.svg; sourceTree = "<group>"; };
+		0206D61E1B2A1BEF00CD3A0E /* conta-telefonica.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "conta-telefonica.svg"; sourceTree = "<group>"; };
+		0206D61F1B2A1BEF00CD3A0E /* dedetizacao.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = dedetizacao.svg; sourceTree = "<group>"; };
+		0206D6201B2A1BEF00CD3A0E /* energia.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = energia.svg; sourceTree = "<group>"; };
+		0206D6211B2A1BEF00CD3A0E /* gas.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = gas.svg; sourceTree = "<group>"; };
+		0206D6221B2A1BEF00CD3A0E /* manutencaoelevador.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = manutencaoelevador.svg; sourceTree = "<group>"; };
+		0206D6231B2A1BEF00CD3A0E /* manutencaogerador.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = manutencaogerador.svg; sourceTree = "<group>"; };
+		0206D6241B2A1BEF00CD3A0E /* manutencaojardim.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = manutencaojardim.svg; sourceTree = "<group>"; };
+		0206D6251B2A1BEF00CD3A0E /* manutencaopocoartesiano.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = manutencaopocoartesiano.svg; sourceTree = "<group>"; };
+		0206D6261B2A1BEF00CD3A0E /* material-de-limpeza-01.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "material-de-limpeza-01.svg"; sourceTree = "<group>"; };
+		0206D6271B2A1BEF00CD3A0E /* pessoal.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = pessoal.svg; sourceTree = "<group>"; };
+		0206D6281B2A1BEF00CD3A0E /* pinturaareacomum.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = pinturaareacomum.svg; sourceTree = "<group>"; };
+		0206D6291B2A1BEF00CD3A0E /* seguranca.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = seguranca.svg; sourceTree = "<group>"; };
+		0206D62A1B2A1BEF00CD3A0E /* servico-de-limpeza.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "servico-de-limpeza.svg"; sourceTree = "<group>"; };
+		0206D62B1B2A1BEF00CD3A0E /* taxa-adm.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "taxa-adm.svg"; sourceTree = "<group>"; };
 		021544181B29121A0057B176 /* CondoUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondoUtils.swift; sourceTree = "<group>"; };
 		0215441C1B291A220057B176 /* AnnouncementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementTableViewCell.swift; sourceTree = "<group>"; };
 		0215441D1B291A220057B176 /* AnnouncementTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnouncementTableViewCell.xib; sourceTree = "<group>"; };
@@ -254,6 +284,21 @@
 		4249F60B1B2A127C00B9F861 /* SVGs */ = {
 			isa = PBXGroup;
 			children = (
+				0206D61D1B2A1BEF00CD3A0E /* agua.svg */,
+				0206D61E1B2A1BEF00CD3A0E /* conta-telefonica.svg */,
+				0206D61F1B2A1BEF00CD3A0E /* dedetizacao.svg */,
+				0206D6201B2A1BEF00CD3A0E /* energia.svg */,
+				0206D6211B2A1BEF00CD3A0E /* gas.svg */,
+				0206D6221B2A1BEF00CD3A0E /* manutencaoelevador.svg */,
+				0206D6231B2A1BEF00CD3A0E /* manutencaogerador.svg */,
+				0206D6241B2A1BEF00CD3A0E /* manutencaojardim.svg */,
+				0206D6251B2A1BEF00CD3A0E /* manutencaopocoartesiano.svg */,
+				0206D6261B2A1BEF00CD3A0E /* material-de-limpeza-01.svg */,
+				0206D6271B2A1BEF00CD3A0E /* pessoal.svg */,
+				0206D6281B2A1BEF00CD3A0E /* pinturaareacomum.svg */,
+				0206D6291B2A1BEF00CD3A0E /* seguranca.svg */,
+				0206D62A1B2A1BEF00CD3A0E /* servico-de-limpeza.svg */,
+				0206D62B1B2A1BEF00CD3A0E /* taxa-adm.svg */,
 				0215442E1B29421A0057B176 /* settings49.svg */,
 			);
 			name = SVGs;
@@ -364,16 +409,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0206D6331B2A1BEF00CD3A0E /* manutencaojardim.svg in Resources */,
+				0206D62F1B2A1BEF00CD3A0E /* energia.svg in Resources */,
+				0206D6381B2A1BEF00CD3A0E /* seguranca.svg in Resources */,
+				0206D6311B2A1BEF00CD3A0E /* manutencaoelevador.svg in Resources */,
 				0215442F1B29421A0057B176 /* settings49.svg in Resources */,
 				02ABC0081B2768BC00E0678B /* Main.storyboard in Resources */,
 				02ABC00D1B2768BC00E0678B /* LaunchScreen.xib in Resources */,
 				0206D6191B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib in Resources */,
 				021544231B2927650057B176 /* ReportTableViewCell.xib in Resources */,
+				0206D6341B2A1BEF00CD3A0E /* manutencaopocoartesiano.svg in Resources */,
 				021544271B29298D0057B176 /* QuestionTableViewCell.xib in Resources */,
+				0206D62D1B2A1BEF00CD3A0E /* conta-telefonica.svg in Resources */,
+				0206D62C1B2A1BEF00CD3A0E /* agua.svg in Resources */,
+				0206D6321B2A1BEF00CD3A0E /* manutencaogerador.svg in Resources */,
 				02AD60591B28BDDD000D5210 /* PostView.xib in Resources */,
+				0206D6351B2A1BEF00CD3A0E /* material-de-limpeza-01.svg in Resources */,
 				02ABC00A1B2768BC00E0678B /* Images.xcassets in Resources */,
 				1BE0E2B21B28C6BE002BF58E /* CommentTableViewCell.xib in Resources */,
+				0206D6301B2A1BEF00CD3A0E /* gas.svg in Resources */,
+				0206D63A1B2A1BEF00CD3A0E /* taxa-adm.svg in Resources */,
+				0206D6361B2A1BEF00CD3A0E /* pessoal.svg in Resources */,
+				0206D6391B2A1BEF00CD3A0E /* servico-de-limpeza.svg in Resources */,
+				0206D62E1B2A1BEF00CD3A0E /* dedetizacao.svg in Resources */,
 				0215441F1B291A220057B176 /* AnnouncementTableViewCell.xib in Resources */,
+				0206D6371B2A1BEF00CD3A0E /* pinturaareacomum.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
