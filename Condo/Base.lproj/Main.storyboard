@@ -167,7 +167,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIb-c2-gbk">
-                                <rect key="frame" x="0.0" y="212" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="110" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFQ-gw-fY4">
                                         <rect key="frame" x="35" y="14" width="41" height="21"/>
@@ -191,40 +191,38 @@
                                     <constraint firstItem="UFQ-gw-fY4" firstAttribute="centerY" secondItem="bTM-A8-pcY" secondAttribute="centerY" constant="-0.5" id="sll-9n-C0Y"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ef6-cx-UVH">
-                                <rect key="frame" x="16" y="270" width="343" height="353"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqO-rm-5Y8">
-                                <rect key="frame" x="303" y="174" width="56" height="30"/>
-                                <state key="normal" title="Publicar">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JkH-vw-lor">
-                                <rect key="frame" x="16" y="174" width="61" height="30"/>
+                                <rect key="frame" x="16" y="72" width="61" height="30"/>
                                 <state key="normal" title="Cancelar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqO-rm-5Y8">
+                                <rect key="frame" x="303" y="72" width="56" height="30"/>
+                                <state key="normal" title="Publicar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ef6-cx-UVH">
+                                <rect key="frame" x="16" y="168" width="343" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Ef6-cx-UVH" secondAttribute="centerX" id="A16-Ll-VSe"/>
-                            <constraint firstItem="Ef6-cx-UVH" firstAttribute="trailing" secondItem="NK3-bQ-3P6" secondAttribute="trailingMargin" id="EU4-IY-dyY"/>
-                            <constraint firstItem="CqO-rm-5Y8" firstAttribute="trailing" secondItem="NK3-bQ-3P6" secondAttribute="trailingMargin" id="FBy-h9-ste"/>
-                            <constraint firstItem="RIb-c2-gbk" firstAttribute="top" secondItem="dqL-3a-U7o" secondAttribute="bottom" constant="148" id="JIt-uR-7E9"/>
-                            <constraint firstItem="RIb-c2-gbk" firstAttribute="top" secondItem="JkH-vw-lor" secondAttribute="bottom" constant="8" id="WfM-1U-9Vd"/>
-                            <constraint firstItem="Ef6-cx-UVH" firstAttribute="top" secondItem="RIb-c2-gbk" secondAttribute="bottom" constant="8" id="daL-7d-wwb"/>
-                            <constraint firstItem="Ef6-cx-UVH" firstAttribute="leading" secondItem="NK3-bQ-3P6" secondAttribute="leadingMargin" id="eaL-AF-BLa"/>
+                            <constraint firstItem="CqO-rm-5Y8" firstAttribute="trailing" secondItem="NK3-bQ-3P6" secondAttribute="trailingMargin" id="1qG-FA-Paj"/>
+                            <constraint firstItem="JkH-vw-lor" firstAttribute="leading" secondItem="NK3-bQ-3P6" secondAttribute="leadingMargin" id="3J7-Pu-Pfh"/>
+                            <constraint firstItem="1yE-Tw-WsR" firstAttribute="top" secondItem="Ef6-cx-UVH" secondAttribute="bottom" id="BWj-af-GCh"/>
+                            <constraint firstItem="RIb-c2-gbk" firstAttribute="top" secondItem="CqO-rm-5Y8" secondAttribute="bottom" constant="8" id="Mce-lA-kZM"/>
+                            <constraint firstItem="RIb-c2-gbk" firstAttribute="top" secondItem="JkH-vw-lor" secondAttribute="bottom" constant="8" id="NbF-2r-UxD"/>
+                            <constraint firstItem="RIb-c2-gbk" firstAttribute="top" secondItem="dqL-3a-U7o" secondAttribute="bottom" constant="46" id="Vt8-Ig-66g"/>
+                            <constraint firstItem="Ef6-cx-UVH" firstAttribute="top" secondItem="RIb-c2-gbk" secondAttribute="bottom" constant="8" id="dfk-eC-oG7"/>
+                            <constraint firstItem="Ef6-cx-UVH" firstAttribute="trailing" secondItem="NK3-bQ-3P6" secondAttribute="trailingMargin" id="gMR-iZ-dCG"/>
                             <constraint firstItem="RIb-c2-gbk" firstAttribute="leading" secondItem="NK3-bQ-3P6" secondAttribute="leadingMargin" constant="-16" id="iyE-B6-pBY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RIb-c2-gbk" secondAttribute="trailing" constant="-16" id="m14-gH-iPc"/>
-                            <constraint firstItem="RIb-c2-gbk" firstAttribute="top" secondItem="CqO-rm-5Y8" secondAttribute="bottom" constant="8" id="qkW-nJ-nDe"/>
-                            <constraint firstItem="1yE-Tw-WsR" firstAttribute="top" secondItem="Ef6-cx-UVH" secondAttribute="bottom" id="u1h-Gr-GYU"/>
-                            <constraint firstItem="JkH-vw-lor" firstAttribute="leading" secondItem="NK3-bQ-3P6" secondAttribute="leadingMargin" id="wS8-Rk-6me"/>
+                            <constraint firstItem="Ef6-cx-UVH" firstAttribute="leading" secondItem="NK3-bQ-3P6" secondAttribute="leadingMargin" id="q2k-Iu-51M"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
