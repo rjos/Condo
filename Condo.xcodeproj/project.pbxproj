@@ -35,6 +35,21 @@
 		1BE0E2A91B28B333002BF58E /* CondoModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1BE0E2B11B28C6BE002BF58E /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0E2AF1B28C6BE002BF58E /* CommentTableViewCell.swift */; };
 		1BE0E2B21B28C6BE002BF58E /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BE0E2B01B28C6BE002BF58E /* CommentTableViewCell.xib */; };
+		4249F5FB1B2A126C00B9F861 /* agua.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4249F5EC1B2A126C00B9F861 /* agua.svg */; };
+		4249F5FC1B2A126C00B9F861 /* conta-telefonica.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4249F5ED1B2A126C00B9F861 /* conta-telefonica.svg */; };
+		4249F5FD1B2A126C00B9F861 /* dedetizacao.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4249F5EE1B2A126C00B9F861 /* dedetizacao.svg */; };
+		4249F5FE1B2A126C00B9F861 /* energia.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4249F5EF1B2A126C00B9F861 /* energia.svg */; };
+		4249F5FF1B2A126C00B9F861 /* gas.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4249F5F01B2A126C00B9F861 /* gas.svg */; };
+		4249F6001B2A126C00B9F861 /* manutencaoelevador.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4249F5F11B2A126C00B9F861 /* manutencaoelevador.svg */; };
+		4249F6011B2A126C00B9F861 /* manutencaogerador.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4249F5F21B2A126C00B9F861 /* manutencaogerador.svg */; };
+		4249F6021B2A126C00B9F861 /* manutencaojardim.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4249F5F31B2A126C00B9F861 /* manutencaojardim.svg */; };
+		4249F6031B2A126C00B9F861 /* manutencaopocoartesiano.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4249F5F41B2A126C00B9F861 /* manutencaopocoartesiano.svg */; };
+		4249F6041B2A126C00B9F861 /* material-de-limpeza-01.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4249F5F51B2A126C00B9F861 /* material-de-limpeza-01.svg */; };
+		4249F6051B2A126C00B9F861 /* pessoal.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4249F5F61B2A126C00B9F861 /* pessoal.svg */; };
+		4249F6061B2A126C00B9F861 /* pinturaareacomum.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4249F5F71B2A126C00B9F861 /* pinturaareacomum.svg */; };
+		4249F6071B2A126C00B9F861 /* seguranca.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4249F5F81B2A126C00B9F861 /* seguranca.svg */; };
+		4249F6081B2A126C00B9F861 /* servico-de-limpeza.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4249F5F91B2A126C00B9F861 /* servico-de-limpeza.svg */; };
+		4249F6091B2A126C00B9F861 /* taxa-adm.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4249F5FA1B2A126C00B9F861 /* taxa-adm.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +130,21 @@
 		02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityFeedTableViewController.swift; sourceTree = "<group>"; };
 		1BE0E2AF1B28C6BE002BF58E /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		1BE0E2B01B28C6BE002BF58E /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		4249F5EC1B2A126C00B9F861 /* agua.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = agua.svg; path = ../../../Desktop/Condo/Icons/agua.svg; sourceTree = "<group>"; };
+		4249F5ED1B2A126C00B9F861 /* conta-telefonica.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "conta-telefonica.svg"; path = "../../../Desktop/Condo/Icons/conta-telefonica.svg"; sourceTree = "<group>"; };
+		4249F5EE1B2A126C00B9F861 /* dedetizacao.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = dedetizacao.svg; path = ../../../Desktop/Condo/Icons/dedetizacao.svg; sourceTree = "<group>"; };
+		4249F5EF1B2A126C00B9F861 /* energia.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = energia.svg; path = ../../../Desktop/Condo/Icons/energia.svg; sourceTree = "<group>"; };
+		4249F5F01B2A126C00B9F861 /* gas.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = gas.svg; path = ../../../Desktop/Condo/Icons/gas.svg; sourceTree = "<group>"; };
+		4249F5F11B2A126C00B9F861 /* manutencaoelevador.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = manutencaoelevador.svg; path = ../../../Desktop/Condo/Icons/manutencaoelevador.svg; sourceTree = "<group>"; };
+		4249F5F21B2A126C00B9F861 /* manutencaogerador.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = manutencaogerador.svg; path = ../../../Desktop/Condo/Icons/manutencaogerador.svg; sourceTree = "<group>"; };
+		4249F5F31B2A126C00B9F861 /* manutencaojardim.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = manutencaojardim.svg; path = ../../../Desktop/Condo/Icons/manutencaojardim.svg; sourceTree = "<group>"; };
+		4249F5F41B2A126C00B9F861 /* manutencaopocoartesiano.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = manutencaopocoartesiano.svg; path = ../../../Desktop/Condo/Icons/manutencaopocoartesiano.svg; sourceTree = "<group>"; };
+		4249F5F51B2A126C00B9F861 /* material-de-limpeza-01.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "material-de-limpeza-01.svg"; path = "../../../Desktop/Condo/Icons/material-de-limpeza-01.svg"; sourceTree = "<group>"; };
+		4249F5F61B2A126C00B9F861 /* pessoal.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = pessoal.svg; path = ../../../Desktop/Condo/Icons/pessoal.svg; sourceTree = "<group>"; };
+		4249F5F71B2A126C00B9F861 /* pinturaareacomum.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = pinturaareacomum.svg; path = ../../../Desktop/Condo/Icons/pinturaareacomum.svg; sourceTree = "<group>"; };
+		4249F5F81B2A126C00B9F861 /* seguranca.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = seguranca.svg; path = ../../../Desktop/Condo/Icons/seguranca.svg; sourceTree = "<group>"; };
+		4249F5F91B2A126C00B9F861 /* servico-de-limpeza.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "servico-de-limpeza.svg"; path = "../../../Desktop/Condo/Icons/servico-de-limpeza.svg"; sourceTree = "<group>"; };
+		4249F5FA1B2A126C00B9F861 /* taxa-adm.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "taxa-adm.svg"; path = "../../../Desktop/Condo/Icons/taxa-adm.svg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,7 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				02ABC0091B2768BC00E0678B /* Images.xcassets */,
-				0215442E1B29421A0057B176 /* settings49.svg */,
+				4249F60B1B2A127C00B9F861 /* SVGs */,
 				021544291B293A8D0057B176 /* PocketSVG.h */,
 				0215442A1B293A8D0057B176 /* PocketSVG.m */,
 				02ABC0011B2768BC00E0678B /* Info.plist */,
@@ -246,6 +276,29 @@
 				02ABC0171B2768BC00E0678B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4249F60B1B2A127C00B9F861 /* SVGs */ = {
+			isa = PBXGroup;
+			children = (
+				4249F5EC1B2A126C00B9F861 /* agua.svg */,
+				4249F5ED1B2A126C00B9F861 /* conta-telefonica.svg */,
+				4249F5EE1B2A126C00B9F861 /* dedetizacao.svg */,
+				4249F5EF1B2A126C00B9F861 /* energia.svg */,
+				4249F5F01B2A126C00B9F861 /* gas.svg */,
+				4249F5F11B2A126C00B9F861 /* manutencaoelevador.svg */,
+				4249F5F21B2A126C00B9F861 /* manutencaogerador.svg */,
+				4249F5F31B2A126C00B9F861 /* manutencaojardim.svg */,
+				4249F5F41B2A126C00B9F861 /* manutencaopocoartesiano.svg */,
+				4249F5F51B2A126C00B9F861 /* material-de-limpeza-01.svg */,
+				4249F5F61B2A126C00B9F861 /* pessoal.svg */,
+				4249F5F71B2A126C00B9F861 /* pinturaareacomum.svg */,
+				4249F5F81B2A126C00B9F861 /* seguranca.svg */,
+				4249F5F91B2A126C00B9F861 /* servico-de-limpeza.svg */,
+				4249F5FA1B2A126C00B9F861 /* taxa-adm.svg */,
+				0215442E1B29421A0057B176 /* settings49.svg */,
+			);
+			name = SVGs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,8 +406,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4249F6021B2A126C00B9F861 /* manutencaojardim.svg in Resources */,
 				0215442F1B29421A0057B176 /* settings49.svg in Resources */,
+				4249F5FC1B2A126C00B9F861 /* conta-telefonica.svg in Resources */,
+				4249F6011B2A126C00B9F861 /* manutencaogerador.svg in Resources */,
+				4249F5FE1B2A126C00B9F861 /* energia.svg in Resources */,
+				4249F6001B2A126C00B9F861 /* manutencaoelevador.svg in Resources */,
+				4249F6061B2A126C00B9F861 /* pinturaareacomum.svg in Resources */,
+				4249F5FD1B2A126C00B9F861 /* dedetizacao.svg in Resources */,
 				02ABC0081B2768BC00E0678B /* Main.storyboard in Resources */,
+				4249F5FB1B2A126C00B9F861 /* agua.svg in Resources */,
+				4249F5FF1B2A126C00B9F861 /* gas.svg in Resources */,
 				02ABC00D1B2768BC00E0678B /* LaunchScreen.xib in Resources */,
 				0206D6191B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib in Resources */,
 				021544231B2927650057B176 /* ReportTableViewCell.xib in Resources */,
@@ -362,7 +424,9 @@
 				02AD60591B28BDDD000D5210 /* PostView.xib in Resources */,
 				02ABC00A1B2768BC00E0678B /* Images.xcassets in Resources */,
 				1BE0E2B21B28C6BE002BF58E /* CommentTableViewCell.xib in Resources */,
+				4249F6041B2A126C00B9F861 /* material-de-limpeza-01.svg in Resources */,
 				0215441F1B291A220057B176 /* AnnouncementTableViewCell.xib in Resources */,
+				4249F6091B2A126C00B9F861 /* taxa-adm.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
