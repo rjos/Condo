@@ -13,19 +13,19 @@ extension UIColor {
         return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a/255.0)
     }
     static func condoReportBackgroundColor() ->UIColor {
-        return UIColor.rgba(255, g: 64, b: 0, a: 255)
+        return UIColor.rgba(88, g: 87, b: 208, a: 255)
     }
     static func condoQuestionBackgroundColor() ->UIColor {
-        return UIColor.rgba(6, g: 38, b: 204, a: 255)
+        return UIColor.rgba(0, g: 154, b: 200, a: 255)
     }
     static func condoAnnouncementBackgroundColor() ->UIColor {
-        return UIColor.rgba(98, g: 111, b: 178, a: 255)
+        return UIColor.rgba(220, g: 61, b: 52, a: 255)
     }
     static func condoCommentEvenBackgroundColor() ->UIColor {
-        return UIColor.rgba(51, g: 51, b: 51, a: 255)
+        return UIColor.rgba(244, g: 244, b: 244, a: 255)
     }
     static func condoCommentOddBackgroundColor() ->UIColor {
-        return UIColor.rgba(200, g: 200, b: 200, a: 255)
+        return UIColor.rgba(229, g: 229, b: 229, a: 255)
     }
 }
 
