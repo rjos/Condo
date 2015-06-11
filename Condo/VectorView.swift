@@ -12,20 +12,34 @@ class VectorView: UIView {
     var shapeLayer: CAShapeLayer? = nil
     var strokeColor = UIColor.blueColor() {
         didSet{
-            self.redrawShapeWithProperties()
+            self.applyPropertiesToShape()
         }
     }
     var fillColor = UIColor.clearColor() {
         didSet{
-            self.redrawShapeWithProperties()
+            self.applyPropertiesToShape()
         }
     }
     var lineWidth: CGFloat = 1.0 {
         didSet{
-            self.redrawShapeWithProperties()
+            self.applyPropertiesToShape()
         }
     }
+    var onlyStrokeAfterAnimation = false{
+        didSet {
+            self.applyPropertiesToShape()
+        }
+    }
+    var onlyFillAfterAnimation = false {
+        didSet {
+            self.applyPropertiesToShape()
+        }
+    }
+    
+    
     var animationDuration: NSTimeInterval = 1.0
+    var animateFadeIn: Bool = true
+
     
     func drawSVGWithName(name: String) {
         if let shapeLayer = self.shapeLayer {
@@ -35,19 +49,23 @@ class VectorView: UIView {
         let path = PocketSVG.pathFromSVGFileNamed(name).takeUnretainedValue()
         self.shapeLayer = CAShapeLayer()
         self.shapeLayer!.path = path;
-        self.shapeLayer!.strokeColor = self.strokeColor.CGColor
-        self.shapeLayer!.fillColor = self.fillColor.CGColor
-        self.shapeLayer!.lineWidth = self.lineWidth;
-        self.shapeLayer!.frame = self.bounds;
+        self.applyPropertiesToShape()
         self.layer.addSublayer(self.shapeLayer)
     }
-    private func redrawShapeWithProperties(){
+    private func applyPropertiesToShape(){
         self.shapeLayer!.strokeColor = self.strokeColor.CGColor
-        self.shapeLayer!.fillColor = self.fillColor.CGColor
+        self.shapeLayer!.fillColor = self.onlyFillAfterAnimation ? UIColor.clearColor().CGColor : self.fillColor.CGColor
         self.shapeLayer!.lineWidth = self.lineWidth;
         self.shapeLayer!.frame = self.bounds;
+        self.shapeLayer!.strokeEnd = self.onlyStrokeAfterAnimation ? 0.0 : 1.0
     }
     func animateShape() {
+        CATransaction.begin()
+//        if self.onlyFillAfterAnimation {
+//            self.shapeLayer?.fillColor = UIColor.clearColor().CGColor
+//        }
+        self.onlyStrokeAfterAnimation = false
+        self.onlyFillAfterAnimation = false
         let draw = CABasicAnimation(keyPath: "strokeEnd")
         draw.autoreverses = true
         draw.repeatCount = HUGE
@@ -65,9 +83,17 @@ class VectorView: UIView {
         fade.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         
         let group = CAAnimationGroup()
-        group.animations = [draw, fade]
+        
+        group.animations = self.animateFadeIn ? [draw, fade] : [draw]
         group.duration = self.animationDuration
+        
+        CATransaction.setCompletionBlock { () -> Void in
+//            self.shapeLayer?.fillColor = self.fillColor.CGColor
+//            self.shapeLayer?.strokeEnd = 1.0
+        }
+        
         self.shapeLayer!.addAnimation(group, forKey: "drawAnimation")
+        CATransaction.commit()
     }
     
     private func resizePathToSize(path: CGPathRef, size: CGSize) ->CGPathRef {
