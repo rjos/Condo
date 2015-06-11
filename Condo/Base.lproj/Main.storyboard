@@ -196,38 +196,55 @@
                                 <state key="normal" title="Cancelar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="ShowBack:" destination="1CV-Bx-gor" eventType="touchUpInside" id="VQU-0s-ovV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqO-rm-5Y8">
                                 <rect key="frame" x="303" y="72" width="56" height="30"/>
                                 <state key="normal" title="Publicar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="ShowPublish:" destination="1CV-Bx-gor" eventType="touchUpInside" id="Puh-Il-Zha"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max: 500" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woh-ZB-dui">
+                                <rect key="frame" x="287" y="594" width="72" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ef6-cx-UVH">
-                                <rect key="frame" x="16" y="168" width="343" height="455"/>
+                                <rect key="frame" x="16" y="168" width="343" height="426"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="1yE-Tw-WsR" firstAttribute="top" secondItem="woh-ZB-dui" secondAttribute="bottom" constant="8" id="1pI-pU-irD"/>
                             <constraint firstItem="CqO-rm-5Y8" firstAttribute="trailing" secondItem="NK3-bQ-3P6" secondAttribute="trailingMargin" id="1qG-FA-Paj"/>
+                            <constraint firstItem="woh-ZB-dui" firstAttribute="trailing" secondItem="NK3-bQ-3P6" secondAttribute="trailingMargin" id="2Yq-Ug-kaN"/>
                             <constraint firstItem="JkH-vw-lor" firstAttribute="leading" secondItem="NK3-bQ-3P6" secondAttribute="leadingMargin" id="3J7-Pu-Pfh"/>
-                            <constraint firstItem="1yE-Tw-WsR" firstAttribute="top" secondItem="Ef6-cx-UVH" secondAttribute="bottom" id="BWj-af-GCh"/>
                             <constraint firstItem="RIb-c2-gbk" firstAttribute="top" secondItem="CqO-rm-5Y8" secondAttribute="bottom" constant="8" id="Mce-lA-kZM"/>
                             <constraint firstItem="RIb-c2-gbk" firstAttribute="top" secondItem="JkH-vw-lor" secondAttribute="bottom" constant="8" id="NbF-2r-UxD"/>
+                            <constraint firstItem="Ef6-cx-UVH" firstAttribute="top" secondItem="RIb-c2-gbk" secondAttribute="bottom" constant="8" id="Uo5-8i-SVr"/>
                             <constraint firstItem="RIb-c2-gbk" firstAttribute="top" secondItem="dqL-3a-U7o" secondAttribute="bottom" constant="46" id="Vt8-Ig-66g"/>
-                            <constraint firstItem="Ef6-cx-UVH" firstAttribute="top" secondItem="RIb-c2-gbk" secondAttribute="bottom" constant="8" id="dfk-eC-oG7"/>
-                            <constraint firstItem="Ef6-cx-UVH" firstAttribute="trailing" secondItem="NK3-bQ-3P6" secondAttribute="trailingMargin" id="gMR-iZ-dCG"/>
+                            <constraint firstItem="Ef6-cx-UVH" firstAttribute="trailing" secondItem="NK3-bQ-3P6" secondAttribute="trailingMargin" id="ZWX-8a-knB"/>
+                            <constraint firstItem="woh-ZB-dui" firstAttribute="top" secondItem="Ef6-cx-UVH" secondAttribute="bottom" id="hO9-8C-FYg"/>
                             <constraint firstItem="RIb-c2-gbk" firstAttribute="leading" secondItem="NK3-bQ-3P6" secondAttribute="leadingMargin" constant="-16" id="iyE-B6-pBY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RIb-c2-gbk" secondAttribute="trailing" constant="-16" id="m14-gH-iPc"/>
-                            <constraint firstItem="Ef6-cx-UVH" firstAttribute="leading" secondItem="NK3-bQ-3P6" secondAttribute="leadingMargin" id="q2k-Iu-51M"/>
+                            <constraint firstItem="Ef6-cx-UVH" firstAttribute="leading" secondItem="NK3-bQ-3P6" secondAttribute="leadingMargin" id="yRV-Cq-g1l"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Novo Post" id="6Mi-11-2AL"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="typeUser" destination="bTM-A8-pcY" id="2Ry-eQ-Ptm"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="2224.5" y="-215.5"/>

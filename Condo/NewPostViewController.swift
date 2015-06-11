@@ -10,6 +10,8 @@ import UIKit
 
 class NewPostViewController: UIViewController {
 
+    @IBOutlet weak var typeUser: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +23,11 @@ class NewPostViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func ShowBack(sender: AnyObject) {
+    }
 
+    @IBAction func ShowPublish(sender: AnyObject) {
+    }
     /*
     // MARK: - Navigation
 
