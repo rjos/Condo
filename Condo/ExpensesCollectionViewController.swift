@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-let reuseIdentifier = "Cell"
+import CondoModel
+let reuseIdentifier = "expense"
 
 class ExpensesCollectionViewController: UICollectionViewController {
 
@@ -19,8 +19,8 @@ class ExpensesCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        self.collectionView!.registerNib(UINib(nibName: "ExpenseCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: reuseIdentifier)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -42,24 +42,34 @@ class ExpensesCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        //#warning Incomplete method implementation -- Return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //#warning Incomplete method implementation -- Return the number of items in the section
-        return 0
+        return 8
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! UICollectionViewCell
-    
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ExpenseCollectionViewCell
+        if indexPath.row % 3 == 0 {
+            cell.expenseType = ExpenseType.Energy
+        }else if indexPath.row % 3 == 1 {
+            cell.expenseType = ExpenseType.Telephone
+        }else{
+            cell.expenseType = ExpenseType.Water
+        }
+        
         // Configure the cell
     
         return cell
     }
 
+    override func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        if let cell = cell as? ExpenseCollectionViewCell {
+            cell.expenseView.animateShape()
+        }
+    }
     // MARK: UICollectionViewDelegate
 
     /*

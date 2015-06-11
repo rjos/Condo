@@ -20,7 +20,7 @@ class VectorView: UIView {
             self.applyPropertiesToShape()
         }
     }
-    var lineWidth: CGFloat = 1.0 {
+    var lineWidth: CGFloat = 5.0 {
         didSet{
             self.applyPropertiesToShape()
         }
@@ -49,6 +49,7 @@ class VectorView: UIView {
         let path = PocketSVG.pathFromSVGFileNamed(name).takeUnretainedValue()
         self.shapeLayer = CAShapeLayer()
         self.shapeLayer!.path = path;
+        self.shapeLayer!.frame = self.bounds
         self.applyPropertiesToShape()
         self.layer.addSublayer(self.shapeLayer)
     }
@@ -98,20 +99,50 @@ class VectorView: UIView {
 
     }
     
-    private func resizePathToSize(path: CGPathRef, size: CGSize) ->CGPathRef {
+    private func resizePathToSize(path: CGPathRef, var size: CGSize) ->CGPathRef {
+        let m = min(size.width, size.height)
+        size = CGSizeMake( m - self.lineWidth, m - self.lineWidth)
         let bezier: UIBezierPath = UIBezierPath(CGPath: path)
-        let pathSize: CGSize = CGPathGetBoundingBox(path).size
-        if pathSize.width > pathSize.height {
+        var boundingBox = CGPathGetBoundingBox(path)
+        //boundingBox.inset(dx: self.lineWidth, dy: self.lineWidth)
+        let pathSize: CGSize = boundingBox.size
+        if pathSize.width >= pathSize.height {
             bezier.applyTransform(CGAffineTransformMakeScale(size.width/pathSize.width, size.width/pathSize.width))
         }else{
             bezier.applyTransform(CGAffineTransformMakeScale(size.height/pathSize.height, size.height/pathSize.height))
         }
+        bezier.applyTransform(CGAffineTransformMakeTranslation(self.lineWidth/2.0, self.lineWidth/2.0))
+        
+        //bezier.applyTransform(CGAffineTransformMakeScale(0.5, 0.5))
+        return bezier.CGPath
+    }
+    
+    private func resizePathToBounds(path: CGPathRef, var rect: CGRect) ->CGPathRef {
+        let m = min(rect.size.width, rect.size.height)
+        rect = CGRect(origin: rect.origin, size: CGSize(width: m, height: m))
+        rect.inset(dx: self.lineWidth/2.0, dy: self.lineWidth/2.0)
+        //CGSizeMake( m - self.lineWidth, m - self.lineWidth)
+        let size = rect.size
+        let bezier: UIBezierPath = UIBezierPath(CGPath: path)
+        var boundingBox = CGPathGetBoundingBox(path)
+        //boundingBox.inset(dx: self.lineWidth, dy: self.lineWidth)
+        
+        let pathSize: CGSize = boundingBox.size
+        if pathSize.width >= pathSize.height {
+            bezier.applyTransform(CGAffineTransformMakeScale(size.width/pathSize.width, size.width/pathSize.width))
+        }else{
+            bezier.applyTransform(CGAffineTransformMakeScale(size.height/pathSize.height, size.height/pathSize.height))
+        }
+        bezier.applyTransform(CGAffineTransformMakeTranslation(self.lineWidth/2.0, self.lineWidth/2.0))
+        //bezier.applyTransform(CGAffineTransformMakeScale(0.5, 0.5))
         return bezier.CGPath
     }
     
     override func layoutSubviews() {
         if let shapeLayer = self.shapeLayer {
-            shapeLayer.path = self.resizePathToSize(shapeLayer.path, size: self.bounds.size)
+            //shapeLayer.path = self.resizePathToSize(shapeLayer.path, size: self.bounds.size)
+            shapeLayer.path = self.resizePathToBounds(shapeLayer.path, rect: self.bounds)
+            shapeLayer.frame = self.bounds
         }
     }
 }

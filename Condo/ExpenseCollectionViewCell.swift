@@ -10,9 +10,20 @@ import UIKit
 import CondoModel
 class ExpenseCollectionViewCell: UICollectionViewCell {
 
+
+    @IBOutlet weak var expenseView: ExpenseVectorView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    
+    var expenseType: ExpenseType? = nil {
+        didSet{
+            if let type = self.expenseType {
+                self.expenseView.expenseType = type
+            }
+        }
     }
 
 }

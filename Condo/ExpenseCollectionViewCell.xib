@@ -12,20 +12,26 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="180" height="139"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gmr-8P-9Uo" userLabel="vectorView">
-                        <rect key="frame" x="8" y="8" width="164" height="123"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gmr-8P-9Uo" userLabel="vectorView" customClass="ExpenseVectorView" customModule="Condo" customModuleProvider="target">
+                        <rect key="frame" x="40" y="44.5" width="100" height="50"/>
+                        <color key="backgroundColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="Ehk-la-fdp"/>
+                            <constraint firstAttribute="height" constant="50" id="Z3A-RV-uK0"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Gmr-8P-9Uo" secondAttribute="bottom" constant="8" id="4sW-oi-poR"/>
-                <constraint firstItem="Gmr-8P-9Uo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="ekW-9A-Nk1"/>
-                <constraint firstItem="Gmr-8P-9Uo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="sSI-rv-dkH"/>
-                <constraint firstAttribute="trailing" secondItem="Gmr-8P-9Uo" secondAttribute="trailing" constant="8" id="yaX-sS-xx3"/>
+                <constraint firstAttribute="centerY" secondItem="Gmr-8P-9Uo" secondAttribute="centerY" id="w6g-zD-pGm"/>
+                <constraint firstAttribute="centerX" secondItem="Gmr-8P-9Uo" secondAttribute="centerX" id="z2h-Ci-Xmo"/>
             </constraints>
             <size key="customSize" width="180" height="139"/>
+            <connections>
+                <outlet property="expenseView" destination="Gmr-8P-9Uo" id="ct4-Pq-Pkb"/>
+            </connections>
             <point key="canvasLocation" x="191" y="266.5"/>
         </collectionViewCell>
     </objects>

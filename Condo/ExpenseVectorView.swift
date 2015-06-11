@@ -22,10 +22,14 @@ class ExpenseVectorView: VectorView {
         case .Water:
             self.drawSVGWithName("agua")
             self.fillColor = UIColor.blueColor()
-            self.strokeColor = UIColor.cyanColor()
+            self.strokeColor = UIColor.blackColor()
         case .Energy:
             self.drawSVGWithName("energia")
             self.fillColor = UIColor.yellowColor()
+            self.strokeColor = UIColor.blackColor()
+        case .Telephone:
+            self.drawSVGWithName("conta-telefonica")
+            self.fillColor = UIColor.greenColor()
             self.strokeColor = UIColor.blackColor()
         default:
             self.drawSVGWithName("settings49")
