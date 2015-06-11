@@ -25,6 +25,7 @@
 		0206D6381B2A1BEF00CD3A0E /* seguranca.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6291B2A1BEF00CD3A0E /* seguranca.svg */; };
 		0206D6391B2A1BEF00CD3A0E /* servico-de-limpeza.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D62A1B2A1BEF00CD3A0E /* servico-de-limpeza.svg */; };
 		0206D63A1B2A1BEF00CD3A0E /* taxa-adm.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D62B1B2A1BEF00CD3A0E /* taxa-adm.svg */; };
+		0206D63D1B2A214500CD3A0E /* ExpenseVectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206D63C1B2A214500CD3A0E /* ExpenseVectorView.swift */; };
 		021544191B29121A0057B176 /* CondoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021544181B29121A0057B176 /* CondoUtils.swift */; };
 		0215441E1B291A220057B176 /* AnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215441C1B291A220057B176 /* AnnouncementTableViewCell.swift */; };
 		0215441F1B291A220057B176 /* AnnouncementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0215441D1B291A220057B176 /* AnnouncementTableViewCell.xib */; };
@@ -117,6 +118,7 @@
 		0206D6291B2A1BEF00CD3A0E /* seguranca.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = seguranca.svg; sourceTree = "<group>"; };
 		0206D62A1B2A1BEF00CD3A0E /* servico-de-limpeza.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "servico-de-limpeza.svg"; sourceTree = "<group>"; };
 		0206D62B1B2A1BEF00CD3A0E /* taxa-adm.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "taxa-adm.svg"; sourceTree = "<group>"; };
+		0206D63C1B2A214500CD3A0E /* ExpenseVectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseVectorView.swift; sourceTree = "<group>"; };
 		021544181B29121A0057B176 /* CondoUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondoUtils.swift; sourceTree = "<group>"; };
 		0215441C1B291A220057B176 /* AnnouncementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementTableViewCell.swift; sourceTree = "<group>"; };
 		0215441D1B291A220057B176 /* AnnouncementTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnouncementTableViewCell.xib; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				02ABC0061B2768BC00E0678B /* Main.storyboard */,
 				02ABC00B1B2768BC00E0678B /* LaunchScreen.xib */,
 				0215442C1B293C050057B176 /* VectorView.swift */,
+				0206D63C1B2A214500CD3A0E /* ExpenseVectorView.swift */,
 				021544131B2900F20057B176 /* Cells */,
 			);
 			name = View;
@@ -459,6 +462,7 @@
 				1BE0E2B11B28C6BE002BF58E /* CommentTableViewCell.swift in Sources */,
 				0215442B1B293A8D0057B176 /* PocketSVG.m in Sources */,
 				021544221B2927650057B176 /* ReportTableViewCell.swift in Sources */,
+				0206D63D1B2A214500CD3A0E /* ExpenseVectorView.swift in Sources */,
 				0215441E1B291A220057B176 /* AnnouncementTableViewCell.swift in Sources */,
 				0206D6181B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift in Sources */,
 				02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */,
