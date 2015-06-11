@@ -14,10 +14,10 @@ public class DummyDatabase: NSObject {
         get {
             let lucas = User(dictionary: ["id": "1", "name": "Lucas Tenório", "imageName": "dummy-photo-lucas"])
             let guedes = User(dictionary: ["id": "2", "name": "Lucas Guedes", "imageName": "dummy-photo-guedes"])
-            let maria = User(dictionary: ["id": "3", "name": "Maria dos Santos", "imageName": ""])
+            let maria = User(dictionary: ["id": "3", "name": "Maria dos Santos", "imageName": "dummy-photo-maria"])
             let pedro = User(dictionary: ["id": "4", "name": "Pedro Barrrrrcelah", "imageName": "dummy-photo-pedro"])
             let hunka = User(dictionary: ["id": "5", "name": "Cecília Hunka", "imageName": "dummy-photo-hunka"])
-            let adm = User(dictionary: ["id":"6", "name": "Hermano Borges", "imageName": ""])
+            let adm = User(dictionary: ["id":"6", "name": "Eduardo Leite", "imageName": "dummy-photo-adm"])
             return [
                 "lucas": lucas,
                 "guedes": guedes,
@@ -97,7 +97,7 @@ public class DummyDatabase: NSObject {
         let comment_1 = Comment(dictionary: [
             "id": "comments-1",
             "owner" : self.allUsers["pedro"]!,
-            "text"  : "Esse comentário não ta bom vlh"
+            "text"  : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt"
         ])
         
         let comment_2 = Comment(dictionary: [
@@ -115,22 +115,22 @@ public class DummyDatabase: NSObject {
         let comment_4 = Comment(dictionary: [
             "id": "comments-4",
             "owner" : self.allUsers["maria"]!,
-            "text"  : "Que cara doidão vlh....."
+            "text"  : "Que cara doidão vlh"
         ])
         
         let comment_5 = Comment(dictionary: [
             "id": "comments-5",
             "owner" : self.allUsers["hunka"]!,
-            "text"  : "Esse teu vizinho é doido mesmo..."
+            "text"  : "Esse teu vizinho é doido mesmo"
         ])
         
         let comment_adm = Comment(dictionary: [
             "id": "comments-6",
             "owner" : self.allUsers["adm"]!,
-            "text"  : "Parem de pertubar, por favor..."
+            "text"  : "Parem de pertubar, por favor"
         ])
         
-        var comments = []
+        let comments: Array<Comment>
         
         switch (id){
             case "announcements-2":
@@ -143,7 +143,7 @@ public class DummyDatabase: NSObject {
                 comments = [comment_1, comment_2, comment_3, comment_4, comment_5, comment_adm]
         }
         
-        return (comments as! Array<Comment>)
+        return comments
         
     }
     

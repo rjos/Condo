@@ -17,45 +17,40 @@ class PostView: UIView {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
     
-    @IBInspectable var cornerRadius: CGFloat = 0.0{
-        didSet{
-            self.layer.cornerRadius = cornerRadius
-            self.layer.masksToBounds = cornerRadius != 0.0
-        }
+    @IBOutlet weak var nextImageViewWidth: NSLayoutConstraint!
+    static func instantiateWithOwner(owner: AnyObject!) ->PostView{
+        let nib = UINib(nibName: "PostView", bundle: nil)
+        let nibs = nib.instantiateWithOwner(owner, options:nil)
+        return nibs.first as! PostView
     }
-    override func translatesAutoresizingMaskIntoConstraints() -> Bool {
-        return false
+    var nextImageHidden: Bool = true{
+        didSet {
+            if self.nextImageHidden{
+                self.nextImageViewWidth.constant = 0.0
+            }else{
+                self.nextImageViewWidth.constant = 30.0
+            }
+        }
     }
     var post: Post? {
         didSet{
             if let post = self.post {
                 self.userImageView.layer.cornerRadius = self.userImageView.bounds.size.width/2
                 self.userImageView.clipsToBounds = true
-                switch(post.type){
-                case(PostContentType.Announcement):
-                    self.backgroundColor = UIColor.condoAnnouncementBackgroundColor()
-                    
-                case(PostContentType.Question):
-                    self.backgroundColor = UIColor.condoQuestionBackgroundColor()
-                    
-                case(PostContentType.Report):
-                    self.backgroundColor = UIColor.condoReportBackgroundColor()
-                    
-                }
                 self.userImageView.image = UIImage(named: post.owner.imageName)
                 self.postTextLabel.text = post.text
                 self.userNameLabel.text = post.owner.name
-                self.commentCountLabel.text = "\(post.comments.count()) comentários"
+                if post.comments.count() == 0 {
+                    self.commentCountLabel.text = "Sem comentários"
+                }else if post.comments.count() == 1 {
+                    self.commentCountLabel.text = "\(post.comments.count()) comentário"
+                } else {
+                    self.commentCountLabel.text = "\(post.comments.count()) comentários"
+                }
+                self.nextImageHidden = true
+                self.layoutSubviews()
             }
         }
     }
-
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+    
 }

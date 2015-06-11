@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021544191B29121A0057B176 /* CondoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021544181B29121A0057B176 /* CondoUtils.swift */; };
+		0215441E1B291A220057B176 /* AnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215441C1B291A220057B176 /* AnnouncementTableViewCell.swift */; };
+		0215441F1B291A220057B176 /* AnnouncementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0215441D1B291A220057B176 /* AnnouncementTableViewCell.xib */; };
+		021544221B2927650057B176 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021544201B2927650057B176 /* ReportTableViewCell.swift */; };
+		021544231B2927650057B176 /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021544211B2927650057B176 /* ReportTableViewCell.xib */; };
+		021544261B29298D0057B176 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021544241B29298D0057B176 /* QuestionTableViewCell.swift */; };
+		021544271B29298D0057B176 /* QuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021544251B29298D0057B176 /* QuestionTableViewCell.xib */; };
 		02529E241B276A09009CF624 /* CondoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; };
-		02891C7E1B28811A00FFA118 /* UIColor+Condo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02891C7D1B28811A00FFA118 /* UIColor+Condo.swift */; };
 		02A9F8F51B28D8E700275606 /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */; };
 		02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABC0021B2768BC00E0678B /* AppDelegate.swift */; };
 		02ABC0051B2768BC00E0678B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABC0041B2768BC00E0678B /* ViewController.swift */; };
@@ -74,8 +80,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		021544181B29121A0057B176 /* CondoUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondoUtils.swift; sourceTree = "<group>"; };
+		0215441C1B291A220057B176 /* AnnouncementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementTableViewCell.swift; sourceTree = "<group>"; };
+		0215441D1B291A220057B176 /* AnnouncementTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnouncementTableViewCell.xib; sourceTree = "<group>"; };
+		021544201B2927650057B176 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
+		021544211B2927650057B176 /* ReportTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportTableViewCell.xib; sourceTree = "<group>"; };
+		021544241B29298D0057B176 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
+		021544251B29298D0057B176 /* QuestionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionTableViewCell.xib; sourceTree = "<group>"; };
 		02529E191B276980009CF624 /* CondoModel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CondoModel.xcodeproj; path = CondoModel/CondoModel.xcodeproj; sourceTree = "<group>"; };
-		02891C7D1B28811A00FFA118 /* UIColor+Condo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Condo.swift"; sourceTree = "<group>"; };
 		02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewController.swift; sourceTree = "<group>"; };
 		02ABBFFD1B2768BC00E0678B /* Condo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Condo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02ABC0011B2768BC00E0678B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +129,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		021544131B2900F20057B176 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1BE0E2AF1B28C6BE002BF58E /* CommentTableViewCell.swift */,
+				1BE0E2B01B28C6BE002BF58E /* CommentTableViewCell.xib */,
+				021544241B29298D0057B176 /* QuestionTableViewCell.swift */,
+				021544251B29298D0057B176 /* QuestionTableViewCell.xib */,
+				021544201B2927650057B176 /* ReportTableViewCell.swift */,
+				021544211B2927650057B176 /* ReportTableViewCell.xib */,
+				0215441C1B291A220057B176 /* AnnouncementTableViewCell.swift */,
+				0215441D1B291A220057B176 /* AnnouncementTableViewCell.xib */,
+				02FFF6C11B27A27E0085DD1B /* CommunityFeedTableViewCell.swift */,
+				02FFF6BD1B27A2420085DD1B /* CommunityFeedTableViewCell.xib */,
+				02AD60561B28BD87000D5210 /* PostView.swift */,
+				02AD60581B28BDDD000D5210 /* PostView.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		02529E1A1B276980009CF624 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,18 +179,13 @@
 		02ABBFFF1B2768BC00E0678B /* Condo */ = {
 			isa = PBXGroup;
 			children = (
+				021544181B29121A0057B176 /* CondoUtils.swift */,
 				02ABC0021B2768BC00E0678B /* AppDelegate.swift */,
-				02891C7D1B28811A00FFA118 /* UIColor+Condo.swift */,
 				02ABC0041B2768BC00E0678B /* ViewController.swift */,
 				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
-				02FFF6C11B27A27E0085DD1B /* CommunityFeedTableViewCell.swift */,
 				02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */,
-				02AD60561B28BD87000D5210 /* PostView.swift */,
 				02AD60531B28BAA7000D5210 /* FeedPostTableViewCell.swift */,
-				1BE0E2AF1B28C6BE002BF58E /* CommentTableViewCell.swift */,
-				02FFF6BD1B27A2420085DD1B /* CommunityFeedTableViewCell.xib */,
-				02AD60581B28BDDD000D5210 /* PostView.xib */,
-				1BE0E2B01B28C6BE002BF58E /* CommentTableViewCell.xib */,
+				021544131B2900F20057B176 /* Cells */,
 				02ABC0061B2768BC00E0678B /* Main.storyboard */,
 				02ABC0091B2768BC00E0678B /* Images.xcassets */,
 				02ABC00B1B2768BC00E0678B /* LaunchScreen.xib */,
@@ -300,10 +326,13 @@
 			files = (
 				02ABC0081B2768BC00E0678B /* Main.storyboard in Resources */,
 				02ABC00D1B2768BC00E0678B /* LaunchScreen.xib in Resources */,
+				021544231B2927650057B176 /* ReportTableViewCell.xib in Resources */,
+				021544271B29298D0057B176 /* QuestionTableViewCell.xib in Resources */,
 				02AD60591B28BDDD000D5210 /* PostView.xib in Resources */,
 				02ABC00A1B2768BC00E0678B /* Images.xcassets in Resources */,
 				02FFF6BE1B27A2420085DD1B /* CommunityFeedTableViewCell.xib in Resources */,
 				1BE0E2B21B28C6BE002BF58E /* CommentTableViewCell.xib in Resources */,
+				0215441F1B291A220057B176 /* AnnouncementTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,14 +351,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				02AD60571B28BD87000D5210 /* PostView.swift in Sources */,
-				02891C7E1B28811A00FFA118 /* UIColor+Condo.swift in Sources */,
+				021544261B29298D0057B176 /* QuestionTableViewCell.swift in Sources */,
 				02A9F8F51B28D8E700275606 /* PostDetailTableViewController.swift in Sources */,
 				1BE0E2B11B28C6BE002BF58E /* CommentTableViewCell.swift in Sources */,
+				021544221B2927650057B176 /* ReportTableViewCell.swift in Sources */,
+				0215441E1B291A220057B176 /* AnnouncementTableViewCell.swift in Sources */,
 				02ABC0051B2768BC00E0678B /* ViewController.swift in Sources */,
 				02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */,
 				02AD60541B28BAA7000D5210 /* FeedPostTableViewCell.swift in Sources */,
 				02FFF6C21B27A27E0085DD1B /* CommunityFeedTableViewCell.swift in Sources */,
 				02E06E021B27970900580B3D /* CommunityFeedTableViewController.swift in Sources */,
+				021544191B29121A0057B176 /* CondoUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,15 +7,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="165" id="KGk-i7-Jjw" customClass="CommentTableViewCell" customModule="Condo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="423" height="165"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="349" id="KGk-i7-Jjw" customClass="CommentTableViewCell" customModule="Condo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="349"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3p0-Gs-5JH">
-                        <rect key="frame" x="8" y="8" width="407" height="148"/>
+                        <rect key="frame" x="8" y="8" width="404" height="340.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4gX-y1-DT7">
                                 <rect key="frame" x="8" y="8" width="60" height="60"/>
@@ -25,13 +25,14 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpI-4w-int">
-                                <rect key="frame" x="76" y="27.5" width="42" height="20.5"/>
+                                <rect key="frame" x="76" y="27" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfL-O1-nZI">
-                                <rect key="frame" x="8" y="76" width="391" height="64"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfL-O1-nZI">
+                                <rect key="frame" x="8" y="76" width="388" height="256.5"/>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -54,7 +55,7 @@
                     <constraint firstItem="3p0-Gs-5JH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="1ji-HM-zSj"/>
                     <constraint firstAttribute="trailingMargin" secondItem="3p0-Gs-5JH" secondAttribute="trailing" id="7ba-iK-YFT"/>
                     <constraint firstItem="3p0-Gs-5JH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="JLK-Ph-OpK"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="3p0-Gs-5JH" secondAttribute="bottom" id="WPL-aL-gcG"/>
+                    <constraint firstAttribute="bottom" secondItem="3p0-Gs-5JH" secondAttribute="bottom" id="WPL-aL-gcG"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -63,7 +64,7 @@
                 <outlet property="lbComment" destination="tfL-O1-nZI" id="DXk-rI-bDN"/>
                 <outlet property="lbName" destination="dpI-4w-int" id="IWu-Vc-nqg"/>
             </connections>
-            <point key="canvasLocation" x="290.5" y="227.5"/>
+            <point key="canvasLocation" x="289" y="319.5"/>
         </tableViewCell>
     </objects>
 </document>

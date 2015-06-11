@@ -17,7 +17,10 @@ class CommunityFeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.community = DummyDatabase().community
-        self.tableView.registerNib(UINib(nibName: "CommunityFeedTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "post")
+        
+        self.tableView.registerNib(UINib(nibName: "AnnouncementTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "announcement")
+        self.tableView.registerNib(UINib(nibName: "ReportTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "report")
+        self.tableView.registerNib(UINib(nibName: "QuestionTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "question")
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 50.0
         self.tableView.reloadData()
@@ -37,17 +40,25 @@ class CommunityFeedTableViewController: UITableViewController {
         }
         return 0
     }
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-//        cell.layoutSubviews()
-    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("post", forIndexPath: indexPath) as! CommunityFeedTableViewCell
-        cell.post = self.community!.posts.modelAtIndex(indexPath.row) as? Post
-//        cell.layoutSubviews()
-//        cell.setNeedsDisplay()
-//        
-//        cell.setNeedsLayout()
+        //let cell = tableView.dequeueReusableCellWithIdentifier("post", forIndexPath: indexPath) as! CommunityFeedTableViewCell
+        let post: Post = self.community!.posts.modelAtIndex(indexPath.row) as! Post
+        let cell: UITableViewCell
+        switch (post.type) {
+        case (.Announcement):
+            let aCell = tableView.dequeueReusableCellWithIdentifier("announcement", forIndexPath: indexPath) as! AnnouncementTableViewCell
+            aCell.post = post
+            cell = aCell
+        case (.Report):
+            let rCell = tableView.dequeueReusableCellWithIdentifier("report", forIndexPath: indexPath) as! ReportTableViewCell
+            rCell.post = post
+            cell = rCell
+        case (.Question):
+            let qCell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as! QuestionTableViewCell
+            qCell.post = post
+            cell = qCell
+        }
         return cell
     }
 

@@ -36,6 +36,8 @@ class CommentTableViewCell: UITableViewCell {
                 self.imgProfile.image = UIImage(named: comment.owner.imageName)
                 self.lbName.text      = comment.owner.name
                 self.lbComment.text   = comment.text
+//                self.lbComment.sizeToFit()
+//                self.bgComment.layoutSubviews()
             }
         }
     }
