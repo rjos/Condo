@@ -35,6 +35,7 @@
 		1BE0E2A91B28B333002BF58E /* CondoModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1BE0E2B11B28C6BE002BF58E /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0E2AF1B28C6BE002BF58E /* CommentTableViewCell.swift */; };
 		1BE0E2B21B28C6BE002BF58E /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BE0E2B01B28C6BE002BF58E /* CommentTableViewCell.xib */; };
+		1BF7C76C1B2A15FC00E9D231 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityFeedTableViewController.swift; sourceTree = "<group>"; };
 		1BE0E2AF1B28C6BE002BF58E /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		1BE0E2B01B28C6BE002BF58E /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */,
 				0206D6131B2A123100CD3A0E /* ExpensesCollectionViewController.swift */,
 				021544301B2943080057B176 /* VectorTestViewController.swift */,
+				1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				02E06E021B27970900580B3D /* CommunityFeedTableViewController.swift in Sources */,
 				021544191B29121A0057B176 /* CondoUtils.swift in Sources */,
 				021544311B2943080057B176 /* VectorTestViewController.swift in Sources */,
+				1BF7C76C1B2A15FC00E9D231 /* NewPostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
