@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0206D6141B2A123100CD3A0E /* ExpensesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206D6131B2A123100CD3A0E /* ExpensesCollectionViewController.swift */; };
+		0206D6181B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206D6161B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift */; };
+		0206D6191B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6171B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib */; };
 		021544191B29121A0057B176 /* CondoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021544181B29121A0057B176 /* CondoUtils.swift */; };
 		0215441E1B291A220057B176 /* AnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215441C1B291A220057B176 /* AnnouncementTableViewCell.swift */; };
 		0215441F1B291A220057B176 /* AnnouncementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0215441D1B291A220057B176 /* AnnouncementTableViewCell.xib */; };
@@ -80,6 +83,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0206D6131B2A123100CD3A0E /* ExpensesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesCollectionViewController.swift; sourceTree = "<group>"; };
+		0206D6161B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCollectionViewCell.swift; sourceTree = "<group>"; };
+		0206D6171B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseCollectionViewCell.xib; sourceTree = "<group>"; };
 		021544181B29121A0057B176 /* CondoUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondoUtils.swift; sourceTree = "<group>"; };
 		0215441C1B291A220057B176 /* AnnouncementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementTableViewCell.swift; sourceTree = "<group>"; };
 		0215441D1B291A220057B176 /* AnnouncementTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnouncementTableViewCell.xib; sourceTree = "<group>"; };
@@ -144,6 +150,8 @@
 				0215441D1B291A220057B176 /* AnnouncementTableViewCell.xib */,
 				02AD60561B28BD87000D5210 /* PostView.swift */,
 				02AD60581B28BDDD000D5210 /* PostView.xib */,
+				0206D6161B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift */,
+				0206D6171B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 			children = (
 				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
 				02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */,
+				0206D6131B2A123100CD3A0E /* ExpensesCollectionViewController.swift */,
 				021544301B2943080057B176 /* VectorTestViewController.swift */,
 			);
 			name = Controller;
@@ -347,6 +356,7 @@
 				0215442F1B29421A0057B176 /* settings49.svg in Resources */,
 				02ABC0081B2768BC00E0678B /* Main.storyboard in Resources */,
 				02ABC00D1B2768BC00E0678B /* LaunchScreen.xib in Resources */,
+				0206D6191B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib in Resources */,
 				021544231B2927650057B176 /* ReportTableViewCell.xib in Resources */,
 				021544271B29298D0057B176 /* QuestionTableViewCell.xib in Resources */,
 				02AD60591B28BDDD000D5210 /* PostView.xib in Resources */,
@@ -371,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0215442D1B293C050057B176 /* VectorView.swift in Sources */,
+				0206D6141B2A123100CD3A0E /* ExpensesCollectionViewController.swift in Sources */,
 				02AD60571B28BD87000D5210 /* PostView.swift in Sources */,
 				021544261B29298D0057B176 /* QuestionTableViewCell.swift in Sources */,
 				02A9F8F51B28D8E700275606 /* PostDetailTableViewController.swift in Sources */,
@@ -378,6 +389,7 @@
 				0215442B1B293A8D0057B176 /* PocketSVG.m in Sources */,
 				021544221B2927650057B176 /* ReportTableViewCell.swift in Sources */,
 				0215441E1B291A220057B176 /* AnnouncementTableViewCell.swift in Sources */,
+				0206D6181B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift in Sources */,
 				02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */,
 				02E06E021B27970900580B3D /* CommunityFeedTableViewController.swift in Sources */,
 				021544191B29121A0057B176 /* CondoUtils.swift in Sources */,

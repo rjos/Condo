@@ -146,6 +146,41 @@ public class DummyDatabase: NSObject {
         return comments
         
     }
+    let t: ExpenseType = ExpenseType.Energy
+    
+    var allExpenses: Array<Expense> {
+        let expense1 = Expense(dictionary: [
+            "id": "expense-1",
+            "type": ExpenseType.Energy.rawValue,
+            "totalExpense": NSDecimalNumber(integerLiteral: 51),
+            "expenseDate": NSDate()
+            ])
+        let expense2 = Expense(dictionary: [
+            "id": "expense-2",
+            "type": ExpenseType.Water.rawValue,
+            "totalExpense": NSDecimalNumber(integerLiteral: 51),
+            "expenseDate": NSDate()
+            ])
+        let expense3 = Expense(dictionary: [
+            "id": "expense-3",
+            "type": ExpenseType.Gas.rawValue,
+            "totalExpense": NSDecimalNumber(integerLiteral: 51),
+            "expenseDate": NSDate()
+            ])
+        let expense4 = Expense(dictionary: [
+            "id": "expense-4",
+            "type": ExpenseType.Personel.rawValue,
+            "totalExpense": NSDecimalNumber(integerLiteral: 51),
+            "expenseDate": NSDate()
+            ])
+        let expense5 = Expense(dictionary: [
+            "id": "expense-5",
+            "type": ExpenseType.Telephone.rawValue,
+            "totalExpense": NSDecimalNumber(integerLiteral: 51),
+            "expenseDate": NSDate()
+            ])
+        return [expense1,expense2,expense3,expense4,expense5]
+    }
     
     public var community: Community {
         get{
@@ -154,6 +189,7 @@ public class DummyDatabase: NSObject {
                 "id": "1",
                 "name":"Edifício Santiago",
                 "administrators": DummyModelList(data: [adm]),
+                "expenses": DummyModelList(data: self.allExpenses),
                 "posts": DummyModelList(data: self.allAnnouncements + self.allQuestions + self.allReports)
             ]
             return Community(dictionary: dic)
