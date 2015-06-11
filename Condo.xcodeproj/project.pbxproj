@@ -21,12 +21,10 @@
 		02529E241B276A09009CF624 /* CondoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; };
 		02A9F8F51B28D8E700275606 /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */; };
 		02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABC0021B2768BC00E0678B /* AppDelegate.swift */; };
-		02ABC0051B2768BC00E0678B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABC0041B2768BC00E0678B /* ViewController.swift */; };
 		02ABC0081B2768BC00E0678B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02ABC0061B2768BC00E0678B /* Main.storyboard */; };
 		02ABC00A1B2768BC00E0678B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02ABC0091B2768BC00E0678B /* Images.xcassets */; };
 		02ABC00D1B2768BC00E0678B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02ABC00B1B2768BC00E0678B /* LaunchScreen.xib */; };
 		02ABC0191B2768BC00E0678B /* CondoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABC0181B2768BC00E0678B /* CondoTests.swift */; };
-		02AD60541B28BAA7000D5210 /* FeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AD60531B28BAA7000D5210 /* FeedPostTableViewCell.swift */; };
 		02AD60571B28BD87000D5210 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AD60561B28BD87000D5210 /* PostView.swift */; };
 		02AD60591B28BDDD000D5210 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AD60581B28BDDD000D5210 /* PostView.xib */; };
 		02E06E021B27970900580B3D /* CommunityFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */; };
@@ -100,14 +98,12 @@
 		02ABBFFD1B2768BC00E0678B /* Condo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Condo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02ABC0011B2768BC00E0678B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02ABC0021B2768BC00E0678B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		02ABC0041B2768BC00E0678B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		02ABC0071B2768BC00E0678B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02ABC0091B2768BC00E0678B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		02ABC00C1B2768BC00E0678B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		02ABC0121B2768BC00E0678B /* CondoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CondoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02ABC0171B2768BC00E0678B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02ABC0181B2768BC00E0678B /* CondoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CondoTests.swift; sourceTree = "<group>"; };
-		02AD60531B28BAA7000D5210 /* FeedPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedPostTableViewCell.swift; sourceTree = "<group>"; };
 		02AD60561B28BD87000D5210 /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		02AD60581B28BDDD000D5210 /* PostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
 		02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityFeedTableViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +148,27 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		021544321B294F070057B176 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				02ABC0061B2768BC00E0678B /* Main.storyboard */,
+				02ABC00B1B2768BC00E0678B /* LaunchScreen.xib */,
+				0215442C1B293C050057B176 /* VectorView.swift */,
+				021544131B2900F20057B176 /* Cells */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		021544331B294F140057B176 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
+				02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */,
+				021544301B2943080057B176 /* VectorTestViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		02529E1A1B276980009CF624 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,16 +202,8 @@
 			children = (
 				021544181B29121A0057B176 /* CondoUtils.swift */,
 				02ABC0021B2768BC00E0678B /* AppDelegate.swift */,
-				02ABC0041B2768BC00E0678B /* ViewController.swift */,
-				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
-				02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */,
-				02AD60531B28BAA7000D5210 /* FeedPostTableViewCell.swift */,
-				021544301B2943080057B176 /* VectorTestViewController.swift */,
-				0215442C1B293C050057B176 /* VectorView.swift */,
-				021544131B2900F20057B176 /* Cells */,
-				02ABC0061B2768BC00E0678B /* Main.storyboard */,
-				02ABC0091B2768BC00E0678B /* Images.xcassets */,
-				02ABC00B1B2768BC00E0678B /* LaunchScreen.xib */,
+				021544331B294F140057B176 /* Controller */,
+				021544321B294F070057B176 /* View */,
 				02ABC0001B2768BC00E0678B /* Supporting Files */,
 			);
 			path = Condo;
@@ -203,6 +212,7 @@
 		02ABC0001B2768BC00E0678B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				02ABC0091B2768BC00E0678B /* Images.xcassets */,
 				0215442E1B29421A0057B176 /* settings49.svg */,
 				021544291B293A8D0057B176 /* PocketSVG.h */,
 				0215442A1B293A8D0057B176 /* PocketSVG.m */,
@@ -368,9 +378,7 @@
 				0215442B1B293A8D0057B176 /* PocketSVG.m in Sources */,
 				021544221B2927650057B176 /* ReportTableViewCell.swift in Sources */,
 				0215441E1B291A220057B176 /* AnnouncementTableViewCell.swift in Sources */,
-				02ABC0051B2768BC00E0678B /* ViewController.swift in Sources */,
 				02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */,
-				02AD60541B28BAA7000D5210 /* FeedPostTableViewCell.swift in Sources */,
 				02E06E021B27970900580B3D /* CommunityFeedTableViewController.swift in Sources */,
 				021544191B29121A0057B176 /* CondoUtils.swift in Sources */,
 				021544311B2943080057B176 /* VectorTestViewController.swift in Sources */,

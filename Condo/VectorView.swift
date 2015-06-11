@@ -64,8 +64,7 @@ class VectorView: UIView {
 //        if self.onlyFillAfterAnimation {
 //            self.shapeLayer?.fillColor = UIColor.clearColor().CGColor
 //        }
-        self.onlyStrokeAfterAnimation = false
-        self.onlyFillAfterAnimation = false
+
         let draw = CABasicAnimation(keyPath: "strokeEnd")
         draw.autoreverses = true
         draw.repeatCount = HUGE
@@ -90,10 +89,13 @@ class VectorView: UIView {
         CATransaction.setCompletionBlock { () -> Void in
 //            self.shapeLayer?.fillColor = self.fillColor.CGColor
 //            self.shapeLayer?.strokeEnd = 1.0
+            self.onlyStrokeAfterAnimation = false
+            self.onlyFillAfterAnimation = false
         }
         
         self.shapeLayer!.addAnimation(group, forKey: "drawAnimation")
         CATransaction.commit()
+
     }
     
     private func resizePathToSize(path: CGPathRef, size: CGSize) ->CGPathRef {
