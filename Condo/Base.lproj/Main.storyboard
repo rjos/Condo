@@ -17,6 +17,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="xds-Eg-k5G" kind="relationship" relationship="viewControllers" id="mn7-eG-QHt"/>
+                        <segue destination="ld3-4J-XX2" kind="relationship" relationship="viewControllers" id="AjG-gy-lyj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXV-TB-t5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -44,6 +45,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zms-lr-mmf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1463.5" y="636.5"/>
+        </scene>
+        <!--Vector Test View Controller-->
+        <scene sceneID="6BY-yw-uKX">
+            <objects>
+                <viewController id="ld3-4J-XX2" customClass="VectorTestViewController" customModule="Condo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fgg-uC-J4B"/>
+                        <viewControllerLayoutGuide type="bottom" id="7NP-Om-Qds"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RNk-S3-xjI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9MV-lU-5Dp" customClass="VectorView" customModule="Condo" customModuleProvider="target">
+                                <rect key="frame" x="112" y="259" width="150" height="150"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="AfA-o4-xuk"/>
+                                    <constraint firstAttribute="height" constant="150" id="JLw-4p-Tlj"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4T-JG-Dno">
+                                <rect key="frame" x="158" y="221" width="57" height="30"/>
+                                <state key="normal" title="Animate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="animateButtonPressed:" destination="ld3-4J-XX2" eventType="touchUpInside" id="rOt-AB-WmJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="9MV-lU-5Dp" secondAttribute="centerX" id="7yP-Au-EVL"/>
+                            <constraint firstItem="P4T-JG-Dno" firstAttribute="centerX" secondItem="9MV-lU-5Dp" secondAttribute="centerX" id="BVk-VC-l9J"/>
+                            <constraint firstAttribute="centerY" secondItem="9MV-lU-5Dp" secondAttribute="centerY" id="GSk-zY-tNw"/>
+                            <constraint firstItem="9MV-lU-5Dp" firstAttribute="top" secondItem="P4T-JG-Dno" secondAttribute="bottom" constant="8" id="qfg-BR-C2y"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="ez0-6y-KPw"/>
+                    <connections>
+                        <outlet property="vectorView" destination="9MV-lU-5Dp" id="6p8-PQ-uen"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8rs-BF-ag2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846.5" y="1538.5"/>
         </scene>
         <!--Post Detail Table View Controller-->
         <scene sceneID="RDS-zf-4pk">

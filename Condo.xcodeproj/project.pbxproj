@@ -14,6 +14,10 @@
 		021544231B2927650057B176 /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021544211B2927650057B176 /* ReportTableViewCell.xib */; };
 		021544261B29298D0057B176 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021544241B29298D0057B176 /* QuestionTableViewCell.swift */; };
 		021544271B29298D0057B176 /* QuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021544251B29298D0057B176 /* QuestionTableViewCell.xib */; };
+		0215442B1B293A8D0057B176 /* PocketSVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 0215442A1B293A8D0057B176 /* PocketSVG.m */; };
+		0215442D1B293C050057B176 /* VectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215442C1B293C050057B176 /* VectorView.swift */; };
+		0215442F1B29421A0057B176 /* settings49.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0215442E1B29421A0057B176 /* settings49.svg */; };
+		021544311B2943080057B176 /* VectorTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021544301B2943080057B176 /* VectorTestViewController.swift */; };
 		02529E241B276A09009CF624 /* CondoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; };
 		02A9F8F51B28D8E700275606 /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */; };
 		02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABC0021B2768BC00E0678B /* AppDelegate.swift */; };
@@ -85,6 +89,12 @@
 		021544211B2927650057B176 /* ReportTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportTableViewCell.xib; sourceTree = "<group>"; };
 		021544241B29298D0057B176 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		021544251B29298D0057B176 /* QuestionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionTableViewCell.xib; sourceTree = "<group>"; };
+		021544281B293A8C0057B176 /* Condo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Condo-Bridging-Header.h"; sourceTree = "<group>"; };
+		021544291B293A8D0057B176 /* PocketSVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PocketSVG.h; sourceTree = "<group>"; };
+		0215442A1B293A8D0057B176 /* PocketSVG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PocketSVG.m; sourceTree = "<group>"; };
+		0215442C1B293C050057B176 /* VectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorView.swift; sourceTree = "<group>"; };
+		0215442E1B29421A0057B176 /* settings49.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = settings49.svg; sourceTree = "<group>"; };
+		021544301B2943080057B176 /* VectorTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTestViewController.swift; sourceTree = "<group>"; };
 		02529E191B276980009CF624 /* CondoModel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CondoModel.xcodeproj; path = CondoModel/CondoModel.xcodeproj; sourceTree = "<group>"; };
 		02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewController.swift; sourceTree = "<group>"; };
 		02ABBFFD1B2768BC00E0678B /* Condo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Condo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +189,8 @@
 				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
 				02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */,
 				02AD60531B28BAA7000D5210 /* FeedPostTableViewCell.swift */,
+				021544301B2943080057B176 /* VectorTestViewController.swift */,
+				0215442C1B293C050057B176 /* VectorView.swift */,
 				021544131B2900F20057B176 /* Cells */,
 				02ABC0061B2768BC00E0678B /* Main.storyboard */,
 				02ABC0091B2768BC00E0678B /* Images.xcassets */,
@@ -191,7 +203,11 @@
 		02ABC0001B2768BC00E0678B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0215442E1B29421A0057B176 /* settings49.svg */,
+				021544291B293A8D0057B176 /* PocketSVG.h */,
+				0215442A1B293A8D0057B176 /* PocketSVG.m */,
 				02ABC0011B2768BC00E0678B /* Info.plist */,
+				021544281B293A8C0057B176 /* Condo-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -318,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0215442F1B29421A0057B176 /* settings49.svg in Resources */,
 				02ABC0081B2768BC00E0678B /* Main.storyboard in Resources */,
 				02ABC00D1B2768BC00E0678B /* LaunchScreen.xib in Resources */,
 				021544231B2927650057B176 /* ReportTableViewCell.xib in Resources */,
@@ -343,10 +360,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0215442D1B293C050057B176 /* VectorView.swift in Sources */,
 				02AD60571B28BD87000D5210 /* PostView.swift in Sources */,
 				021544261B29298D0057B176 /* QuestionTableViewCell.swift in Sources */,
 				02A9F8F51B28D8E700275606 /* PostDetailTableViewController.swift in Sources */,
 				1BE0E2B11B28C6BE002BF58E /* CommentTableViewCell.swift in Sources */,
+				0215442B1B293A8D0057B176 /* PocketSVG.m in Sources */,
 				021544221B2927650057B176 /* ReportTableViewCell.swift in Sources */,
 				0215441E1B291A220057B176 /* AnnouncementTableViewCell.swift in Sources */,
 				02ABC0051B2768BC00E0678B /* ViewController.swift in Sources */,
@@ -354,6 +373,7 @@
 				02AD60541B28BAA7000D5210 /* FeedPostTableViewCell.swift in Sources */,
 				02E06E021B27970900580B3D /* CommunityFeedTableViewController.swift in Sources */,
 				021544191B29121A0057B176 /* CondoUtils.swift in Sources */,
+				021544311B2943080057B176 /* VectorTestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,10 +507,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Condo/Info.plist;
 				LD_DYLIB_INSTALL_NAME = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Condo/Condo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -498,10 +521,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Condo/Info.plist;
 				LD_DYLIB_INSTALL_NAME = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Condo/Condo-Bridging-Header.h";
 			};
 			name = Release;
 		};

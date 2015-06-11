@@ -15,6 +15,8 @@ class CommunityFeedTableViewController: UITableViewController {
     
     var selectedPost: Post? = nil
     override func viewDidLoad() {
+        
+        let test = PocketSVG.pathFromSVGString("")
         super.viewDidLoad()
         self.community = DummyDatabase().community
         
