@@ -175,7 +175,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bTM-A8-pcY">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Síndico" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bTM-A8-pcY">
                                         <rect key="frame" x="84" y="10" width="98" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -243,6 +243,9 @@
                     <navigationItem key="navigationItem" title="Novo Post" id="6Mi-11-2AL"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btnPublish" destination="CqO-rm-5Y8" id="Ceg-OK-GqA"/>
+                        <outlet property="countLetter" destination="woh-ZB-dui" id="PLB-EM-38b"/>
+                        <outlet property="textReport" destination="Ef6-cx-UVH" id="Lns-FM-cdp"/>
                         <outlet property="typeUser" destination="bTM-A8-pcY" id="2Ry-eQ-Ptm"/>
                     </connections>
                 </viewController>
