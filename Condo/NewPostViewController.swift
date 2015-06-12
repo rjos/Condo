@@ -59,6 +59,11 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
         
         self.textReport.layer.borderWidth = 1.0
         self.textReport.layer.borderColor = UIColor.blueColor().CGColor
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardWillShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: UIKeyboardWillHideNotification, object: nil)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -67,30 +72,29 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
         // Dispose of any resources that can be recreated.
     }
     
-    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
-        self.keyboardDidShow()
-        return true
+    func keyboardDidShow (notification: NSNotification){
+        
+        let info = (notification.userInfo as! Dictionary<NSString, AnyObject>)
+        let valueSize = info["UIKeyboardFrameEndUserInfoKey"] as! NSValue
+        let rect = valueSize.CGRectValue()
+        let size = rect.size
+        
+        self.bottomConstraintTextView.constant = 2.0 + size.height
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            self.view.layoutIfNeeded()
+        })
     }
     
-    func textViewShouldEndEditing(textView: UITextView) -> Bool {
-        self.keyboardDidHide()
-        return true
-    }
-    
-    func keyboardDidShow(){
-        UIView.setAnimationDelegate(self)
-        UIView.setAnimationDuration(0.5)
-        UIView.setAnimationBeginsFromCurrentState(true)
-        self.bottomConstraintTextView.constant = 200.0
-        UIView.commitAnimations()
-    }
-    
-    func keyboardDidHide(){
-        UIView.setAnimationDelegate(self)
-        UIView.setAnimationDuration(0.5)
-        UIView.setAnimationBeginsFromCurrentState(true)
+    func keyboardDidHide(notification: NSNotification){
+        let info = (notification.userInfo as! Dictionary<NSString, AnyObject>)
+        let valueSize = info["UIKeyboardFrameEndUserInfoKey"] as! NSValue
+        let rect = valueSize.CGRectValue()
+        let size = rect.size
+        
         self.bottomConstraintTextView.constant = 0
-        UIView.commitAnimations()
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            self.view.layoutIfNeeded()
+        })
     }
     
     func textViewDidChange(textView: UITextView) {

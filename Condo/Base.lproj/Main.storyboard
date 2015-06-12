@@ -186,7 +186,7 @@
         <!--Novo Post-->
         <scene sceneID="J5R-2m-UvW">
             <objects>
-                <viewController id="1CV-Bx-gor" customClass="NewPostViewController" customModule="Condo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="1CV-Bx-gor" customClass="NewPostViewController" customModule="Condo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dqL-3a-U7o"/>
                         <viewControllerLayoutGuide type="bottom" id="1yE-Tw-WsR"/>
