@@ -17,9 +17,36 @@ class ExpenseVectorView: VectorView {
             }
         }
     }
+    
     func drawWithProperties(properties: ExpenseDrawingProperties) {
         self.drawSVGWithName(properties.svgFileName)
-        self.fillColor = properties.fillColor
-        self.strokeColor = properties.strokeColor
+        self.layer.borderWidth = 3.0
+        self.layer.cornerRadius = 15.0
+        
+        let innerColor : UIColor
+        let outerColor : UIColor
+        
+        if properties.selected {
+            innerColor = properties.backgroundColor
+            outerColor = properties.fillColor
+        }else{
+            innerColor = properties.fillColor
+            outerColor = properties.backgroundColor
+        }
+        
+        if properties.selected {
+            self.fillColor = outerColor
+            self.strokeColor = outerColor
+            self.layer.borderColor = outerColor.CGColor
+            
+            self.backgroundColor = innerColor
+            
+        } else{
+            self.fillColor = innerColor
+            self.strokeColor = innerColor
+            self.layer.borderColor = innerColor.CGColor
+            
+            self.backgroundColor = outerColor
+        }
     }
 }

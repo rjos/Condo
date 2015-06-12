@@ -19,7 +19,7 @@ class AnnouncementTableViewCell: UITableViewCell {
         self.postView!.textColor = UIColor.condoAnnouncementBackgroundColor()
         self.mainView.fillWithSubview(postView!)
         self.mainView.layer.cornerRadius = 15.0
-        self.mainView.layer.borderWidth = 1.0
+        self.mainView.layer.borderWidth = 3.0
         self.mainView.layer.borderColor = UIColor.condoAnnouncementBackgroundColor().CGColor
         self.mainView.backgroundColor = UIColor.clearColor()
         self.mainView.layer.cornerRadius = 15.0
