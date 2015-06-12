@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E33b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="A1j-Be-Tkw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="A1j-Be-Tkw">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -143,7 +143,7 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="jhd-kz-O4z" customClass="ExpenseHeaderReusableView" customModule="Condo" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                            <rect key="frame" x="0.0" y="64" width="375" height="201"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9i-sA-obl" customClass="ExpenseVectorView" customModule="Condo" customModuleProvider="target">
@@ -204,8 +204,11 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Síndico" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bTM-A8-pcY">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Síndico" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bTM-A8-pcY">
                                         <rect key="frame" x="84" y="10" width="98" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Wnd-EZ-4Uo"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -260,6 +263,7 @@
                             <constraint firstItem="RIb-c2-gbk" firstAttribute="top" secondItem="CqO-rm-5Y8" secondAttribute="bottom" constant="8" id="Mce-lA-kZM"/>
                             <constraint firstItem="RIb-c2-gbk" firstAttribute="top" secondItem="JkH-vw-lor" secondAttribute="bottom" constant="8" id="NbF-2r-UxD"/>
                             <constraint firstItem="Ef6-cx-UVH" firstAttribute="top" secondItem="RIb-c2-gbk" secondAttribute="bottom" constant="8" id="Uo5-8i-SVr"/>
+                            <constraint firstItem="Ef6-cx-UVH" firstAttribute="trailing" secondItem="NK3-bQ-3P6" secondAttribute="trailingMargin" id="VHw-fy-SBv"/>
                             <constraint firstItem="RIb-c2-gbk" firstAttribute="top" secondItem="dqL-3a-U7o" secondAttribute="bottom" constant="46" id="Vt8-Ig-66g"/>
                             <constraint firstItem="Ef6-cx-UVH" firstAttribute="trailing" secondItem="NK3-bQ-3P6" secondAttribute="trailingMargin" id="ZWX-8a-knB"/>
                             <constraint firstItem="woh-ZB-dui" firstAttribute="top" secondItem="Ef6-cx-UVH" secondAttribute="bottom" id="hO9-8C-FYg"/>
@@ -272,6 +276,7 @@
                     <navigationItem key="navigationItem" title="Novo Post" id="6Mi-11-2AL"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bottomConstraintTextView" destination="hO9-8C-FYg" id="77S-SV-QXT"/>
                         <outlet property="btnPublish" destination="CqO-rm-5Y8" id="Ceg-OK-GqA"/>
                         <outlet property="countLetter" destination="woh-ZB-dui" id="PLB-EM-38b"/>
                         <outlet property="textReport" destination="Ef6-cx-UVH" id="Lns-FM-cdp"/>
