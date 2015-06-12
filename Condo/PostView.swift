@@ -32,6 +32,13 @@ class PostView: UIView {
             }
         }
     }
+    var textColor = UIColor.whiteColor() {
+        didSet{
+            self.postTextLabel.textColor = self.textColor
+            self.userNameLabel.textColor = self.textColor
+            self.commentCountLabel.textColor = self.textColor
+        }
+    }
     var post: Post? {
         didSet{
             if let post = self.post {

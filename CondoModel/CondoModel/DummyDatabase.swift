@@ -181,6 +181,7 @@ public class DummyDatabase: NSObject {
             ])
         return [expense1,expense2,expense3,expense4,expense5]
     }
+
     
     public var community: Community {
         get{
