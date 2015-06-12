@@ -11,6 +11,7 @@ import CondoModel
 
 class QuestionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var questionSegmentedControl: UISegmentedControl!
     @IBOutlet weak var optionsView: UIView!
     @IBOutlet weak var postView: UIView!
     @IBOutlet weak var mainView: UIView!
@@ -18,10 +19,16 @@ class QuestionTableViewCell: UITableViewCell {
     var postHolder: PostView? = nil
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.tintColor = UIColor.condoQuestionBackgroundColor()
+        self.questionSegmentedControl.tintColor = UIColor.condoQuestionBackgroundColor()
         self.postHolder = PostView.instantiateWithOwner(self)
+        self.postHolder!.textColor = UIColor.condoQuestionBackgroundColor()
         self.postView.fillWithSubview(self.postHolder!)
-        self.mainView.backgroundColor = UIColor.condoQuestionBackgroundColor()
         self.mainView.layer.cornerRadius = 15.0
+        self.mainView.layer.borderWidth = 1.0
+        self.mainView.layer.borderColor = UIColor.condoQuestionBackgroundColor().CGColor
+        self.mainView.backgroundColor = UIColor.clearColor()
+        
         self.mainView.layer.masksToBounds = true
         // Initialization code
     }

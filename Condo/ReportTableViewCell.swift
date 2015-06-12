@@ -16,8 +16,12 @@ class ReportTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.postView = PostView.instantiateWithOwner(self)
+        self.postView!.textColor = UIColor.condoReportBackgroundColor()
         self.mainView.fillWithSubview(postView!)
-        self.mainView.backgroundColor = UIColor.condoReportBackgroundColor()
+        self.mainView.layer.cornerRadius = 15.0
+        self.mainView.layer.borderWidth = 1.0
+        self.mainView.layer.borderColor = UIColor.condoReportBackgroundColor().CGColor
+        self.mainView.backgroundColor = UIColor.clearColor()
         self.mainView.layer.cornerRadius = 15.0
         self.mainView.layer.masksToBounds = true
     }

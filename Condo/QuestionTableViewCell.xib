@@ -14,13 +14,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gw-Bw-hcH" userLabel="mainView">
-                        <rect key="frame" x="8" y="8" width="392" height="223.5"/>
+                        <rect key="frame" x="8" y="8" width="392" height="224"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5Y-Ip-YLt" userLabel="postView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r5Y-Ip-YLt" userLabel="postView">
                                 <rect key="frame" x="0.0" y="0.0" width="392" height="173"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMU-fL-7Fj" userLabel="optionsView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OMU-fL-7Fj" userLabel="optionsView">
                                 <rect key="frame" x="0.0" y="173" width="392" height="50"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Pkm-Te-GtU">
@@ -64,6 +64,7 @@
                 <outlet property="mainView" destination="1gw-Bw-hcH" id="ZvL-J1-tO6"/>
                 <outlet property="optionsView" destination="OMU-fL-7Fj" id="KJs-Pv-MnY"/>
                 <outlet property="postView" destination="r5Y-Ip-YLt" id="LGm-As-gEw"/>
+                <outlet property="questionSegmentedControl" destination="Pkm-Te-GtU" id="QIz-cJ-cmk"/>
             </connections>
             <point key="canvasLocation" x="313" y="431"/>
         </tableViewCell>

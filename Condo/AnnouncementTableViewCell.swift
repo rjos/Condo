@@ -16,8 +16,12 @@ class AnnouncementTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.postView = PostView.instantiateWithOwner(self)
+        self.postView!.textColor = UIColor.condoAnnouncementBackgroundColor()
         self.mainView.fillWithSubview(postView!)
-        self.mainView.backgroundColor = UIColor.condoAnnouncementBackgroundColor()
+        self.mainView.layer.cornerRadius = 15.0
+        self.mainView.layer.borderWidth = 1.0
+        self.mainView.layer.borderColor = UIColor.condoAnnouncementBackgroundColor().CGColor
+        self.mainView.backgroundColor = UIColor.clearColor()
         self.mainView.layer.cornerRadius = 15.0
         self.mainView.layer.masksToBounds = true
     }
