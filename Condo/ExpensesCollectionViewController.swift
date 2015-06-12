@@ -12,6 +12,7 @@ let reuseIdentifier = "expense"
 
 class ExpensesCollectionViewController: UICollectionViewController {
 
+    var selectedType = ExpenseType.allValues[0]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +21,9 @@ class ExpensesCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.registerNib(UINib(nibName: "ExpenseCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: reuseIdentifier)
+        let first = NSIndexPath(forItem: 0, inSection: 0)
         
+        self.collectionView!.selectItemAtIndexPath(first, animated: true, scrollPosition: UICollectionViewScrollPosition.Top)
         // Do any additional setup after loading the view.
     }
 
@@ -50,7 +53,8 @@ class ExpensesCollectionViewController: UICollectionViewController {
         var view: UICollectionReusableView? = nil
         if kind == UICollectionElementKindSectionHeader {
             let expensesHeader: ExpenseHeaderReusableView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "header", forIndexPath: indexPath) as! ExpenseHeaderReusableView
-            expensesHeader.expenseProperties = ExpenseDrawingProperties(type: ExpenseType.Water)
+            expensesHeader.tag = 666
+            expensesHeader.expenseProperties = ExpenseDrawingProperties(type: self.selectedType)
             view = expensesHeader
         }
         return view!
@@ -62,12 +66,21 @@ class ExpensesCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ExpenseCollectionViewCell
         let type = ExpenseType.allValues[indexPath.row % ExpenseType.allValues.count]
-        cell.expenseType = type
+        cell.expenseProperties = ExpenseDrawingProperties(type: type)
         // Configure the cell
     
         return cell
     }
-
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        self.selectedType = ExpenseType.allValues[indexPath.row]
+        let header = self.collectionView?.viewWithTag(666) as? ExpenseHeaderReusableView
+        var p = ExpenseDrawingProperties(type: self.selectedType)
+        p.selected = true
+        header?.expenseProperties = p
+        //self.collectionView?.reloadItemsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)])
+    }
+    
     override func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
         if let cell = cell as? ExpenseCollectionViewCell {
             cell.expenseView.animateShape()

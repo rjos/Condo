@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0200C98B1B2B49BC008ED219 /* ExpenseDrawingProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200C98A1B2B49BC008ED219 /* ExpenseDrawingProperties.swift */; };
 		0200C98D1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200C98C1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift */; };
+		0200C98F1B2B7294008ED219 /* test.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0200C98E1B2B7294008ED219 /* test.svg */; };
 		0206D6141B2A123100CD3A0E /* ExpensesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206D6131B2A123100CD3A0E /* ExpensesCollectionViewController.swift */; };
 		0206D6181B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206D6161B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift */; };
 		0206D6191B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6171B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib */; };
@@ -104,6 +105,7 @@
 /* Begin PBXFileReference section */
 		0200C98A1B2B49BC008ED219 /* ExpenseDrawingProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseDrawingProperties.swift; sourceTree = "<group>"; };
 		0200C98C1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseHeaderReusableView.swift; sourceTree = "<group>"; };
+		0200C98E1B2B7294008ED219 /* test.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.svg; sourceTree = "<group>"; };
 		0206D6131B2A123100CD3A0E /* ExpensesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesCollectionViewController.swift; sourceTree = "<group>"; };
 		0206D6161B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCollectionViewCell.swift; sourceTree = "<group>"; };
 		0206D6171B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -197,10 +199,10 @@
 		021544321B294F070057B176 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0200C98A1B2B49BC008ED219 /* ExpenseDrawingProperties.swift */,
 				02ABC0061B2768BC00E0678B /* Main.storyboard */,
 				02ABC00B1B2768BC00E0678B /* LaunchScreen.xib */,
 				0215442C1B293C050057B176 /* VectorView.swift */,
-				0200C98A1B2B49BC008ED219 /* ExpenseDrawingProperties.swift */,
 				0206D63C1B2A214500CD3A0E /* ExpenseVectorView.swift */,
 				0200C98C1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift */,
 				021544131B2900F20057B176 /* Cells */,
@@ -293,6 +295,7 @@
 		4249F60B1B2A127C00B9F861 /* SVGs */ = {
 			isa = PBXGroup;
 			children = (
+				0200C98E1B2B7294008ED219 /* test.svg */,
 				0206D61D1B2A1BEF00CD3A0E /* agua.svg */,
 				0206D61E1B2A1BEF00CD3A0E /* conta-telefonica.svg */,
 				0206D61F1B2A1BEF00CD3A0E /* dedetizacao.svg */,
@@ -440,6 +443,7 @@
 				0206D63A1B2A1BEF00CD3A0E /* taxa-adm.svg in Resources */,
 				0206D6361B2A1BEF00CD3A0E /* pessoal.svg in Resources */,
 				0206D6391B2A1BEF00CD3A0E /* servico-de-limpeza.svg in Resources */,
+				0200C98F1B2B7294008ED219 /* test.svg in Resources */,
 				0206D62E1B2A1BEF00CD3A0E /* dedetizacao.svg in Resources */,
 				0215441F1B291A220057B176 /* AnnouncementTableViewCell.xib in Resources */,
 				0206D6371B2A1BEF00CD3A0E /* pinturaareacomum.svg in Resources */,

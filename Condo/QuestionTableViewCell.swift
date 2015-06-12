@@ -25,7 +25,7 @@ class QuestionTableViewCell: UITableViewCell {
         self.postHolder!.textColor = UIColor.condoQuestionBackgroundColor()
         self.postView.fillWithSubview(self.postHolder!)
         self.mainView.layer.cornerRadius = 15.0
-        self.mainView.layer.borderWidth = 1.0
+        self.mainView.layer.borderWidth = 3.0
         self.mainView.layer.borderColor = UIColor.condoQuestionBackgroundColor().CGColor
         self.mainView.backgroundColor = UIColor.clearColor()
         

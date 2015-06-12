@@ -14,7 +14,8 @@ class ExpenseHeaderReusableView: UICollectionReusableView {
     @IBOutlet weak var expenseVectorView: ExpenseVectorView!
     var expenseProperties : ExpenseDrawingProperties? = nil {
         didSet{
-            if let properties = self.expenseProperties {
+            if var properties = self.expenseProperties {
+                properties.selected = true
                 self.expenseNameLabel.text = properties.name
                 self.backgroundColor = properties.fillColor
                 self.expenseVectorView.expenseProperties = properties
