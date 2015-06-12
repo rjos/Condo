@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CondoModel
 
 class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UITextViewDelegate{
 
@@ -14,6 +15,7 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet weak var countLetter: UILabel!
     @IBOutlet weak var textReport: UITextView!
     @IBOutlet weak var btnPublish: UIButton!
+    @IBOutlet weak var bottomConstraintTextView: NSLayoutConstraint!
     
     var pickerTypeUser : UIPickerView!
     var toolBar : UIToolbar!
@@ -25,6 +27,9 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
         super.viewDidLoad()
         
         self.btnPublish.enabled = false
+        
+        self.typeUser.delegate = self
+        self.textReport.delegate = self
         
         self.pickerTypeUser = UIPickerView()
         self.pickerTypeUser.delegate = self
@@ -44,9 +49,10 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
         self.imgProfile = UIImageView(frame: CGRect(x: 10, y: 10, width: 50, height: 50))
         self.imgProfile.layer.cornerRadius = self.imgProfile.bounds.width / 2
         self.imgProfile.clipsToBounds = true
-        self.imgProfile.image = UIImage(named: "dummy-photo-adm")
         
-        var bezierPath : UIBezierPath = UIBezierPath(rect: CGRect(x: 10, y: 0, width: self.imgProfile.bounds.width, height: self.imgProfile.bounds.height))
+        self.imgProfile.image = UIImage(named: DummyDatabase().user.imageName)
+        
+        var bezierPath : UIBezierPath = UIBezierPath(rect: CGRect(x: 10, y: 10, width: self.imgProfile.bounds.width, height: self.imgProfile.bounds.height))
         
         self.textReport.textContainer.exclusionPaths = [bezierPath]
         self.textReport.addSubview(self.imgProfile)
@@ -61,8 +67,46 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
         // Dispose of any resources that can be recreated.
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        return false
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+        self.keyboardDidShow()
+        return true
+    }
+    
+    func textViewShouldEndEditing(textView: UITextView) -> Bool {
+        self.keyboardDidHide()
+        return true
+    }
+    
+    func keyboardDidShow(){
+        UIView.setAnimationDelegate(self)
+        UIView.setAnimationDuration(0.5)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        self.bottomConstraintTextView.constant = 200.0
+        UIView.commitAnimations()
+    }
+    
+    func keyboardDidHide(){
+        UIView.setAnimationDelegate(self)
+        UIView.setAnimationDuration(0.5)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        self.bottomConstraintTextView.constant = 0
+        UIView.commitAnimations()
+    }
+    
+    func textViewDidChange(textView: UITextView) {
+        let textPost = self.textReport.text
+        let countText = count(textPost)
+        
+        if countText <= 500 {
+            if countText > 0 {
+                self.btnPublish.enabled = true
+            }else{
+                self.btnPublish.enabled = false
+            }
+            
+            let characters = 500 - countText
+            self.countLetter.text = "Max: \(characters)"
+        }
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
