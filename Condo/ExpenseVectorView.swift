@@ -34,19 +34,11 @@ class ExpenseVectorView: VectorView {
             outerColor = properties.backgroundColor
         }
         
-        if properties.selected {
-            self.fillColor = outerColor
-            self.strokeColor = outerColor
-            self.layer.borderColor = outerColor.CGColor
-            
-            self.backgroundColor = innerColor
-            
-        } else{
-            self.fillColor = innerColor
-            self.strokeColor = innerColor
-            self.layer.borderColor = innerColor.CGColor
-            
-            self.backgroundColor = outerColor
-        }
+        self.fillColor = innerColor
+        self.strokeColor = innerColor
+        self.layer.borderColor = innerColor.CGColor
+        
+        self.backgroundColor = outerColor
+
     }
 }
