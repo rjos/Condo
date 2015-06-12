@@ -195,4 +195,9 @@ public class DummyDatabase: NSObject {
             return Community(dictionary: dic)
         }
     }
+    public var user: User {
+        get {
+            return self.allUsers["pedro"]!
+        }
+    }
 }

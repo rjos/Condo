@@ -18,6 +18,18 @@ public enum ExpenseType: String{
     case Telephone = "ExpenseTypeTelephone"
     case CleaningServices = "ExpenseTypeCleaningServices"
     case CleaningMaterial = "ExpenseTypeCleaningMaterial"
+    public static let allValues: Array<ExpenseType> = [
+        .Water,
+        .Energy,
+        .Personel,
+        .Gas,
+        .AdministrationCost,
+        .Insurance,
+        .Telephone,
+        .CleaningServices,
+        .CleaningMaterial
+    ]
+    
 }
 public class Expense: Model {
     public let totalExpense : NSDecimalNumber

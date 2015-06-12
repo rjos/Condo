@@ -46,20 +46,23 @@ class ExpensesCollectionViewController: UICollectionViewController {
     }
 
 
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        var view: UICollectionReusableView? = nil
+        if kind == UICollectionElementKindSectionHeader {
+            let expensesHeader: ExpenseHeaderReusableView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "header", forIndexPath: indexPath) as! ExpenseHeaderReusableView
+            expensesHeader.expenseProperties = ExpenseDrawingProperties(type: ExpenseType.Water)
+            view = expensesHeader
+        }
+        return view!
+    }
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return ExpenseType.allValues.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ExpenseCollectionViewCell
-        if indexPath.row % 3 == 0 {
-            cell.expenseType = ExpenseType.Energy
-        }else if indexPath.row % 3 == 1 {
-            cell.expenseType = ExpenseType.Telephone
-        }else{
-            cell.expenseType = ExpenseType.Water
-        }
-        
+        let type = ExpenseType.allValues[indexPath.row % ExpenseType.allValues.count]
+        cell.expenseType = type
         // Configure the cell
     
         return cell

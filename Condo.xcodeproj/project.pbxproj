@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0200C98B1B2B49BC008ED219 /* ExpenseDrawingProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200C98A1B2B49BC008ED219 /* ExpenseDrawingProperties.swift */; };
+		0200C98D1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200C98C1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift */; };
 		0206D6141B2A123100CD3A0E /* ExpensesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206D6131B2A123100CD3A0E /* ExpensesCollectionViewController.swift */; };
 		0206D6181B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206D6161B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift */; };
 		0206D6191B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6171B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib */; };
@@ -19,7 +21,7 @@
 		0206D6321B2A1BEF00CD3A0E /* manutencaogerador.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6231B2A1BEF00CD3A0E /* manutencaogerador.svg */; };
 		0206D6331B2A1BEF00CD3A0E /* manutencaojardim.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6241B2A1BEF00CD3A0E /* manutencaojardim.svg */; };
 		0206D6341B2A1BEF00CD3A0E /* manutencaopocoartesiano.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6251B2A1BEF00CD3A0E /* manutencaopocoartesiano.svg */; };
-		0206D6351B2A1BEF00CD3A0E /* material-de-limpeza-01.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6261B2A1BEF00CD3A0E /* material-de-limpeza-01.svg */; };
+		0206D6351B2A1BEF00CD3A0E /* material-de-limpeza.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6261B2A1BEF00CD3A0E /* material-de-limpeza.svg */; };
 		0206D6361B2A1BEF00CD3A0E /* pessoal.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6271B2A1BEF00CD3A0E /* pessoal.svg */; };
 		0206D6371B2A1BEF00CD3A0E /* pinturaareacomum.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6281B2A1BEF00CD3A0E /* pinturaareacomum.svg */; };
 		0206D6381B2A1BEF00CD3A0E /* seguranca.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6291B2A1BEF00CD3A0E /* seguranca.svg */; };
@@ -100,6 +102,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0200C98A1B2B49BC008ED219 /* ExpenseDrawingProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseDrawingProperties.swift; sourceTree = "<group>"; };
+		0200C98C1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseHeaderReusableView.swift; sourceTree = "<group>"; };
 		0206D6131B2A123100CD3A0E /* ExpensesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesCollectionViewController.swift; sourceTree = "<group>"; };
 		0206D6161B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCollectionViewCell.swift; sourceTree = "<group>"; };
 		0206D6171B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -112,7 +116,7 @@
 		0206D6231B2A1BEF00CD3A0E /* manutencaogerador.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = manutencaogerador.svg; sourceTree = "<group>"; };
 		0206D6241B2A1BEF00CD3A0E /* manutencaojardim.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = manutencaojardim.svg; sourceTree = "<group>"; };
 		0206D6251B2A1BEF00CD3A0E /* manutencaopocoartesiano.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = manutencaopocoartesiano.svg; sourceTree = "<group>"; };
-		0206D6261B2A1BEF00CD3A0E /* material-de-limpeza-01.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "material-de-limpeza-01.svg"; sourceTree = "<group>"; };
+		0206D6261B2A1BEF00CD3A0E /* material-de-limpeza.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "material-de-limpeza.svg"; sourceTree = "<group>"; };
 		0206D6271B2A1BEF00CD3A0E /* pessoal.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = pessoal.svg; sourceTree = "<group>"; };
 		0206D6281B2A1BEF00CD3A0E /* pinturaareacomum.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = pinturaareacomum.svg; sourceTree = "<group>"; };
 		0206D6291B2A1BEF00CD3A0E /* seguranca.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = seguranca.svg; sourceTree = "<group>"; };
@@ -196,7 +200,9 @@
 				02ABC0061B2768BC00E0678B /* Main.storyboard */,
 				02ABC00B1B2768BC00E0678B /* LaunchScreen.xib */,
 				0215442C1B293C050057B176 /* VectorView.swift */,
+				0200C98A1B2B49BC008ED219 /* ExpenseDrawingProperties.swift */,
 				0206D63C1B2A214500CD3A0E /* ExpenseVectorView.swift */,
+				0200C98C1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift */,
 				021544131B2900F20057B176 /* Cells */,
 			);
 			name = View;
@@ -296,7 +302,7 @@
 				0206D6231B2A1BEF00CD3A0E /* manutencaogerador.svg */,
 				0206D6241B2A1BEF00CD3A0E /* manutencaojardim.svg */,
 				0206D6251B2A1BEF00CD3A0E /* manutencaopocoartesiano.svg */,
-				0206D6261B2A1BEF00CD3A0E /* material-de-limpeza-01.svg */,
+				0206D6261B2A1BEF00CD3A0E /* material-de-limpeza.svg */,
 				0206D6271B2A1BEF00CD3A0E /* pessoal.svg */,
 				0206D6281B2A1BEF00CD3A0E /* pinturaareacomum.svg */,
 				0206D6291B2A1BEF00CD3A0E /* seguranca.svg */,
@@ -427,7 +433,7 @@
 				0206D62C1B2A1BEF00CD3A0E /* agua.svg in Resources */,
 				0206D6321B2A1BEF00CD3A0E /* manutencaogerador.svg in Resources */,
 				02AD60591B28BDDD000D5210 /* PostView.xib in Resources */,
-				0206D6351B2A1BEF00CD3A0E /* material-de-limpeza-01.svg in Resources */,
+				0206D6351B2A1BEF00CD3A0E /* material-de-limpeza.svg in Resources */,
 				02ABC00A1B2768BC00E0678B /* Images.xcassets in Resources */,
 				1BE0E2B21B28C6BE002BF58E /* CommentTableViewCell.xib in Resources */,
 				0206D6301B2A1BEF00CD3A0E /* gas.svg in Resources */,
@@ -457,11 +463,13 @@
 				0215442D1B293C050057B176 /* VectorView.swift in Sources */,
 				0206D6141B2A123100CD3A0E /* ExpensesCollectionViewController.swift in Sources */,
 				02AD60571B28BD87000D5210 /* PostView.swift in Sources */,
+				0200C98D1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift in Sources */,
 				021544261B29298D0057B176 /* QuestionTableViewCell.swift in Sources */,
 				02A9F8F51B28D8E700275606 /* PostDetailTableViewController.swift in Sources */,
 				1BE0E2B11B28C6BE002BF58E /* CommentTableViewCell.swift in Sources */,
 				0215442B1B293A8D0057B176 /* PocketSVG.m in Sources */,
 				021544221B2927650057B176 /* ReportTableViewCell.swift in Sources */,
+				0200C98B1B2B49BC008ED219 /* ExpenseDrawingProperties.swift in Sources */,
 				0206D63D1B2A214500CD3A0E /* ExpenseVectorView.swift in Sources */,
 				0215441E1B291A220057B176 /* AnnouncementTableViewCell.swift in Sources */,
 				0206D6181B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift in Sources */,

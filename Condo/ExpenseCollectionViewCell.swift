@@ -21,7 +21,7 @@ class ExpenseCollectionViewCell: UICollectionViewCell {
     var expenseType: ExpenseType? = nil {
         didSet{
             if let type = self.expenseType {
-                self.expenseView.expenseType = type
+                self.expenseView.expenseProperties = ExpenseDrawingProperties(type: type)
             }
         }
     }

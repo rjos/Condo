@@ -359,8 +359,8 @@ unichar const invalidCommand		= '*';
             NSScanner *floatScanner = [NSScanner scannerWithString:stringToken];
             float value;
             if (![floatScanner scanFloat:&value]) {
-                NSLog(@"*** PocketSVG Error: Path string parse error: expected float or command at token %ld (but found %s) in path %s.",
-                      (long)index, [stringToken cStringUsingEncoding:NSUTF8StringEncoding], [attr cStringUsingEncoding:NSUTF8StringEncoding]);
+                NSLog(@"*** PocketSVG Error: Path string parse error: expected float or command at token (%ld) (but found (%@-%lu)) in path %s.",
+                      (long)index, stringToken,(unsigned long)stringToken.length , [attr cStringUsingEncoding:NSUTF8StringEncoding]);
                 return nil;
             }
             // Maintain scale.
