@@ -90,6 +90,7 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
 
     @IBAction func ShowPublish(sender: AnyObject) {
+        
     }
     
     func SelectedItemPickerView(){

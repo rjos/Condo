@@ -9,32 +9,17 @@
 import UIKit
 import CondoModel
 class ExpenseVectorView: VectorView {
-    var expenseType: ExpenseType? = nil {
+    
+    var expenseProperties: ExpenseDrawingProperties? = nil {
         didSet{
-            if let type = self.expenseType {
-                self.drawWithType(type)
+            if let properties = self.expenseProperties {
+                self.drawWithProperties(properties)
             }
         }
     }
-    
-    func drawWithType(type: ExpenseType) {
-        switch type {
-        case .Water:
-            self.drawSVGWithName("agua")
-            self.fillColor = UIColor.blueColor()
-            self.strokeColor = UIColor.blackColor()
-        case .Energy:
-            self.drawSVGWithName("energia")
-            self.fillColor = UIColor.yellowColor()
-            self.strokeColor = UIColor.blackColor()
-        case .Telephone:
-            self.drawSVGWithName("conta-telefonica")
-            self.fillColor = UIColor.greenColor()
-            self.strokeColor = UIColor.blackColor()
-        default:
-            self.drawSVGWithName("settings49")
-            self.fillColor = UIColor.grayColor()
-            self.strokeColor = UIColor.whiteColor()
-        }
+    func drawWithProperties(properties: ExpenseDrawingProperties) {
+        self.drawSVGWithName(properties.svgFileName)
+        self.fillColor = properties.fillColor
+        self.strokeColor = properties.strokeColor
     }
 }

@@ -10,17 +10,17 @@ import UIKit
 
 class VectorView: UIView {
     var shapeLayer: CAShapeLayer? = nil
-    var strokeColor = UIColor.blueColor() {
+    var strokeColor = UIColor.blackColor() {
         didSet{
             self.applyPropertiesToShape()
         }
     }
-    var fillColor = UIColor.clearColor() {
+    var fillColor = UIColor.blackColor() {
         didSet{
             self.applyPropertiesToShape()
         }
     }
-    var lineWidth: CGFloat = 5.0 {
+    var lineWidth: CGFloat = 1.0 {
         didSet{
             self.applyPropertiesToShape()
         }
@@ -58,6 +58,10 @@ class VectorView: UIView {
         self.shapeLayer!.fillColor = self.onlyFillAfterAnimation ? UIColor.clearColor().CGColor : self.fillColor.CGColor
         self.shapeLayer!.lineWidth = self.lineWidth;
         self.shapeLayer!.frame = self.bounds;
+        self.shapeLayer!.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        self.shapeLayer!.position = self.layer.position
+        
+        
         self.shapeLayer!.strokeEnd = self.onlyStrokeAfterAnimation ? 0.0 : 1.0
     }
     func animateShape() {
@@ -101,7 +105,7 @@ class VectorView: UIView {
     
     private func resizePathToSize(path: CGPathRef, var size: CGSize) ->CGPathRef {
         let m = min(size.width, size.height)
-        size = CGSizeMake( m - self.lineWidth, m - self.lineWidth)
+        size = CGSizeMake(m ,m)
         let bezier: UIBezierPath = UIBezierPath(CGPath: path)
         var boundingBox = CGPathGetBoundingBox(path)
         //boundingBox.inset(dx: self.lineWidth, dy: self.lineWidth)
@@ -117,19 +121,20 @@ class VectorView: UIView {
         return bezier.CGPath
     }
     
-    private func resizePathToBounds(path: CGPathRef, var rect: CGRect) ->CGPathRef {
+    private func resizePathToBounds(path: CGPathRef, rect: CGRect) ->CGPathRef {
         let m = min(rect.size.width, rect.size.height)
-        rect = CGRect(origin: rect.origin, size: CGSize(width: m, height: m))
-        rect.inset(dx: self.lineWidth/2.0, dy: self.lineWidth/2.0)
+        let originalRect = rect
+        //rect = CGRect(origin: rect.origin, size: CGSize(width: m, height: m))
+        //rect.inset(dx: self.lineWidth/2.0, dy: self.lineWidth/2.0)
         //CGSizeMake( m - self.lineWidth, m - self.lineWidth)
         let size = rect.size
         let bezier: UIBezierPath = UIBezierPath(CGPath: path)
         var boundingBox = CGPathGetBoundingBox(path)
-        //boundingBox.inset(dx: self.lineWidth, dy: self.lineWidth)
-        
         let pathSize: CGSize = boundingBox.size
+        
         if pathSize.width >= pathSize.height {
             bezier.applyTransform(CGAffineTransformMakeScale(size.width/pathSize.width, size.width/pathSize.width))
+            
         }else{
             bezier.applyTransform(CGAffineTransformMakeScale(size.height/pathSize.height, size.height/pathSize.height))
         }
@@ -140,8 +145,12 @@ class VectorView: UIView {
     
     override func layoutSubviews() {
         if let shapeLayer = self.shapeLayer {
-            //shapeLayer.path = self.resizePathToSize(shapeLayer.path, size: self.bounds.size)
-            shapeLayer.path = self.resizePathToBounds(shapeLayer.path, rect: self.bounds)
+            
+            var rect = self.bounds
+            
+            rect.inset(dx: self.lineWidth/2.0, dy: self.lineWidth/2.0)
+            shapeLayer.path = self.resizePathToSize(shapeLayer.path, size: rect.size)
+            //shapeLayer.path = self.resizePathToBounds(shapeLayer.path, rect: rect)
             shapeLayer.frame = self.bounds
         }
     }
