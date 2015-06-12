@@ -44,9 +44,10 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
         self.imgProfile = UIImageView(frame: CGRect(x: 10, y: 10, width: 50, height: 50))
         self.imgProfile.layer.cornerRadius = self.imgProfile.bounds.width / 2
         self.imgProfile.clipsToBounds = true
-        self.imgProfile.image = UIImage(named: "dummy-photo-adm")
         
-        var bezierPath : UIBezierPath = UIBezierPath(rect: CGRect(x: 10, y: 0, width: self.imgProfile.bounds.width, height: self.imgProfile.bounds.height))
+        self.imgProfile.image = UIImage(named: "pedro")
+        
+        var bezierPath : UIBezierPath = UIBezierPath(rect: CGRect(x: self.imgProfile.bounds.origin.x, y: self.imgProfile.bounds.origin.y, width: self.imgProfile.bounds.width, height: self.imgProfile.bounds.height))
         
         self.textReport.textContainer.exclusionPaths = [bezierPath]
         self.textReport.addSubview(self.imgProfile)
@@ -62,6 +63,7 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        
         return false
     }
     
