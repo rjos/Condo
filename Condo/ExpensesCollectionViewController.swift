@@ -15,14 +15,15 @@ class ExpensesCollectionViewController: UICollectionViewController {
     var selectedType = ExpenseType.allValues[0]
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
         self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
         self.collectionView!.registerNib(UINib(nibName: "ExpenseCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: reuseIdentifier)
+
+        self.collectionView?.reloadData()
         let first = NSIndexPath(forItem: 0, inSection: 0)
         self.collectionView!.selectItemAtIndexPath(first, animated: true, scrollPosition: UICollectionViewScrollPosition.None)
+        self.collectionView(self.collectionView!, didSelectItemAtIndexPath: first)
         // Do any additional setup after loading the view.
     }
 
@@ -61,22 +62,16 @@ class ExpensesCollectionViewController: UICollectionViewController {
         header?.expenseProperties = p
     }
     override func viewWillAppear(animated: Bool) {
-        let visibleCells = self.collectionView?.visibleCells()
+        super.viewWillAppear(animated)
+        let visibleCells = self.collectionView?.visibleCells() as? Array<ExpenseCollectionViewCell>
+
         if let v = visibleCells {
             for cell in v{
-                if let cell = cell as? ExpenseCollectionViewCell {
-                    cell.expenseView.animateShape()
-                }
+                cell.expenseView.animateShape()
             }
         }
-       
     }
     
-//    override func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
-//        if let cell = cell as? ExpenseCollectionViewCell {
-//            cell.expenseView.animateShape()
-//        }
-//    }
     // MARK: UICollectionViewDelegate
 
     /*

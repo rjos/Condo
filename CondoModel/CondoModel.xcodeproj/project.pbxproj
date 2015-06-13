@@ -10,6 +10,7 @@
 		0206D6101B2A070A00CD3A0E /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206D60F1B2A070A00CD3A0E /* Expense.swift */; };
 		0206D6111B2A10D300CD3A0E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0E2AD1B28B606002BF58E /* Comment.swift */; };
 		0206D6121B2A10D300CD3A0E /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206D60F1B2A070A00CD3A0E /* Expense.swift */; };
+		024D328F1B2CCE940061D518 /* CondoDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024D328E1B2CCE940061D518 /* CondoDatabase.swift */; };
 		02529E031B276980009CF624 /* CondoModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 02529E021B276980009CF624 /* CondoModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02529E091B276980009CF624 /* CondoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02529DFD1B276980009CF624 /* CondoModel.framework */; };
 		02529E101B276980009CF624 /* CondoModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02529E0F1B276980009CF624 /* CondoModelTests.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		0206D60F1B2A070A00CD3A0E /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		024D328E1B2CCE940061D518 /* CondoDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondoDatabase.swift; sourceTree = "<group>"; };
 		02529DFD1B276980009CF624 /* CondoModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CondoModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02529E011B276980009CF624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02529E021B276980009CF624 /* CondoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CondoModel.h; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				02529E021B276980009CF624 /* CondoModel.h */,
 				02529E2F1B277A6C009CF624 /* DummyDatabase.swift */,
+				024D328E1B2CCE940061D518 /* CondoDatabase.swift */,
 				02529E2D1B2779DA009CF624 /* DummyModelList.swift */,
 				02529E251B276B06009CF624 /* Model.swift */,
 				02529E271B276CB4009CF624 /* User.swift */,
@@ -247,6 +250,7 @@
 				02529E261B276B06009CF624 /* Model.swift in Sources */,
 				1BE0E2AE1B28B606002BF58E /* Comment.swift in Sources */,
 				02529E281B276CB4009CF624 /* User.swift in Sources */,
+				024D328F1B2CCE940061D518 /* CondoDatabase.swift in Sources */,
 				02529E2C1B2772E6009CF624 /* Post.swift in Sources */,
 				02529E301B277A6C009CF624 /* DummyDatabase.swift in Sources */,
 			);

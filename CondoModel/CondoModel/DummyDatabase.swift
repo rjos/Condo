@@ -61,7 +61,7 @@ public class DummyDatabase: NSObject {
         }
     }
     
-    public var allQuestions: Array<Model> {
+    var allQuestions: Array<Model> {
         get{
             let adm: User = self.allUsers["adm"]!
             let postDic1 : Dictionary<String, AnyObject> = [
@@ -76,7 +76,7 @@ public class DummyDatabase: NSObject {
         }
     }
     
-    public var allReports: Array<Model> {
+    var allReports: Array<Model> {
         get {
             
             let user1: User = self.allUsers["pedro"]!
@@ -92,7 +92,7 @@ public class DummyDatabase: NSObject {
         }
     }
     
-    public func getCommentByIdPost (id: String) -> Array<Comment> {
+    func getCommentByIdPost (id: String) -> Array<Comment> {
         
         let comment_1 = Comment(dictionary: [
             "id": "comments-1",

@@ -9,6 +9,8 @@
 import UIKit
 
 class VectorView: UIView {
+    
+    //MARK: - Vector Properties
     var shapeLayer: CAShapeLayer? = nil
     var strokeColor = UIColor.blackColor() {
         didSet{
@@ -25,6 +27,8 @@ class VectorView: UIView {
             self.applyPropertiesToShape()
         }
     }
+    
+    //MARK: - Animation Properties
     var onlyStrokeAfterAnimation = false{
         didSet {
             self.applyPropertiesToShape()
@@ -40,7 +44,7 @@ class VectorView: UIView {
     var animationDuration: NSTimeInterval = 1.0
     var animateFadeIn: Bool = true
 
-    
+    //MARK: - Setup
     func drawSVGWithName(name: String) {
         if let shapeLayer = self.shapeLayer {
             shapeLayer.removeFromSuperlayer()
@@ -64,25 +68,21 @@ class VectorView: UIView {
         
         self.shapeLayer!.strokeEnd = self.onlyStrokeAfterAnimation ? 0.0 : 1.0
     }
+    
+    //MARK: - Animation
+    
     func animateShape() {
-        CATransaction.begin()
-//        if self.onlyFillAfterAnimation {
-//            self.shapeLayer?.fillColor = UIColor.clearColor().CGColor
-//        }
         self.shapeLayer?.fillColor = UIColor.clearColor().CGColor
         let draw = CABasicAnimation(keyPath: "strokeEnd")
-        draw.autoreverses = true
-        draw.repeatCount = HUGE
         draw.fromValue = 0.0
         draw.toValue = 1.0
         draw.duration = self.animationDuration
         draw.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         
         let fade = CABasicAnimation(keyPath: "opacity")
-        fade.autoreverses = true
-        fade.repeatCount = HUGE
         fade.fromValue = 0.0
         fade.toValue = 1.0
+
         fade.duration = self.animationDuration
         fade.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         
@@ -90,18 +90,19 @@ class VectorView: UIView {
         
         group.animations = self.animateFadeIn ? [draw, fade] : [draw]
         group.duration = self.animationDuration
-        
-        CATransaction.setCompletionBlock { () -> Void in
+
+        group.delegate = self
+        self.shapeLayer!.addAnimation(group, forKey: "drawAnimation")
+    }
+    
+    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+        if flag {
             self.shapeLayer?.fillColor = self.fillColor.CGColor
             self.shapeLayer?.strokeEnd = 1.0
-//            self.onlyStrokeAfterAnimation = false
-//            self.onlyFillAfterAnimation = false
         }
-        
-        self.shapeLayer!.addAnimation(group, forKey: "drawAnimation")
-        CATransaction.commit()
-
     }
+    
+    //MARK: - Resizing
     
     private func resizePathToSize(path: CGPathRef, var size: CGSize) ->CGPathRef {
         let m = min(size.width, size.height)
@@ -121,28 +122,6 @@ class VectorView: UIView {
         return bezier.CGPath
     }
     
-    private func resizePathToBounds(path: CGPathRef, rect: CGRect) ->CGPathRef {
-        let m = min(rect.size.width, rect.size.height)
-        let originalRect = rect
-        //rect = CGRect(origin: rect.origin, size: CGSize(width: m, height: m))
-        //rect.inset(dx: self.lineWidth/2.0, dy: self.lineWidth/2.0)
-        //CGSizeMake( m - self.lineWidth, m - self.lineWidth)
-        let size = rect.size
-        let bezier: UIBezierPath = UIBezierPath(CGPath: path)
-        var boundingBox = CGPathGetBoundingBox(path)
-        let pathSize: CGSize = boundingBox.size
-        
-        if pathSize.width >= pathSize.height {
-            bezier.applyTransform(CGAffineTransformMakeScale(size.width/pathSize.width, size.width/pathSize.width))
-            
-        }else{
-            bezier.applyTransform(CGAffineTransformMakeScale(size.height/pathSize.height, size.height/pathSize.height))
-        }
-        bezier.applyTransform(CGAffineTransformMakeTranslation(self.lineWidth/2.0, self.lineWidth/2.0))
-        //bezier.applyTransform(CGAffineTransformMakeScale(0.5, 0.5))
-        return bezier.CGPath
-    }
-    
     override func layoutSubviews() {
         if let shapeLayer = self.shapeLayer {
             
@@ -150,7 +129,6 @@ class VectorView: UIView {
             
             rect.inset(dx: self.lineWidth/2.0, dy: self.lineWidth/2.0)
             shapeLayer.path = self.resizePathToSize(shapeLayer.path, size: rect.size)
-            //shapeLayer.path = self.resizePathToBounds(shapeLayer.path, rect: rect)
             shapeLayer.frame = self.bounds
         }
     }

@@ -27,7 +27,8 @@ class ExpenseCollectionViewCell: UICollectionViewCell {
     
     var expenseProperties: ExpenseDrawingProperties? {
         didSet {
-            if let properties = self.expenseProperties {
+            if var properties = self.expenseProperties {
+                properties.selected = self.selected
                 self.layer.borderWidth = 1.0
                 self.layer.cornerRadius = 15.0
                 //println("Selected: \(properties.selected) Color: \(properties.backgroundColor)")
