@@ -27,6 +27,26 @@ extension UIColor {
     static func condoCommentOddBackgroundColor() ->UIColor {
         return UIColor.rgba(229, g: 229, b: 229, a: 255)
     }
+    
+    static func condoBlue() -> UIColor {
+        return UIColor.rgba(75, g: 181, b: 198, a: 255)
+    }
+    
+    static func condoYellow() -> UIColor {
+        return UIColor.rgba(234, g: 186, b: 52, a: 255)
+    }
+    
+    static func condoRed() -> UIColor {
+        return UIColor.rgba(186, g: 81, b: 77, a: 255)
+    }
+    
+    static func condoGreen() -> UIColor {
+        return UIColor.rgba(129, g: 195, b: 134, a: 255)
+    }
+    
+    static func condoPurple() -> UIColor {
+        return UIColor.rgba(103, g: 78, b: 142, a: 255)
+    }
 }
 
 extension UIView {

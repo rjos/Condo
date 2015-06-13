@@ -14,26 +14,27 @@ class ExpenseCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var expenseView: ExpenseVectorView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override var selected: Bool {
         didSet{
-            if self.selected {
-                self.backgroundColor = UIColor.blackColor()
-                self.expenseProperties!.selected = true
-            }else{
-                self.backgroundColor = UIColor.whiteColor()
-                self.expenseProperties!.selected = false
+            if var properties = self.expenseProperties {
+                properties.selected = self.selected
+                self.expenseProperties = properties
             }
-            self.expenseView.expenseProperties = self.expenseProperties!
-            //self.expenseView.animateShape()
         }
     }
+    
     var expenseProperties: ExpenseDrawingProperties? {
         didSet {
             if let properties = self.expenseProperties {
+                self.layer.borderWidth = 1.0
+                self.layer.cornerRadius = 15.0
+                //println("Selected: \(properties.selected) Color: \(properties.backgroundColor)")
+                self.layer.borderColor = properties.backgroundColor.CGColor
+                self.backgroundColor = properties.backgroundColor//properties.backgroundColor
                 self.expenseView.expenseProperties = properties
+                self.expenseView.animateShape()
             }
         }
     }

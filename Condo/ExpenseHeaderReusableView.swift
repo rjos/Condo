@@ -17,7 +17,7 @@ class ExpenseHeaderReusableView: UICollectionReusableView {
             if var properties = self.expenseProperties {
                 properties.selected = true
                 self.expenseNameLabel.text = properties.name
-                self.backgroundColor = properties.fillColor
+                self.backgroundColor = properties.backgroundColor
                 self.expenseVectorView.expenseProperties = properties
                 self.expenseVectorView.animateShape()
             }

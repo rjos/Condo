@@ -17,30 +17,14 @@ class ExpensesCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
         self.collectionView!.registerNib(UINib(nibName: "ExpenseCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: reuseIdentifier)
         let first = NSIndexPath(forItem: 0, inSection: 0)
-        
-        self.collectionView!.selectItemAtIndexPath(first, animated: true, scrollPosition: UICollectionViewScrollPosition.Top)
+        self.collectionView!.selectItemAtIndexPath(first, animated: true, scrollPosition: UICollectionViewScrollPosition.None)
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -67,8 +51,6 @@ class ExpensesCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ExpenseCollectionViewCell
         let type = ExpenseType.allValues[indexPath.row % ExpenseType.allValues.count]
         cell.expenseProperties = ExpenseDrawingProperties(type: type)
-        // Configure the cell
-    
         return cell
     }
     
@@ -76,16 +58,25 @@ class ExpensesCollectionViewController: UICollectionViewController {
         self.selectedType = ExpenseType.allValues[indexPath.row]
         let header = self.collectionView?.viewWithTag(666) as? ExpenseHeaderReusableView
         var p = ExpenseDrawingProperties(type: self.selectedType)
-        p.selected = true
         header?.expenseProperties = p
-        //self.collectionView?.reloadItemsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)])
+    }
+    override func viewWillAppear(animated: Bool) {
+        let visibleCells = self.collectionView?.visibleCells()
+        if let v = visibleCells {
+            for cell in v{
+                if let cell = cell as? ExpenseCollectionViewCell {
+                    cell.expenseView.animateShape()
+                }
+            }
+        }
+       
     }
     
-    override func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
-        if let cell = cell as? ExpenseCollectionViewCell {
-            cell.expenseView.animateShape()
-        }
-    }
+//    override func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+//        if let cell = cell as? ExpenseCollectionViewCell {
+//            cell.expenseView.animateShape()
+//        }
+//    }
     // MARK: UICollectionViewDelegate
 
     /*
