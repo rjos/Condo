@@ -45,6 +45,7 @@ class CommentTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.contentView.autoresizingMask = UIViewAutoresizing.FlexibleHeight
         // Initialization code
     }
 

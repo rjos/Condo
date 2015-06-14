@@ -8,13 +8,16 @@
 
 import UIKit
 import CondoModel
-class PostDetailTableViewController: UITableViewController {
+class PostDetailTableViewController: SLKTextViewController {
 
     var post: Post?
     
+    override class func tableViewStyleForCoder(decoder: NSCoder) -> UITableViewStyle {
+        return UITableViewStyle.Plain;
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.inverted = false
         self.tableView.registerNib(UINib(nibName: "AnnouncementTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "announcement")
         self.tableView.registerNib(UINib(nibName: "ReportTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "report")
         self.tableView.registerNib(UINib(nibName: "QuestionTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "question")
@@ -24,6 +27,8 @@ class PostDetailTableViewController: UITableViewController {
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 100.0
+        self.textInputbar.translucent = false
+        self.rightButton.setTitle("Enviar", forState: .Normal)
         //self.tableView.reloadData()
     }
 
