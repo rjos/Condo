@@ -98,8 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				02529E021B276980009CF624 /* CondoModel.h */,
-				02529E2F1B277A6C009CF624 /* DummyDatabase.swift */,
 				024D328E1B2CCE940061D518 /* CondoDatabase.swift */,
+				02529E2F1B277A6C009CF624 /* DummyDatabase.swift */,
 				02529E2D1B2779DA009CF624 /* DummyModelList.swift */,
 				02529E251B276B06009CF624 /* Model.swift */,
 				02529E271B276CB4009CF624 /* User.swift */,

@@ -9,9 +9,14 @@
 import UIKit
 
 class DummyModelList: NSObject, ModelList {
+    
     let data: Array<Model>
     init(data: Array<Model>) {
         self.data = data
+        self.dataFetchedCallback = {
+            (newData, error) ->() in
+            //Do nothing, hence dummy, you dummy
+        }
     }
     
     func count() -> Int {
@@ -25,4 +30,12 @@ class DummyModelList: NSObject, ModelList {
     func hasMoreData() -> Bool {
         return false
     }
+    
+    func fetchMoreData() {
+        self.dataFetchedCallback(newData: false, error: nil) //No results
+        
+    }
+    
+    var dataFetchedCallback: (newData: Bool, error: NSError?) -> ()
+    
 }

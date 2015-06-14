@@ -23,6 +23,8 @@ public protocol ModelList {
     func count() -> Int
     func hasMoreData() -> Bool
     func modelAtIndex(index: Int)-> Model
+    func fetchMoreData()
+    var dataFetchedCallback: (newData: Bool, error: NSError?) -> (){get set}
 }
 
 

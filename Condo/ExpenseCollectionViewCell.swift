@@ -29,10 +29,10 @@ class ExpenseCollectionViewCell: UICollectionViewCell {
         didSet {
             if var properties = self.expenseProperties {
                 properties.selected = self.selected
-                self.layer.borderWidth = 1.0
+                self.layer.borderWidth = 2.0
                 self.layer.cornerRadius = 15.0
                 //println("Selected: \(properties.selected) Color: \(properties.backgroundColor)")
-                self.layer.borderColor = properties.backgroundColor.CGColor
+                self.layer.borderColor = properties.normalShapeColor.CGColor
                 self.backgroundColor = properties.backgroundColor//properties.backgroundColor
                 self.expenseView.expenseProperties = properties
                 self.expenseView.animateShape()

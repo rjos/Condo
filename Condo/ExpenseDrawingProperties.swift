@@ -87,6 +87,36 @@ struct ExpenseDrawingProperties {
             self.normalShapeColor = UIColor.condoBlue()
             self.selectedBackgroundColor = UIColor.condoBlue()
             
+        case .MaintenanceLift:
+            self.svgFileName = "manutencaoelevador"
+            self.name = "Manutenção do elevador"
+            self.normalShapeColor = UIColor.condoRed()
+            self.selectedBackgroundColor = UIColor.condoRed()
+        
+        case .MaintenanceGarden:
+            self.svgFileName = "manutencaojardim"
+            self.name = "Manutenção do jardim"
+            self.normalShapeColor = UIColor.condoGreen()
+            self.selectedBackgroundColor = UIColor.condoGreen()
+            
+        case .MaintenanceGenerator:
+            self.svgFileName = "manutencaogerador"
+            self.name = "Manutenção do gerador"
+            self.normalShapeColor = UIColor.condoPurple()
+            self.selectedBackgroundColor = UIColor.condoPurple()
+            
+        case .MaintenancePainting:
+            self.svgFileName = "pinturaareacomum"
+            self.name = "Pintura da área comum"
+            self.normalShapeColor = UIColor.condoYellow()
+            self.selectedBackgroundColor = UIColor.condoYellow()
+        
+        case .MaintenanceWell:
+            self.svgFileName = "manutencaopocoartesiano"
+            self.name = "Manutenção do poço artesiano"
+            self.normalShapeColor = UIColor.condoBlue()
+            self.selectedBackgroundColor = UIColor.condoBlue()
+            
         default:
             self.name = "TYPE_NOT_IMPLEMENTED"
             self.svgFileName = "test"

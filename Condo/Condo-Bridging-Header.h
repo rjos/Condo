@@ -3,3 +3,4 @@
 //
 
 #import "PocketSVG.h"
+#import "SLKTextViewController.h"

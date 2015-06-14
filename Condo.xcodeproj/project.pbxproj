@@ -40,6 +40,15 @@
 		0215442D1B293C050057B176 /* VectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215442C1B293C050057B176 /* VectorView.swift */; };
 		0215442F1B29421A0057B176 /* settings49.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0215442E1B29421A0057B176 /* settings49.svg */; };
 		021544311B2943080057B176 /* VectorTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021544301B2943080057B176 /* VectorTestViewController.swift */; };
+		024D32A61B2CFEDC0061D518 /* SLKTextView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D32931B2CFEDC0061D518 /* SLKTextView+SLKAdditions.m */; };
+		024D32A71B2CFEDC0061D518 /* UIResponder+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D32961B2CFEDC0061D518 /* UIResponder+SLKAdditions.m */; };
+		024D32A81B2CFEDC0061D518 /* UIScrollView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D32981B2CFEDC0061D518 /* UIScrollView+SLKAdditions.m */; };
+		024D32A91B2CFEDC0061D518 /* UIView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D329A1B2CFEDC0061D518 /* UIView+SLKAdditions.m */; };
+		024D32AA1B2CFEDC0061D518 /* SLKInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D329D1B2CFEDC0061D518 /* SLKInputAccessoryView.m */; };
+		024D32AB1B2CFEDC0061D518 /* SLKTextInputbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D329F1B2CFEDC0061D518 /* SLKTextInputbar.m */; };
+		024D32AC1B2CFEDC0061D518 /* SLKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D32A11B2CFEDC0061D518 /* SLKTextView.m */; };
+		024D32AD1B2CFEDC0061D518 /* SLKTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D32A31B2CFEDC0061D518 /* SLKTextViewController.m */; };
+		024D32AE1B2CFEDC0061D518 /* SLKTypingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D32A51B2CFEDC0061D518 /* SLKTypingIndicatorView.m */; };
 		02529E241B276A09009CF624 /* CondoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; };
 		02A9F8F51B28D8E700275606 /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */; };
 		02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABC0021B2768BC00E0678B /* AppDelegate.swift */; };
@@ -138,6 +147,25 @@
 		0215442C1B293C050057B176 /* VectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorView.swift; sourceTree = "<group>"; };
 		0215442E1B29421A0057B176 /* settings49.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = settings49.svg; sourceTree = "<group>"; };
 		021544301B2943080057B176 /* VectorTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTestViewController.swift; sourceTree = "<group>"; };
+		024D32921B2CFEDC0061D518 /* SLKTextView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SLKTextView+SLKAdditions.h"; sourceTree = "<group>"; };
+		024D32931B2CFEDC0061D518 /* SLKTextView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SLKTextView+SLKAdditions.m"; sourceTree = "<group>"; };
+		024D32941B2CFEDC0061D518 /* SLKUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKUIConstants.h; sourceTree = "<group>"; };
+		024D32951B2CFEDC0061D518 /* UIResponder+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+SLKAdditions.h"; sourceTree = "<group>"; };
+		024D32961B2CFEDC0061D518 /* UIResponder+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+SLKAdditions.m"; sourceTree = "<group>"; };
+		024D32971B2CFEDC0061D518 /* UIScrollView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SLKAdditions.h"; sourceTree = "<group>"; };
+		024D32981B2CFEDC0061D518 /* UIScrollView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SLKAdditions.m"; sourceTree = "<group>"; };
+		024D32991B2CFEDC0061D518 /* UIView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SLKAdditions.h"; sourceTree = "<group>"; };
+		024D329A1B2CFEDC0061D518 /* UIView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SLKAdditions.m"; sourceTree = "<group>"; };
+		024D329C1B2CFEDC0061D518 /* SLKInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKInputAccessoryView.h; sourceTree = "<group>"; };
+		024D329D1B2CFEDC0061D518 /* SLKInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKInputAccessoryView.m; sourceTree = "<group>"; };
+		024D329E1B2CFEDC0061D518 /* SLKTextInputbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTextInputbar.h; sourceTree = "<group>"; };
+		024D329F1B2CFEDC0061D518 /* SLKTextInputbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextInputbar.m; sourceTree = "<group>"; };
+		024D32A01B2CFEDC0061D518 /* SLKTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTextView.h; sourceTree = "<group>"; };
+		024D32A11B2CFEDC0061D518 /* SLKTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextView.m; sourceTree = "<group>"; };
+		024D32A21B2CFEDC0061D518 /* SLKTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTextViewController.h; sourceTree = "<group>"; };
+		024D32A31B2CFEDC0061D518 /* SLKTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextViewController.m; sourceTree = "<group>"; };
+		024D32A41B2CFEDC0061D518 /* SLKTypingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTypingIndicatorView.h; sourceTree = "<group>"; };
+		024D32A51B2CFEDC0061D518 /* SLKTypingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTypingIndicatorView.m; sourceTree = "<group>"; };
 		02529E191B276980009CF624 /* CondoModel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CondoModel.xcodeproj; path = CondoModel/CondoModel.xcodeproj; sourceTree = "<group>"; };
 		02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewController.swift; sourceTree = "<group>"; };
 		02ABBFFD1B2768BC00E0678B /* Condo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Condo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +250,48 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		024D32901B2CFEDC0061D518 /* Slack */ = {
+			isa = PBXGroup;
+			children = (
+				024D32911B2CFEDC0061D518 /* Additions */,
+				024D329B1B2CFEDC0061D518 /* Classes */,
+			);
+			path = Slack;
+			sourceTree = "<group>";
+		};
+		024D32911B2CFEDC0061D518 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				024D32921B2CFEDC0061D518 /* SLKTextView+SLKAdditions.h */,
+				024D32931B2CFEDC0061D518 /* SLKTextView+SLKAdditions.m */,
+				024D32941B2CFEDC0061D518 /* SLKUIConstants.h */,
+				024D32951B2CFEDC0061D518 /* UIResponder+SLKAdditions.h */,
+				024D32961B2CFEDC0061D518 /* UIResponder+SLKAdditions.m */,
+				024D32971B2CFEDC0061D518 /* UIScrollView+SLKAdditions.h */,
+				024D32981B2CFEDC0061D518 /* UIScrollView+SLKAdditions.m */,
+				024D32991B2CFEDC0061D518 /* UIView+SLKAdditions.h */,
+				024D329A1B2CFEDC0061D518 /* UIView+SLKAdditions.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		024D329B1B2CFEDC0061D518 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				024D329C1B2CFEDC0061D518 /* SLKInputAccessoryView.h */,
+				024D329D1B2CFEDC0061D518 /* SLKInputAccessoryView.m */,
+				024D329E1B2CFEDC0061D518 /* SLKTextInputbar.h */,
+				024D329F1B2CFEDC0061D518 /* SLKTextInputbar.m */,
+				024D32A01B2CFEDC0061D518 /* SLKTextView.h */,
+				024D32A11B2CFEDC0061D518 /* SLKTextView.m */,
+				024D32A21B2CFEDC0061D518 /* SLKTextViewController.h */,
+				024D32A31B2CFEDC0061D518 /* SLKTextViewController.m */,
+				024D32A41B2CFEDC0061D518 /* SLKTypingIndicatorView.h */,
+				024D32A51B2CFEDC0061D518 /* SLKTypingIndicatorView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		02529E1A1B276980009CF624 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				02ABC0091B2768BC00E0678B /* Images.xcassets */,
+				024D32901B2CFEDC0061D518 /* Slack */,
 				4249F60B1B2A127C00B9F861 /* SVGs */,
 				021544291B293A8D0057B176 /* PocketSVG.h */,
 				0215442A1B293A8D0057B176 /* PocketSVG.m */,
@@ -467,8 +538,12 @@
 				0215442D1B293C050057B176 /* VectorView.swift in Sources */,
 				0206D6141B2A123100CD3A0E /* ExpensesCollectionViewController.swift in Sources */,
 				02AD60571B28BD87000D5210 /* PostView.swift in Sources */,
+				024D32AC1B2CFEDC0061D518 /* SLKTextView.m in Sources */,
 				0200C98D1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift in Sources */,
+				024D32AA1B2CFEDC0061D518 /* SLKInputAccessoryView.m in Sources */,
 				021544261B29298D0057B176 /* QuestionTableViewCell.swift in Sources */,
+				024D32A71B2CFEDC0061D518 /* UIResponder+SLKAdditions.m in Sources */,
+				024D32A81B2CFEDC0061D518 /* UIScrollView+SLKAdditions.m in Sources */,
 				02A9F8F51B28D8E700275606 /* PostDetailTableViewController.swift in Sources */,
 				1BE0E2B11B28C6BE002BF58E /* CommentTableViewCell.swift in Sources */,
 				0215442B1B293A8D0057B176 /* PocketSVG.m in Sources */,
@@ -476,12 +551,17 @@
 				0200C98B1B2B49BC008ED219 /* ExpenseDrawingProperties.swift in Sources */,
 				0206D63D1B2A214500CD3A0E /* ExpenseVectorView.swift in Sources */,
 				0215441E1B291A220057B176 /* AnnouncementTableViewCell.swift in Sources */,
+				024D32AD1B2CFEDC0061D518 /* SLKTextViewController.m in Sources */,
 				0206D6181B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift in Sources */,
+				024D32AB1B2CFEDC0061D518 /* SLKTextInputbar.m in Sources */,
 				02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */,
 				02E06E021B27970900580B3D /* CommunityFeedTableViewController.swift in Sources */,
+				024D32A61B2CFEDC0061D518 /* SLKTextView+SLKAdditions.m in Sources */,
 				021544191B29121A0057B176 /* CondoUtils.swift in Sources */,
+				024D32AE1B2CFEDC0061D518 /* SLKTypingIndicatorView.m in Sources */,
 				021544311B2943080057B176 /* VectorTestViewController.swift in Sources */,
 				1BF7C76C1B2A15FC00E9D231 /* NewPostViewController.swift in Sources */,
+				024D32A91B2CFEDC0061D518 /* UIView+SLKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

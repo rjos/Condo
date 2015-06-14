@@ -12,7 +12,20 @@ let reuseIdentifier = "expense"
 
 class ExpensesCollectionViewController: UICollectionViewController {
 
-    var selectedType = ExpenseType.allValues[0]
+    var selectedType = ExpenseType.allValues[0] {
+        didSet{
+            let header = self.collectionView?.viewWithTag(666) as? ExpenseHeaderReusableView
+            var p = ExpenseDrawingProperties(type: self.selectedType)
+            header?.expenseProperties = p
+            
+            self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+            self.navigationController?.navigationBar.barTintColor = p.selectedBackgroundColor
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+            self.navigationController?.navigationBar.shadowImage = UIImage()
+            
+            //self.tabBarController?.tabBar.barTintColor = p.selectedBackgroundColor
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.clearsSelectionOnViewWillAppear = false
@@ -57,9 +70,6 @@ class ExpensesCollectionViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         self.selectedType = ExpenseType.allValues[indexPath.row]
-        let header = self.collectionView?.viewWithTag(666) as? ExpenseHeaderReusableView
-        var p = ExpenseDrawingProperties(type: self.selectedType)
-        header?.expenseProperties = p
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
