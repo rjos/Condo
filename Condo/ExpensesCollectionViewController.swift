@@ -39,14 +39,7 @@ class ExpensesCollectionViewController: UICollectionViewController {
         self.collectionView(self.collectionView!, didSelectItemAtIndexPath: first)
         // Do any additional setup after loading the view.
     }
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-
+    
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         var view: UICollectionReusableView? = nil
         if kind == UICollectionElementKindSectionHeader {
@@ -57,6 +50,15 @@ class ExpensesCollectionViewController: UICollectionViewController {
         }
         return view!
     }
+
+    // MARK: UICollectionViewDataSource
+
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+
+
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return ExpenseType.allValues.count
     }

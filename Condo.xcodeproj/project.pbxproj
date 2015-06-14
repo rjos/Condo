@@ -40,6 +40,11 @@
 		0215442D1B293C050057B176 /* VectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215442C1B293C050057B176 /* VectorView.swift */; };
 		0215442F1B29421A0057B176 /* settings49.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0215442E1B29421A0057B176 /* settings49.svg */; };
 		021544311B2943080057B176 /* VectorTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021544301B2943080057B176 /* VectorTestViewController.swift */; };
+		0241574A1B2DD083000ADCB5 /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024157451B2DD083000ADCB5 /* JBBarChartView.m */; };
+		0241574B1B2DD083000ADCB5 /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024157471B2DD083000ADCB5 /* JBChartView.m */; };
+		0241574C1B2DD083000ADCB5 /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024157491B2DD083000ADCB5 /* JBLineChartView.m */; };
+		024157501B2DECB9000ADCB5 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0241574F1B2DECB9000ADCB5 /* ExpensesViewController.swift */; };
+		024157521B2DF13F000ADCB5 /* ExpenseGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024157511B2DF13F000ADCB5 /* ExpenseGraphViewController.swift */; };
 		024D32A61B2CFEDC0061D518 /* SLKTextView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D32931B2CFEDC0061D518 /* SLKTextView+SLKAdditions.m */; };
 		024D32A71B2CFEDC0061D518 /* UIResponder+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D32961B2CFEDC0061D518 /* UIResponder+SLKAdditions.m */; };
 		024D32A81B2CFEDC0061D518 /* UIScrollView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D32981B2CFEDC0061D518 /* UIScrollView+SLKAdditions.m */; };
@@ -147,6 +152,14 @@
 		0215442C1B293C050057B176 /* VectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorView.swift; sourceTree = "<group>"; };
 		0215442E1B29421A0057B176 /* settings49.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = settings49.svg; sourceTree = "<group>"; };
 		021544301B2943080057B176 /* VectorTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTestViewController.swift; sourceTree = "<group>"; };
+		024157441B2DD083000ADCB5 /* JBBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBarChartView.h; sourceTree = "<group>"; };
+		024157451B2DD083000ADCB5 /* JBBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBarChartView.m; sourceTree = "<group>"; };
+		024157461B2DD083000ADCB5 /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartView.h; sourceTree = "<group>"; };
+		024157471B2DD083000ADCB5 /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
+		024157481B2DD083000ADCB5 /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartView.h; sourceTree = "<group>"; };
+		024157491B2DD083000ADCB5 /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartView.m; sourceTree = "<group>"; };
+		0241574F1B2DECB9000ADCB5 /* ExpensesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
+		024157511B2DF13F000ADCB5 /* ExpenseGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseGraphViewController.swift; sourceTree = "<group>"; };
 		024D32921B2CFEDC0061D518 /* SLKTextView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SLKTextView+SLKAdditions.h"; sourceTree = "<group>"; };
 		024D32931B2CFEDC0061D518 /* SLKTextView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SLKTextView+SLKAdditions.m"; sourceTree = "<group>"; };
 		024D32941B2CFEDC0061D518 /* SLKUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKUIConstants.h; sourceTree = "<group>"; };
@@ -243,11 +256,37 @@
 			children = (
 				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
 				02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */,
-				0206D6131B2A123100CD3A0E /* ExpensesCollectionViewController.swift */,
+				0241574F1B2DECB9000ADCB5 /* ExpensesViewController.swift */,
+				024157511B2DF13F000ADCB5 /* ExpenseGraphViewController.swift */,
 				021544301B2943080057B176 /* VectorTestViewController.swift */,
 				1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */,
+				0206D6131B2A123100CD3A0E /* ExpensesCollectionViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		024157431B2DD083000ADCB5 /* Jawbone */ = {
+			isa = PBXGroup;
+			children = (
+				024157441B2DD083000ADCB5 /* JBBarChartView.h */,
+				024157451B2DD083000ADCB5 /* JBBarChartView.m */,
+				024157461B2DD083000ADCB5 /* JBChartView.h */,
+				024157471B2DD083000ADCB5 /* JBChartView.m */,
+				024157481B2DD083000ADCB5 /* JBLineChartView.h */,
+				024157491B2DD083000ADCB5 /* JBLineChartView.m */,
+			);
+			path = Jawbone;
+			sourceTree = "<group>";
+		};
+		0241574E1B2DD0B6000ADCB5 /* Open Source Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				024157431B2DD083000ADCB5 /* Jawbone */,
+				024D32901B2CFEDC0061D518 /* Slack */,
+				021544291B293A8D0057B176 /* PocketSVG.h */,
+				0215442A1B293A8D0057B176 /* PocketSVG.m */,
+			);
+			name = "Open Source Frameworks";
 			sourceTree = "<group>";
 		};
 		024D32901B2CFEDC0061D518 /* Slack */ = {
@@ -336,10 +375,8 @@
 			isa = PBXGroup;
 			children = (
 				02ABC0091B2768BC00E0678B /* Images.xcassets */,
-				024D32901B2CFEDC0061D518 /* Slack */,
+				0241574E1B2DD0B6000ADCB5 /* Open Source Frameworks */,
 				4249F60B1B2A127C00B9F861 /* SVGs */,
-				021544291B293A8D0057B176 /* PocketSVG.h */,
-				0215442A1B293A8D0057B176 /* PocketSVG.m */,
 				02ABC0011B2768BC00E0678B /* Info.plist */,
 				021544281B293A8C0057B176 /* Condo-Bridging-Header.h */,
 			);
@@ -543,6 +580,7 @@
 				024D32AA1B2CFEDC0061D518 /* SLKInputAccessoryView.m in Sources */,
 				021544261B29298D0057B176 /* QuestionTableViewCell.swift in Sources */,
 				024D32A71B2CFEDC0061D518 /* UIResponder+SLKAdditions.m in Sources */,
+				024157521B2DF13F000ADCB5 /* ExpenseGraphViewController.swift in Sources */,
 				024D32A81B2CFEDC0061D518 /* UIScrollView+SLKAdditions.m in Sources */,
 				02A9F8F51B28D8E700275606 /* PostDetailTableViewController.swift in Sources */,
 				1BE0E2B11B28C6BE002BF58E /* CommentTableViewCell.swift in Sources */,
@@ -552,12 +590,16 @@
 				0206D63D1B2A214500CD3A0E /* ExpenseVectorView.swift in Sources */,
 				0215441E1B291A220057B176 /* AnnouncementTableViewCell.swift in Sources */,
 				024D32AD1B2CFEDC0061D518 /* SLKTextViewController.m in Sources */,
+				0241574B1B2DD083000ADCB5 /* JBChartView.m in Sources */,
 				0206D6181B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift in Sources */,
 				024D32AB1B2CFEDC0061D518 /* SLKTextInputbar.m in Sources */,
 				02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */,
 				02E06E021B27970900580B3D /* CommunityFeedTableViewController.swift in Sources */,
+				0241574A1B2DD083000ADCB5 /* JBBarChartView.m in Sources */,
 				024D32A61B2CFEDC0061D518 /* SLKTextView+SLKAdditions.m in Sources */,
 				021544191B29121A0057B176 /* CondoUtils.swift in Sources */,
+				024157501B2DECB9000ADCB5 /* ExpensesViewController.swift in Sources */,
+				0241574C1B2DD083000ADCB5 /* JBLineChartView.m in Sources */,
 				024D32AE1B2CFEDC0061D518 /* SLKTypingIndicatorView.m in Sources */,
 				021544311B2943080057B176 /* VectorTestViewController.swift in Sources */,
 				1BF7C76C1B2A15FC00E9D231 /* NewPostViewController.swift in Sources */,

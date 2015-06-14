@@ -4,3 +4,6 @@
 
 #import "PocketSVG.h"
 #import "SLKTextViewController.h"
+#import "JBChartView.h"
+#import "JBBarChartView.h"
+#import "JBLineChartView.h"
