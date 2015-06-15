@@ -11,10 +11,24 @@ import Parse
 
 class CondoApiMapper: NSObject {
     static func communityFromPFObject(object: PFObject) -> Community? {
-        return nil
+        
+        let dictionary: Dictionary<String, AnyObject> = [
+            "id": object.objectId!,
+            "name": object["name"]!,
+            "administratorID": object["administrator"]!
+        ]
+        return Community(dictionary: dictionary)
     }
     
     static func expenseFromPFOBject(object: PFObject) -> Expense? {
+        let dic :Dictionary<String, AnyObject> = [
+            "id": object.objectId!,
+            "type": object["type"]!,
+            "totalExpense": object["totalExpense"]!,
+            "expenseDate": object["date"]!
+        ]
+        
+        let newExpense: Expense = Expense(dictionary: dic)
         return nil
     }
 }

@@ -13,9 +13,12 @@ import CondoModel
 class CommunityFeedTableViewController: UITableViewController {
     var community: Community?
     
+    var database: DummyDatabase?
+    
     var selectedPost: Post? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.database = DummyDatabase()
         self.community = DummyDatabase().community
         
         self.tableView.registerNib(UINib(nibName: "AnnouncementTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "announcement")
@@ -35,15 +38,15 @@ class CommunityFeedTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        if let c = self.community {
-            return c.posts.count()
+        if let db = self.database {
+            return db.allPosts().count()
         }
         return 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCellWithIdentifier("post", forIndexPath: indexPath) as! CommunityFeedTableViewCell
-        let post: Post = self.community!.posts.modelAtIndex(indexPath.row) as! Post
+        let post: Post = self.database!.allPosts().modelAtIndex(indexPath.row) as! Post
         let cell: UITableViewCell
         switch (post.type) {
         case (.Announcement):
@@ -65,7 +68,7 @@ class CommunityFeedTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.selectedPost = self.community?.posts.modelAtIndex(indexPath.row) as? Post
+        self.selectedPost = self.database!.allPosts().modelAtIndex(indexPath.row) as? Post
         self.performSegueWithIdentifier("showPost", sender: self)
     }
     

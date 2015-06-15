@@ -10,14 +10,10 @@ import UIKit
 
 public class Community: Model {
     public let name: String
-    public let administrators: ModelList
-    public let posts: ModelList
-    public let expenses: ModelList
+    public let administratorID: String
     public override init(dictionary: Dictionary<String, AnyObject>) {
         self.name = dictionary["name"] as! String
-        self.administrators = dictionary["administrators"] as! ModelList
-        self.expenses = dictionary["expenses"] as! ModelList
-        self.posts = dictionary["posts"] as! ModelList
+        self.administratorID = dictionary["administratorID"] as! String
         super.init(dictionary: dictionary)
     }
 }
