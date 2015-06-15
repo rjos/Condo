@@ -12,7 +12,7 @@ import Bolts
 
 public class ParseDatabase: NSObject {
    
-    static let shareInstance = ParseDatabase()
+    public static let sharedDatabase = ParseDatabase()
     
     public func setup(){
         
