@@ -24,6 +24,20 @@ class TestExpenseParseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func getExpenses(sender: AnyObject) {
+        
+        let community = ParseDatabase.sharedDatabase.testCommunity()
+        
+        ParseDatabase.sharedDatabase.getAllExpenses(community: community) { (expenses, error) -> () in
+            
+            if let expenses = expenses {
+                for expense in expenses {
+                    println(expense.totalExpense)
+                }
+            }
+        }
+    }
+    
     @IBAction func saveExpense(sender: AnyObject) {
         
         let value: Double? = totalExpense.text.toDouble()
