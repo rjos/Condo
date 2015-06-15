@@ -29,7 +29,8 @@ class TestExpenseParseViewController: UIViewController {
         let value: Double? = totalExpense.text.toDouble()
         
         if let value = value {
-            ParseDatabase.sharedDatabase.createExpense(type:ExpenseType.Energy, date: expenseDate.date, totalExpense: value, community: Community(dictionary: ["id":"GpMV5wxc37", "name":"Ed. Santiago", "administratorID":"1234"]), completionBlock: { (expense, error) -> () in
+            let community = ParseDatabase.sharedDatabase.testCommunity()
+            ParseDatabase.sharedDatabase.createExpense(type:ExpenseType.Energy, date: expenseDate.date, totalExpense: value, community: community, completionBlock: { (expense, error) -> () in
                 
                 if let expense = expense {
                     println("Funfou")

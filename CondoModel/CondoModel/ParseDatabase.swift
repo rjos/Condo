@@ -45,6 +45,10 @@ public class ParseDatabase: NSObject {
         }
     }
     
+    public func testCommunity()->Community {
+        return Community(dictionary: ["id":"GpMV5wxc37", "name":"Ed. Santiago", "administratorID":"1234"])
+    }
+    
     public func createExpense(#type: ExpenseType, date: NSDate, totalExpense: NSNumber, community: Community, completionBlock: (expense: Expense?, error: NSError?) -> ()){
         
         let expenseObject = PFObject(className: "Expense")
