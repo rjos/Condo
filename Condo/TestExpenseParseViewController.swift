@@ -44,7 +44,7 @@ class TestExpenseParseViewController: UIViewController {
         
         if let value = value {
             let community = ParseDatabase.sharedDatabase.testCommunity()
-            ParseDatabase.sharedDatabase.createExpense(type:ExpenseType.Energy, date: expenseDate.date, totalExpense: value, community: community, completionBlock: { (expense, error) -> () in
+            ParseDatabase.sharedDatabase.createExpense(type:ExpenseType.Water, date: expenseDate.date, totalExpense: value, community: community, completionBlock: { (expense, error) -> () in
                 
                 if let expense = expense {
                     println("Funfou")
