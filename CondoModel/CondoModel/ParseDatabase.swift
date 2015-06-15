@@ -68,4 +68,8 @@ public class ParseDatabase: NSObject {
             }
         })
     }
+    
+    public func getAllExpenses(#community: Community, completionBlock: (expense: Array<Expense>?, error: NSError?) -> ()) {
+        completionBlock(expense: [], error: nil)
+    }
 }
