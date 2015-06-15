@@ -23,10 +23,11 @@ public class ParseDatabase: NSObject {
             clientKey: "EC0xXL6isxFFX64o8sDFREmRHZ6nBe0kJlZ76Al2")
     }
     
-    public func createCommunity(name: String, completionBlock: (community: Community?, error: NSError?) -> ()){
+    public func createCommunity(name: String, administratorID: String ,completionBlock: (community: Community?, error: NSError?) -> ()){
         
         let testObject = PFObject(className: "Community")
         testObject["name"] = name
+        testObject["administratorID"] = administratorID
         testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             println(testObject.objectId)
             if success {
