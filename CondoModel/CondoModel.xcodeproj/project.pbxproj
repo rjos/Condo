@@ -26,6 +26,7 @@
 		02891C7A1B28743300FFA118 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02529E271B276CB4009CF624 /* User.swift */; };
 		02891C7B1B28743300FFA118 /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02529E221B2769C5009CF624 /* Community.swift */; };
 		02891C7C1B28743300FFA118 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02529E2B1B2772E6009CF624 /* Post.swift */; };
+		02F333371B2F5580003D84EC /* CondoApiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F333361B2F5580003D84EC /* CondoApiMapper.swift */; };
 		1B9CE3A11B2F3FA400866898 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9CE3A01B2F3FA400866898 /* Bolts.framework */; };
 		1B9CE3A31B2F3FAD00866898 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9CE3A21B2F3FAD00866898 /* Parse.framework */; };
 		1B9CE3A81B2F3FBE00866898 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9CE3A41B2F3FBE00866898 /* ParseCrashReporting.framework */; };
@@ -73,6 +74,7 @@
 		02529E2B1B2772E6009CF624 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		02529E2D1B2779DA009CF624 /* DummyModelList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyModelList.swift; sourceTree = "<group>"; };
 		02529E2F1B277A6C009CF624 /* DummyDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyDatabase.swift; sourceTree = "<group>"; };
+		02F333361B2F5580003D84EC /* CondoApiMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondoApiMapper.swift; sourceTree = "<group>"; };
 		1B9CE3A01B2F3FA400866898 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		1B9CE3A21B2F3FAD00866898 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		1B9CE3A41B2F3FBE00866898 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				02529E021B276980009CF624 /* CondoModel.h */,
 				024D328E1B2CCE940061D518 /* CondoDatabase.swift */,
+				02F333361B2F5580003D84EC /* CondoApiMapper.swift */,
 				1B9CE3AD1B2F409F00866898 /* ParseDatabase.swift */,
 				02529E2F1B277A6C009CF624 /* DummyDatabase.swift */,
 				02529E2D1B2779DA009CF624 /* DummyModelList.swift */,
@@ -332,6 +335,7 @@
 				02529E2E1B2779DA009CF624 /* DummyModelList.swift in Sources */,
 				02529E261B276B06009CF624 /* Model.swift in Sources */,
 				1BE0E2AE1B28B606002BF58E /* Comment.swift in Sources */,
+				02F333371B2F5580003D84EC /* CondoApiMapper.swift in Sources */,
 				02529E281B276CB4009CF624 /* User.swift in Sources */,
 				024D328F1B2CCE940061D518 /* CondoDatabase.swift in Sources */,
 				02529E2C1B2772E6009CF624 /* Post.swift in Sources */,
