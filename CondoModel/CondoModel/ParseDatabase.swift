@@ -30,7 +30,14 @@ public class ParseDatabase: NSObject {
         testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             println(testObject.objectId)
             if success {
-                completionBlock(community: nil, error: error)
+                
+                let community = CondoApiMapper.communityFromPFObject(testObject)
+                
+                if let community = community {
+                    completionBlock(community: community, error: error)
+                }else{
+                    completionBlock(community: nil, error: error)
+                }
             }else{
                 completionBlock(community: nil, error: error)
             }
@@ -48,14 +55,13 @@ public class ParseDatabase: NSObject {
         expenseObject.saveInBackgroundWithBlock({(success:Bool, error:NSError?) -> Void in
             if success{
                 
-                let newExpense: Expense = Expense(dictionary: [
-                    "id": expenseObject.objectId!,
-                    "type": type.rawValue,
-                    "totalExpense": totalExpense,
-                    "expenseDate": date
-                    ])
+                let expense = CondoApiMapper.expenseFromPFOBject(expenseObject)
                 
-                completionBlock(expense: newExpense, error: error)
+                if let expense = expense {
+                    completionBlock(expense: expense, error: error)
+                }else{
+                    completionBlock(expense: nil, error: error)
+                }
             }else{
                 completionBlock(expense: nil, error: error)
             }
