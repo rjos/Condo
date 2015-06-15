@@ -182,6 +182,9 @@ public class DummyDatabase: NSObject {
         return [expense1,expense2,expense3,expense4,expense5]
     }
 
+    public func allPosts() -> ModelList {
+        return DummyModelList(data: self.allAnnouncements + self.allQuestions + self.allReports)
+    }
     
     public var community: Community {
         get{
@@ -189,9 +192,7 @@ public class DummyDatabase: NSObject {
             let dic = [
                 "id": "1",
                 "name":"Edifício Santiago",
-                "administrators": DummyModelList(data: [adm]),
-                "expenses": DummyModelList(data: self.allExpenses),
-                "posts": DummyModelList(data: self.allAnnouncements + self.allQuestions + self.allReports)
+                "administratorID": ""
             ]
             return Community(dictionary: dic)
         }
