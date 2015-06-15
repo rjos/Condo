@@ -92,3 +92,15 @@ extension UIView {
         self.addConstraints([constraint1,constraint2,constraint3,constraint4])
     }
 }
+
+extension String{
+    func toDouble() -> Double?{
+        let number  = NSNumberFormatter().numberFromString(self)
+        
+        if let number = number {
+            return number.doubleValue
+        }
+        
+        return nil
+    }
+}

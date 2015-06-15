@@ -69,6 +69,7 @@
 		1BE0E2A91B28B333002BF58E /* CondoModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1BE0E2B11B28C6BE002BF58E /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0E2AF1B28C6BE002BF58E /* CommentTableViewCell.swift */; };
 		1BE0E2B21B28C6BE002BF58E /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BE0E2B01B28C6BE002BF58E /* CommentTableViewCell.xib */; };
+		1BE15C6F1B2F5EBC001BC7BF /* TestExpenseParseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE15C6E1B2F5EBC001BC7BF /* TestExpenseParseViewController.swift */; };
 		1BF7C76C1B2A15FC00E9D231 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -197,6 +198,7 @@
 		1B9CE3AF1B2F450400866898 /* TestParseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestParseViewController.swift; sourceTree = "<group>"; };
 		1BE0E2AF1B28C6BE002BF58E /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		1BE0E2B01B28C6BE002BF58E /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		1BE15C6E1B2F5EBC001BC7BF /* TestExpenseParseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestExpenseParseViewController.swift; sourceTree = "<group>"; };
 		1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,6 +266,7 @@
 				1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */,
 				0206D6131B2A123100CD3A0E /* ExpensesCollectionViewController.swift */,
 				1B9CE3AF1B2F450400866898 /* TestParseViewController.swift */,
+				1BE15C6E1B2F5EBC001BC7BF /* TestExpenseParseViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				02AD60571B28BD87000D5210 /* PostView.swift in Sources */,
 				024D32AC1B2CFEDC0061D518 /* SLKTextView.m in Sources */,
 				0200C98D1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift in Sources */,
+				1BE15C6F1B2F5EBC001BC7BF /* TestExpenseParseViewController.swift in Sources */,
 				024D32AA1B2CFEDC0061D518 /* SLKInputAccessoryView.m in Sources */,
 				021544261B29298D0057B176 /* QuestionTableViewCell.swift in Sources */,
 				024D32A71B2CFEDC0061D518 /* UIResponder+SLKAdditions.m in Sources */,
