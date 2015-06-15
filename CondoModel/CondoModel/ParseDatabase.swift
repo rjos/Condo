@@ -47,7 +47,6 @@ public class ParseDatabase: NSObject {
         
         expenseObject.saveInBackgroundWithBlock({(success:Bool, error:NSError?) -> Void in
             if success{
-                
                 let newExpense: Expense = Expense(dictionary: [
                     "id": expenseObject.objectId!,
                     "type": type.rawValue,
