@@ -11,31 +11,56 @@ import CondoModel
 
 class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     var expenseGraphViewController: ExpenseGraphViewController? = nil
+    
+    var allExpenses: Array<Expense>? = nil
+    var expenseDictionary: Dictionary<ExpenseType, Array<Expense>> = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.collectionView!.registerNib(UINib(nibName: "ExpenseCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: reuseIdentifier)
         
-        self.collectionView?.reloadData()
-        let first = NSIndexPath(forItem: 0, inSection: 0)
-        self.collectionView!.selectItemAtIndexPath(first, animated: true, scrollPosition: UICollectionViewScrollPosition.None)
-        self.collectionView(self.collectionView!, didSelectItemAtIndexPath: first)
+
         self.title = DummyDatabase().community.name
+        
+        self.fetchData()
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func fetchData() {
+        let community = ParseDatabase.sharedDatabase.testCommunity()
+        ParseDatabase.sharedDatabase.getAllExpenses(community: community) { (expenses, error) -> () in
+            if let expenses = expenses {
+                self.allExpenses = expenses
+                self.expenseDictionary = [:]
+                for expense in expenses {
+                    let type = expense.type
+                    var expenseArray: Array<Expense>
+                    if let array = self.expenseDictionary[type] {
+                        expenseArray = array
+                    } else {
+                        expenseArray = []
+                    }
+                    expenseArray.append(expense)
+                    self.expenseDictionary[type] = expenseArray
+                }
+                self.collectionView?.reloadData()
+                let first = NSIndexPath(forItem: 0, inSection: 0)
+                if self.expenseDictionary.count > 0 {
+                    self.collectionView!.selectItemAtIndexPath(first, animated: true, scrollPosition: UICollectionViewScrollPosition.None)
+                    self.collectionView(self.collectionView!, didSelectItemAtIndexPath: first)
+                }
+            }
+        }
     }
     
     var selectedType = ExpenseType.allValues[0] {
         didSet{
             
             var p = ExpenseDrawingProperties(type: self.selectedType)
-//            let header = self.collectionView?.viewWithTag(666) as? ExpenseHeaderReusableView
-//            header?.expenseProperties = p
             self.expenseGraphViewController?.selectedType = self.selectedType
             self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
             self.navigationController?.navigationBar.barTintColor = p.selectedBackgroundColor
@@ -50,21 +75,24 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
         return 1
     }
     
-    
-    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ExpenseType.allValues.count
+        return self.expenseDictionary.count
+    }
+    
+    func expenseType(#indexPath: NSIndexPath) -> ExpenseType {
+        let index = indexPath.row
+        return self.expenseDictionary.keys.array[index]
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ExpenseCollectionViewCell
-        let type = ExpenseType.allValues[indexPath.row % ExpenseType.allValues.count]
+        let type = self.expenseType(indexPath: indexPath)
         cell.expenseProperties = ExpenseDrawingProperties(type: type)
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.selectedType = ExpenseType.allValues[indexPath.row]
+        self.selectedType = self.expenseType(indexPath: indexPath)
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
