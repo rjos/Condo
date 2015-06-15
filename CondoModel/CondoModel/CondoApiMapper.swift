@@ -17,6 +17,7 @@ class CondoApiMapper: NSObject {
             "name": object["name"]!,
             "administratorID": object["administrator"]!
         ]
+        
         return Community(dictionary: dictionary)
     }
     
