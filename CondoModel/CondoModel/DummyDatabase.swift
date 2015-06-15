@@ -202,8 +202,4 @@ public class DummyDatabase: NSObject {
             return self.allUsers["pedro"]!
         }
     }
-    
-    public func createReport(#text: String) {
-        
-    }
 }

@@ -27,8 +27,6 @@ class CondoApiMapper: NSObject {
             "totalExpense": object["totalExpense"]!,
             "expenseDate": object["date"]!
         ]
-        
-        let newExpense: Expense = Expense(dictionary: dic)
-        return nil
+        return Expense(dictionary: dic)
     }
 }
