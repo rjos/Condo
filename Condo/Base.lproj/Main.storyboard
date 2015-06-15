@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Test Parse View Controller-->
+        <!--Item-->
         <scene sceneID="PPs-B2-S5U">
             <objects>
                 <viewController id="OIy-nj-Zaa" customClass="TestParseViewController" customModule="Condo" customModuleProvider="target" sceneMemberID="viewController">
@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="eeb-p9-zZP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TiG-3E-ZkF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZp-yf-674">
@@ -34,6 +34,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="ZBQ-J3-WA2"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="nameCommunity" destination="SZp-yf-674" id="Wvd-3O-fPN"/>
@@ -59,6 +60,7 @@
                         <segue destination="xds-Eg-k5G" kind="relationship" relationship="viewControllers" id="mn7-eG-QHt"/>
                         <segue destination="ld3-4J-XX2" kind="relationship" relationship="viewControllers" id="AjG-gy-lyj"/>
                         <segue destination="l5O-86-n2Y" kind="relationship" relationship="viewControllers" id="FtO-nb-9zP"/>
+                        <segue destination="OIy-nj-Zaa" kind="relationship" relationship="viewControllers" id="NZF-lc-OB2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXV-TB-t5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
