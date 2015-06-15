@@ -25,8 +25,8 @@ public enum ExpenseType: String{
     case MaintenancePainting = "ExpenseTypeMaintenancePainting"
     
     public static let allValues: Array<ExpenseType> = [
-        .Water,
         .Energy,
+        .Water,
         .Personel,
         .Gas,
         .AdministrationCost,

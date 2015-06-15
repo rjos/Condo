@@ -17,6 +17,7 @@ class CondoApiMapper: NSObject {
             "name": object["name"]!,
             "administratorID": object["administrator"]!
         ]
+        
         return Community(dictionary: dictionary)
     }
     
@@ -27,8 +28,6 @@ class CondoApiMapper: NSObject {
             "totalExpense": object["totalExpense"]!,
             "expenseDate": object["date"]!
         ]
-        
-        let newExpense: Expense = Expense(dictionary: dic)
-        return nil
+        return Expense(dictionary: dic)
     }
 }
