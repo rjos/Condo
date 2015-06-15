@@ -73,7 +73,34 @@ public class ParseDatabase: NSObject {
         })
     }
     
-    public func getAllExpenses(#community: Community, completionBlock: (expense: Array<Expense>?, error: NSError?) -> ()) {
-        completionBlock(expense: [], error: nil)
+    public func getAllExpenses(#community: Community, completionBlock: (expenses: Array<Expense>?, error: NSError?) -> ()) {
+        
+        let query = PFQuery(className: "Expense")
+        query.whereKey("communityId", equalTo: PFObject(withoutDataWithClassName: "Community", objectId: community.id))
+        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+            
+            if let error = error{
+                completionBlock(expenses: [], error: error)
+            }else{
+                
+                if let objects = objects as? [PFObject]{
+                    
+                    var expenses : Array<Expense> = []
+                    
+                    for object in objects{
+                       
+                        let expense = CondoApiMapper.expenseFromPFOBject(object)
+                        
+                        if let expense = expense {
+                            expenses.append(expense)
+                        }
+                    }
+                    
+                    completionBlock(expenses: expenses, error: nil)
+                }else{
+                    completionBlock(expenses: [], error: error)
+                }
+            }
+        }
     }
 }

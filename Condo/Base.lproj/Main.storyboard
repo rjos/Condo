@@ -32,6 +32,11 @@
                                 <rect key="frame" x="0.0" y="14" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="Blz-YI-cDc">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="oOk-0Z-yNg">
+                                            <connections>
+                                                <action selector="getExpenses:" destination="C0E-4l-Div" id="YFE-Ka-E0y"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="Jt9-Xe-VgS">
                                             <connections>
                                                 <action selector="saveExpense:" destination="C0E-4l-Div" id="4Ds-Sp-LYB"/>
