@@ -26,7 +26,13 @@ class TestParseViewController: UIViewController {
     
     @IBAction func saveCommunity(sender: AnyObject) {
         
-        ParseDatabase.sharedDatabase.createCommunity(nameCommunity.text)
+        ParseDatabase.sharedDatabase.createCommunity(nameCommunity.text) { (community: Community?, error: NSError?) in
+            if let error = error {
+                println(error)
+            }else{
+                println("Funcionou!!!!")
+            }
+        }
     }
 
     /*

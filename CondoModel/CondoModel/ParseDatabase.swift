@@ -23,17 +23,42 @@ public class ParseDatabase: NSObject {
             clientKey: "EC0xXL6isxFFX64o8sDFREmRHZ6nBe0kJlZ76Al2")
     }
     
-    public func createCommunity(name: String){
+    public func createCommunity(name: String, completionBlock: (community: Community?, error: NSError?) -> ()){
         
         let testObject = PFObject(className: "Community")
         testObject["name"] = name
         testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            
+            println(testObject.objectId)
             if success {
-                println("Sucesso")
+                completionBlock(community: nil, error: error)
             }else{
-                println("Deu erro")
+                completionBlock(community: nil, error: error)
             }
         }
+    }
+    
+    public func createExpense(type: ExpenseType, date: NSDate, totalExpense: NSNumber, community: Community, completionBlock: (expense: Expense?, error: NSError?) -> ()){
+        
+        let expenseObject = PFObject(className: "Expense")
+        expenseObject["communityId"] = PFObject(withoutDataWithClassName: "Community", objectId: community.id)
+        expenseObject["type"] = type.rawValue
+        expenseObject["date"] = date
+        expenseObject["totalExpense"] = totalExpense
+        
+        expenseObject.saveInBackgroundWithBlock({(success:Bool, error:NSError?) -> Void in
+            if success{
+                
+                let newExpense: Expense = Expense(dictionary: [
+                    "id": expenseObject.objectId!,
+                    "type": type.rawValue,
+                    "totalExpense": totalExpense,
+                    "expenseDate": date
+                    ])
+                
+                completionBlock(expense: newExpense, error: error)
+            }else{
+                completionBlock(expense: nil, error: error)
+            }
+        })
     }
 }
