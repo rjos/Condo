@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double CondoModelVersionNumber;
 FOUNDATION_EXPORT const unsigned char CondoModelVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <CondoModel/PublicHeader.h>
-
-

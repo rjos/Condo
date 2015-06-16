@@ -10,8 +10,8 @@
 
 
 import CondoModel
+
 struct ExpenseDrawingProperties {
-    
     let type: ExpenseType
     let name: String
     let svgFileName: String
