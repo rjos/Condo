@@ -19,23 +19,27 @@ class QuestionTableViewCell: UITableViewCell {
     var postHolder: PostView? = nil
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.tintColor = UIColor.condoQuestionBackgroundColor()
-        self.questionSegmentedControl.tintColor = UIColor.condoQuestionBackgroundColor()
+
         self.postHolder = PostView.instantiateWithOwner(self)
-        self.postHolder!.textColor = UIColor.condoQuestionBackgroundColor()
-        self.postView.fillWithSubview(self.postHolder!)
-        self.mainView.layer.cornerRadius = 15.0
-        self.mainView.layer.borderWidth = 3.0
-        self.mainView.layer.borderColor = UIColor.condoQuestionBackgroundColor().CGColor
-        self.mainView.backgroundColor = UIColor.clearColor()
-        
-        self.mainView.layer.masksToBounds = true
+        self.postView.fillWithSubview(postHolder!)
         // Initialization code
     }
 
     var post: Post? = nil {
         didSet{
+            let properties = PostDrawingProperties(type: self.post!.type)
+            let outlineColor = properties.outlineColor
             self.postHolder!.post = self.post
+            self.postHolder!.textColor = outlineColor
+            
+            self.mainView.layer.cornerRadius = properties.cornerRadius
+            self.mainView.layer.borderWidth = properties.lineWidth
+            self.mainView.layer.borderColor = outlineColor.CGColor
+            self.mainView.backgroundColor = UIColor.clearColor()
+            self.mainView.layer.masksToBounds = true
+            
+            self.tintColor = outlineColor
+            self.questionSegmentedControl.tintColor = outlineColor
         }
     }
     

@@ -20,10 +20,8 @@ class ExpenseVectorView: VectorView {
     
     func drawWithProperties(properties: ExpenseDrawingProperties) {
         self.drawSVGWithName(properties.svgFileName)
-
         self.backgroundColor = UIColor.clearColor()
-        self.fillColor = properties.shapeColor
-        self.strokeColor = properties.shapeColor
-
+        self.fillColor = properties.fillColor
+        self.strokeColor = properties.strokeColor
     }
 }

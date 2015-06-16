@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E33b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E36b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -18,13 +18,13 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljC-Xd-ZeF" userLabel="userNameLabel">
-                    <rect key="frame" x="56" y="17.5" width="41" height="19.5"/>
+                    <rect key="frame" x="56" y="18.5" width="41" height="19.5"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUq-xe-O3a" userLabel="commentCountLabel">
-                    <rect key="frame" x="360.5" y="267" width="35.5" height="17"/>
+                    <rect key="frame" x="360" y="267" width="35.5" height="17"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -42,6 +42,13 @@
                         <constraint firstAttribute="width" constant="30" id="6QS-XT-cTU"/>
                     </constraints>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wTY-MI-KPf">
+                    <rect key="frame" x="386" y="8" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="5M6-QN-tcZ"/>
+                        <constraint firstAttribute="height" constant="40" id="EWp-B0-dht"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
@@ -49,12 +56,14 @@
                 <constraint firstItem="zJK-En-qRr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="4tO-rf-8j0"/>
                 <constraint firstItem="I9z-be-Crx" firstAttribute="leading" secondItem="PUq-xe-O3a" secondAttribute="trailing" id="8IE-NX-qNS"/>
                 <constraint firstItem="I9z-be-Crx" firstAttribute="centerY" secondItem="PUq-xe-O3a" secondAttribute="centerY" id="DNa-oY-Sb6"/>
+                <constraint firstAttribute="trailing" secondItem="wTY-MI-KPf" secondAttribute="trailing" constant="8" id="FHs-HL-cJa"/>
                 <constraint firstItem="I9z-be-Crx" firstAttribute="trailing" secondItem="1eR-zp-Qs3" secondAttribute="trailing" id="IZb-Ee-lNP"/>
                 <constraint firstItem="I9z-be-Crx" firstAttribute="top" secondItem="1eR-zp-Qs3" secondAttribute="bottom" constant="8" id="ORc-N2-zLA"/>
                 <constraint firstAttribute="bottom" secondItem="I9z-be-Crx" secondAttribute="bottom" id="Zbi-xd-vqU"/>
                 <constraint firstItem="1eR-zp-Qs3" firstAttribute="top" secondItem="zJK-En-qRr" secondAttribute="bottom" constant="8" id="bis-1x-1e3"/>
                 <constraint firstItem="zJK-En-qRr" firstAttribute="centerY" secondItem="ljC-Xd-ZeF" secondAttribute="centerY" id="kwd-DC-rHB"/>
                 <constraint firstAttribute="trailing" secondItem="I9z-be-Crx" secondAttribute="trailing" constant="8" id="l2n-yZ-h7V"/>
+                <constraint firstItem="wTY-MI-KPf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="oQj-LX-LXJ"/>
                 <constraint firstItem="ljC-Xd-ZeF" firstAttribute="leading" secondItem="zJK-En-qRr" secondAttribute="trailing" constant="8" id="xxX-6f-crO"/>
                 <constraint firstItem="1eR-zp-Qs3" firstAttribute="leading" secondItem="zJK-En-qRr" secondAttribute="leading" id="zaI-R5-6ic"/>
             </constraints>
@@ -65,6 +74,7 @@
                 <outlet property="commentCountLabel" destination="PUq-xe-O3a" id="InV-Ub-k9n"/>
                 <outlet property="nextImageView" destination="I9z-be-Crx" id="XNh-TR-w4S"/>
                 <outlet property="nextImageViewWidth" destination="6QS-XT-cTU" id="h5i-im-ECn"/>
+                <outlet property="postIconImageView" destination="wTY-MI-KPf" id="sdc-A0-rfK"/>
                 <outlet property="postTextLabel" destination="1eR-zp-Qs3" id="Du7-00-05I"/>
                 <outlet property="userImageView" destination="zJK-En-qRr" id="2Rd-ou-SiA"/>
                 <outlet property="userNameLabel" destination="ljC-Xd-ZeF" id="omz-6f-GMO"/>
