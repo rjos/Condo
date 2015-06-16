@@ -47,6 +47,9 @@
 		02AD60591B28BDDD000D5210 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AD60581B28BDDD000D5210 /* PostView.xib */; };
 		02E06E021B27970900580B3D /* CommunityFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */; };
 		02ECE4B41B309070000FC6A0 /* PostDrawingProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECE4B31B309070000FC6A0 /* PostDrawingProperties.swift */; };
+		02ECE4B91B30B6B5000FC6A0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECE4B81B30B6B5000FC6A0 /* LoginViewController.swift */; };
+		02ECE4BB1B30B6BE000FC6A0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECE4BA1B30B6BE000FC6A0 /* SignUpViewController.swift */; };
+		02ECE4BD1B30B6E4000FC6A0 /* AddExpenseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECE4BC1B30B6E4000FC6A0 /* AddExpenseTableViewController.swift */; };
 		1B9CE3B01B2F450400866898 /* TestParseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9CE3AF1B2F450400866898 /* TestParseViewController.swift */; };
 		1BE0E2A81B28B333002BF58E /* CondoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; };
 		1BE0E2A91B28B333002BF58E /* CondoModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -54,7 +57,6 @@
 		1BE0E2B21B28C6BE002BF58E /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BE0E2B01B28C6BE002BF58E /* CommentTableViewCell.xib */; };
 		1BE15C6F1B2F5EBC001BC7BF /* TestExpenseParseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE15C6E1B2F5EBC001BC7BF /* TestExpenseParseViewController.swift */; };
 		1BF7C76C1B2A15FC00E9D231 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */; };
-		D1DA350F1B30A3530082E263 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DA350E1B30A3530082E263 /* LoginViewController.swift */; };
 		D1DA35241B30A4980082E263 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA35111B30A4980082E263 /* libz.dylib */; };
 		D1DA35251B30A4980082E263 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA35121B30A4980082E263 /* SystemConfiguration.framework */; };
 		D1DA35261B30A4980082E263 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA35131B30A4980082E263 /* StoreKit.framework */; };
@@ -196,12 +198,14 @@
 		02AD60581B28BDDD000D5210 /* PostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
 		02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityFeedTableViewController.swift; sourceTree = "<group>"; };
 		02ECE4B31B309070000FC6A0 /* PostDrawingProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDrawingProperties.swift; sourceTree = "<group>"; };
+		02ECE4B81B30B6B5000FC6A0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		02ECE4BA1B30B6BE000FC6A0 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		02ECE4BC1B30B6E4000FC6A0 /* AddExpenseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExpenseTableViewController.swift; sourceTree = "<group>"; };
 		1B9CE3AF1B2F450400866898 /* TestParseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestParseViewController.swift; sourceTree = "<group>"; };
 		1BE0E2AF1B28C6BE002BF58E /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		1BE0E2B01B28C6BE002BF58E /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		1BE15C6E1B2F5EBC001BC7BF /* TestExpenseParseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestExpenseParseViewController.swift; sourceTree = "<group>"; };
 		1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
-		D1DA350E1B30A3530082E263 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D1DA35111B30A4980082E263 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/usr/lib/libz.dylib; sourceTree = "<absolute>"; };
 		D1DA35121B30A4980082E263 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
 		D1DA35131B30A4980082E263 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = "<absolute>"; };
@@ -313,9 +317,11 @@
 		021544331B294F140057B176 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D1DA350E1B30A3530082E263 /* LoginViewController.swift */,
+				02ECE4B81B30B6B5000FC6A0 /* LoginViewController.swift */,
+				02ECE4BA1B30B6BE000FC6A0 /* SignUpViewController.swift */,
 				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
 				02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */,
+				02ECE4BC1B30B6E4000FC6A0 /* AddExpenseTableViewController.swift */,
 				0241574F1B2DECB9000ADCB5 /* ExpensesViewController.swift */,
 				024157511B2DF13F000ADCB5 /* ExpenseGraphViewController.swift */,
 				021544301B2943080057B176 /* VectorTestViewController.swift */,
@@ -659,11 +665,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0215442D1B293C050057B176 /* VectorView.swift in Sources */,
+				02ECE4BD1B30B6E4000FC6A0 /* AddExpenseTableViewController.swift in Sources */,
 				02AD60571B28BD87000D5210 /* PostView.swift in Sources */,
 				024D32AC1B2CFEDC0061D518 /* SLKTextView.m in Sources */,
 				0200C98D1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift in Sources */,
 				1BE15C6F1B2F5EBC001BC7BF /* TestExpenseParseViewController.swift in Sources */,
 				024D32AA1B2CFEDC0061D518 /* SLKInputAccessoryView.m in Sources */,
+				02ECE4BB1B30B6BE000FC6A0 /* SignUpViewController.swift in Sources */,
 				021544261B29298D0057B176 /* QuestionTableViewCell.swift in Sources */,
 				024D32A71B2CFEDC0061D518 /* UIResponder+SLKAdditions.m in Sources */,
 				024157521B2DF13F000ADCB5 /* ExpenseGraphViewController.swift in Sources */,
@@ -686,7 +694,7 @@
 				024D32A61B2CFEDC0061D518 /* SLKTextView+SLKAdditions.m in Sources */,
 				021544191B29121A0057B176 /* CondoUtils.swift in Sources */,
 				02ECE4B41B309070000FC6A0 /* PostDrawingProperties.swift in Sources */,
-				D1DA350F1B30A3530082E263 /* LoginViewController.swift in Sources */,
+				02ECE4B91B30B6B5000FC6A0 /* LoginViewController.swift in Sources */,
 				024157501B2DECB9000ADCB5 /* ExpensesViewController.swift in Sources */,
 				0241574C1B2DD083000ADCB5 /* JBLineChartView.m in Sources */,
 				024D32AE1B2CFEDC0061D518 /* SLKTypingIndicatorView.m in Sources */,
