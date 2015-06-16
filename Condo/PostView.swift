@@ -17,6 +17,7 @@ class PostView: UIView {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
     
+    @IBOutlet weak var postIconImageView: UIImageView!
     @IBOutlet weak var nextImageViewWidth: NSLayoutConstraint!
     static func instantiateWithOwner(owner: AnyObject!) ->PostView{
         let nib = UINib(nibName: "PostView", bundle: nil)
@@ -55,6 +56,9 @@ class PostView: UIView {
                     self.commentCountLabel.text = "\(post.comments.count()) comentários"
                 }
                 self.nextImageHidden = true
+                let properties = PostDrawingProperties(type: self.post!.type)
+                let imageName = properties.imageIconName
+                self.postIconImageView.image = UIImage(named: imageName)
                 self.layoutSubviews()
             }
         }

@@ -21,21 +21,27 @@ class ExpenseCollectionViewCell: UICollectionViewCell {
             if var properties = self.expenseProperties {
                 properties.selected = self.selected
                 self.expenseProperties = properties
+                let old = oldValue
+                let new = self.selected
+                if properties.shouldAnimateSelectionChange(old, new: new) {
+                    self.expenseView.animateShape()
+                }
             }
         }
     }
     
     var expenseProperties: ExpenseDrawingProperties? {
-        didSet {
+        
+        didSet{
             if var properties = self.expenseProperties {
+
                 properties.selected = self.selected
-                self.layer.borderWidth = 2.0
-                self.layer.cornerRadius = 15.0
-                //println("Selected: \(properties.selected) Color: \(properties.backgroundColor)")
-                self.layer.borderColor = properties.normalShapeColor.CGColor
-                self.backgroundColor = properties.backgroundColor//properties.backgroundColor
+                self.layer.cornerRadius = properties.cornerRadius
+                self.layer.borderWidth = properties.borderWidth
+                self.layer.borderColor = properties.borderColor.CGColor
+                self.backgroundColor = properties.backgroundColor
                 self.expenseView.expenseProperties = properties
-                self.expenseView.animateShape()
+
             }
         }
     }

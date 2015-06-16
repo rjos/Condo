@@ -13,39 +13,39 @@ extension UIColor {
         return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a/255.0)
     }
     static func condoReportBackgroundColor() ->UIColor {
-        return UIColor.rgba(88, g: 87, b: 208, a: 255)
+        return UIColor.rgba(112, g: 77, b: 145, a: 255)
     }
     static func condoQuestionBackgroundColor() ->UIColor {
-        return UIColor.rgba(0, g: 154, b: 200, a: 255)
+        return UIColor.rgba(85, g: 196, b: 132, a: 255)
     }
     static func condoAnnouncementBackgroundColor() ->UIColor {
-        return UIColor.rgba(220, g: 61, b: 52, a: 255)
+        return UIColor.rgba(213, g: 80, b: 76, a: 255)
     }
     static func condoCommentEvenBackgroundColor() ->UIColor {
-        return UIColor.rgba(244, g: 244, b: 244, a: 255)
+        return UIColor.rgba(255, g: 255, b: 255, a: 255)
     }
     static func condoCommentOddBackgroundColor() ->UIColor {
-        return UIColor.rgba(229, g: 229, b: 229, a: 255)
+        return UIColor.rgba(247, g: 247, b: 247, a: 255)
     }
     
     static func condoBlue() -> UIColor {
-        return UIColor.rgba(75, g: 181, b: 198, a: 255)
+        return UIColor.rgba(0, g: 182, b: 200, a: 255)
     }
     
     static func condoYellow() -> UIColor {
-        return UIColor.rgba(234, g: 186, b: 52, a: 255)
+        return UIColor.rgba(250, g: 187, b: 26, a: 255)
     }
     
     static func condoRed() -> UIColor {
-        return UIColor.rgba(186, g: 81, b: 77, a: 255)
+        return UIColor.rgba(213, g: 80, b: 76, a: 255)
     }
     
     static func condoGreen() -> UIColor {
-        return UIColor.rgba(129, g: 195, b: 134, a: 255)
+        return UIColor.rgba(85, g: 196, b: 132, a: 255)
     }
     
     static func condoPurple() -> UIColor {
-        return UIColor.rgba(103, g: 78, b: 142, a: 255)
+        return UIColor.rgba(112, g: 77, b: 145, a: 255)
     }
 }
 
