@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CondoModel
 class AddExpenseTableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -22,6 +22,7 @@ class AddExpenseTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
         // Dispose of any resources that can be recreated.
     }
 
@@ -30,7 +31,7 @@ class AddExpenseTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return ExpenseType.allValues.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
