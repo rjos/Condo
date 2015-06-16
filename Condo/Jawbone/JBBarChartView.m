@@ -11,7 +11,7 @@
 // Numerics
 CGFloat static const kJBBarChartViewBarBasePaddingMutliplier = 50.0f;
 CGFloat static const kJBBarChartViewUndefinedCachedHeight = -1.0f;
-CGFloat static const kJBBarChartViewStateAnimationDuration = 0.05f;
+CGFloat static const kJBBarChartViewStateAnimationDuration = 0.10f;
 CGFloat static const kJBBarChartViewStatePopOffset = 10.0f;
 NSInteger static const kJBBarChartViewUndefinedBarIndex = -1;
 

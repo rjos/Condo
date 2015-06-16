@@ -8,23 +8,35 @@
 
 import UIKit
 import CondoModel
-class ExpenseGraphViewController: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSource {
+class ExpenseGraphViewController: UIViewController, JBBarChartViewDataSource, JBBarChartViewDelegate {
     @IBOutlet weak var expenseNameLabel: UILabel!
 
     @IBOutlet weak var detailLabel: UILabel!
-    @IBOutlet weak var lineChartView: JBLineChartView!
+
+    @IBOutlet weak var barChartView: JBBarChartView!
+    
+    let evenSelectionColor = UIColor(white: 1.0, alpha: 0.8)
+    let oddSelectionColor = UIColor(white: 1.0, alpha: 0.5)
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.lineChartView.delegate = self
-        self.lineChartView.dataSource = self
+        self.barChartView.delegate = self
+        self.barChartView.dataSource = self
         
-        self.lineChartView.reloadData()
+        self.barChartView.reloadData()
+        self.detailLabel.hidden = true
         // Do any additional setup after loading the view.
     }
     
     var expenses: Array<Expense> = [] {
         didSet{
-            println(self.expenses)
+            expenses.sort { (a, b) -> Bool in
+                let firstDate = a.expenseDate
+                let secondDate = b.expenseDate
+                if firstDate.compare(secondDate) == NSComparisonResult.OrderedDescending {
+                    return false
+                }
+                return true
+            }
         }
     }
     
@@ -32,11 +44,10 @@ class ExpenseGraphViewController: UIViewController, JBLineChartViewDelegate, JBL
         didSet{
             var p = ExpenseDrawingProperties(type: self.selectedType)
             self.view.backgroundColor = p.selectedBackgroundColor
-            self.lineChartView.backgroundColor = p.selectedBackgroundColor
+            self.barChartView.backgroundColor = p.selectedBackgroundColor
             self.expenseNameLabel.text = p.name
-            self.lineChartView.reloadData()
-            self.lineChartView.setState(JBChartViewState.Collapsed, animated: true)
-            self.lineChartView.setState(JBChartViewState.Expanded, animated: true)
+            self.barChartView.reloadData()
+            self.barChartView.setState(JBChartViewState.Expanded, animated: true)
         }
     }
     
@@ -46,52 +57,50 @@ class ExpenseGraphViewController: UIViewController, JBLineChartViewDelegate, JBL
         }
     }
     
-    //MARK: LineChartView Data Source
-    func numberOfLinesInLineChartView(lineChartView: JBLineChartView!) -> UInt {
-        return 1
-    }
-    func lineChartView(lineChartView: JBLineChartView!, numberOfVerticalValuesAtLineIndex lineIndex: UInt) -> UInt {
+    //MARK: BarChartView Data Source
+    func numberOfBarsInBarChartView(barChartView: JBBarChartView!) -> UInt {
         return UInt(self.expenses.count)
-        
-        //return 12
+    }
+    func barChartView(barChartView: JBBarChartView!, didSelectBarAtIndex index: UInt, touchPoint: CGPoint) {
+        let expense = self.expenses[Int(index)]
+        self.detailLabel.hidden = false
+        self.detailLabel.text = "\(self.month(expense.expenseDate.month)): \(expense.totalExpense)"
+        println("Selected")
+    }
+    func didDeselectBarChartView(barChartView: JBBarChartView!) {
+        self.detailLabel.hidden = true
+        self.detailLabel.text = ""
     }
     
-    //MARK: LineChartView Delegate
-    func lineChartView(lineChartView: JBLineChartView!, verticalValueForHorizontalIndex horizontalIndex: UInt, atLineIndex lineIndex: UInt) -> CGFloat {
-//        var test =  sin(CGFloat(horizontalIndex))
-//        test = abs(test)
-//        return test
-        let expense = self.expenses[Int(horizontalIndex)]
-        
+    //MARK: BarChartView Delegate
+    func barChartView(barChartView: JBBarChartView!, heightForBarViewAtIndex index: UInt) -> CGFloat {
+        let expense = self.expenses[Int(index)]
         return CGFloat(expense.totalExpense.doubleValue)
     }
-    func lineChartView(lineChartView: JBLineChartView!, colorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
+    
+    func barChartView(barChartView: JBBarChartView!, colorForBarViewAtIndex index: UInt) -> UIColor! {
+        return index % 2 == 0 ? self.evenSelectionColor : self.oddSelectionColor
+    }
+    
+    func barSelectionColorForBarChartView(barChartView: JBBarChartView!) -> UIColor! {
         return UIColor.whiteColor()
     }
-    func lineChartView(lineChartView: JBLineChartView!, fillColorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
-        return UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.2)
-    }
-
-    func lineChartView(lineChartView: JBLineChartView!, smoothLineAtLineIndex lineIndex: UInt) -> Bool {
-        return false
-    }
     
-    func lineChartView(lineChartView: JBLineChartView!, widthForLineAtLineIndex lineIndex: UInt) -> CGFloat {
-        return 1.0
+    func month(int: Int) -> String{
+        switch int {
+        case 1: return "Janeiro"
+        case 2: return "Fevereiro"
+        case 3: return "Março"
+        case 4: return "Abril"
+        case 5: return "Maio"
+        case 6: return "Junho"
+        case 7: return "Julho"
+        case 8: return "Agosto"
+        case 9: return "Setembro"
+        case 10: return "Outubro"
+        case 11: return "Novembro"
+        case 12: return "Dezembro"
+        default: return ""
+        }
     }
-    
-    func lineChartView(lineChartView: JBLineChartView!, showsDotsForLineAtLineIndex lineIndex: UInt) -> Bool {
-        return true
-    }
-    
-    func lineChartView(lineChartView: JBLineChartView!, colorForDotAtHorizontalIndex horizontalIndex: UInt, atLineIndex lineIndex: UInt) -> UIColor! {
-        return self.selectedTypeProperties.normalBackgroundColor
-    }
-    
-    func lineChartView(lineChartView: JBLineChartView!, didSelectLineAtIndex lineIndex: UInt, horizontalIndex: UInt, touchPoint: CGPoint) {
-        let expense = self.expenses[Int(horizontalIndex)]
-        self.detailLabel.text = "\(expense.totalExpense)"
-    }
-    
-
 }

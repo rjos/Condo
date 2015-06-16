@@ -442,9 +442,9 @@
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="barChartView" destination="JT1-3Q-tbM" id="yZ8-B0-an2"/>
                         <outlet property="detailLabel" destination="atG-nA-fJM" id="kjW-ch-sUg"/>
                         <outlet property="expenseNameLabel" destination="AyT-Bw-y3o" id="rdm-Mx-kf4"/>
-                        <outlet property="lineChartView" destination="JT1-3Q-tbM" id="9ih-62-1DP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o8i-Oj-Lm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
