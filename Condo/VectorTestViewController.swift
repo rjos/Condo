@@ -13,7 +13,7 @@ class VectorTestViewController: UIViewController {
     @IBOutlet weak var vectorView: VectorView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.vectorView.drawSVGWithName("energia")
+        self.vectorView.drawSVGWithName("cleaningServices")
         
         //Colocando as propriedades opcionais de desenho
         self.vectorView.fillColor = UIColor.grayColor()      //A cor de preenchimento do SVG
