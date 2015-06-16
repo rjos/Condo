@@ -397,10 +397,7 @@ static UIColor *kJBBarChartViewDefaultBarColor = nil;
             NSUInteger index = 0;
             for (UIView *barView in self.barViews)
             {
-#pragma mark - ______HACK_PARA_MELHORAR_A_ANIMACAO_________
-                //NSTimeInterval oldDelay = (kJBBarChartViewStateAnimationDuration * 0.5) * index;
-                
-                [UIView animateWithDuration:kJBBarChartViewStateAnimationDuration delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                [UIView animateWithDuration:kJBBarChartViewStateAnimationDuration delay:(kJBBarChartViewStateAnimationDuration * 0.5) * index options:UIViewAnimationOptionBeginFromCurrentState animations:^{
                     updateBarView(barView, YES);
                 } completion:^(BOOL finished) {
                     [UIView animateWithDuration:kJBBarChartViewStateAnimationDuration delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{

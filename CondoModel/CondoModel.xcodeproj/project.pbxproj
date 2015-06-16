@@ -27,8 +27,6 @@
 		02891C7B1B28743300FFA118 /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02529E221B2769C5009CF624 /* Community.swift */; };
 		02891C7C1B28743300FFA118 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02529E2B1B2772E6009CF624 /* Post.swift */; };
 		02F333371B2F5580003D84EC /* CondoApiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F333361B2F5580003D84EC /* CondoApiMapper.swift */; };
-		02F3333B1B2FD3C3003D84EC /* Parse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F3333A1B2FD3C3003D84EC /* Parse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		02F3333D1B2FD57D003D84EC /* ParseUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F3333C1B2FD57D003D84EC /* ParseUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B9CE3A11B2F3FA400866898 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9CE3A01B2F3FA400866898 /* Bolts.framework */; };
 		1B9CE3A31B2F3FAD00866898 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9CE3A21B2F3FAD00866898 /* Parse.framework */; };
 		1B9CE3A81B2F3FBE00866898 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9CE3A41B2F3FBE00866898 /* ParseCrashReporting.framework */; };
@@ -77,8 +75,6 @@
 		02529E2D1B2779DA009CF624 /* DummyModelList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyModelList.swift; sourceTree = "<group>"; };
 		02529E2F1B277A6C009CF624 /* DummyDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyDatabase.swift; sourceTree = "<group>"; };
 		02F333361B2F5580003D84EC /* CondoApiMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondoApiMapper.swift; sourceTree = "<group>"; };
-		02F3333A1B2FD3C3003D84EC /* Parse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Parse.h; path = Parse.framework/Headers/Parse.h; sourceTree = "<group>"; };
-		02F3333C1B2FD57D003D84EC /* ParseUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ParseUI.h; path = ParseUI.framework/Headers/ParseUI.h; sourceTree = "<group>"; };
 		1B9CE3A01B2F3FA400866898 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		1B9CE3A21B2F3FAD00866898 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		1B9CE3A41B2F3FBE00866898 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -141,8 +137,6 @@
 		02529DF31B276980009CF624 = {
 			isa = PBXGroup;
 			children = (
-				02F3333C1B2FD57D003D84EC /* ParseUI.h */,
-				02F3333A1B2FD3C3003D84EC /* Parse.h */,
 				1B9CE3AC1B2F3FED00866898 /* Frameworks */,
 				02529DFF1B276980009CF624 /* CondoModel */,
 				02529E0C1B276980009CF624 /* CondoModelTests */,
@@ -236,8 +230,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02F3333B1B2FD3C3003D84EC /* Parse.h in Headers */,
-				02F3333D1B2FD57D003D84EC /* ParseUI.h in Headers */,
 				02529E031B276980009CF624 /* CondoModel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
