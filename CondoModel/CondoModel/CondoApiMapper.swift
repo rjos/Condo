@@ -21,7 +21,7 @@ class CondoApiMapper: NSObject {
         return Community(dictionary: dictionary)
     }
     
-    static func expenseFromPFOBject(object: PFObject) -> Expense? {
+    static func expenseFromPFObject(object: PFObject) -> Expense? {
         let dic :Dictionary<String, AnyObject> = [
             "id": object.objectId!,
             "type": object["type"]!,
@@ -29,5 +29,46 @@ class CondoApiMapper: NSObject {
             "expenseDate": object["date"]!
         ]
         return Expense(dictionary: dic)
+    }
+    
+    static func postFromPFObject(object: PFObject) -> Post? {
+        
+        var dic: Dictionary<String, AnyObject> = [
+            "id": object.objectId!,
+            "type": object["type"]!,
+            "owner": object["owner"]!,
+            "community": object["community"]!,
+            "text": object["text"]!
+        ]
+        
+        let dicStatus : Dictionary<String, AnyObject> = [
+            "status": object["status"]!
+        ]
+        
+        if let type = PostContentType(rawValue: object["type"]! as! String) {
+            switch type {
+            case .Announcement:
+                return PostAnnouncement(dictionary: dic)
+            case .Question:
+                return PostQuestion(dictionary: dic)
+            case .Report:
+                dic["status"] = object["status"]!
+                return PostReport(dictionary: dic)
+            }
+        }
+        
+        return nil
+    }
+    
+    static func commentFromPFObject(object:PFObject) -> Comment? {
+        
+        let dic:Dictionary<String, AnyObject> = [
+            "id": object.objectId!,
+            "owner": object["owner"]!,
+            "post": object["post"]!,
+            "text": object["text"]!
+        ]
+        
+        return Comment(dictionary: dic)
     }
 }

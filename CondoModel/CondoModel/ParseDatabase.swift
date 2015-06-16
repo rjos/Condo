@@ -49,6 +49,14 @@ public class ParseDatabase: NSObject {
         return Community(dictionary: ["id":"GpMV5wxc37", "name":"Ed. Santiago", "administratorID":"1234"])
     }
     
+    public func testUser() -> User {
+        return User(dictionary: ["id": "fswYxDrqiG", "name": "pedro", "imageName": ""])
+    }
+    
+    public func testPost(user: User) -> Post {
+        return PostReport(dictionary: ["id": "6pGX8Owasd", "owner": user, "community": "GpMV5wxc37", "text": "teste 1", "status":"PostReportStatusOpen", "type": "PostContentTypeReport"])
+    }
+    
     public func createExpense(#type: ExpenseType, date: NSDate, totalExpense: NSNumber, community: Community, completionBlock: (expense: Expense?, error: NSError?) -> ()){
         
         let expenseObject = PFObject(className: "Expense")
@@ -60,7 +68,7 @@ public class ParseDatabase: NSObject {
         expenseObject.saveInBackgroundWithBlock({(success:Bool, error:NSError?) -> Void in
             if success{
                 
-                let expense = CondoApiMapper.expenseFromPFOBject(expenseObject)
+                let expense = CondoApiMapper.expenseFromPFObject(expenseObject)
                 
                 if let expense = expense {
                     completionBlock(expense: expense, error: error)
@@ -71,6 +79,62 @@ public class ParseDatabase: NSObject {
                 completionBlock(expense: nil, error: error)
             }
         })
+    }
+    
+    public func createPost(#type: PostContentType, owner: User, text: String, status: PostReport.PostReportStatus, community: Community, completionBlock: (post: Post?, error: NSError?) -> ()) {
+        
+        let postObject              = PFObject(className: "Post")
+        postObject["community"]     = PFObject(withoutDataWithClassName: "Community", objectId: community.id)
+        postObject["owner"]         = PFObject(withoutDataWithClassName: "_User", objectId: owner.id)
+        postObject["type"]          = type.rawValue
+        postObject["text"]          = text
+        postObject["totalComments"] = 0
+        
+        switch type {
+        case .Report:
+            postObject["status"] = status.rawValue
+        default:
+            postObject["status"] = ""
+        }
+        
+        postObject.saveInBackgroundWithBlock { (success:Bool, error:NSError?) -> Void in
+            
+            if success {
+                
+                let post = CondoApiMapper.postFromPFObject(postObject)
+                
+                if let post = post {
+                    completionBlock(post: post, error: nil)
+                }else{
+                    completionBlock(post: nil, error: error)
+                }
+            }else{
+                completionBlock(post: nil, error: error)
+            }
+        }
+    }
+    
+    public func createComment(#owner: User, text: String, post: Post, completionBlock: (comment: Comment?, error: NSError?) -> ()){
+        
+        let commentObject = PFObject(className: "Comment")
+        commentObject["owner"] = PFObject(withoutDataWithClassName: "_User", objectId: owner.id)
+        commentObject["post"]  = PFObject(withoutDataWithClassName: "Post", objectId: post.id)
+        commentObject["text"]  = text
+        
+        commentObject.saveInBackgroundWithBlock { (success:Bool, error:NSError?) -> Void in
+            if success {
+                
+                let comment = CondoApiMapper.commentFromPFObject(commentObject)
+                
+                if let comment = comment {
+                    completionBlock(comment: comment, error: nil)
+                }else{
+                    completionBlock(comment: nil, error: error)
+                }
+            }else{
+                completionBlock(comment: nil, error: error)
+            }
+        }
     }
     
     public func getAllExpenses(#community: Community, completionBlock: (expenses: Array<Expense>?, error: NSError?) -> ()) {
@@ -89,7 +153,7 @@ public class ParseDatabase: NSObject {
                     
                     for object in objects{
                        
-                        let expense = CondoApiMapper.expenseFromPFOBject(object)
+                        let expense = CondoApiMapper.expenseFromPFObject(object)
                         
                         if let expense = expense {
                             expenses.append(expense)
@@ -99,6 +163,38 @@ public class ParseDatabase: NSObject {
                     completionBlock(expenses: expenses, error: nil)
                 }else{
                     completionBlock(expenses: [], error: error)
+                }
+            }
+        }
+    }
+    
+    public func getAllPosts(#community: Community, completionBlock: (posts: Array<Post>?, error: NSError?) -> ()){
+        
+        let query = PFQuery(className: "Post")
+        query.whereKey("community", equalTo: community.id)
+        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+            
+            if let error = error {
+                completionBlock(posts: [], error: error)
+            }else{
+                
+                if let objects = objects as? [PFObject] {
+                    
+                    var posts : Array<Post> = []
+                    
+                    for object in objects {
+                        
+                        let post = CondoApiMapper.postFromPFObject(object)
+                        
+                        if let post = post {
+                            posts.append(post)
+                        }
+                    }
+                    
+                    completionBlock(posts: posts, error: nil)
+                    
+                }else{
+                    completionBlock(posts: [], error: error)
                 }
             }
         }

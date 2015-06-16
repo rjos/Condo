@@ -18,12 +18,12 @@ public class Post: Model {
     public let owner: User
     public let type: PostContentType
     public let text: String
-    public let comments: ModelList
+    public let community: String
     public override init(dictionary: Dictionary<String, AnyObject>) {
         self.owner = dictionary["owner"] as! User
         self.text = dictionary["text"] as! String
         self.type = PostContentType(rawValue: dictionary["type"] as! String)!
-        self.comments = dictionary["comments"] as! ModelList
+        self.community = dictionary["community"] as! String
         super.init(dictionary: dictionary)
     }
 }
@@ -49,9 +49,7 @@ public class PostReport: Post {
 }
 
 public class PostQuestion: Post {
-    public let answers: ModelList
     public override init(var dictionary: Dictionary<String, AnyObject>) {
-        self.answers = dictionary["answers"] as! ModelList
         dictionary["type"] = PostContentType.Question.rawValue
         super.init(dictionary: dictionary)
     }
@@ -65,9 +63,11 @@ public class PostQuestionAnswer: Model {
     }
     public let owner: User
     public let status: PostQuestionAnswerStatus
+    public let postId: String
     public override init(dictionary: Dictionary<String, AnyObject>) {
         self.status = PostQuestionAnswerStatus(rawValue: dictionary["status"] as! String)!
         self.owner = dictionary["owner"] as! User
+        self.postId = dictionary["post"] as! String
         super.init(dictionary: dictionary)
     }
 }
