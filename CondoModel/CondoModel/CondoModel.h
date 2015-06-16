@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Parse/Parse.h"
+#import "Bolts/Bolts.h"
 
 //! Project version number for CondoModel.
 FOUNDATION_EXPORT double CondoModelVersionNumber;

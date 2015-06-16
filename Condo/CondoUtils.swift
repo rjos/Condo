@@ -29,23 +29,23 @@ extension UIColor {
     }
     
     static func condoBlue() -> UIColor {
-        return UIColor.rgba(75, g: 181, b: 198, a: 255)
+        return UIColor.rgba(0, g: 182, b: 200, a: 255)
     }
     
     static func condoYellow() -> UIColor {
-        return UIColor.rgba(234, g: 186, b: 52, a: 255)
+        return UIColor.rgba(250, g: 187, b: 26, a: 255)
     }
     
     static func condoRed() -> UIColor {
-        return UIColor.rgba(186, g: 81, b: 77, a: 255)
+        return UIColor.rgba(213, g: 80, b: 76, a: 255)
     }
     
     static func condoGreen() -> UIColor {
-        return UIColor.rgba(129, g: 195, b: 134, a: 255)
+        return UIColor.rgba(85, g: 196, b: 132, a: 255)
     }
     
     static func condoPurple() -> UIColor {
-        return UIColor.rgba(103, g: 78, b: 142, a: 255)
+        return UIColor.rgba(112, g: 77, b: 145, a: 255)
     }
 }
 

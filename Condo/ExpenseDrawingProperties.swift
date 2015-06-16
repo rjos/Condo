@@ -88,6 +88,9 @@ struct ExpenseDrawingProperties {
         self.selectedFillColor = UIColor.whiteColor()
         self.normalFillColor = UIColor(white: 1.0, alpha: 0.3)
     
+        //daqui pra cima é constante e daqui pra baixo é por tipo de despesa
+        
+        
         switch type {
         case .Water:
             self.svgFileName = "agua"
@@ -167,6 +170,10 @@ struct ExpenseDrawingProperties {
             self.normalBackgroundColor = UIColor.grayColor()
             self.selectedBackgroundColor = UIColor.grayColor()
         }
+        
+        //daqui pra cima é baixo é por tipo de despesa e daqui pra baixo é constante
+
+        
         self.normalBorderColor = self.normalBackgroundColor
         self.selectedBorderColor = self.selectedBackgroundColor
     }
