@@ -85,6 +85,14 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
         return self.expenseDictionary.keys.array[index]
     }
     
+//    func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+//        if let g = self.expenseGraphViewController {
+//            return !g.animating
+//        }else{
+//            return true
+//        }
+//    }
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! ExpenseCollectionViewCell
         let type = self.expenseType(indexPath: indexPath)

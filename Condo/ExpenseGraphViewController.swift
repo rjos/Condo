@@ -39,15 +39,28 @@ class ExpenseGraphViewController: UIViewController, JBBarChartViewDataSource, JB
             }
         }
     }
-    
+    var animating: Bool = false
+    var aCount: Int = 0
     var selectedType = ExpenseType.allValues[0] {
         didSet{
             var p = ExpenseDrawingProperties(type: self.selectedType)
             self.view.backgroundColor = p.selectedBackgroundColor
             self.barChartView.backgroundColor = p.selectedBackgroundColor
             self.expenseNameLabel.text = p.name
-            self.barChartView.reloadData()
-            self.barChartView.setState(JBChartViewState.Expanded, animated: true)
+            if self.animating {
+                self.barChartView.reloadData()
+            }else {
+                self.aCount++
+                self.animating = true
+                println("Started animation (\(self.aCount))")
+                self.barChartView.setState(JBChartViewState.Collapsed, animated: true) { () -> Void in
+                    self.barChartView.reloadData()
+                    self.barChartView.setState(JBChartViewState.Expanded, animated: true) { () -> Void in
+                        println("Finished animation (\(self.aCount))")
+                        self.animating = false
+                    }
+                }
+            }
         }
     }
     
@@ -65,7 +78,6 @@ class ExpenseGraphViewController: UIViewController, JBBarChartViewDataSource, JB
         let expense = self.expenses[Int(index)]
         self.detailLabel.hidden = false
         self.detailLabel.text = "\(self.month(expense.expenseDate.month)): \(expense.totalExpense)"
-        println("Selected")
     }
     func didDeselectBarChartView(barChartView: JBBarChartView!) {
         self.detailLabel.hidden = true
