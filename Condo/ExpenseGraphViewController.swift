@@ -22,15 +22,20 @@ class ExpenseGraphViewController: UIViewController, JBLineChartViewDelegate, JBL
         // Do any additional setup after loading the view.
     }
     
-    var selectedType = ExpenseType.allValues[0] {
-        willSet{
-            //self.lineChartView.setState(JBChartViewState.Collapsed, animated: true)
+    var expenses: Array<Expense> = [] {
+        didSet{
+            println(self.expenses)
         }
+    }
+    
+    var selectedType = ExpenseType.allValues[0] {
         didSet{
             var p = ExpenseDrawingProperties(type: self.selectedType)
             self.view.backgroundColor = p.selectedBackgroundColor
             self.lineChartView.backgroundColor = p.selectedBackgroundColor
             self.expenseNameLabel.text = p.name
+            self.lineChartView.reloadData()
+            self.lineChartView.setState(JBChartViewState.Collapsed, animated: true)
             self.lineChartView.setState(JBChartViewState.Expanded, animated: true)
         }
     }
@@ -46,14 +51,19 @@ class ExpenseGraphViewController: UIViewController, JBLineChartViewDelegate, JBL
         return 1
     }
     func lineChartView(lineChartView: JBLineChartView!, numberOfVerticalValuesAtLineIndex lineIndex: UInt) -> UInt {
-        return 12
+        return UInt(self.expenses.count)
+        
+        //return 12
     }
     
     //MARK: LineChartView Delegate
     func lineChartView(lineChartView: JBLineChartView!, verticalValueForHorizontalIndex horizontalIndex: UInt, atLineIndex lineIndex: UInt) -> CGFloat {
-        var test =  sin(CGFloat(horizontalIndex))
-        test = abs(test)
-        return test
+//        var test =  sin(CGFloat(horizontalIndex))
+//        test = abs(test)
+//        return test
+        let expense = self.expenses[Int(horizontalIndex)]
+        
+        return CGFloat(expense.totalExpense.doubleValue)
     }
     func lineChartView(lineChartView: JBLineChartView!, colorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
         return UIColor.whiteColor()
@@ -79,9 +89,8 @@ class ExpenseGraphViewController: UIViewController, JBLineChartViewDelegate, JBL
     }
     
     func lineChartView(lineChartView: JBLineChartView!, didSelectLineAtIndex lineIndex: UInt, horizontalIndex: UInt, touchPoint: CGPoint) {
-        var test =  sin(CGFloat(horizontalIndex))
-        test = abs(test)
-        self.detailLabel.text = "\(test)"
+        let expense = self.expenses[Int(horizontalIndex)]
+        self.detailLabel.text = "\(expense.totalExpense)"
     }
     
 

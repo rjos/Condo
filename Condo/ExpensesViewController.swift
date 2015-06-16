@@ -21,7 +21,7 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.collectionView!.registerNib(UINib(nibName: "ExpenseCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.registerNib(UINib(nibName: "ExpenseCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: "cell")
         
 
         self.title = DummyDatabase().community.name
@@ -61,6 +61,7 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
         didSet{
             
             var p = ExpenseDrawingProperties(type: self.selectedType)
+            self.expenseGraphViewController?.expenses = self.expenseDictionary[self.selectedType]!
             self.expenseGraphViewController?.selectedType = self.selectedType
             self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
             self.navigationController?.navigationBar.barTintColor = p.selectedBackgroundColor
@@ -85,7 +86,7 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ExpenseCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! ExpenseCollectionViewCell
         let type = self.expenseType(indexPath: indexPath)
         cell.expenseProperties = ExpenseDrawingProperties(type: type)
         return cell

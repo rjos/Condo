@@ -10,7 +10,6 @@
 		0200C98B1B2B49BC008ED219 /* ExpenseDrawingProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200C98A1B2B49BC008ED219 /* ExpenseDrawingProperties.swift */; };
 		0200C98D1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200C98C1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift */; };
 		0200C98F1B2B7294008ED219 /* test.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0200C98E1B2B7294008ED219 /* test.svg */; };
-		0206D6141B2A123100CD3A0E /* ExpensesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206D6131B2A123100CD3A0E /* ExpensesCollectionViewController.swift */; };
 		0206D6181B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206D6161B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift */; };
 		0206D6191B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0206D6171B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib */; };
 		0206D62C1B2A1BEF00CD3A0E /* agua.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0206D61D1B2A1BEF00CD3A0E /* agua.svg */; };
@@ -122,7 +121,6 @@
 		0200C98A1B2B49BC008ED219 /* ExpenseDrawingProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseDrawingProperties.swift; sourceTree = "<group>"; };
 		0200C98C1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseHeaderReusableView.swift; sourceTree = "<group>"; };
 		0200C98E1B2B7294008ED219 /* test.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.svg; sourceTree = "<group>"; };
-		0206D6131B2A123100CD3A0E /* ExpensesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesCollectionViewController.swift; sourceTree = "<group>"; };
 		0206D6161B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCollectionViewCell.swift; sourceTree = "<group>"; };
 		0206D6171B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseCollectionViewCell.xib; sourceTree = "<group>"; };
 		0206D61D1B2A1BEF00CD3A0E /* agua.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = agua.svg; sourceTree = "<group>"; };
@@ -264,7 +262,6 @@
 				024157511B2DF13F000ADCB5 /* ExpenseGraphViewController.swift */,
 				021544301B2943080057B176 /* VectorTestViewController.swift */,
 				1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */,
-				0206D6131B2A123100CD3A0E /* ExpensesCollectionViewController.swift */,
 				1B9CE3AF1B2F450400866898 /* TestParseViewController.swift */,
 				1BE15C6E1B2F5EBC001BC7BF /* TestExpenseParseViewController.swift */,
 			);
@@ -579,7 +576,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0215442D1B293C050057B176 /* VectorView.swift in Sources */,
-				0206D6141B2A123100CD3A0E /* ExpensesCollectionViewController.swift in Sources */,
 				02AD60571B28BD87000D5210 /* PostView.swift in Sources */,
 				024D32AC1B2CFEDC0061D518 /* SLKTextView.m in Sources */,
 				0200C98D1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift in Sources */,

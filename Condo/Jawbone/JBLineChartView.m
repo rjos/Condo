@@ -1477,7 +1477,7 @@ static UIColor *kJBLineChartViewDefaultDotSelectionColor = nil;
             
             animation.duration = duration;
             animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-            [fill addAnimation:animation forKey:[NSString stringWithFormat:@"Animation(%lu)",(unsigned long)lineIndex]];
+            [fill addAnimation:animation forKey:[NSString stringWithFormat:@"Animation(%lu)-fill",(unsigned long)lineIndex]];
         }
         
         lineIndex++;
