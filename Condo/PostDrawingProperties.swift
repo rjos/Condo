@@ -23,15 +23,15 @@ struct PostDrawingProperties {
         case PostContentType.Announcement:
             self.outlineColor = UIColor.condoAnnouncementBackgroundColor()
             self.lineWidth = 2.0
-            self.imageIconName = ""
+            self.imageIconName = "announcement"
         case PostContentType.Question:
             self.outlineColor = UIColor.condoQuestionBackgroundColor()
             self.lineWidth = 2.0
-            self.imageIconName = ""
+            self.imageIconName = "question"
         case PostContentType.Report:
             self.outlineColor = UIColor.condoReportBackgroundColor()
             self.lineWidth = 2.0
-            self.imageIconName = ""
+            self.imageIconName = "report"
         }
     }
 }
