@@ -15,6 +15,8 @@ class PostDetailTableViewController: SLKTextViewController {
     override class func tableViewStyleForCoder(decoder: NSCoder) -> UITableViewStyle {
         return UITableViewStyle.Plain;
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.inverted = false
@@ -29,6 +31,7 @@ class PostDetailTableViewController: SLKTextViewController {
         self.tableView.estimatedRowHeight = 100.0
         self.textInputbar.translucent = false
         self.rightButton.setTitle("Enviar", forState: .Normal)
+        
         //self.tableView.reloadData()
     }
 
@@ -79,6 +82,9 @@ class PostDetailTableViewController: SLKTextViewController {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("comment", forIndexPath: indexPath) as! CommentTableViewCell
         cell.comment = self.post!.comments.modelAtIndex(indexPath.row) as? Comment
         cell.isEven = indexPath.row % 2 == 0
+        let draw = PostDrawingProperties(type: self.post!.type)
+        cell.lbName.textColor = draw.outlineColor
+        cell.lbComment.textColor = draw.outlineColor
         return cell
     }
     

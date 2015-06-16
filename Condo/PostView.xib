@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E36b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -18,7 +18,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljC-Xd-ZeF" userLabel="userNameLabel">
-                    <rect key="frame" x="56" y="18.5" width="41" height="19.5"/>
+                    <rect key="frame" x="56" y="18" width="41" height="19.5"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -43,10 +43,10 @@
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wTY-MI-KPf">
-                    <rect key="frame" x="386" y="8" width="40" height="40"/>
+                    <rect key="frame" x="396" y="8" width="30" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="40" id="5M6-QN-tcZ"/>
-                        <constraint firstAttribute="height" constant="40" id="EWp-B0-dht"/>
+                        <constraint firstAttribute="width" constant="30" id="5M6-QN-tcZ"/>
+                        <constraint firstAttribute="height" constant="30" id="EWp-B0-dht"/>
                     </constraints>
                 </imageView>
             </subviews>
@@ -58,12 +58,12 @@
                 <constraint firstItem="I9z-be-Crx" firstAttribute="centerY" secondItem="PUq-xe-O3a" secondAttribute="centerY" id="DNa-oY-Sb6"/>
                 <constraint firstAttribute="trailing" secondItem="wTY-MI-KPf" secondAttribute="trailing" constant="8" id="FHs-HL-cJa"/>
                 <constraint firstItem="I9z-be-Crx" firstAttribute="trailing" secondItem="1eR-zp-Qs3" secondAttribute="trailing" id="IZb-Ee-lNP"/>
+                <constraint firstItem="wTY-MI-KPf" firstAttribute="top" secondItem="zJK-En-qRr" secondAttribute="top" id="IjU-3v-seL"/>
                 <constraint firstItem="I9z-be-Crx" firstAttribute="top" secondItem="1eR-zp-Qs3" secondAttribute="bottom" constant="8" id="ORc-N2-zLA"/>
                 <constraint firstAttribute="bottom" secondItem="I9z-be-Crx" secondAttribute="bottom" id="Zbi-xd-vqU"/>
                 <constraint firstItem="1eR-zp-Qs3" firstAttribute="top" secondItem="zJK-En-qRr" secondAttribute="bottom" constant="8" id="bis-1x-1e3"/>
                 <constraint firstItem="zJK-En-qRr" firstAttribute="centerY" secondItem="ljC-Xd-ZeF" secondAttribute="centerY" id="kwd-DC-rHB"/>
                 <constraint firstAttribute="trailing" secondItem="I9z-be-Crx" secondAttribute="trailing" constant="8" id="l2n-yZ-h7V"/>
-                <constraint firstItem="wTY-MI-KPf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="oQj-LX-LXJ"/>
                 <constraint firstItem="ljC-Xd-ZeF" firstAttribute="leading" secondItem="zJK-En-qRr" secondAttribute="trailing" constant="8" id="xxX-6f-crO"/>
                 <constraint firstItem="1eR-zp-Qs3" firstAttribute="leading" secondItem="zJK-En-qRr" secondAttribute="leading" id="zaI-R5-6ic"/>
             </constraints>
