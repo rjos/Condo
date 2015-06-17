@@ -18,12 +18,14 @@ public class Post: Model {
     public let owner: User
     public let type: PostContentType
     public let text: String
-    public let community: String
+    public let community: Community
+    public let totalComments: Int
     public override init(dictionary: Dictionary<String, AnyObject>) {
         self.owner = dictionary["owner"] as! User
         self.text = dictionary["text"] as! String
         self.type = PostContentType(rawValue: dictionary["type"] as! String)!
-        self.community = dictionary["community"] as! String
+        self.community = dictionary["community"] as! Community
+        self.totalComments = dictionary["totalComments"] as! Int
         super.init(dictionary: dictionary)
     }
 }

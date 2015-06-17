@@ -42,7 +42,18 @@ class ListExpensesTableViewController: UITableViewController {
         let type = controller.getAllExpenseTypes()[indexPath.row]
         let property = ExpenseDrawingProperties(type: type)
         cell.textLabel?.text = property.name
-        cell.imageView?.image = UIImage(named: property.svgFileName)
+        var im = UIImage(named: property.svgFileName)
+        
+        cell.imageView?.image = im
+        cell.imageView?.frame = CGRect(origin: cell.imageView!.frame.origin, size: CGSize(width: 3, height: 3))
+        
+        let itemSize = CGSize(width: 35, height: 35)
+        UIGraphicsBeginImageContextWithOptions(itemSize, false, UIScreen.mainScreen().scale)
+        let imageRect = CGRect(x: 0.0, y: 0.0, width: itemSize.width, height: itemSize.height)
+        cell.imageView?.image?.drawInRect(imageRect)
+        cell.imageView?.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
         // Configure the cell...
 
         return cell

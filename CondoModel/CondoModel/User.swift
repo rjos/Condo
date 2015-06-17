@@ -12,9 +12,16 @@ public class User: Model {
     public let name: String
     //MARK: Tem que remover depois do dummy
     public let imageName: String
+    public var image:PFFile?
     override init(dictionary: Dictionary<String, AnyObject>) {
         self.name = dictionary["name"] as! String
         self.imageName = dictionary["imageName"] as! String
+        
+        if let imageData = (dictionary["image"] as? PFFile) {
+            
+            self.image = imageData
+        }
+        
         super.init(dictionary: dictionary)
     }
 }

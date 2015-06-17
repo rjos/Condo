@@ -50,12 +50,12 @@ public class ParseDatabase: NSObject {
     }
     
     public func testUser() -> User {
-        return User(dictionary: ["id": "fswYxDrqiG", "name": "pedro", "imageName": ""])
+        return User(dictionary: ["id": "Byxv7MQvph", "name": "pedro", "imageName": ""])
     }
     
     public func testPost(user: User) -> Post {
         return PostReport(dictionary: [
-            "id": "6pGX8Owasd",
+            "id": "WpUJEAST1l",
             "owner": user,
             "community":
             "GpMV5wxc37",
@@ -116,7 +116,7 @@ public class ParseDatabase: NSObject {
             
             if success {
                 
-                let post = CondoApiMapper.postFromPFObject(postObject)
+                let post = CondoApiMapper.postFromPFObject(postObject, user: owner, community: community)
                 
                 if let post = post {
                     completionBlock(post: post, error: nil)
@@ -139,7 +139,7 @@ public class ParseDatabase: NSObject {
         commentObject.saveInBackgroundWithBlock { (success:Bool, error:NSError?) -> Void in
             if success {
                 
-                let comment = CondoApiMapper.commentFromPFObject(commentObject)
+                let comment = CondoApiMapper.commentFromPFObject(commentObject, user: owner, post: post)
                 
                 if let comment = comment {
                     completionBlock(comment: comment, error: nil)
@@ -186,7 +186,8 @@ public class ParseDatabase: NSObject {
     public func getAllPosts(#community: Community, completionBlock: (posts: Array<Post>?, error: NSError?) -> ()){
         
         let query = PFQuery(className: "Post")
-        query.whereKey("community", equalTo: community.id)
+        query.whereKey("community", equalTo: PFObject(withoutDataWithClassName: "Community", objectId: community.id))
+        query.includeKey("owner")
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             
             if let error = error {
@@ -199,10 +200,17 @@ public class ParseDatabase: NSObject {
                     
                     for object in objects {
                         
-                        let post = CondoApiMapper.postFromPFObject(object)
+                        let owner = object["owner"] as! PFUser
                         
-                        if let post = post {
-                            posts.append(post)
+                        let userPost = CondoApiMapper.userFromPFObject(owner)
+                        
+                        if let userPost = userPost {
+                            
+                            let post = CondoApiMapper.postFromPFObject(object, user: userPost, community: community)
+                            
+                            if let post = post {
+                                posts.append(post)
+                            }
                         }
                     }
                     
