@@ -328,11 +328,7 @@
 				02ECE4BA1B30B6BE000FC6A0 /* SignUpViewController.swift */,
 				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
 				02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */,
-				02ECE4C01B31E8F7000FC6A0 /* ExpensesController.swift */,
-				0241574F1B2DECB9000ADCB5 /* ExpensesViewController.swift */,
-				024157511B2DF13F000ADCB5 /* ExpenseGraphViewController.swift */,
-				02ECE4C31B31EC51000FC6A0 /* ListExpensesTableViewController.swift */,
-				02ECE4BC1B30B6E4000FC6A0 /* AddExpenseTableViewController.swift */,
+				D1E279461B31FCCA00CB33FA /* Expenses */,
 				021544301B2943080057B176 /* VectorTestViewController.swift */,
 				1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */,
 				1B9CE3AF1B2F450400866898 /* TestParseViewController.swift */,
@@ -524,6 +520,18 @@
 			);
 			name = Frameworks;
 			path = CondoModel;
+			sourceTree = "<group>";
+		};
+		D1E279461B31FCCA00CB33FA /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				02ECE4C01B31E8F7000FC6A0 /* ExpensesController.swift */,
+				0241574F1B2DECB9000ADCB5 /* ExpensesViewController.swift */,
+				024157511B2DF13F000ADCB5 /* ExpenseGraphViewController.swift */,
+				02ECE4C31B31EC51000FC6A0 /* ListExpensesTableViewController.swift */,
+				02ECE4BC1B30B6E4000FC6A0 /* AddExpenseTableViewController.swift */,
+			);
+			name = Expenses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
