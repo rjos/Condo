@@ -40,7 +40,6 @@ class ExpenseGraphViewController: UIViewController, JBBarChartViewDataSource, JB
         }
     }
     var animating: Bool = false
-    var aCount: Int = 0
     var selectedType = ExpenseType.allValues[0] {
         didSet{
             var p = ExpenseDrawingProperties(type: self.selectedType)
@@ -50,13 +49,10 @@ class ExpenseGraphViewController: UIViewController, JBBarChartViewDataSource, JB
             if self.animating {
                 self.barChartView.reloadData()
             }else {
-                self.aCount++
                 self.animating = true
-                println("Started animation (\(self.aCount))")
-                self.barChartView.setState(JBChartViewState.Collapsed, animated: true) { () -> Void in
+                self.barChartView.setState(JBChartViewState.Collapsed, animated: false) { () -> Void in
                     self.barChartView.reloadData()
                     self.barChartView.setState(JBChartViewState.Expanded, animated: true) { () -> Void in
-                        println("Finished animation (\(self.aCount))")
                         self.animating = false
                     }
                 }

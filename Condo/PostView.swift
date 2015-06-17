@@ -48,13 +48,13 @@ class PostView: UIView {
                 self.userImageView.image = UIImage(named: post.owner.imageName)
                 self.postTextLabel.text = post.text
                 self.userNameLabel.text = post.owner.name
-                if post.comments.count() == 0 {
-                    self.commentCountLabel.text = "Sem comentários"
-                }else if post.comments.count() == 1 {
-                    self.commentCountLabel.text = "\(post.comments.count()) comentário"
-                } else {
-                    self.commentCountLabel.text = "\(post.comments.count()) comentários"
-                }
+//                if post.comments.count() == 0 {
+//                    self.commentCountLabel.text = "Sem comentários"
+//                }else if post.comments.count() == 1 {
+//                    self.commentCountLabel.text = "\(post.comments.count()) comentário"
+//                } else {
+//                    self.commentCountLabel.text = "\(post.comments.count()) comentários"
+//                }
                 self.nextImageHidden = true
                 let properties = PostDrawingProperties(type: self.post!.type)
                 let imageName = properties.imageIconName

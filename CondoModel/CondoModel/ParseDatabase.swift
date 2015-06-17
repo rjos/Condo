@@ -54,31 +54,46 @@ public class ParseDatabase: NSObject {
     }
     
     public func testPost(user: User) -> Post {
-        return PostReport(dictionary: ["id": "6pGX8Owasd", "owner": user, "community": "GpMV5wxc37", "text": "teste 1", "status":"PostReportStatusOpen", "type": "PostContentTypeReport"])
+        return PostReport(dictionary: [
+            "id": "6pGX8Owasd",
+            "owner": user,
+            "community":
+            "GpMV5wxc37",
+            "text": "teste 1",
+            "status":"PostReportStatusOpen",
+            "type": "PostContentTypeReport"
+            ])
+    }
+    
+    
+    public func createExpenses(#expenses: Array<Dictionary<String, AnyObject>>, community: Community, completionBlock: (expenses: Array<Expense>?, error: NSError?) -> ()) {
+        var expensePFObjects: Array<PFObject> = []
+        for expenseDictionary in expenses {
+            let expense = CondoApiMapper.PFObjectFromExpenseDictionary(expenseDictionary, community: community)
+            expensePFObjects.append(expense)
+        }
+        PFObject.saveAllInBackground(expensePFObjects, block: { (success, error) -> Void in
+            if success {
+                var result: Array<Expense> = []
+                for object in expensePFObjects {
+                    result.append(CondoApiMapper.expenseFromPFObject(object)!)
+                }
+                completionBlock(expenses: result, error: error)
+            }else{
+                completionBlock(expenses: nil, error: error)
+            }
+        })
     }
     
     public func createExpense(#type: ExpenseType, date: NSDate, totalExpense: NSNumber, community: Community, completionBlock: (expense: Expense?, error: NSError?) -> ()){
-        
-        let expenseObject = PFObject(className: "Expense")
-        expenseObject["communityId"] = PFObject(withoutDataWithClassName: "Community", objectId: community.id)
-        expenseObject["type"] = type.rawValue
-        expenseObject["date"] = date
-        expenseObject["totalExpense"] = totalExpense
-        
-        expenseObject.saveInBackgroundWithBlock({(success:Bool, error:NSError?) -> Void in
-            if success{
-                
-                let expense = CondoApiMapper.expenseFromPFObject(expenseObject)
-                
-                if let expense = expense {
-                    completionBlock(expense: expense, error: error)
-                }else{
-                    completionBlock(expense: nil, error: error)
-                }
+        let d = Expense.dictionary(type: type, date: date, totalExpense: totalExpense)
+        self.createExpenses(expenses: [d], community: community) { (expenses, error) -> () in
+            if let e = expenses {
+                completionBlock(expense: e[0], error: error)
             }else{
                 completionBlock(expense: nil, error: error)
             }
-        })
+        }
     }
     
     public func createPost(#type: PostContentType, owner: User, text: String, status: PostReport.PostReportStatus, community: Community, completionBlock: (post: Post?, error: NSError?) -> ()) {

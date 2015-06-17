@@ -56,4 +56,11 @@ public class Expense: Model {
         self.expenseDate = dictionary["expenseDate"] as! NSDate
         super.init(dictionary: dictionary)
     }
+    public static func dictionary(#type: ExpenseType, date: NSDate, totalExpense: NSNumber) -> Dictionary<String, AnyObject> {
+        return [
+            "type": type.rawValue,
+            "totalExpense": totalExpense,
+            "expenseDate": date
+        ]
+    }
 }

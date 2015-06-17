@@ -11,7 +11,7 @@
 // Numerics
 CGFloat static const kJBBarChartViewBarBasePaddingMutliplier = 50.0f;
 CGFloat static const kJBBarChartViewUndefinedCachedHeight = -1.0f;
-CGFloat static const kJBBarChartViewStateAnimationDuration = 0.10f;
+CGFloat static const kJBBarChartViewStateAnimationDuration = 0.05f;
 CGFloat static const kJBBarChartViewStatePopOffset = 10.0f;
 NSInteger static const kJBBarChartViewUndefinedBarIndex = -1;
 
@@ -398,23 +398,35 @@ static UIColor *kJBBarChartViewDefaultBarColor = nil;
             for (UIView *barView in self.barViews)
             {
 #pragma mark - ______HACK_PARA_MELHORAR_A_ANIMACAO_________
-                //NSTimeInterval oldDelay = (kJBBarChartViewStateAnimationDuration * 0.5) * index;
- 
-                [UIView animateWithDuration:kJBBarChartViewStateAnimationDuration delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-                    updateBarView(barView, YES);
+                NSTimeInterval oldDelay = (kJBBarChartViewStateAnimationDuration * 0.5) * index;
+                
+                [UIView animateWithDuration:0.5 delay:oldDelay usingSpringWithDamping:0.4 initialSpringVelocity:0.4 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                    updateBarView(barView, NO);
                 } completion:^(BOOL finished) {
-                    [UIView animateWithDuration:kJBBarChartViewStateAnimationDuration delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-                        updateBarView(barView, NO);
-                    } completion:^(BOOL lastBarFinished) {
-                        if ((NSUInteger)barView.tag == [self.barViews count] - 1)
+                    if ((NSUInteger)barView.tag == [self.barViews count] - 1 || !finished)
+                    {
+                        if (callbackCopy)
                         {
-                            if (callbackCopy)
-                            {
-                                callbackCopy();
-                            }
+                            callbackCopy();
                         }
-                    }];
+                    }
                 }];
+ 
+//                [UIView animateWithDuration:kJBBarChartViewStateAnimationDuration delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+//                    updateBarView(barView, YES);
+//                } completion:^(BOOL finished) {
+//                    [UIView animateWithDuration:kJBBarChartViewStateAnimationDuration delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+//                        updateBarView(barView, NO);
+//                    } completion:^(BOOL lastBarFinished) {
+//                        if ((NSUInteger)barView.tag == [self.barViews count] - 1)
+//                        {
+//                            if (callbackCopy)
+//                            {
+//                                callbackCopy();
+//                            }
+//                        }
+//                    }];
+//                }];
                 index++;
             }
         }

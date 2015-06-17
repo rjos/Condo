@@ -21,6 +21,15 @@ class CondoApiMapper: NSObject {
         return Community(dictionary: dictionary)
     }
     
+    static func PFObjectFromExpenseDictionary(dictionary: Dictionary<String, AnyObject>, community: Community) ->PFObject {
+        let expenseObject = PFObject(className: "Expense")
+        expenseObject["communityId"] = PFObject(withoutDataWithClassName: "Community", objectId: community.id)
+        expenseObject["type"] = dictionary["type"] as! String
+        expenseObject["date"] = dictionary["expenseDate"] as! NSDate
+        expenseObject["totalExpense"] = dictionary["totalExpense"] as! NSNumber
+        return expenseObject
+    }
+    
     static func expenseFromPFObject(object: PFObject) -> Expense? {
         let dic :Dictionary<String, AnyObject> = [
             "id": object.objectId!,

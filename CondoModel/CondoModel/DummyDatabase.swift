@@ -35,6 +35,7 @@ public class DummyDatabase: NSObject {
             let postDic1 : Dictionary<String, AnyObject> = [
                 "id": "announcements-1",
                 "owner": adm,
+                "community": "c?",
                 "text": "Infelizmente nosso querido zelador Zequinha se encontra hospitalizado depois de ter recebido uma privada na cabeça num jogo de futebol. Até a sua melhora, contratei um substituto, nenhuma mudança no condomínio será necessária (trabalho escravo).",
                 "comments": DummyModelList(data: self.getCommentByIdPost("announcements-1"))
             ]
@@ -43,6 +44,7 @@ public class DummyDatabase: NSObject {
             let postDic2 : Dictionary<String, AnyObject> = [
                 "id": "announcements-2",
                 "owner": adm,
+                "community": "c?",
                 "text": "Lembrando para todo mundo que está chegando a data do pagamento dos porteiros, preciso que todos estejam em dia com o condomínio.",
                 "comments": DummyModelList(data: self.getCommentByIdPost("announcements-2"))
             ]
@@ -51,6 +53,7 @@ public class DummyDatabase: NSObject {
             let postDic3 : Dictionary<String, AnyObject> = [
                 "id": "announcements-3",
                 "owner": adm,
+                "community": "c?",
                 "text": "Hoje é dia de festa, Zequinha voltou para o nosso prédio! Estamos muito felizes com sua recuperação!",
                 "comments": DummyModelList(data: self.getCommentByIdPost("announcements-3"))
             ]
@@ -67,6 +70,7 @@ public class DummyDatabase: NSObject {
             let postDic1 : Dictionary<String, AnyObject> = [
                 "id": "questions-1",
                 "owner": adm,
+                "community": "c?",
                 "text": "O que vocês acham da ideia de trocar todas as lâmpadas para um padrão mais eficiente? Estamos gastando muito dinheiro com a energia comum. O custo esperado seria de aproximadamente R$500.",
                 "comments": DummyModelList(data: self.getCommentByIdPost("questions-1")),
                 "answers": DummyModelList(data: [])
@@ -83,6 +87,7 @@ public class DummyDatabase: NSObject {
             let postDic1 : Dictionary<String, AnyObject> = [
                 "id": "reports-1",
                 "owner": user1,
+                "community": "c?",
                 "text": "Mermão doido, tem lixo na frente do meu apartamento. Quando fui sair para trabalhar achei que estava na muribeca #odeiomeuvizinho",
                 "comments": DummyModelList(data: self.getCommentByIdPost("reports-1")),
                 "status": PostReport.PostReportStatus.Open.rawValue
@@ -97,35 +102,41 @@ public class DummyDatabase: NSObject {
         let comment_1 = Comment(dictionary: [
             "id": "comments-1",
             "owner" : self.allUsers["pedro"]!,
+            "post": id,
             "text"  : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt"
         ])
         
         let comment_2 = Comment(dictionary: [
             "id": "comments-2",
+            "post": id,
             "owner" : self.allUsers["lucas"]!,
             "text"  : "Mas esse comentário tbm ta ruim"
         ])
         
         let comment_3 = Comment(dictionary: [
             "id": "comments-3",
+            "post": id,
             "owner" : self.allUsers["guedes"]!,
             "text"  : "então relaxa ai, pq vocês são muitos fracos"
         ])
         
         let comment_4 = Comment(dictionary: [
             "id": "comments-4",
+            "post": id,
             "owner" : self.allUsers["maria"]!,
             "text"  : "Que cara doidão vlh"
         ])
         
         let comment_5 = Comment(dictionary: [
             "id": "comments-5",
+            "post": id,
             "owner" : self.allUsers["hunka"]!,
             "text"  : "Esse teu vizinho é doido mesmo"
         ])
         
         let comment_adm = Comment(dictionary: [
             "id": "comments-6",
+            "post": id,
             "owner" : self.allUsers["adm"]!,
             "text"  : "Parem de pertubar, por favor"
         ])

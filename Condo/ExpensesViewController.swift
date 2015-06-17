@@ -26,8 +26,8 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
 
         self.title = DummyDatabase().community.name
         
-        //self.fetchData()
-        self.test()
+        self.fetchData()
+        //self.test()
         // Do any additional setup after loading the view.
     }
     

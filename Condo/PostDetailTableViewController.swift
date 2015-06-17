@@ -50,7 +50,7 @@ class PostDetailTableViewController: SLKTextViewController {
             if section == 0 {
                 return 1
             }else{
-                return post.comments.count()
+                return 0//post.comments.count()
             }
         }
         return 0
@@ -80,7 +80,7 @@ class PostDetailTableViewController: SLKTextViewController {
 
     func commentCell(indexPath: NSIndexPath) -> CommentTableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("comment", forIndexPath: indexPath) as! CommentTableViewCell
-        cell.comment = self.post!.comments.modelAtIndex(indexPath.row) as? Comment
+        //cell.comment = self.post!.comments.modelAtIndex(indexPath.row) as? Comment
         cell.isEven = indexPath.row % 2 == 0
         let draw = PostDrawingProperties(type: self.post!.type)
         cell.lbName.textColor = draw.outlineColor
