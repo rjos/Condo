@@ -38,7 +38,7 @@ class AddExpenseTableViewController: UITableViewController {
             if let e = expenses {
                 self.dismissViewControllerAnimated(true, completion: nil)
             }else{
-                println("error uploading expeneses \(error)")
+                println("error uploading expenses \(error)")
             }
         }
         

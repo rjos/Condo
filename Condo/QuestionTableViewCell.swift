@@ -22,6 +22,7 @@ class QuestionTableViewCell: UITableViewCell {
 
         self.postHolder = PostView.instantiateWithOwner(self)
         self.postView.fillWithSubview(postHolder!)
+        self.selectionStyle = UITableViewCellSelectionStyle.None
         // Initialization code
     }
 

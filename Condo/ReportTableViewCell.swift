@@ -17,6 +17,7 @@ class ReportTableViewCell: UITableViewCell {
         super.awakeFromNib()
         self.postView = PostView.instantiateWithOwner(self)
         self.mainView.fillWithSubview(postView!)
+        self.selectionStyle = UITableViewCellSelectionStyle.None
     }
     
     var post: Post? = nil {

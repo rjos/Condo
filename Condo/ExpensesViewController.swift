@@ -27,15 +27,8 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
         self.title = DummyDatabase().community.name
         
         self.fetchData()
-        //self.test()
-        // Do any additional setup after loading the view.
     }
     
-    func test() {
-        for type in ExpenseType.allValues {
-            self.expenseDictionary[type] = Array<Expense>()
-        }
-    }
     func fetchData() {
         let community = ParseDatabase.sharedDatabase.testCommunity()
         ParseDatabase.sharedDatabase.getAllExpenses(community: community) { (expenses, error) -> () in
@@ -91,13 +84,7 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
         return self.expenseDictionary.keys.array[index]
     }
     
-//    func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        if let g = self.expenseGraphViewController {
-//            return !g.animating
-//        }else{
-//            return true
-//        }
-//    }
+
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! ExpenseCollectionViewCell

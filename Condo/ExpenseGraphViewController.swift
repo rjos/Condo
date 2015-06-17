@@ -39,6 +39,7 @@ class ExpenseGraphViewController: UIViewController, JBBarChartViewDataSource, JB
             }
         }
     }
+    
     var animating: Bool = false
     var selectedType = ExpenseType.allValues[0] {
         didSet{
@@ -68,22 +69,32 @@ class ExpenseGraphViewController: UIViewController, JBBarChartViewDataSource, JB
     
     //MARK: BarChartView Data Source
     func numberOfBarsInBarChartView(barChartView: JBBarChartView!) -> UInt {
-        return UInt(self.expenses.count)
+        return 12//UInt(self.expenses.count)
     }
     func barChartView(barChartView: JBBarChartView!, didSelectBarAtIndex index: UInt, touchPoint: CGPoint) {
-        let expense = self.expenses[Int(index)]
-        self.detailLabel.hidden = false
-        self.detailLabel.text = "\(self.month(expense.expenseDate.month)): \(expense.totalExpense)"
+//        let expense = self.expenses[Int(index)]
+//        self.detailLabel.hidden = false
+//        self.detailLabel.text = "\(self.month(expense.expenseDate.month)): \(expense.totalExpense)"
     }
     func didDeselectBarChartView(barChartView: JBBarChartView!) {
         self.detailLabel.hidden = true
         self.detailLabel.text = ""
     }
     
+    func getTotalExpenseForMonthIndex(index: Int ) -> CGFloat{
+        var total: CGFloat = 0.0
+        for expense in self.expenses {
+            if expense.expenseDate.month == index + 1 {
+                total += CGFloat(expense.totalExpense.doubleValue)
+            }
+        }
+        return total
+    }
+    
     //MARK: BarChartView Delegate
     func barChartView(barChartView: JBBarChartView!, heightForBarViewAtIndex index: UInt) -> CGFloat {
-        let expense = self.expenses[Int(index)]
-        return CGFloat(expense.totalExpense.doubleValue)
+        //let expense = self.expenses[Int(index)]
+        return self.getTotalExpenseForMonthIndex(Int(index))
     }
     
     func barChartView(barChartView: JBBarChartView!, colorForBarViewAtIndex index: UInt) -> UIColor! {
@@ -95,6 +106,7 @@ class ExpenseGraphViewController: UIViewController, JBBarChartViewDataSource, JB
     }
     
     func month(int: Int) -> String{
+        
         switch int {
         case 1: return "Janeiro"
         case 2: return "Fevereiro"

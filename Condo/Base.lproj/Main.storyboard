@@ -265,7 +265,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1qs-PP-tFD">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="oe9-xM-jqJ" kind="presentation" identifier="addExpensesSegue" id="bMR-jB-bn4"/>
+                                <segue destination="oe9-xM-jqJ" kind="presentation" identifier="addExpensesSegue" modalTransitionStyle="flipHorizontal" id="bMR-jB-bn4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -463,7 +463,7 @@
             <objects>
                 <tableViewController id="C9b-LU-MxS" customClass="AddExpenseTableViewController" customModule="Condo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="H81-ip-yp0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -486,7 +486,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aci-01-wlp" id="fPt-PJ-nvo">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tA7-jr-KMN">
+                                        <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tA7-jr-KMN">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
                                             <date key="date" timeIntervalSinceReferenceDate="456202894.02956003">
                                                 <!--2015-06-17 03:01:34 +0000-->
@@ -547,7 +547,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5b-08-YmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3070.5" y="1782.5"/>
+            <point key="canvasLocation" x="3056" y="960"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="imQ-C7-eEJ">
@@ -558,12 +558,45 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="C9b-LU-MxS" kind="relationship" relationship="rootViewController" id="mJ4-oy-Vnh"/>
+                        <segue destination="BJp-Nr-LzJ" kind="relationship" relationship="rootViewController" id="bMF-LN-BOB"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOe-H4-ccl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2378.5" y="1782.5"/>
+        </scene>
+        <!--List Expenses Table View Controller-->
+        <scene sceneID="oVp-yD-dxb">
+            <objects>
+                <tableViewController id="BJp-Nr-LzJ" customClass="ListExpensesTableViewController" customModule="Condo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="DXy-6u-9hK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iXs-59-3AF">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iXs-59-3AF" id="1EQ-ns-Hng">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BJp-Nr-LzJ" id="KcI-2j-yun"/>
+                            <outlet property="delegate" destination="BJp-Nr-LzJ" id="5tf-vn-URj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Qto-kL-GAe">
+                        <barButtonItem key="rightBarButtonItem" title="OK" style="done" id="S8J-NS-W2w">
+                            <connections>
+                                <action selector="okButtonPressed:" destination="BJp-Nr-LzJ" id="WZQ-zh-bs1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yTz-HL-klO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2947" y="1783"/>
         </scene>
     </scenes>
 </document>
