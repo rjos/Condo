@@ -50,7 +50,7 @@ class PostDetailTableViewController: SLKTextViewController {
             if section == 0 {
                 return 1
             }else{
-                return 0//post.comments.count()
+                return post.totalComments
             }
         }
         return 0
