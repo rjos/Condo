@@ -50,7 +50,7 @@ public class ParseDatabase: NSObject {
     }
     
     public func testUser() -> User {
-        return User(dictionary: ["id": "fswYxDrqiG", "name": "pedro", "imageName": ""])
+        return User(dictionary: ["id": "Byxv7MQvph", "name": "pedro", "imageName": ""])
     }
     
     public func testPost(user: User) -> Post {
@@ -188,7 +188,6 @@ public class ParseDatabase: NSObject {
         let query = PFQuery(className: "Post")
         query.whereKey("community", equalTo: PFObject(withoutDataWithClassName: "Community", objectId: community.id))
         query.includeKey("owner")
-        
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             
             if let error = error {
@@ -201,18 +200,16 @@ public class ParseDatabase: NSObject {
                     
                     for object in objects {
                         
-                        let owner = object["owner"] as? PFObject
+                        let owner = object["owner"] as! PFUser
                         
-                        if let owner = owner {
-                            let userPost = CondoApiMapper.userFromPFObject(owner)
+                        let userPost = CondoApiMapper.userFromPFObject(owner)
+                        
+                        if let userPost = userPost {
                             
-                            if let userPost = userPost {
-                                
-                                let post = CondoApiMapper.postFromPFObject(object, user: userPost, community: community)
-                                
-                                if let post = post {
-                                    posts.append(post)
-                                }
+                            let post = CondoApiMapper.postFromPFObject(object, user: userPost, community: community)
+                            
+                            if let post = post {
+                                posts.append(post)
                             }
                         }
                     }

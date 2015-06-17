@@ -11,11 +11,11 @@ import Parse
 
 class CondoApiMapper: NSObject {
     
-    static func userFromPFObject(object: PFObject) -> User? {
+    static func userFromPFObject(object: PFUser) -> User? {
         
         let dic: Dictionary<String, AnyObject> = [
             "id": object.objectId!,
-            "name": object["username"]!,
+            "name": object.username!,
             "imageName": "dummy-photo-pedro"
         ]
         

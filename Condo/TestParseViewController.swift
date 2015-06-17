@@ -26,13 +26,35 @@ class TestParseViewController: UIViewController {
     
     @IBAction func saveCommunity(sender: AnyObject) {
         
-        ParseDatabase.sharedDatabase.createCommunity(nameCommunity.text, administratorID: "1234") { (community, error) -> () in
-            if let error = error {
-                println(error)
+        /*ParseDatabase.sharedDatabase.createCommunity(nameCommunity.text, administratorID: "1234") { (community, error) -> () in
+        if let error = error {
+        println(error)
+        }else{
+        println("Funcionou!!!!")
+        }
+        }*/
+        
+        let community = ParseDatabase.sharedDatabase.testCommunity()
+        
+        let owner     = ParseDatabase.sharedDatabase.testUser()
+        
+        ParseDatabase.sharedDatabase.createPost(type: PostContentType.Announcement, owner: owner, text: nameCommunity.text, status: PostReport.PostReportStatus.Open, community: community) { (post, error) -> () in
+            if let post = post {
+                println("Funcionou")
             }else{
-                println("Funcionou!!!!")
+                println(error)
             }
         }
+        
+        /*let post      = ParseDatabase.sharedDatabase.testPost(owner)
+        
+        ParseDatabase.sharedDatabase.createComment(owner: owner, text: nameCommunity.text, post: post) { (comment, error) -> () in
+            if let comment = comment {
+                println("Funcionou")
+            }else{
+                println(error)
+            }
+        }*/
     }
 
     /*
