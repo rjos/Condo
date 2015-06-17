@@ -17,6 +17,8 @@ class ExpenseGraphViewController: UIViewController, JBBarChartViewDataSource, JB
     
     let evenSelectionColor = UIColor(white: 1.0, alpha: 0.8)
     let oddSelectionColor = UIColor(white: 1.0, alpha: 0.5)
+    
+    let currentDate = NSDate()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.barChartView.delegate = self
@@ -71,10 +73,20 @@ class ExpenseGraphViewController: UIViewController, JBBarChartViewDataSource, JB
     func numberOfBarsInBarChartView(barChartView: JBBarChartView!) -> UInt {
         return 12//UInt(self.expenses.count)
     }
+    
+    
+    
     func barChartView(barChartView: JBBarChartView!, didSelectBarAtIndex index: UInt, touchPoint: CGPoint) {
-//        let expense = self.expenses[Int(index)]
-//        self.detailLabel.hidden = false
-//        self.detailLabel.text = "\(self.month(expense.expenseDate.month)): \(expense.totalExpense)"
+        
+        let month = self.month(Int(index + 1))
+        let expenseTotal = self.getTotalExpenseForMonthIndex(Int(index))
+        self.detailLabel.hidden = false
+        if expenseTotal <= 0.00001 {
+            self.detailLabel.text = "\(month): Sem dados"
+        }else{
+            self.detailLabel.text = "\(month): \(expenseTotal)"
+        }
+        
     }
     func didDeselectBarChartView(barChartView: JBBarChartView!) {
         self.detailLabel.hidden = true
@@ -85,7 +97,10 @@ class ExpenseGraphViewController: UIViewController, JBBarChartViewDataSource, JB
         var total: CGFloat = 0.0
         for expense in self.expenses {
             if expense.expenseDate.month == index + 1 {
-                total += CGFloat(expense.totalExpense.doubleValue)
+                if expense.expenseDate.year == self.currentDate.year {
+                    total += CGFloat(expense.totalExpense.doubleValue)
+                }
+                
             }
         }
         return total

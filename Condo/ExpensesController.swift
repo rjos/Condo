@@ -23,7 +23,24 @@ class ExpensesController: NSObject {
     }
     
     func fetchNewData() {
-        
+        let community = ParseDatabase.sharedDatabase.testCommunity()
+        ParseDatabase.sharedDatabase.getAllExpenses(community: community) { (expenses, error) -> () in
+            if let expenses = expenses {
+                self.expenseDictionary = [:]
+                for expense in expenses {
+                    let type = expense.type
+                    var expenseArray: Array<Expense>
+                    if let array = self.expenseDictionary[type] {
+                        expenseArray = array
+                    } else {
+                        expenseArray = []
+                    }
+                    expenseArray.append(expense)
+                    self.expenseDictionary[type] = expenseArray
+                }
+                NSNotificationCenter.defaultCenter().postNotificationName(ExpensesControllerDataChangedNotification, object: self, userInfo: nil)
+            }
+        }
     }
     
     func getAllExpenseTypes() -> Array<ExpenseType> {
