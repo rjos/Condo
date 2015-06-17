@@ -55,7 +55,7 @@ public class ParseDatabase: NSObject {
     
     public func testPost(user: User) -> Post {
         return PostReport(dictionary: [
-            "id": "6pGX8Owasd",
+            "id": "WpUJEAST1l",
             "owner": user,
             "community":
             "GpMV5wxc37",
@@ -186,8 +186,9 @@ public class ParseDatabase: NSObject {
     public func getAllPosts(#community: Community, completionBlock: (posts: Array<Post>?, error: NSError?) -> ()){
         
         let query = PFQuery(className: "Post")
+        query.whereKey("community", equalTo: PFObject(withoutDataWithClassName: "Community", objectId: community.id))
         query.includeKey("owner")
-        query.whereKey("community", equalTo: community.id)
+        
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             
             if let error = error {

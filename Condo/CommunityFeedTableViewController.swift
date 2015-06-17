@@ -13,13 +13,23 @@ import CondoModel
 class CommunityFeedTableViewController: UITableViewController {
     var community: Community?
     
-    var database: DummyDatabase?
+    var database: Array<Post> = []
     
     var selectedPost: Post? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.database = DummyDatabase()
-        self.community = DummyDatabase().community
+        self.community = ParseDatabase.sharedDatabase.testCommunity() //DummyDatabase().community
+        
+        if let community = self.community {
+            
+            ParseDatabase.sharedDatabase.getAllPosts(community: community) { (posts, error) -> () in
+                if let posts = posts {
+                    self.database = posts
+                    println(posts)
+                    self.tableView.reloadData()
+                }
+            }
+        }
         
         self.tableView.registerNib(UINib(nibName: "AnnouncementTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "announcement")
         self.tableView.registerNib(UINib(nibName: "ReportTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "report")
@@ -38,15 +48,15 @@ class CommunityFeedTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        if let db = self.database {
-            return db.allPosts().count()
-        }
-        return 0
+        //if let db = self.database {
+            return database.count
+        //}
+        //return 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCellWithIdentifier("post", forIndexPath: indexPath) as! CommunityFeedTableViewCell
-        let post: Post = self.database!.allPosts().modelAtIndex(indexPath.row) as! Post
+        let post: Post = self.database[indexPath.row]//self.database!.allPosts().modelAtIndex(indexPath.row) as! Post
         let cell: UITableViewCell
         switch (post.type) {
         case (.Announcement):
@@ -68,7 +78,7 @@ class CommunityFeedTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.selectedPost = self.database!.allPosts().modelAtIndex(indexPath.row) as? Post
+        self.selectedPost = self.database[indexPath.row] //self.database!.allPosts().modelAtIndex(indexPath.row) as? Post
         self.performSegueWithIdentifier("showPost", sender: self)
     }
     
