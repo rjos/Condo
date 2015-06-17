@@ -284,7 +284,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bXb-Yh-ISX">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1qs-PP-tFD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="1qs-PP-tFD">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="oe9-xM-jqJ" kind="presentation" identifier="addExpensesSegue" modalTransitionStyle="flipHorizontal" id="bMR-jB-bn4"/>
