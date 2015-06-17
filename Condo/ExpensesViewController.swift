@@ -121,6 +121,7 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
     }
 
     
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -128,6 +129,11 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
         let segueName = segue.identifier
         if segueName == "ExpenseGraphViewControllerSegue" {
             expenseGraphViewController = segue.destinationViewController as? ExpenseGraphViewController
+        }
+        let type = self.selectedType
+        let p = ExpenseDrawingProperties(type: type)
+        if let vc = segue.destinationViewController as? UIViewController {
+            vc.view.tintColor = p.backgroundColor
         }
         
         // Get the new view controller using segue.destinationViewController.
