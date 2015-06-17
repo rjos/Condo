@@ -13,14 +13,20 @@ class LoginViewController:UIViewController{
     
     @IBOutlet var login:UITextField!
     @IBOutlet var password:UITextField!
+    @IBOutlet var loginbutton:UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginbutton.layer.cornerRadius = 10
+        loginbutton.backgroundColor = UIColor.condoBlue()
+        
     }
     
-    var loginCallback: (PFUser?, NSError?) -> () = {
-        (user, error) in
+    var loginCallback: (PFUser) -> () = {
+        (user) in
         //nothing
+
+        
     }
     
     @IBAction func login(sender: UIButton) {
@@ -33,8 +39,20 @@ class LoginViewController:UIViewController{
         
         PFUser.logInWithUsernameInBackground(loginaux as String, password:passwordaux as String) {
             (user: PFUser?, error: NSError?) -> Void in
-            self.loginCallback(user, error)
+            if let processedUser = user {
+                // Do stuff after successful login.
+                self.loginCallback(processedUser)
+                
+            } else {
+                self.displayAlertWithLoginError(error)
+                // The login failed. Check error to see why.
+            }
+            
         }
     }
-
+    
+    func displayAlertWithLoginError(error: NSError?) {
+        //dasd
+    }
+ 
 }

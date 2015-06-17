@@ -15,11 +15,13 @@ class SignUpViewController:UIViewController{
     @IBOutlet var nome:UITextField!
     @IBOutlet var email:UITextField!
     @IBOutlet var senha:UITextField!
+    @IBOutlet var cadastro:UIButton!
 
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        cadastro.layer.cornerRadius = 10
     }
     @IBAction func cadastro(sender: UIButton)
     {
@@ -34,13 +36,17 @@ class SignUpViewController:UIViewController{
             (succeeded: Bool, error: NSError?) -> Void in
             if let error = error {
                 let errorString = error.userInfo?["error"] as? NSString
+                self.displayAlertWithLoginError(error)
                 // Show the errorString somewhere and let the user try again.
                 
             } else {
-                NSLog("jafoi")
-                // Hooray! Let them use the app now.
+                self.dismissViewControllerAnimated(true, completion: nil)
             }
         }
+    }
+    
+    func displayAlertWithLoginError(error: NSError?) {
+        
     }
     
 }
