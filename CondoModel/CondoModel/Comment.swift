@@ -12,11 +12,11 @@ public class Comment: Model {
    
     public let owner : User
     public let text  : String
-    public let post  : String
+    public let post  : Post
     override init(dictionary: Dictionary<String, AnyObject>) {
         self.owner = dictionary["owner"] as! User
         self.text  = dictionary["text"]  as! String
-        self.post  = dictionary["post"]  as! String
+        self.post  = dictionary["post"]  as! Post
         super.init(dictionary: dictionary)
     }
 }

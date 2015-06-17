@@ -10,6 +10,18 @@ import UIKit
 import Parse
 
 class CondoApiMapper: NSObject {
+    
+    static func userFromPFObject(object: PFObject) -> User? {
+        
+        let dic: Dictionary<String, AnyObject> = [
+            "id": object.objectId!,
+            "name": object["username"]!,
+            "imageName": "dummy-photo-pedro"
+        ]
+        
+        return User(dictionary: dic)
+    }
+    
     static func communityFromPFObject(object: PFObject) -> Community? {
         
         let dictionary: Dictionary<String, AnyObject> = [
@@ -40,14 +52,15 @@ class CondoApiMapper: NSObject {
         return Expense(dictionary: dic)
     }
     
-    static func postFromPFObject(object: PFObject) -> Post? {
+    static func postFromPFObject(object: PFObject, user: User, community: Community) -> Post? {
         
         var dic: Dictionary<String, AnyObject> = [
             "id": object.objectId!,
             "type": object["type"]!,
-            "owner": object["owner"]!,
-            "community": object["community"]!,
-            "text": object["text"]!
+            "owner": user,
+            "community": community,
+            "text": object["text"]!,
+            "totalComments": object["totalComments"]!
         ]
         
         let dicStatus : Dictionary<String, AnyObject> = [
@@ -69,12 +82,12 @@ class CondoApiMapper: NSObject {
         return nil
     }
     
-    static func commentFromPFObject(object:PFObject) -> Comment? {
+    static func commentFromPFObject(object:PFObject, user:User, post: Post) -> Comment? {
         
         let dic:Dictionary<String, AnyObject> = [
             "id": object.objectId!,
-            "owner": object["owner"]!,
-            "post": object["post"]!,
+            "owner": user,
+            "post": post,
             "text": object["text"]!
         ]
         
