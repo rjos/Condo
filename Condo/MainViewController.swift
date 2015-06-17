@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CondoModel
 
 class MainViewController: UIViewController {
 
@@ -15,12 +16,17 @@ class MainViewController: UIViewController {
         if self.loggedIn() {
             self.performSegueWithIdentifier("loggedInSegue", sender: self)
         }else{
-            // MOSTRAR A TELA DE LOGIN/SIGNUP!
+            self.performSegueWithIdentifier("logSegue", sender: self)
         }
     }
     
     func loggedIn() -> Bool {
-        return true
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            return true
+        } else {
+            return false
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,14 +35,23 @@ class MainViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "logSegue" {
+            var vc = segue.destinationViewController as! LoginViewController
+            vc.loginCallback = {
+                (user) in
+                self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                    self.performSegueWithIdentifier("loggedInSegue", sender: self)
+                })
+            }
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }
