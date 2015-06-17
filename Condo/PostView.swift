@@ -8,6 +8,8 @@
 
 import UIKit
 import CondoModel
+import Parse
+import ParseUI
 @IBDesignable
 class PostView: UIView {
     
@@ -15,7 +17,7 @@ class PostView: UIView {
     @IBOutlet weak var nextImageView: UIImageView!
     @IBOutlet weak var postTextLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userImageView: PFImageView!
     
     @IBOutlet weak var postIconImageView: UIImageView!
     @IBOutlet weak var nextImageViewWidth: NSLayoutConstraint!
@@ -43,9 +45,16 @@ class PostView: UIView {
     var post: Post? {
         didSet{
             if let post = self.post {
+                
                 self.userImageView.layer.cornerRadius = self.userImageView.bounds.size.width/2
                 self.userImageView.clipsToBounds = true
-                self.userImageView.image = UIImage(named: post.owner.imageName)
+                if let image = post.owner.image {
+                    self.userImageView.file = image
+                    self.userImageView.loadInBackground()
+                }else{
+                    self.userImageView.image = UIImage(named: post.owner.imageName)
+                }
+                
                 self.postTextLabel.text = post.text
                 self.userNameLabel.text = post.owner.name
                 if post.totalComments == 0 {

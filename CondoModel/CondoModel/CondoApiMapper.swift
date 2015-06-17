@@ -13,11 +13,18 @@ class CondoApiMapper: NSObject {
     
     static func userFromPFObject(object: PFUser) -> User? {
         
-        let dic: Dictionary<String, AnyObject> = [
+        var dic: Dictionary<String, AnyObject> = [
             "id": object.objectId!,
             "name": object.username!,
             "imageName": "dummy-photo-pedro"
         ]
+        
+        if let imageFile = (object["image"] as? PFFile) {
+            
+            dic["image"] = imageFile
+        }else{
+            dic["image"] = nil
+        }
         
         return User(dictionary: dic)
     }
