@@ -26,8 +26,8 @@ class ExpensesController: NSObject {
         
     }
     
-    func getAllExpenseTypesWithData() -> Array<ExpenseType> {
-        return []
+    func getAllExpenseTypes() -> Array<ExpenseType> {
+        return ExpenseType.allValues
     }
     
     func getAllExpenses(#type: ExpenseType) -> Array<Expense> {
