@@ -81,6 +81,7 @@ class ExpensesController: NSObject {
     static let DataChangedNotification = "CondoExpensesControllerDataChangedNotification"
     static let ExpenseAddedNotification = "CondoExpensesControllerExpenseAddedNotification"
     static let ExpenseDeletedNotification = "CondoExpensesControllerExpenseDeletedNotification"
+    
     private func postExpenseDeletedNotification() {
         NSNotificationCenter.defaultCenter().postNotificationName(ExpensesController.ExpenseDeletedNotification, object: self, userInfo: nil)
         self.postDataChangedNotification()

@@ -53,6 +53,7 @@
 		02ECE4C11B31E8F7000FC6A0 /* ExpensesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECE4C01B31E8F7000FC6A0 /* ExpensesController.swift */; };
 		02ECE4C41B31EC51000FC6A0 /* ListExpensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECE4C31B31EC51000FC6A0 /* ListExpensesTableViewController.swift */; };
 		02ECE4C61B31F7AD000FC6A0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECE4C51B31F7AD000FC6A0 /* MainViewController.swift */; };
+		1B15DFD01B334D9B00CB365F /* ListDetailsExpensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15DFCF1B334D9B00CB365F /* ListDetailsExpensesTableViewController.swift */; };
 		1B9CE3B01B2F450400866898 /* TestParseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9CE3AF1B2F450400866898 /* TestParseViewController.swift */; };
 		1BE0E2A81B28B333002BF58E /* CondoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; };
 		1BE0E2A91B28B333002BF58E /* CondoModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -207,6 +208,7 @@
 		02ECE4C01B31E8F7000FC6A0 /* ExpensesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesController.swift; sourceTree = "<group>"; };
 		02ECE4C31B31EC51000FC6A0 /* ListExpensesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListExpensesTableViewController.swift; sourceTree = "<group>"; };
 		02ECE4C51B31F7AD000FC6A0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1B15DFCF1B334D9B00CB365F /* ListDetailsExpensesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailsExpensesTableViewController.swift; sourceTree = "<group>"; };
 		1B9CE3AF1B2F450400866898 /* TestParseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestParseViewController.swift; sourceTree = "<group>"; };
 		1BE0E2AF1B28C6BE002BF58E /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		1BE0E2B01B28C6BE002BF58E /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
@@ -530,6 +532,7 @@
 				024157511B2DF13F000ADCB5 /* ExpenseGraphViewController.swift */,
 				02ECE4C31B31EC51000FC6A0 /* ListExpensesTableViewController.swift */,
 				02ECE4BC1B30B6E4000FC6A0 /* AddExpenseTableViewController.swift */,
+				1B15DFCF1B334D9B00CB365F /* ListDetailsExpensesTableViewController.swift */,
 			);
 			name = Expenses;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 				024157521B2DF13F000ADCB5 /* ExpenseGraphViewController.swift in Sources */,
 				024D32A81B2CFEDC0061D518 /* UIScrollView+SLKAdditions.m in Sources */,
 				1B9CE3B01B2F450400866898 /* TestParseViewController.swift in Sources */,
+				1B15DFD01B334D9B00CB365F /* ListDetailsExpensesTableViewController.swift in Sources */,
 				02A9F8F51B28D8E700275606 /* PostDetailTableViewController.swift in Sources */,
 				1BE0E2B11B28C6BE002BF58E /* CommentTableViewCell.swift in Sources */,
 				0215442B1B293A8D0057B176 /* PocketSVG.m in Sources */,

@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CondoModel
 
 class ListExpensesTableViewController: UITableViewController {
 
     private let controller = ExpensesController.sharedController
+    private var expenseType: ExpenseType = ExpenseType.Energy
     private let reuseIdentifier = "ExpenseTypeCellReuseIdentifier"
     @IBAction func okButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -28,6 +30,12 @@ class ListExpensesTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.expenseType = controller.getAllExpenseTypes()[indexPath.row]
+        
+        //self.performSegueWithIdentifier("showDetailsExpenses", sender: self)
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -57,11 +65,6 @@ class ListExpensesTableViewController: UITableViewController {
         // Configure the cell...
 
         return cell
-    }
-
-
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
     }
     
     /*
@@ -102,11 +105,15 @@ class ListExpensesTableViewController: UITableViewController {
     /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // In a storyboard-based application, you will often want to do a little preparation before navigation*/
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showDetailsExpenses" {
+            let vc = segue.destinationViewController as! ListDetailsExpensesTableViewController
+            vc.type = self.expenseType
+        }
     }
-    */
 
 }
