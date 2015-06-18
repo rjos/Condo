@@ -24,45 +24,45 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
     var typesUserArray = ["Síndico", "Público"]
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.btnPublish.enabled = false
-        
-        self.typeUser.delegate = self
-        self.textReport.delegate = self
-        
-        self.pickerTypeUser = UIPickerView()
-        self.pickerTypeUser.delegate = self
-        
-        self.typeUser.inputView = pickerTypeUser
-        
-        self.toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 44))
-        self.toolBar.barStyle = UIBarStyle.Default
-        
-        let btnDone : UIBarButtonItem! = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: Selector("SelectedItemPickerView"))
-        let btnCancel : UIBarButtonItem! = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: Selector("CancelItemPickerView"))
-        
-        self.toolBar.setItems([btnCancel, UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil) , btnDone], animated: true)
-        
-        self.typeUser.inputAccessoryView = self.toolBar
-        
-        self.imgProfile = UIImageView(frame: CGRect(x: 10, y: 10, width: 50, height: 50))
-        self.imgProfile.layer.cornerRadius = self.imgProfile.bounds.width / 2
-        self.imgProfile.clipsToBounds = true
-        
-        self.imgProfile.image = UIImage(named: DummyDatabase().user.imageName)
-        
-        var bezierPath : UIBezierPath = UIBezierPath(rect: CGRect(x: 10, y: 10, width: self.imgProfile.bounds.width, height: self.imgProfile.bounds.height))
-        
-        self.textReport.textContainer.exclusionPaths = [bezierPath]
-        self.textReport.addSubview(self.imgProfile)
-        
-        self.textReport.layer.borderWidth = 1.0
-        self.textReport.layer.borderColor = UIColor.blueColor().CGColor
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardWillShowNotification, object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: UIKeyboardWillHideNotification, object: nil)
+//        super.viewDidLoad()
+//        
+//        self.btnPublish.enabled = false
+//        
+//        self.typeUser.delegate = self
+//        self.textReport.delegate = self
+//        
+//        self.pickerTypeUser = UIPickerView()
+//        self.pickerTypeUser.delegate = self
+//        
+//        self.typeUser.inputView = pickerTypeUser
+//        
+//        self.toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 44))
+//        self.toolBar.barStyle = UIBarStyle.Default
+//        
+//        let btnDone : UIBarButtonItem! = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: Selector("SelectedItemPickerView"))
+//        let btnCancel : UIBarButtonItem! = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: Selector("CancelItemPickerView"))
+//        
+//        self.toolBar.setItems([btnCancel, UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil) , btnDone], animated: true)
+//        
+//        self.typeUser.inputAccessoryView = self.toolBar
+//        
+//        self.imgProfile = UIImageView(frame: CGRect(x: 10, y: 10, width: 50, height: 50))
+//        self.imgProfile.layer.cornerRadius = self.imgProfile.bounds.width / 2
+//        self.imgProfile.clipsToBounds = true
+//        
+//        self.imgProfile.image = UIImage(named: DummyDatabase().user.imageName)
+//        
+//        var bezierPath : UIBezierPath = UIBezierPath(rect: CGRect(x: 10, y: 10, width: self.imgProfile.bounds.width, height: self.imgProfile.bounds.height))
+//        
+//        self.textReport.textContainer.exclusionPaths = [bezierPath]
+//        self.textReport.addSubview(self.imgProfile)
+//        
+//        self.textReport.layer.borderWidth = 1.0
+//        self.textReport.layer.borderColor = UIColor.blueColor().CGColor
+//        
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardWillShowNotification, object: nil)
+//        
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: UIKeyboardWillHideNotification, object: nil)
         
         // Do any additional setup after loading the view.
     }

@@ -10,6 +10,7 @@ import UIKit
 import CondoModel
 
 class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    let notificationManager = NotificationManager()
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -25,35 +26,31 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
         
 
         self.title = DummyDatabase().community.name
+        self.loadData()
+        self.notificationManager.registerObserver(ExpensesController.DataChangedNotification) {
+            [weak self](notification) in
+            self?.expensesChanged(notification)
+        }
+        ExpensesController.sharedController.reloadData(cached: true)
         
-        self.fetchData()
+
+    }
+
+    func expensesChanged(notification: NSNotification) {
+        loadData()
+    }
+    func loadData() {
+        self.expenseDictionary = ExpensesController.sharedController.expenseDictionary
+        self.collectionView?.reloadData()
+        let first = NSIndexPath(forItem: 0, inSection: 0)
+        if self.expenseDictionary.count > 0 {
+            self.collectionView!.selectItemAtIndexPath(first, animated: true, scrollPosition: UICollectionViewScrollPosition.None)
+            self.collectionView(self.collectionView!, didSelectItemAtIndexPath: first)
+        }
     }
     
-    func fetchData() {
-        let community = ParseDatabase.sharedDatabase.testCommunity()
-        ParseDatabase.sharedDatabase.getAllExpenses(community: community) { (expenses, error) -> () in
-            if let expenses = expenses {
-                self.allExpenses = expenses
-                self.expenseDictionary = [:]
-                for expense in expenses {
-                    let type = expense.type
-                    var expenseArray: Array<Expense>
-                    if let array = self.expenseDictionary[type] {
-                        expenseArray = array
-                    } else {
-                        expenseArray = []
-                    }
-                    expenseArray.append(expense)
-                    self.expenseDictionary[type] = expenseArray
-                }
-                self.collectionView?.reloadData()
-                let first = NSIndexPath(forItem: 0, inSection: 0)
-                if self.expenseDictionary.count > 0 {
-                    self.collectionView!.selectItemAtIndexPath(first, animated: true, scrollPosition: UICollectionViewScrollPosition.None)
-                    self.collectionView(self.collectionView!, didSelectItemAtIndexPath: first)
-                }
-            }
-        }
+    @IBAction func refreshButtonPressed(sender: UIBarButtonItem) {
+        ExpensesController.sharedController.reloadData(cached: false)
     }
     
     var selectedType = ExpenseType.allValues[0] {
@@ -125,6 +122,10 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
         
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
 
