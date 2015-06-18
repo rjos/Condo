@@ -135,6 +135,7 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
     
     @IBAction func ShowBack(sender: AnyObject) {
+        self.dismissViewControllerAnimated(false, completion: nil)
     }
 
     @IBAction func ShowPublish(sender: AnyObject) {

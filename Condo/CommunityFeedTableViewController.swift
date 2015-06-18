@@ -16,20 +16,10 @@ class CommunityFeedTableViewController: UITableViewController {
     var database: Array<Post> = []
     
     var selectedPost: Post? = nil
+    @IBOutlet weak var btnShowNewPost: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.community = ParseDatabase.sharedDatabase.testCommunity() //DummyDatabase().community
-        
-        if let community = self.community {
-            
-            ParseDatabase.sharedDatabase.getAllPosts(community: community) { (posts, error) -> () in
-                if let posts = posts {
-                    self.database = posts
-                    println(posts)
-                    self.tableView.reloadData()
-                }
-            }
-        }
         
         self.tableView.registerNib(UINib(nibName: "AnnouncementTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "announcement")
         self.tableView.registerNib(UINib(nibName: "ReportTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "report")
@@ -38,6 +28,23 @@ class CommunityFeedTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 50.0
         self.tableView.reloadData()
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        if let community = self.community {
+            
+            ParseDatabase.sharedDatabase.getAllPosts(community: community) { (posts, error) -> () in
+                if let posts = posts {
+                    self.database = posts
+                    println(posts)
+                    self.tableView.reloadData()
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                }
+            }
+        }
     }
     
     // MARK: - Table view data source
@@ -82,7 +89,6 @@ class CommunityFeedTableViewController: UITableViewController {
         self.performSegueWithIdentifier("showPost", sender: self)
     }
     
-
     
     // MARK: - Navigation
 
@@ -91,6 +97,10 @@ class CommunityFeedTableViewController: UITableViewController {
         if segue.identifier == "showPost" {
             let vc = segue.destinationViewController as! PostDetailTableViewController
             vc.post = self.selectedPost
+        }else if segue.identifier == "showNewPost" {
+            let vc = segue.destinationViewController as! NewPostViewController
+            vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+            vc.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
         }
     }
 

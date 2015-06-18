@@ -8,14 +8,16 @@
 
 import UIKit
 import CondoModel
+
 class PostDetailTableViewController: SLKTextViewController {
 
     var post: Post?
     
+    var database: Array<Comment> = []
+    
     override class func tableViewStyleForCoder(decoder: NSCoder) -> UITableViewStyle {
         return UITableViewStyle.Plain;
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +33,26 @@ class PostDetailTableViewController: SLKTextViewController {
         self.tableView.estimatedRowHeight = 100.0
         self.textInputbar.translucent = false
         self.rightButton.setTitle("Enviar", forState: .Normal)
-        
-        //self.tableView.reloadData()
+        self.rightButton.addTarget(self, action: "sendComment:", forControlEvents: UIControlEvents.TouchDown)
+        self.tableView.reloadData()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        ParseDatabase.sharedDatabase.getCommentFromPost(self.post!, completionBlock: { (comments, error) -> () in
+            
+            if let comments = comments {
+             
+                self.database = comments
+                self.tableView.reloadData()
+                
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            }
+        })   
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -50,7 +68,7 @@ class PostDetailTableViewController: SLKTextViewController {
             if section == 0 {
                 return 1
             }else{
-                return post.totalComments
+                return self.database.count//post.totalComments
             }
         }
         return 0
@@ -80,7 +98,8 @@ class PostDetailTableViewController: SLKTextViewController {
 
     func commentCell(indexPath: NSIndexPath) -> CommentTableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("comment", forIndexPath: indexPath) as! CommentTableViewCell
-        //cell.comment = self.post!.comments.modelAtIndex(indexPath.row) as? Comment
+        cell.comment = self.database[indexPath.row] as Comment
+        //self.post!.comments.modelAtIndex(indexPath.row) as? Comment
         cell.isEven = indexPath.row % 2 == 0
         let draw = PostDrawingProperties(type: self.post!.type)
         cell.lbName.textColor = draw.outlineColor
@@ -93,6 +112,28 @@ class PostDetailTableViewController: SLKTextViewController {
             return self.postCell()
         }else{
             return self.commentCell(indexPath)
+        }
+    }
+    
+    func sendComment(sender: UIButton!){
+        
+        let user = ParseDatabase.sharedDatabase.testUser()
+        
+        let message = self.textView.text
+        
+        if count(message) > 0 {
+            ParseDatabase.sharedDatabase.createComment(owner: user, text: message, post: self.post!) { (comment, error) -> () in
+                
+                if let comment = comment {
+                    
+                    self.database.append(comment)
+                    
+                    self.tableView.reloadData()
+                    
+                }else{
+                    println(error)
+                }
+            }
         }
     }
 }
