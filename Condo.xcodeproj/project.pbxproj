@@ -53,6 +53,8 @@
 		02ECE4C11B31E8F7000FC6A0 /* ExpensesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECE4C01B31E8F7000FC6A0 /* ExpensesController.swift */; };
 		02ECE4C41B31EC51000FC6A0 /* ListExpensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECE4C31B31EC51000FC6A0 /* ListExpensesTableViewController.swift */; };
 		02ECE4C61B31F7AD000FC6A0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECE4C51B31F7AD000FC6A0 /* MainViewController.swift */; };
+		041368701B3363E1005B60F5 /* SelectCondoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0413686F1B3363E1005B60F5 /* SelectCondoViewController.swift */; };
+		041368731B336661005B60F5 /* logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 041368721B336661005B60F5 /* logo.svg */; };
 		1B9CE3B01B2F450400866898 /* TestParseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9CE3AF1B2F450400866898 /* TestParseViewController.swift */; };
 		1BE0E2A81B28B333002BF58E /* CondoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; };
 		1BE0E2A91B28B333002BF58E /* CondoModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -207,6 +209,8 @@
 		02ECE4C01B31E8F7000FC6A0 /* ExpensesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesController.swift; sourceTree = "<group>"; };
 		02ECE4C31B31EC51000FC6A0 /* ListExpensesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListExpensesTableViewController.swift; sourceTree = "<group>"; };
 		02ECE4C51B31F7AD000FC6A0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0413686F1B3363E1005B60F5 /* SelectCondoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCondoViewController.swift; sourceTree = "<group>"; };
+		041368721B336661005B60F5 /* logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = logo.svg; sourceTree = "<group>"; };
 		1B9CE3AF1B2F450400866898 /* TestParseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestParseViewController.swift; sourceTree = "<group>"; };
 		1BE0E2AF1B28C6BE002BF58E /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		1BE0E2B01B28C6BE002BF58E /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
@@ -328,6 +332,7 @@
 				02ECE4BA1B30B6BE000FC6A0 /* SignUpViewController.swift */,
 				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
 				02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */,
+				0413686F1B3363E1005B60F5 /* SelectCondoViewController.swift */,
 				D1E279461B31FCCA00CB33FA /* Expenses */,
 				021544301B2943080057B176 /* VectorTestViewController.swift */,
 				1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */,
@@ -476,6 +481,7 @@
 		4249F60B1B2A127C00B9F861 /* SVGs */ = {
 			isa = PBXGroup;
 			children = (
+				041368721B336661005B60F5 /* logo.svg */,
 				D1DA35381B30BF970082E263 /* administrationCost.svg */,
 				D1DA35391B30BF970082E263 /* cleaningMaterial.svg */,
 				D1DA353A1B30BF970082E263 /* cleaningServices.svg */,
@@ -656,6 +662,7 @@
 				D1DA35531B30BF970082E263 /* maintenancePainting.svg in Resources */,
 				D1DA35501B30BF970082E263 /* maintenanceGenerator.svg in Resources */,
 				D1DA354C1B30BF970082E263 /* energy.svg in Resources */,
+				041368731B336661005B60F5 /* logo.svg in Resources */,
 				D1DA35541B30BF970082E263 /* maintenancePestControl.svg in Resources */,
 				02ABC00A1B2768BC00E0678B /* Images.xcassets in Resources */,
 				D1DA35551B30BF970082E263 /* maintenanceWell.svg in Resources */,
@@ -682,6 +689,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0215442D1B293C050057B176 /* VectorView.swift in Sources */,
+				041368701B3363E1005B60F5 /* SelectCondoViewController.swift in Sources */,
 				02ECE4BD1B30B6E4000FC6A0 /* AddExpenseTableViewController.swift in Sources */,
 				02AD60571B28BD87000D5210 /* PostView.swift in Sources */,
 				024D32AC1B2CFEDC0061D518 /* SLKTextView.m in Sources */,
