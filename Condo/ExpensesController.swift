@@ -58,8 +58,10 @@ class ExpensesController: NSObject {
     }
     
     func getAllExpenses(#type: ExpenseType) -> Array<Expense> {
-        
-        return []
+        if let result = self.expenseDictionary[type] {
+            return result
+        }
+        return Array<Expense>()
     }
     
 
