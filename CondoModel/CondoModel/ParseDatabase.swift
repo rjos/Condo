@@ -50,21 +50,25 @@ public class ParseDatabase: NSObject {
     }
     
     public func testUser() -> User {
-        return User(dictionary: ["id": "Byxv7MQvph", "name": "pedro", "imageName": ""])
+        
+        return User(dictionary: [
+            "id": "YwUtjZt51Z",
+            "name": "pedro",
+            "imageName": "dummy-photo-pedro",
+            "image": ""])
     }
     
-    public func testPost(user: User) -> Post {
+    public func testPost(user: User, community: Community) -> Post {
         return PostReport(dictionary: [
-            "id": "WpUJEAST1l",
+            "id": "wTVodyGdYU",
             "owner": user,
-            "community":
-            "GpMV5wxc37",
+            "community": community,
             "text": "teste 1",
             "status":"PostReportStatusOpen",
-            "type": "PostContentTypeReport"
+            "type": "PostContentTypeReport",
+            "totalComments": 1
             ])
     }
-    
     
     public func createExpenses(#expenses: Array<Dictionary<String, AnyObject>>, community: Community, completionBlock: (expenses: Array<Expense>?, error: NSError?) -> ()) {
         var expensePFObjects: Array<PFObject> = []
@@ -219,6 +223,41 @@ public class ParseDatabase: NSObject {
                 }else{
                     completionBlock(posts: [], error: error)
                 }
+            }
+        }
+    }
+    
+    public func getCommentFromPost(post: Post, completionBlock: (comments: Array<Comment>?, error: NSError?) -> ()) {
+        
+        let commentsObject = PFQuery(className: "Comment")
+        commentsObject.includeKey("onwer")
+        commentsObject.whereKey("post", equalTo: PFObject(withoutDataWithClassName: "Post", objectId: post.id))
+        commentsObject.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+            
+            if let objects = (objects as? [PFObject]){
+                
+                var comments : Array<Comment> = []
+                
+                for object in objects {
+                    
+                    let user = object["owner"] as! PFUser
+                    
+                    let ownerPost = CondoApiMapper.userFromPFObject(user)
+                    
+                    if let ownerPost = ownerPost {
+                        
+                        let comment = CondoApiMapper.commentFromPFObject(object, user: ownerPost, post: post)
+                        
+                        if let comment = comment {
+                            comments.append(comment)
+                        }
+                    }
+                }
+                
+                completionBlock(comments: comments, error: nil)
+                
+            }else{
+                completionBlock(comments: [], error: error)
             }
         }
     }
