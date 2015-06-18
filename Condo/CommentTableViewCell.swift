@@ -8,10 +8,12 @@
 
 import UIKit
 import CondoModel
+import Parse
+import ParseUI
 
 class CommentTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var imgProfile: UIImageView!
+    @IBOutlet weak var imgProfile: PFImageView!
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbComment: UILabel!
     @IBOutlet weak var bgComment: UIView!
@@ -33,7 +35,12 @@ class CommentTableViewCell: UITableViewCell {
                 //self.bgComment.layer.cornerRadius = 15.0
                 self.imgProfile.layer.cornerRadius = self.imgProfile.bounds.size.width / 2
                 self.imgProfile.clipsToBounds = true
-                self.imgProfile.image = UIImage(named: comment.owner.imageName)
+                if let image = comment.owner.image {
+                    self.imgProfile.file = image
+                    self.imgProfile.loadInBackground()
+                }else{
+                    self.imgProfile.image = UIImage(named: comment.owner.imageName)
+                }
                 self.lbName.text      = comment.owner.name
                 self.lbComment.text   = comment.text
                 self.lbComment.sizeToFit()

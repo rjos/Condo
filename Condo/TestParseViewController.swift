@@ -38,15 +38,15 @@ class TestParseViewController: UIViewController {
         
         let owner     = ParseDatabase.sharedDatabase.testUser()
         
-        /*ParseDatabase.sharedDatabase.createPost(type: PostContentType.Announcement, owner: owner, text: nameCommunity.text, status: PostReport.PostReportStatus.Open, community: community) { (post, error) -> () in
+        ParseDatabase.sharedDatabase.createPost(type: PostContentType.Announcement, owner: owner, text: nameCommunity.text, status: PostReport.PostReportStatus.Open, community: community) { (post, error) -> () in
             if let post = post {
                 println("Funcionou")
             }else{
                 println(error)
             }
-        }*/
+        }
         
-        let post      = ParseDatabase.sharedDatabase.testPost(owner, community: community)
+        /*let post      = ParseDatabase.sharedDatabase.testPost(owner, community: community)
         
         ParseDatabase.sharedDatabase.createComment(owner: owner, text: nameCommunity.text, post: post) { (comment, error) -> () in
             if let comment = comment {
@@ -54,7 +54,7 @@ class TestParseViewController: UIViewController {
             }else{
                 println(error)
             }
-        }
+        }*/
     }
 
     /*
