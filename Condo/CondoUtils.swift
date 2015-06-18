@@ -32,6 +32,18 @@ extension UIColor {
         return UIColor.rgba(0, g: 182, b: 200, a: 255)
     }
     
+    static func condoBlue30() -> UIColor {
+        return UIColor.rgba(0, g: 182, b: 200, a: 76)
+    }
+    
+    static func condoBlue60() -> UIColor {
+        return UIColor.rgba(0, g: 182, b: 200, a: 153)
+    }
+    
+    static func condoBlue80() -> UIColor {
+        return UIColor.rgba(0, g: 182, b: 200, a: 204)
+    }
+    
     static func condoYellow() -> UIColor {
         return UIColor.rgba(250, g: 187, b: 26, a: 255)
     }

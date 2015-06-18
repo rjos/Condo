@@ -11,12 +11,12 @@ import CondoModel
 
 class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UITextViewDelegate{
 
-    @IBOutlet weak var typeUser: UITextField!
     @IBOutlet weak var countLetter: UILabel!
     @IBOutlet weak var textReport: UITextView!
     @IBOutlet weak var btnPublish: UIButton!
     @IBOutlet weak var bottomConstraintTextView: NSLayoutConstraint!
     
+    @IBOutlet weak var contentView: UIView!
     var pickerTypeUser : UIPickerView!
     var toolBar : UIToolbar!
     var imgProfile : UIImageView!
@@ -24,18 +24,20 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
     var typesUserArray = ["Síndico", "Público"]
     
     override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-//        self.btnPublish.enabled = false
-//        
-//        self.typeUser.delegate = self
-//        self.textReport.delegate = self
-//        
-//        self.pickerTypeUser = UIPickerView()
-//        self.pickerTypeUser.delegate = self
-//        
-//        self.typeUser.inputView = pickerTypeUser
-//        
+        super.viewDidLoad()
+        self.view.tintColor = UIColor.condoReportBackgroundColor()
+        self.contentView.layer.cornerRadius = 15.0
+        
+        self.btnPublish.enabled = false
+        
+        //self.typeUser.delegate = self
+        self.textReport.delegate = self
+        
+        self.pickerTypeUser = UIPickerView()
+        self.pickerTypeUser.delegate = self
+        
+        //self.typeUser.inputView = pickerTypeUser
+        
 //        self.toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 44))
 //        self.toolBar.barStyle = UIBarStyle.Default
 //        
@@ -43,27 +45,29 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
 //        let btnCancel : UIBarButtonItem! = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: Selector("CancelItemPickerView"))
 //        
 //        self.toolBar.setItems([btnCancel, UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil) , btnDone], animated: true)
-//        
-//        self.typeUser.inputAccessoryView = self.toolBar
-//        
-//        self.imgProfile = UIImageView(frame: CGRect(x: 10, y: 10, width: 50, height: 50))
-//        self.imgProfile.layer.cornerRadius = self.imgProfile.bounds.width / 2
-//        self.imgProfile.clipsToBounds = true
-//        
-//        self.imgProfile.image = UIImage(named: DummyDatabase().user.imageName)
-//        
-//        var bezierPath : UIBezierPath = UIBezierPath(rect: CGRect(x: 10, y: 10, width: self.imgProfile.bounds.width, height: self.imgProfile.bounds.height))
-//        
-//        self.textReport.textContainer.exclusionPaths = [bezierPath]
-//        self.textReport.addSubview(self.imgProfile)
-//        
-//        self.textReport.layer.borderWidth = 1.0
-//        self.textReport.layer.borderColor = UIColor.blueColor().CGColor
-//        
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardWillShowNotification, object: nil)
-//        
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: UIKeyboardWillHideNotification, object: nil)
         
+        //self.typeUser.inputAccessoryView = self.toolBar
+        let imageRect = CGRect(x: 4, y: 4, width: 40, height: 40)
+        self.imgProfile = UIImageView(frame: imageRect)
+        self.imgProfile.layer.cornerRadius = self.imgProfile.bounds.width / 2
+        self.imgProfile.clipsToBounds = true
+        
+        self.imgProfile.image = UIImage(named: DummyDatabase().user.imageName)
+        
+        var bezierPath : UIBezierPath = UIBezierPath(rect: imageRect)
+        
+        self.textReport.textContainer.exclusionPaths = [bezierPath]
+        self.textReport.addSubview(self.imgProfile)
+        
+        self.textReport.layer.cornerRadius = 15.0
+        self.textReport.layer.borderWidth = 2.0
+        self.textReport.layer.borderColor = UIColor.condoReportBackgroundColor().CGColor
+        self.textReport.tintColor = UIColor.condoReportBackgroundColor()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardWillShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: UIKeyboardWillHideNotification, object: nil)
+        self.textReport.becomeFirstResponder()
         // Do any additional setup after loading the view.
     }
 
@@ -79,7 +83,7 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
         let rect = valueSize.CGRectValue()
         let size = rect.size
         
-        self.bottomConstraintTextView.constant = 2.0 + size.height
+        self.bottomConstraintTextView.constant = 32.0 + size.height
         UIView.animateWithDuration(0.5, animations: { () -> Void in
             self.view.layoutIfNeeded()
         })
@@ -91,7 +95,7 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
         let rect = valueSize.CGRectValue()
         let size = rect.size
         
-        self.bottomConstraintTextView.constant = 0
+        self.bottomConstraintTextView.constant = 32.0
         UIView.animateWithDuration(0.5, animations: { () -> Void in
             self.view.layoutIfNeeded()
         })
@@ -126,12 +130,12 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.typeUser.text = self.typesUserArray[row]
+        //self.typeUser.text = self.typesUserArray[row]
     }
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
-        self.typeUser.resignFirstResponder()
-        self.textReport.resignFirstResponder()
+//        self.typeUser.resignFirstResponder()
+//        self.textReport.resignFirstResponder()
     }
     
     @IBAction func ShowBack(sender: AnyObject) {
@@ -139,15 +143,21 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
 
     @IBAction func ShowPublish(sender: AnyObject) {
+        let community = ParseDatabase.sharedDatabase.testCommunity()
+        let user = ParseDatabase.sharedDatabase.testUser()
+        let text = self.textReport.text
         
+        ParseDatabase.sharedDatabase.createPost(type: PostContentType.Report, owner: user, text: text, status: PostReport.PostReportStatus.Open, community: community) { (post, error) -> () in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     
     func SelectedItemPickerView(){
-        self.typeUser.resignFirstResponder()
+        //self.typeUser.resignFirstResponder()
     }
     
     func CancelItemPickerView(){
-        self.typeUser.resignFirstResponder()
+        //self.typeUser.resignFirstResponder()
     }
     
     /*
