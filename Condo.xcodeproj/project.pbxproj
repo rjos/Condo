@@ -415,11 +415,11 @@
 		02ABBFF41B2768BC00E0678B = {
 			isa = PBXGroup;
 			children = (
-				D1DA35231B30A4980082E263 /* Frameworks */,
 				02529E191B276980009CF624 /* CondoModel.xcodeproj */,
 				02ABBFFF1B2768BC00E0678B /* Condo */,
 				02ABC0151B2768BC00E0678B /* CondoTests */,
 				02ABBFFE1B2768BC00E0678B /* Products */,
+				D1DA35231B30A4980082E263 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

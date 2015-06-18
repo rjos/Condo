@@ -9,8 +9,14 @@
 import UIKit
 import CondoModel
 
+import Parse
+
 let ExpensesControllerDataChangedNotification = "CondoExpensesControllerDataChangedNotification"
 class ExpensesController: NSObject {
+    enum ExpenseServerAction {
+        case Delete(id: String)
+        case Add(id: String, type: ExpenseType, totalExpense: NSNumber, date: NSDate)
+    }
     private var _hasData = false
     private var expenseDictionary: Dictionary<ExpenseType, Array<Expense>> = [:]
     
@@ -23,6 +29,7 @@ class ExpensesController: NSObject {
     }
     
     func fetchNewData() {
+        self._hasData = false
         let community = ParseDatabase.sharedDatabase.testCommunity()
         ParseDatabase.sharedDatabase.getAllExpenses(community: community) { (expenses, error) -> () in
             if let expenses = expenses {
@@ -38,7 +45,9 @@ class ExpensesController: NSObject {
                     expenseArray.append(expense)
                     self.expenseDictionary[type] = expenseArray
                 }
+                self._hasData = true
                 NSNotificationCenter.defaultCenter().postNotificationName(ExpensesControllerDataChangedNotification, object: self, userInfo: nil)
+                
             }
         }
     }
@@ -48,6 +57,7 @@ class ExpensesController: NSObject {
     }
     
     func getAllExpenses(#type: ExpenseType) -> Array<Expense> {
+        
         return []
     }
     
