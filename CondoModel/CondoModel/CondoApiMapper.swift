@@ -15,7 +15,7 @@ class CondoApiMapper: NSObject {
         
         var dic: Dictionary<String, AnyObject> = [
             "id": object.objectId!,
-            "name": object.username!,
+            "name": object["fullname"]!,
             "imageName": "dummy-photo-pedro"
         ]
         
