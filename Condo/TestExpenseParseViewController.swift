@@ -28,7 +28,7 @@ class TestExpenseParseViewController: UIViewController {
         
         let community = ParseDatabase.sharedDatabase.testCommunity()
         
-        ParseDatabase.sharedDatabase.getAllExpenses(community: community) { (expenses, error) -> () in
+        ParseDatabase.sharedDatabase.getAllExpenses(community: community, cachedResult: false) { (expenses, error) -> () in
             
             if let expenses = expenses {
                 for expense in expenses {

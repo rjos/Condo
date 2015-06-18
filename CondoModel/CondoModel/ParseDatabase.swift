@@ -17,7 +17,7 @@ public class ParseDatabase: NSObject {
     public func setup(){
         
         Parse.enableLocalDatastore()
-        
+        //PFObject.unpinAllObjectsInBackground()
         // Initialize Parse.
         Parse.setApplicationId("frhoWZOYHwsv5M6bTlBgbnsKb4MteIZle69dovkh",
             clientKey: "EC0xXL6isxFFX64o8sDFREmRHZ6nBe0kJlZ76Al2")
@@ -72,17 +72,33 @@ public class ParseDatabase: NSObject {
             let expense = CondoApiMapper.PFObjectFromExpenseDictionary(expenseDictionary, community: community)
             expensePFObjects.append(expense)
         }
-        PFObject.saveAllInBackground(expensePFObjects, block: { (success, error) -> Void in
-            if success {
+        
+        PFObject.pinAllInBackground(expensePFObjects, block: { (pinSuccess, pinError) -> Void in
+            if !pinSuccess {
+                completionBlock(expenses: nil, error: pinError)
+            }else{
+                for expense in expensePFObjects {
+                    expense.saveEventually()
+                }
                 var result: Array<Expense> = []
                 for object in expensePFObjects {
                     result.append(CondoApiMapper.expenseFromPFObject(object)!)
                 }
-                completionBlock(expenses: result, error: error)
-            }else{
-                completionBlock(expenses: nil, error: error)
+                completionBlock(expenses: result, error: nil)
             }
         })
+        
+//        PFObject.saveAllInBackground(expensePFObjects, block: { (success, error) -> Void in
+//            if success {
+//                var result: Array<Expense> = []
+//                for object in expensePFObjects {
+//                    result.append(CondoApiMapper.expenseFromPFObject(object)!)
+//                }
+//                completionBlock(expenses: result, error: error)
+//            }else{
+//                completionBlock(expenses: nil, error: error)
+//            }
+//        })
     }
     
     public func createExpense(#type: ExpenseType, date: NSDate, totalExpense: NSNumber, community: Community, completionBlock: (expense: Expense?, error: NSError?) -> ()){
@@ -152,18 +168,29 @@ public class ParseDatabase: NSObject {
         }
     }
     
-    public func getAllExpenses(#community: Community, completionBlock: (expenses: Array<Expense>?, error: NSError?) -> ()) {
+    public func getAllExpenses(#community: Community, cachedResult: Bool, completionBlock: (expenses: Array<Expense>?, error: NSError?) -> ()) {
         
         let query = PFQuery(className: "Expense")
         query.whereKey("communityId", equalTo: PFObject(withoutDataWithClassName: "Community", objectId: community.id))
+        query.orderByDescending("date")
+        if cachedResult {
+            query.fromLocalDatastore()
+        }
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             
             if let error = error{
-                completionBlock(expenses: [], error: error)
+                completionBlock(expenses: nil, error: error)
             }else{
                 
                 if let objects = objects as? [PFObject]{
-                    
+                    if cachedResult {
+                        if objects.count == 0 {
+                            self.getAllExpenses(community: community, cachedResult: false, completionBlock: completionBlock)
+                            return 
+                        }
+                    }else{
+                        PFObject.pinAllInBackground(objects)
+                    }
                     var expenses : Array<Expense> = []
                     
                     for object in objects{

@@ -11,14 +11,16 @@ import CondoModel
 
 import Parse
 
-let ExpensesControllerDataChangedNotification = "CondoExpensesControllerDataChangedNotification"
+
+
 class ExpensesController: NSObject {
+
     enum ExpenseServerAction {
         case Delete(id: String)
         case Add(id: String, type: ExpenseType, totalExpense: NSNumber, date: NSDate)
     }
     private var _hasData = false
-    private var expenseDictionary: Dictionary<ExpenseType, Array<Expense>> = [:]
+    var expenseDictionary: Dictionary<ExpenseType, Array<Expense>> = [:]
     
     
     static let sharedController =  ExpensesController()
@@ -28,10 +30,10 @@ class ExpensesController: NSObject {
         }
     }
     
-    func fetchNewData() {
+    func reloadData(#cached: Bool) {
         self._hasData = false
         let community = ParseDatabase.sharedDatabase.testCommunity()
-        ParseDatabase.sharedDatabase.getAllExpenses(community: community) { (expenses, error) -> () in
+        ParseDatabase.sharedDatabase.getAllExpenses(community: community, cachedResult: cached) { (expenses, error) -> () in
             if let expenses = expenses {
                 self.expenseDictionary = [:]
                 for expense in expenses {
@@ -46,8 +48,7 @@ class ExpensesController: NSObject {
                     self.expenseDictionary[type] = expenseArray
                 }
                 self._hasData = true
-                NSNotificationCenter.defaultCenter().postNotificationName(ExpensesControllerDataChangedNotification, object: self, userInfo: nil)
-                
+                self.postDataChangedNotification()
             }
         }
     }
@@ -61,7 +62,34 @@ class ExpensesController: NSObject {
         return []
     }
     
+
+    
     func addExpense(#type: ExpenseType, totalExpense: NSNumber, date: NSDate) {
-        
+        let community = ParseDatabase.sharedDatabase.testCommunity()
+        ParseDatabase.sharedDatabase.createExpense(type: type, date: date, totalExpense: totalExpense, community: community) { (expenseRaw, error) -> () in
+            if let expense = expenseRaw {
+                self.postExpenseAddedNotification()
+            }
+        }
+    }
+    
+    
+    
+    //MARK: - Notifications
+    static let DataChangedNotification = "CondoExpensesControllerDataChangedNotification"
+    static let ExpenseAddedNotification = "CondoExpensesControllerExpenseAddedNotification"
+    static let ExpenseDeletedNotification = "CondoExpensesControllerExpenseDeletedNotification"
+    private func postExpenseDeletedNotification() {
+        NSNotificationCenter.defaultCenter().postNotificationName(ExpensesController.ExpenseDeletedNotification, object: self, userInfo: nil)
+        self.postDataChangedNotification()
+    }
+    
+    private func postExpenseAddedNotification() {
+        NSNotificationCenter.defaultCenter().postNotificationName(ExpensesController.ExpenseAddedNotification, object: self, userInfo: nil)
+        self.postDataChangedNotification()
+    }
+    
+    private func postDataChangedNotification() {
+        NSNotificationCenter.defaultCenter().postNotificationName(ExpensesController.DataChangedNotification, object: self, userInfo: nil)
     }
 }
