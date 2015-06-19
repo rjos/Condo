@@ -13,11 +13,9 @@ class ListDetailsExpensesTableViewController: UITableViewController {
 
     private let controller = ExpensesController.sharedController
     var type: ExpenseType?
-    var database : Array<Expense> = []
     
-    var expenses =  Array<Array<Expense>>()
-    
-    var group : Dictionary<String, Array<Expense>> = [:]
+    var database : Array<Array<Expense>> = []
+    var keys: Array<String> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +27,6 @@ class ListDetailsExpensesTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         var expenses = controller.getAllExpenses(type: self.type!)
-        var e: Expense? = nil
-        
         
         expenses.sort { (a, b) -> Bool in
             let firstDate = a.expenseDate
@@ -41,39 +37,25 @@ class ListDetailsExpensesTableViewController: UITableViewController {
             return false
         }
         
-        self.database = expenses
+        var key: String = ""
+        var index: Int = -1
         
-        for expense in self.database {
+        for expense in (expenses as Array<Expense>) {
             
-            let expenseListOptional = self.group["\(expense.expenseDate.month)-\(expense.expenseDate.year)"]
+            var currentKey = "\(expense.expenseDate.month)-\(expense.expenseDate.year)"
             
-            var expenseList: Array<Expense>
-            
-            if let group = expenseListOptional {
-                expenseList = group
-            }else{
-                expenseList = Array<Expense>()
+            if key != currentKey {
+                
+                self.keys.append(currentKey)
+                key = currentKey
+                
+                index += 1
+                self.database.append(Array<Expense>())
+
             }
             
-            expenseList.append(expense)
-            
-            self.group["\(expense.expenseDate.month)-\(expense.expenseDate.year)"] = expenseList
+            self.database[index].append(expense)
         }
-        
-        for (key, value) in  self.group {
-            self.expenses.append(value)
-        }
-        
-        self.expenses.sort { (arrayA, arrayB) -> Bool in
-            let first: Array<Expense> = arrayA
-            let second: Array<Expense>= arrayB
-            if first.first!.expenseDate.compare(second.first!.expenseDate) == NSComparisonResult.OrderedAscending {
-                return false
-            }
-            return true
-        }
-        println(self.expenses)
-        
         
     }
 
@@ -87,25 +69,30 @@ class ListDetailsExpensesTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return self.expenses.count
+        return self.keys.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return self.expenses[section].count
+        return self.database[section].count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("expenseCell", forIndexPath: indexPath) as! UITableViewCell
-        let expense = self.expenses[indexPath.section][indexPath.row]
+        let expense = self.database[indexPath.section][indexPath.row]
         cell.textLabel?.text = "\(expense.expenseDate)"
         // Configure the cell...
         
         return cell
     }
-
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return self.keys[section]
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
