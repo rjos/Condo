@@ -65,6 +65,7 @@
 		1BF5FAC11B34012100E78744 /* CreateCondoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF5FAC01B34012100E78744 /* CreateCondoViewController.swift */; };
 		1BF7C76C1B2A15FC00E9D231 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */; };
 		34A380791B348F4700D94929 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A380781B348F4700D94929 /* AVFoundation.framework */; };
+		34AC95951B34ABBB0006FD17 /* MPGNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AC95941B34ABBB0006FD17 /* MPGNotification.m */; };
 		D1DA35241B30A4980082E263 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA35111B30A4980082E263 /* libz.dylib */; };
 		D1DA35251B30A4980082E263 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA35121B30A4980082E263 /* SystemConfiguration.framework */; };
 		D1DA35261B30A4980082E263 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA35131B30A4980082E263 /* StoreKit.framework */; };
@@ -222,6 +223,8 @@
 		1BF5FAC01B34012100E78744 /* CreateCondoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCondoViewController.swift; sourceTree = "<group>"; };
 		1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		34A380781B348F4700D94929 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		34AC95931B34ABBB0006FD17 /* MPGNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGNotification.h; sourceTree = "<group>"; };
+		34AC95941B34ABBB0006FD17 /* MPGNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGNotification.m; sourceTree = "<group>"; };
 		D1DA35111B30A4980082E263 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/usr/lib/libz.dylib; sourceTree = "<absolute>"; };
 		D1DA35121B30A4980082E263 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
 		D1DA35131B30A4980082E263 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = "<absolute>"; };
@@ -370,6 +373,8 @@
 				024D32901B2CFEDC0061D518 /* Slack */,
 				021544291B293A8D0057B176 /* PocketSVG.h */,
 				0215442A1B293A8D0057B176 /* PocketSVG.m */,
+				34AC95931B34ABBB0006FD17 /* MPGNotification.h */,
+				34AC95941B34ABBB0006FD17 /* MPGNotification.m */,
 			);
 			name = "Open Source Frameworks";
 			sourceTree = "<group>";
@@ -723,6 +728,7 @@
 				1B80A5451B33BF19000351B6 /* DetailsExpensesTableViewCell.swift in Sources */,
 				0241574B1B2DD083000ADCB5 /* JBChartView.m in Sources */,
 				0206D6181B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift in Sources */,
+				34AC95951B34ABBB0006FD17 /* MPGNotification.m in Sources */,
 				024D32AB1B2CFEDC0061D518 /* SLKTextInputbar.m in Sources */,
 				02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */,
 				02E06E021B27970900580B3D /* CommunityFeedTableViewController.swift in Sources */,
