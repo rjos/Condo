@@ -1,22 +1,22 @@
 //
-//  ListExpensesTableViewController.swift
+//  ListDetailsExpensesTableViewController.swift
 //  Condo
 //
-//  Created by Lucas Tenório on 17/06/15.
+//  Created by Rodolfo José on 18/06/15.
 //  Copyright (c) 2015 Condo. All rights reserved.
 //
 
 import UIKit
 import CondoModel
 
-class ListExpensesTableViewController: UITableViewController {
+class ListDetailsExpensesTableViewController: UITableViewController {
 
     private let controller = ExpensesController.sharedController
-    private var expenseType: ExpenseType = ExpenseType.Energy
-    private let reuseIdentifier = "ExpenseTypeCellReuseIdentifier"
-    @IBAction func okButtonPressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+    var type: ExpenseType?
+    
+    var database : Array<Array<Expense>> = []
+    var keys: Array<String> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,46 +25,72 @@ class ListExpensesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        var expenses = controller.getAllExpenses(type: self.type!)
+        
+        expenses.sort { (a, b) -> Bool in
+            let firstDate = a.expenseDate
+            let secondDate = b.expenseDate
+            if firstDate.compare(secondDate) != NSComparisonResult.OrderedAscending {
+                return true
+            }
+            return false
+        }
+        
+        var key: String = ""
+        var index: Int = -1
+        
+        for expense in (expenses as Array<Expense>) {
+            
+            var currentKey = "\(expense.expenseDate.month)-\(expense.expenseDate.year)"
+            
+            if key != currentKey {
+                
+                self.keys.append(currentKey)
+                key = currentKey
+                
+                index += 1
+                self.database.append(Array<Expense>())
+
+            }
+            
+            self.database[index].append(expense)
+        }
+        
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
     // MARK: - Table view data source
-
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.expenseType = controller.getAllExpenseTypes()[indexPath.row]
-        
-        //self.performSegueWithIdentifier("showDetailsExpenses", sender: self)
-    }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
+        return self.keys.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return controller.getAllExpenseTypes().count
+        // #warning Incomplete method implementation.
+        // Return the number of rows in the section.
+        return self.database[section].count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! UITableViewCell
-        let type = controller.getAllExpenseTypes()[indexPath.row]
-        let property = ExpenseDrawingProperties(type: type)
-        cell.textLabel?.text = property.name
-        var im = UIImage(named: property.svgFileName)
-        
-        cell.imageView?.image = im
-        cell.imageView?.frame = CGRect(origin: cell.imageView!.frame.origin, size: CGSize(width: 3, height: 3))
-        
-        let itemSize = CGSize(width: 35, height: 35)
-        UIGraphicsBeginImageContextWithOptions(itemSize, false, UIScreen.mainScreen().scale)
-        let imageRect = CGRect(x: 0.0, y: 0.0, width: itemSize.width, height: itemSize.height)
-        cell.imageView?.image?.drawInRect(imageRect)
-        cell.imageView?.image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("expenseCell", forIndexPath: indexPath) as! UITableViewCell
+        let expense = self.database[indexPath.section][indexPath.row]
+        cell.textLabel?.text = "\(expense.expenseDate)"
         // Configure the cell...
-
+        
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return self.keys[section]
     }
     
     /*
@@ -105,15 +131,11 @@ class ListExpensesTableViewController: UITableViewController {
     /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation*/
-    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        if segue.identifier == "showDetailsExpenses" {
-            let vc = segue.destinationViewController as! ListDetailsExpensesTableViewController
-            vc.type = self.expenseType
-        }
     }
+    */
 
 }
