@@ -417,11 +417,11 @@
             </objects>
             <point key="canvasLocation" x="1297.5" y="-2477.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Perfil-->
         <scene sceneID="FPT-Fv-jlc">
             <objects>
                 <navigationController id="cWp-gw-9T8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="sPM-bu-Uld"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" image="perfil" id="sPM-bu-Uld"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IcF-ge-lhr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -484,7 +484,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYI-vi-Ao3">
                                 <rect key="frame" x="31" y="409" width="313" height="44"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0O-7q-yKg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8R-Zi-Ud2">
                                         <rect key="frame" x="8" y="11" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -493,7 +493,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="T0O-7q-yKg" firstAttribute="leading" secondItem="UYI-vi-Ao3" secondAttribute="leading" constant="8" id="3tv-UR-tBv"/>
+                                    <constraint firstAttribute="centerY" secondItem="M8R-Zi-Ud2" secondAttribute="centerY" id="Diu-Ov-k6a"/>
+                                    <constraint firstItem="M8R-Zi-Ud2" firstAttribute="leading" secondItem="UYI-vi-Ao3" secondAttribute="leading" constant="8" id="cz6-0L-HzG"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -979,6 +980,7 @@
     <resources>
         <image name="feed" width="29" height="29"/>
         <image name="home" width="29" height="29"/>
+        <image name="perfil" width="29" height="29"/>
         <image name="skyline" width="375" height="85"/>
     </resources>
 </document>
