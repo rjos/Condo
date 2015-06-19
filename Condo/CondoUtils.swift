@@ -121,19 +121,19 @@ extension NSDate{
     var month: Int {
         get{
             let calendar = NSCalendar.currentCalendar()
-            return calendar.component(NSCalendarUnit.MonthCalendarUnit, fromDate: self)
+            return calendar.component(.CalendarUnitMonth, fromDate: self)
         }
     }
     var year: Int {
         get{
             let calendar = NSCalendar.currentCalendar()
-            return calendar.component(NSCalendarUnit.YearCalendarUnit, fromDate: self)
+            return calendar.component(.CalendarUnitYear, fromDate: self)
         }
     }
     var day: Int {
         get{
             let calendar = NSCalendar.currentCalendar()
-            return calendar.component(NSCalendarUnit.DayCalendarUnit, fromDate: self)
+            return calendar.component(.CalendarUnitDay, fromDate: self)
         }
     }
 }
