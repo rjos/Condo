@@ -8,6 +8,7 @@
 
 import UIKit
 import CondoModel
+import ParseUI
 
 class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UITextViewDelegate{
 
@@ -19,7 +20,7 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
     @IBOutlet weak var contentView: UIView!
     var pickerTypeUser : UIPickerView!
     var toolBar : UIToolbar!
-    var imgProfile : UIImageView!
+    var imgProfile : PFImageView!
     
     var typesUserArray = ["Síndico", "Público"]
     
@@ -48,11 +49,19 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
         
         //self.typeUser.inputAccessoryView = self.toolBar
         let imageRect = CGRect(x: 4, y: 4, width: 40, height: 40)
-        self.imgProfile = UIImageView(frame: imageRect)
+        self.imgProfile = PFImageView(frame: imageRect)
         self.imgProfile.layer.cornerRadius = self.imgProfile.bounds.width / 2
         self.imgProfile.clipsToBounds = true
         
-        self.imgProfile.image = UIImage(named: DummyDatabase().user.imageName)
+        let user = ParseDatabase.sharedDatabase.getCurrentUser()
+        
+        if let image = user.image {
+            
+            self.imgProfile.file = image
+            self.imgProfile.loadInBackground()
+        }else{
+            self.imgProfile.image = UIImage(named: user.imageName)
+        }
         
         var bezierPath : UIBezierPath = UIBezierPath(rect: imageRect)
         
@@ -143,8 +152,8 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
 
     @IBAction func ShowPublish(sender: AnyObject) {
-        let community = ParseDatabase.sharedDatabase.testCommunity()
-        let user = ParseDatabase.sharedDatabase.testUser()
+        let community = ParseDatabase.sharedDatabase.getCommunityUser()
+        let user = ParseDatabase.sharedDatabase.getCurrentUser()
         let text = self.textReport.text
         
         ParseDatabase.sharedDatabase.createPost(type: PostContentType.Report, owner: user, text: text, status: PostReport.PostReportStatus.Open, community: community) { (post, error) -> () in

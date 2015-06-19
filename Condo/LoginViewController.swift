@@ -20,10 +20,9 @@ class LoginViewController:UIViewController{
         super.viewDidLoad()
         loginbutton.layer.cornerRadius = 10
         loginbutton.backgroundColor = UIColor.condoBlue()
-        //headerVector.drawSVGWithName("logo")
-        
-        //headerVector.strokeColor = UIColor.condoBlue()
-        //headerVector.fillColor = UIColor.condoBlue60()
+        headerVector.drawSVGWithName("logo")
+        headerVector.strokeColor = UIColor.condoBlue()
+        headerVector.fillColor = UIColor.condoBlue60()
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
         
@@ -37,7 +36,7 @@ class LoginViewController:UIViewController{
         if let user = PFUser.currentUser(){
             self.loginCallback(user)
         }else{
-            //headerVector.animateShape()
+            headerVector.animateShape()
         }
         
     }

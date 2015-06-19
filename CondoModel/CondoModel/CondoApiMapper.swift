@@ -16,8 +16,15 @@ class CondoApiMapper: NSObject {
         var dic: Dictionary<String, AnyObject> = [
             "id": object.objectId!,
             "name": object["fullname"]!,
-            "imageName": "dummy-photo-pedro"
+            "imageName": "dummy-photo-pedro",
         ]
+        
+        if let community = object["community"] as? PFObject {
+            
+            dic["community"] = self.communityFromPFObject(community)!
+        }else{
+            dic["community"] = nil
+        }
         
         if let imageFile = (object["image"] as? PFFile) {
             

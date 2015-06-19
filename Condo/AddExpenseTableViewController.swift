@@ -28,7 +28,7 @@ class AddExpenseTableViewController: UITableViewController {
         
         var newExpenses = Array<Dictionary<String, AnyObject>>()
         let db = ParseDatabase.sharedDatabase
-        let community = db.testCommunity()
+        let community = db.getCommunityUser()
         for (type, totalExpense) in self.expenses {
 
             let dic = Expense.dictionary(type: type, date: self.selectedDate, totalExpense: totalExpense)

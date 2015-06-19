@@ -26,7 +26,7 @@ class TestExpenseParseViewController: UIViewController {
     
     @IBAction func getExpenses(sender: AnyObject) {
         
-        let community = ParseDatabase.sharedDatabase.testCommunity()
+        let community = ParseDatabase.sharedDatabase.getCommunityUser()
         
         ParseDatabase.sharedDatabase.getAllExpenses(community: community, cachedResult: false) { (expenses, error) -> () in
             
@@ -43,7 +43,7 @@ class TestExpenseParseViewController: UIViewController {
         let value: Double? = totalExpense.text.toDouble()
         
         if let value = value {
-            let community = ParseDatabase.sharedDatabase.testCommunity()
+            let community = ParseDatabase.sharedDatabase.getCommunityUser()
             ParseDatabase.sharedDatabase.createExpense(type:ExpenseType.Energy, date: expenseDate.date, totalExpense: value, community: community, completionBlock: { (expense, error) -> () in
                 
                 if let expense = expense {

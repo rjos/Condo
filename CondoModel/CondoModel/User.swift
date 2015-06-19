@@ -13,9 +13,14 @@ public class User: Model {
     //MARK: Tem que remover depois do dummy
     public let imageName: String
     public var image:PFFile?
+    public var community: Community?
     override init(dictionary: Dictionary<String, AnyObject>) {
         self.name = dictionary["name"] as! String
         self.imageName = dictionary["imageName"] as! String
+        
+        if let community = dictionary["community"] as? Community {
+            self.community = community
+        }
         
         if let imageData = (dictionary["image"] as? PFFile) {
             

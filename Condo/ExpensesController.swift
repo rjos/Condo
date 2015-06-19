@@ -32,7 +32,7 @@ class ExpensesController: NSObject {
     
     func reloadData(#cached: Bool) {
         self._hasData = false
-        let community = ParseDatabase.sharedDatabase.testCommunity()
+        let community = ParseDatabase.sharedDatabase.getCommunityUser()
         ParseDatabase.sharedDatabase.getAllExpenses(community: community, cachedResult: cached) { (expenses, error) -> () in
             if let expenses = expenses {
                 self.expenseDictionary = [:]
@@ -67,7 +67,7 @@ class ExpensesController: NSObject {
 
     
     func addExpense(#type: ExpenseType, totalExpense: NSNumber, date: NSDate) {
-        let community = ParseDatabase.sharedDatabase.testCommunity()
+        let community = ParseDatabase.sharedDatabase.getCommunityUser()
         ParseDatabase.sharedDatabase.createExpense(type: type, date: date, totalExpense: totalExpense, community: community) { (expenseRaw, error) -> () in
             if let expense = expenseRaw {
                 self.postExpenseAddedNotification()

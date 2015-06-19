@@ -45,11 +45,16 @@ public class ParseDatabase: NSObject {
         }
     }
     
-    public func testCommunity()->Community {
+    public func getCommunityUser()->Community {
+        
+        /*let user = self.getCurrentUser()
+        
+        return user.community*/
+        
         return Community(dictionary: ["id":"GpMV5wxc37", "name":"Ed. Santiago", "administratorID":"1234"])
     }
     
-    public func testUser() -> User {
+    public func getCurrentUser() -> User {
         
         /*return User(dictionary: [
             "id": "YwUtjZt51Z",

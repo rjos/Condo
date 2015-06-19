@@ -62,6 +62,9 @@
 		1BE0E2B11B28C6BE002BF58E /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0E2AF1B28C6BE002BF58E /* CommentTableViewCell.swift */; };
 		1BE0E2B21B28C6BE002BF58E /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BE0E2B01B28C6BE002BF58E /* CommentTableViewCell.xib */; };
 		1BE15C6F1B2F5EBC001BC7BF /* TestExpenseParseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE15C6E1B2F5EBC001BC7BF /* TestExpenseParseViewController.swift */; };
+		1BF5FABC1B33F9B800E78744 /* SelectCondoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF5FABB1B33F9B800E78744 /* SelectCondoViewController.swift */; };
+		1BF5FABF1B33F9CD00E78744 /* logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1BF5FABE1B33F9CD00E78744 /* logo.svg */; };
+		1BF5FAC11B34012100E78744 /* CreateCondoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF5FAC01B34012100E78744 /* CreateCondoViewController.swift */; };
 		1BF7C76C1B2A15FC00E9D231 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */; };
 		D1DA35241B30A4980082E263 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA35111B30A4980082E263 /* libz.dylib */; };
 		D1DA35251B30A4980082E263 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA35121B30A4980082E263 /* SystemConfiguration.framework */; };
@@ -217,6 +220,9 @@
 		1BE0E2AF1B28C6BE002BF58E /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		1BE0E2B01B28C6BE002BF58E /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		1BE15C6E1B2F5EBC001BC7BF /* TestExpenseParseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestExpenseParseViewController.swift; sourceTree = "<group>"; };
+		1BF5FABB1B33F9B800E78744 /* SelectCondoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCondoViewController.swift; sourceTree = "<group>"; };
+		1BF5FABE1B33F9CD00E78744 /* logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = logo.svg; sourceTree = "<group>"; };
+		1BF5FAC01B34012100E78744 /* CreateCondoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCondoViewController.swift; sourceTree = "<group>"; };
 		1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		D1DA35111B30A4980082E263 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/usr/lib/libz.dylib; sourceTree = "<absolute>"; };
 		D1DA35121B30A4980082E263 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
@@ -331,6 +337,7 @@
 		021544331B294F140057B176 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1BF5FABB1B33F9B800E78744 /* SelectCondoViewController.swift */,
 				02ECE4C51B31F7AD000FC6A0 /* MainViewController.swift */,
 				02ECE4B81B30B6B5000FC6A0 /* LoginViewController.swift */,
 				02ECE4BA1B30B6BE000FC6A0 /* SignUpViewController.swift */,
@@ -341,6 +348,7 @@
 				1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */,
 				1B9CE3AF1B2F450400866898 /* TestParseViewController.swift */,
 				1BE15C6E1B2F5EBC001BC7BF /* TestExpenseParseViewController.swift */,
+				1BF5FAC01B34012100E78744 /* CreateCondoViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -484,6 +492,7 @@
 		4249F60B1B2A127C00B9F861 /* SVGs */ = {
 			isa = PBXGroup;
 			children = (
+				1BF5FABE1B33F9CD00E78744 /* logo.svg */,
 				D1DA35381B30BF970082E263 /* administrationCost.svg */,
 				D1DA35391B30BF970082E263 /* cleaningMaterial.svg */,
 				D1DA353A1B30BF970082E263 /* cleaningServices.svg */,
@@ -649,6 +658,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02ABC0081B2768BC00E0678B /* Main.storyboard in Resources */,
+				1BF5FABF1B33F9CD00E78744 /* logo.svg in Resources */,
 				02ABC00D1B2768BC00E0678B /* LaunchScreen.xib in Resources */,
 				0206D6191B2A13A100CD3A0E /* ExpenseCollectionViewCell.xib in Resources */,
 				021544231B2927650057B176 /* ReportTableViewCell.xib in Resources */,
@@ -731,7 +741,9 @@
 				024D32AE1B2CFEDC0061D518 /* SLKTypingIndicatorView.m in Sources */,
 				021544311B2943080057B176 /* VectorTestViewController.swift in Sources */,
 				1BF7C76C1B2A15FC00E9D231 /* NewPostViewController.swift in Sources */,
+				1BF5FAC11B34012100E78744 /* CreateCondoViewController.swift in Sources */,
 				024D32A91B2CFEDC0061D518 /* UIView+SLKAdditions.m in Sources */,
+				1BF5FABC1B33F9B800E78744 /* SelectCondoViewController.swift in Sources */,
 				02ECE4C61B31F7AD000FC6A0 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

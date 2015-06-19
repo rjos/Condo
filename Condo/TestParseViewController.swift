@@ -34,9 +34,9 @@ class TestParseViewController: UIViewController {
         }
         }*/
         
-        let community = ParseDatabase.sharedDatabase.testCommunity()
+        let community = ParseDatabase.sharedDatabase.getCommunityUser()
         
-        let owner     = ParseDatabase.sharedDatabase.testUser()
+        let owner     = ParseDatabase.sharedDatabase.getCurrentUser()
         
         ParseDatabase.sharedDatabase.createPost(type: PostContentType.Announcement, owner: owner, text: nameCommunity.text, status: PostReport.PostReportStatus.Open, community: community) { (post, error) -> () in
             if let post = post {

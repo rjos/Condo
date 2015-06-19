@@ -19,7 +19,7 @@ class CommunityFeedTableViewController: UITableViewController {
     @IBOutlet weak var btnShowNewPost: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.community = ParseDatabase.sharedDatabase.testCommunity() //DummyDatabase().community
+        self.community = ParseDatabase.sharedDatabase.getCommunityUser() //DummyDatabase().community
         
         self.tableView.registerNib(UINib(nibName: "AnnouncementTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "announcement")
         self.tableView.registerNib(UINib(nibName: "ReportTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "report")

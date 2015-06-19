@@ -21,6 +21,8 @@ class ListDetailsExpensesTableViewController: UITableViewController {
             if let type = type {
                 
                 let properties = ExpenseDrawingProperties(type: type)
+                
+                self.title = properties.name
             }
         }
     }
@@ -72,6 +74,14 @@ class ListDetailsExpensesTableViewController: UITableViewController {
         
     }
 
+    override func viewWillAppear(animated: Bool) {
+        let properties = ExpenseDrawingProperties(type: self.type!)
+        
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+        self.navigationController?.navigationBar.barTintColor = properties.backgroundColor
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

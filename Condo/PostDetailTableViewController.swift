@@ -120,7 +120,7 @@ class PostDetailTableViewController: SLKTextViewController {
     
     func sendComment(sender: UIButton!){
         
-        let user = ParseDatabase.sharedDatabase.testUser()
+        let user = ParseDatabase.sharedDatabase.getCurrentUser()
         
         let message = self.textView.text
         
