@@ -37,8 +37,8 @@ CGFloat static const kJBLineSelectionViewWidth = 20.0f;
 // Numerics (JBLineChartView)
 CGFloat static const kJBBarChartViewUndefinedCachedHeight = -1.0f;
 CGFloat static const kJBLineChartViewStateAnimationDuration = 1.0f;
-CGFloat static const kJBLineChartViewStateAnimationDelay = 0.05f;
-CGFloat static const kJBLineChartViewStateBounceOffset = 15.0f;
+//CGFloat static const kJBLineChartViewStateAnimationDelay = 0.05f;
+//CGFloat static const kJBLineChartViewStateBounceOffset = 15.0f;
 NSInteger static const kJBLineChartUnselectedLineIndex = -1;
 
 // Collections (JBLineChartLineView)
@@ -722,7 +722,7 @@ static UIColor *kJBLineChartViewDefaultDotSelectionColor = nil;
     
     if ([self.chartData count] > 0)
     {
-        CGRect mainViewRect = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, [self availableHeight]);
+        //CGRect mainViewRect = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, [self availableHeight]);
         CGFloat yOffset = self.headerView.frame.size.height + self.headerPadding;
         
         dispatch_block_t adjustViewFrames = ^{
