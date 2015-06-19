@@ -226,6 +226,7 @@ public class ParseDatabase: NSObject {
         let query = PFQuery(className: "Post")
         query.whereKey("community", equalTo: PFObject(withoutDataWithClassName: "Community", objectId: community.id))
         query.includeKey("owner")
+        query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             
             if let error = error {

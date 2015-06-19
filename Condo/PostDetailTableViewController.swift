@@ -39,6 +39,28 @@ class PostDetailTableViewController: SLKTextViewController {
         self.rightButton.addTarget(self, action: "sendComment:", forControlEvents: UIControlEvents.TouchDown)
         self.tableView.reloadData()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        let type = self.post!.type
+        
+        var color: UIColor
+        
+        switch type {
+        case .Announcement:
+            color = UIColor.condoAnnouncementBackgroundColor()
+        case .Question:
+            color = UIColor.condoQuestionBackgroundColor()
+        case .Report:
+            color = UIColor.condoReportBackgroundColor()
+        }
+        
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+        self.navigationController?.navigationBar.barTintColor = color
+        self.textInputbar.backgroundColor = color
+        self.textInputbar.tintColor = color
+        self.rightButton.tintColor = UIColor.whiteColor()
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+    }
 
     override func viewDidAppear(animated: Bool) {
         
