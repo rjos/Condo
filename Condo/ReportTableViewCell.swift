@@ -18,6 +18,8 @@ class ReportTableViewCell: UITableViewCell {
         self.postView = PostView.instantiateWithOwner(self)
         self.mainView.fillWithSubview(postView!)
         self.selectionStyle = UITableViewCellSelectionStyle.None
+        self.contentView.backgroundColor = UIColor.condoMainBackgroundColor()
+        self.mainView.backgroundColor = UIColor.whiteColor()
     }
     
     var post: Post? = nil {
@@ -30,7 +32,6 @@ class ReportTableViewCell: UITableViewCell {
             self.mainView.layer.cornerRadius = properties.cornerRadius
             self.mainView.layer.borderWidth = properties.lineWidth
             self.mainView.layer.borderColor = outlineColor.CGColor
-            self.mainView.backgroundColor = UIColor.clearColor()
             self.mainView.layer.masksToBounds = true
         }
     }

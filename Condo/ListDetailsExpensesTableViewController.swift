@@ -109,7 +109,7 @@ class ListDetailsExpensesTableViewController: UITableViewController {
         let expense = self.database[indexPath.section][indexPath.row]
         
         cell.expense = expense
-        
+        cell.type = expense.type
         //cell.textLabel?.text = "\(expense.expenseDate)"
         // Configure the cell...
         

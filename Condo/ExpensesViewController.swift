@@ -12,20 +12,24 @@ import CondoModel
 class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     let notificationManager = NotificationManager()
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    @IBOutlet weak var navItem: UINavigationItem!
+    @IBOutlet weak var btnRefresh: UIBarButtonItem!
+    @IBOutlet weak var btnOrganize: UIBarButtonItem!
     
     var expenseGraphViewController: ExpenseGraphViewController? = nil
     
     var allExpenses: Array<Expense>? = nil
     var expenseDictionary: Dictionary<ExpenseType, Array<Expense>> = [:]
     
+    var titleView = UILabel(frame: CGRectMake(0, 0, 320, 30))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.collectionView!.registerNib(UINib(nibName: "ExpenseCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: "cell")
         
-
-        self.title = DummyDatabase().community.name
+        //self.title = DummyDatabase().community.name
+        
         self.loadData()
         self.notificationManager.registerObserver(ExpensesController.DataChangedNotification) {
             [weak self](notification) in
@@ -33,9 +37,12 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
         }
         ExpensesController.sharedController.reloadData(cached: true)
         
-
+        self.titleView.font = UIFont.boldSystemFontOfSize(18)
+        self.titleView.backgroundColor = UIColor.clearColor()
+        self.titleView.text = DummyDatabase().community.name
+        self.titleView.textAlignment = NSTextAlignment.Center
     }
-
+    
     func expensesChanged(notification: NSNotification) {
         loadData()
     }
@@ -59,14 +66,21 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
             var p = ExpenseDrawingProperties(type: self.selectedType)
             self.expenseGraphViewController?.expenses = self.expenseDictionary[self.selectedType]!
             self.expenseGraphViewController?.selectedType = self.selectedType
-            self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+            /*self.navigationController?.navigationBar.barStyle = UIBarStyle.Black*/
             UIView.animateWithDuration(0.5) {
-                self.navigationController?.navigationBar.barTintColor = p.selectedBackgroundColor
-                self.tabBarController?.tabBar.barTintColor = p.selectedBackgroundColor
+                //self.navigationController?.navigationBar.barTintColor = p.selectedBackgroundColor
+                self.btnRefresh.tintColor = p.selectedBackgroundColor
+                self.btnOrganize.tintColor = p.selectedBackgroundColor
+                self.navigationController?.navigationBar.tintColor = p.selectedBackgroundColor
+                self.tabBarController?.tabBar.tintColor = p.selectedBackgroundColor
+                self.navigationController?.navigationItem.titleView?.tintColor = p.selectedBackgroundColor
+                
+                self.titleView.textColor = p.selectedBackgroundColor
+                self.navItem.titleView = self.titleView
             }
             
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-            self.navigationController?.navigationBar.shadowImage = UIImage()
+            /*self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+            self.navigationController?.navigationBar.shadowImage = UIImage()*/
             
             
         }

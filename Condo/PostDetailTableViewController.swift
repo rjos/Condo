@@ -25,6 +25,8 @@ class PostDetailTableViewController: SLKTextViewController {
         
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
+        self.tableView.backgroundColor = UIColor.rgba(247, g: 247, b: 247, a: 255)
+        
         self.tableView.registerNib(UINib(nibName: "AnnouncementTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "announcement")
         self.tableView.registerNib(UINib(nibName: "ReportTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "report")
         self.tableView.registerNib(UINib(nibName: "QuestionTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "question")
@@ -61,7 +63,7 @@ class PostDetailTableViewController: SLKTextViewController {
         self.rightButton.tintColor = UIColor.whiteColor()
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
-
+    
     override func viewDidAppear(animated: Bool) {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true

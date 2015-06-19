@@ -16,10 +16,17 @@ class CommunityFeedTableViewController: UITableViewController {
     var database: Array<Post> = []
     
     var selectedPost: Post? = nil
+    
     @IBOutlet weak var btnShowNewPost: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.community = ParseDatabase.sharedDatabase.getCommunityUser() //DummyDatabase().community
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.tintColor = UIColor.condoBlue30()
+        self.refreshControl?.addTarget(self, action: "refreshData", forControlEvents: UIControlEvents.ValueChanged)
+        
+        self.view.backgroundColor = UIColor.condoMainBackgroundColor()
         
         self.tableView.registerNib(UINib(nibName: "AnnouncementTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "announcement")
         self.tableView.registerNib(UINib(nibName: "ReportTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "report")
@@ -30,17 +37,35 @@ class CommunityFeedTableViewController: UITableViewController {
         
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Default
+        self.navigationController?.navigationBar.barTintColor = UIColor.condoNavigationBarColor()
+        self.tabBarController?.tabBar.tintColor = UIColor.blueColor()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
-        self.navigationController?.navigationBar.barTintColor = UIColor.condoBlue30()
+    func refreshData(){
         
-        self.tabBarController?.tabBar.barStyle = UIBarStyle.Black
-        self.tabBarController?.tabBar.barTintColor = UIColor.condoBlue30()
-        self.tabBarController?.tabBar.tintColor = UIColor.whiteColor()
+        if let refreshControll = self.refreshControl {
+            
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            
+            if let community = self.community {
+                
+                ParseDatabase.sharedDatabase.getAllPosts(community: community, completionBlock: { (posts, error) -> () in
+                    if let posts = posts {
+                        self.database = posts
+                        self.tableView.reloadData()
+                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    }
+                })
+            }
+            
+            self.refreshControl?.endRefreshing()
+        }
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -52,7 +77,6 @@ class CommunityFeedTableViewController: UITableViewController {
             ParseDatabase.sharedDatabase.getAllPosts(community: community) { (posts, error) -> () in
                 if let posts = posts {
                     self.database = posts
-                    println(posts)
                     self.tableView.reloadData()
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 }

@@ -23,8 +23,23 @@ class DetailsExpensesTableViewCell: UITableViewCell {
     var expense: Expense? = nil{
         didSet{
             if let expense = expense {
+                
+                let properties = ExpenseDrawingProperties(type: expense.type)
+                
                 self.dateExpense.text = "\(expense.expenseDate.day)/\(expense.expenseDate.month)/\(expense.expenseDate.year)"
                 self.totalExpense.text = "R$ \(expense.totalExpense)"
+            }
+        }
+    }
+    
+    var type: ExpenseType? {
+        didSet {
+            if let type = type {
+                
+                let properties = ExpenseDrawingProperties(type: type)
+                
+                self.dateExpense.textColor = properties.selectedBackgroundColor
+                self.totalExpense.textColor = properties.selectedBackgroundColor
             }
         }
     }

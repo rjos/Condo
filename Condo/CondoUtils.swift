@@ -59,6 +59,14 @@ extension UIColor {
     static func condoPurple() -> UIColor {
         return UIColor.rgba(112, g: 77, b: 145, a: 255)
     }
+    
+    static func condoMainBackgroundColor() -> UIColor{
+        return UIColor.rgba(230, g: 230, b: 230, a: 255)
+    }
+    
+    static func condoNavigationBarColor() -> UIColor {
+        return UIColor.rgba(247, g: 247, b: 247, a: 255)
+    }
 }
 
 extension UIView {

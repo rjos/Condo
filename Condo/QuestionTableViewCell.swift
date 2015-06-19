@@ -23,6 +23,8 @@ class QuestionTableViewCell: UITableViewCell {
         self.postHolder = PostView.instantiateWithOwner(self)
         self.postView.fillWithSubview(postHolder!)
         self.selectionStyle = UITableViewCellSelectionStyle.None
+        self.contentView.backgroundColor = UIColor.condoMainBackgroundColor()
+        self.mainView.backgroundColor = UIColor.whiteColor()
         // Initialization code
     }
 
@@ -36,7 +38,6 @@ class QuestionTableViewCell: UITableViewCell {
             self.mainView.layer.cornerRadius = properties.cornerRadius
             self.mainView.layer.borderWidth = properties.lineWidth
             self.mainView.layer.borderColor = outlineColor.CGColor
-            self.mainView.backgroundColor = UIColor.clearColor()
             self.mainView.layer.masksToBounds = true
             
             self.tintColor = outlineColor
