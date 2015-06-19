@@ -216,7 +216,7 @@
                                     <constraint firstAttribute="width" secondItem="h4A-hP-56G" secondAttribute="height" multiplier="261:169" id="Jcg-ws-Zup"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="skyline" translatesAutoresizingMaskIntoConstraints="NO" id="USs-Yo-LpX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skyline" translatesAutoresizingMaskIntoConstraints="NO" id="USs-Yo-LpX">
                                 <rect key="frame" x="0.0" y="597" width="375" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Fob-MM-287"/>
@@ -256,6 +256,7 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="MKP-bJ-F8A" secondAttribute="centerX" id="446-dU-SxZ"/>
                             <constraint firstItem="B3S-bx-EZx" firstAttribute="top" secondItem="CGv-yx-fUD" secondAttribute="bottom" constant="-1" id="6y7-Cl-Q6y"/>
+                            <constraint firstAttribute="trailing" secondItem="USs-Yo-LpX" secondAttribute="trailing" id="Cmy-8h-lU6"/>
                             <constraint firstItem="USs-Yo-LpX" firstAttribute="top" secondItem="B3S-bx-EZx" secondAttribute="bottom" constant="30" id="DY9-q9-vhR"/>
                             <constraint firstItem="CGv-yx-fUD" firstAttribute="top" secondItem="M8e-UU-FZs" secondAttribute="bottom" constant="8" id="Edg-IS-JX9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h4A-hP-56G" secondAttribute="trailing" constant="41" id="FfG-lV-5Pm"/>
@@ -266,6 +267,7 @@
                             <constraint firstItem="kBx-lr-h8S" firstAttribute="top" secondItem="USs-Yo-LpX" secondAttribute="bottom" id="c7B-cq-4jq"/>
                             <constraint firstItem="MKP-bJ-F8A" firstAttribute="top" secondItem="h4A-hP-56G" secondAttribute="bottom" constant="8" id="cEg-mP-fke"/>
                             <constraint firstItem="h4A-hP-56G" firstAttribute="top" secondItem="GJG-L5-K4W" secondAttribute="bottom" constant="30" id="e7e-H3-IjH"/>
+                            <constraint firstItem="USs-Yo-LpX" firstAttribute="leading" secondItem="Vrq-C9-7tg" secondAttribute="leading" id="kes-Yw-eax"/>
                             <constraint firstAttribute="trailingMargin" secondItem="M8e-UU-FZs" secondAttribute="trailing" constant="41" id="uCX-z1-BFP"/>
                         </constraints>
                     </view>
@@ -741,7 +743,7 @@
                                 <rect key="frame" x="32" y="324" width="311" height="311"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max: 500" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIf-JP-8Tw">
-                                        <rect key="frame" x="255" y="289" width="48" height="13.5"/>
+                                        <rect key="frame" x="255" y="289" width="48" height="14"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -980,7 +982,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5b-08-YmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3056" y="960"/>
+            <point key="canvasLocation" x="72" y="3312"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="imQ-C7-eEJ">

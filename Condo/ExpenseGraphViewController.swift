@@ -46,8 +46,11 @@ class ExpenseGraphViewController: UIViewController, JBBarChartViewDataSource, JB
     var selectedType = ExpenseType.allValues[0] {
         didSet{
             var p = ExpenseDrawingProperties(type: self.selectedType)
-            self.view.backgroundColor = p.selectedBackgroundColor
-            self.barChartView.backgroundColor = p.selectedBackgroundColor
+            UIView.animateWithDuration(0.5) {
+                self.view.backgroundColor = p.selectedBackgroundColor
+                self.barChartView.backgroundColor = p.selectedBackgroundColor
+            }
+            
             self.expenseNameLabel.text = p.name
             if self.animating {
                 self.barChartView.reloadData()

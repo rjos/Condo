@@ -98,6 +98,10 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
         })
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     func keyboardDidHide(notification: NSNotification){
         let info = (notification.userInfo as! Dictionary<NSString, AnyObject>)
         let valueSize = info["UIKeyboardFrameEndUserInfoKey"] as! NSValue

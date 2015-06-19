@@ -60,11 +60,15 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
             self.expenseGraphViewController?.expenses = self.expenseDictionary[self.selectedType]!
             self.expenseGraphViewController?.selectedType = self.selectedType
             self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
-            self.navigationController?.navigationBar.barTintColor = p.selectedBackgroundColor
+            UIView.animateWithDuration(0.5) {
+                self.navigationController?.navigationBar.barTintColor = p.selectedBackgroundColor
+                self.tabBarController?.tabBar.barTintColor = p.selectedBackgroundColor
+            }
+            
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
             self.navigationController?.navigationBar.shadowImage = UIImage()
             
-            self.tabBarController?.tabBar.barTintColor = p.selectedBackgroundColor
+            
         }
     }
     

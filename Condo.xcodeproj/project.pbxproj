@@ -66,6 +66,7 @@
 		1BF5FABF1B33F9CD00E78744 /* logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1BF5FABE1B33F9CD00E78744 /* logo.svg */; };
 		1BF5FAC11B34012100E78744 /* CreateCondoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF5FAC01B34012100E78744 /* CreateCondoViewController.swift */; };
 		1BF7C76C1B2A15FC00E9D231 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */; };
+		34A380791B348F4700D94929 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A380781B348F4700D94929 /* AVFoundation.framework */; };
 		D1DA35241B30A4980082E263 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA35111B30A4980082E263 /* libz.dylib */; };
 		D1DA35251B30A4980082E263 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA35121B30A4980082E263 /* SystemConfiguration.framework */; };
 		D1DA35261B30A4980082E263 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA35131B30A4980082E263 /* StoreKit.framework */; };
@@ -224,6 +225,7 @@
 		1BF5FABE1B33F9CD00E78744 /* logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = logo.svg; sourceTree = "<group>"; };
 		1BF5FAC01B34012100E78744 /* CreateCondoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCondoViewController.swift; sourceTree = "<group>"; };
 		1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		34A380781B348F4700D94929 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D1DA35111B30A4980082E263 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/usr/lib/libz.dylib; sourceTree = "<absolute>"; };
 		D1DA35121B30A4980082E263 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
 		D1DA35131B30A4980082E263 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = "<absolute>"; };
@@ -265,6 +267,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34A380791B348F4700D94929 /* AVFoundation.framework in Frameworks */,
 				D1DA35331B30A4980082E263 /* ParseUI.framework in Frameworks */,
 				1BE0E2A81B28B333002BF58E /* CondoModel.framework in Frameworks */,
 				D1DA35301B30A4980082E263 /* ParseCrashReporting.framework in Frameworks */,
@@ -516,6 +519,7 @@
 		D1DA35231B30A4980082E263 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				34A380781B348F4700D94929 /* AVFoundation.framework */,
 				D1DA35111B30A4980082E263 /* libz.dylib */,
 				D1DA35121B30A4980082E263 /* SystemConfiguration.framework */,
 				D1DA35131B30A4980082E263 /* StoreKit.framework */,
