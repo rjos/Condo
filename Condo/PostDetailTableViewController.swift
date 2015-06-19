@@ -22,6 +22,9 @@ class PostDetailTableViewController: SLKTextViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.inverted = false
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
         self.tableView.registerNib(UINib(nibName: "AnnouncementTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "announcement")
         self.tableView.registerNib(UINib(nibName: "ReportTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "report")
         self.tableView.registerNib(UINib(nibName: "QuestionTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "question")

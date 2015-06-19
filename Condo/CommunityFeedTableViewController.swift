@@ -30,6 +30,19 @@ class CommunityFeedTableViewController: UITableViewController {
         
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+        self.navigationController?.navigationBar.barTintColor = UIColor.condoBlue30()
+        
+        self.tabBarController?.tabBar.barStyle = UIBarStyle.Black
+        self.tabBarController?.tabBar.barTintColor = UIColor.condoBlue30()
+        self.tabBarController?.tabBar.tintColor = UIColor.whiteColor()
+    }
+    
     override func viewDidAppear(animated: Bool) {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true

@@ -64,7 +64,7 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
             self.navigationController?.navigationBar.shadowImage = UIImage()
             
-            //self.tabBarController?.tabBar.barTintColor = p.selectedBackgroundColor
+            self.tabBarController?.tabBar.barTintColor = p.selectedBackgroundColor
         }
     }
     
