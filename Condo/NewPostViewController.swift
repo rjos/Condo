@@ -159,9 +159,14 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
         let community = ParseDatabase.sharedDatabase.getCommunityUser()
         let user = ParseDatabase.sharedDatabase.getCurrentUser()
         let text = self.textReport.text
-        
+        self.dismissViewControllerAnimated(true, completion: nil)
         ParseDatabase.sharedDatabase.createPost(type: PostContentType.Report, owner: user, text: text, status: PostReport.PostReportStatus.Open, community: community) { (post, error) -> () in
-            self.dismissViewControllerAnimated(true, completion: nil)
+            let notification = MPGNotification(title: "Seu problema foi publicado", subtitle: nil, backgroundColor: UIColor.condoReportBackgroundColor(), iconImage: UIImage(named: "question"))
+            
+            notification.duration = 4.0
+            notification.animationType = MPGNotificationAnimationType.Drop
+            notification.swipeToDismissEnabled = false
+            notification.show()
         }
     }
     
