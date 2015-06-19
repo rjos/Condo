@@ -51,11 +51,13 @@ public class ParseDatabase: NSObject {
     
     public func testUser() -> User {
         
-        return User(dictionary: [
+        /*return User(dictionary: [
             "id": "YwUtjZt51Z",
             "name": "pedro",
             "imageName": "dummy-photo-pedro",
-            "image": ""])
+            "image": ""])*/
+        
+        return CondoApiMapper.userFromPFObject(PFUser.currentUser()!)!
     }
     
     public func testPost(user: User, community: Community) -> Post {

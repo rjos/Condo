@@ -12,10 +12,18 @@ import CondoModel
 class ListDetailsExpensesTableViewController: UITableViewController {
 
     private let controller = ExpensesController.sharedController
-    var type: ExpenseType?
     
     var database : Array<Array<Expense>> = []
     var keys: Array<String> = []
+    
+    var type: ExpenseType? {
+        didSet{
+            if let type = type {
+                
+                let properties = ExpenseDrawingProperties(type: type)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +33,11 @@ class ListDetailsExpensesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.tableView.registerNib((UINib(nibName: "DetailsExpensesTableViewCell", bundle: NSBundle.mainBundle())), forCellReuseIdentifier: "DetailsExpenses")
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 50.0
+        self.tableView.reloadData()
         
         var expenses = controller.getAllExpenses(type: self.type!)
         
@@ -80,9 +93,14 @@ class ListDetailsExpensesTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("expenseCell", forIndexPath: indexPath) as! UITableViewCell
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("DetailsExpenses", forIndexPath: indexPath) as! DetailsExpensesTableViewCell
+        
         let expense = self.database[indexPath.section][indexPath.row]
-        cell.textLabel?.text = "\(expense.expenseDate)"
+        
+        cell.expense = expense
+        
+        //cell.textLabel?.text = "\(expense.expenseDate)"
         // Configure the cell...
         
         return cell
@@ -90,7 +108,33 @@ class ListDetailsExpensesTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return self.keys[section]
+        let dateArr = split(self.keys[section]) {$0 == "-"}
+        
+        var monthToInt = dateArr[0].toInt()
+        let year  = dateArr[1]
+        
+        let month = self.month(monthToInt!)
+        
+        return "\(month) - \(year)"
+    }
+    
+    func month(int: Int) -> String{
+        
+        switch int {
+        case 1: return "Janeiro"
+        case 2: return "Fevereiro"
+        case 3: return "Março"
+        case 4: return "Abril"
+        case 5: return "Maio"
+        case 6: return "Junho"
+        case 7: return "Julho"
+        case 8: return "Agosto"
+        case 9: return "Setembro"
+        case 10: return "Outubro"
+        case 11: return "Novembro"
+        case 12: return "Dezembro"
+        default: return ""
+        }
     }
     
     /*

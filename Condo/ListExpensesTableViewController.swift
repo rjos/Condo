@@ -14,6 +14,8 @@ class ListExpensesTableViewController: UITableViewController {
     private let controller = ExpensesController.sharedController
     private var expenseType: ExpenseType = ExpenseType.Energy
     private let reuseIdentifier = "ExpenseTypeCellReuseIdentifier"
+    private var database: Array<ExpenseType> = []
+    
     @IBAction func okButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -25,15 +27,19 @@ class ListExpensesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.database = controller.getAllExpenseTypes()
     }
 
 
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.expenseType = controller.getAllExpenseTypes()[indexPath.row]
         
-        //self.performSegueWithIdentifier("showDetailsExpenses", sender: self)
+        let type = self.database[indexPath.row]
+        
+        self.expenseType = type
+        self.performSegueWithIdentifier("showDetailsExpenses", sender: self)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -47,7 +53,7 @@ class ListExpensesTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! UITableViewCell
-        let type = controller.getAllExpenseTypes()[indexPath.row]
+        let type = self.database[indexPath.row]
         let property = ExpenseDrawingProperties(type: type)
         cell.textLabel?.text = property.name
         var im = UIImage(named: property.svgFileName)

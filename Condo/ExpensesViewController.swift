@@ -116,6 +116,7 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
         }
         let type = self.selectedType
         let p = ExpenseDrawingProperties(type: type)
+        
         if let vc = segue.destinationViewController as? UIViewController {
             vc.view.tintColor = p.backgroundColor
         }

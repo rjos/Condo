@@ -23,9 +23,9 @@ class SignUpViewController:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         cadastro.layer.cornerRadius = 10
-        headerVector2.drawSVGWithName("logo")
-        headerVector2.fillColor = UIColor.condoBlue60()
-        headerVector2.strokeColor = UIColor.condoBlue()
+        //headerVector2.drawSVGWithName("logo")
+        //headerVector2.fillColor = UIColor.condoBlue60()
+        //headerVector2.strokeColor = UIColor.condoBlue()
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
     }
@@ -40,6 +40,7 @@ class SignUpViewController:UIViewController{
         var user = PFUser()
         user.username = email.text
         user.password = senha.text
+        user["fullname"] = nome.text
         
         // other fields can be set just like with PFObject
         if (nome.text == "" || email.text == "" || senha.text == ""){
