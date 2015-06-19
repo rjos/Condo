@@ -40,9 +40,9 @@ class ExpensesController: NSObject {
                     let type = expense.type
                     var expenseArray: Array<Expense>
                     if let array = self.expenseDictionary[type] {
-                        expenseArray = array
+                        expenseArray = Array<Expense>(array)
                     } else {
-                        expenseArray = []
+                        expenseArray = Array<Expense>()
                     }
                     expenseArray.append(expense)
                     self.expenseDictionary[type] = expenseArray
