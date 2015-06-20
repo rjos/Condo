@@ -265,7 +265,7 @@ public class ParseDatabase: NSObject {
     public func getCommentFromPost(post: Post, completionBlock: (comments: Array<Comment>?, error: NSError?) -> ()) {
         
         let commentsObject = PFQuery(className: "Comment")
-        commentsObject.includeKey("onwer")
+        commentsObject.includeKey("owner")
         commentsObject.whereKey("post", equalTo: PFObject(withoutDataWithClassName: "Post", objectId: post.id))
         commentsObject.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             
