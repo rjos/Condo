@@ -53,6 +53,11 @@
 		02ECE4C11B31E8F7000FC6A0 /* ExpensesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECE4C01B31E8F7000FC6A0 /* ExpensesController.swift */; };
 		02ECE4C41B31EC51000FC6A0 /* ListExpensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECE4C31B31EC51000FC6A0 /* ListExpensesTableViewController.swift */; };
 		02ECE4C61B31F7AD000FC6A0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECE4C51B31F7AD000FC6A0 /* MainViewController.swift */; };
+		02ED37641B35CEE1003E7A1C /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED375B1B35CEE1003E7A1C /* BEMSimpleLineGraphView.m */; };
+		02ED37651B35CEE1003E7A1C /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED375D1B35CEE1003E7A1C /* BEMCircle.m */; };
+		02ED37661B35CEE1003E7A1C /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED375F1B35CEE1003E7A1C /* BEMLine.m */; };
+		02ED37671B35CEE1003E7A1C /* BEMAverageLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED37611B35CEE1003E7A1C /* BEMAverageLine.m */; };
+		02ED37681B35CEE1003E7A1C /* BEMPermanentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED37631B35CEE1003E7A1C /* BEMPermanentPopupView.m */; };
 		04E4BB211B34C1980091D3FF /* QrCodeCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E4BB201B34C1980091D3FF /* QrCodeCreateViewController.swift */; };
 		1B15DFD01B334D9B00CB365F /* ListDetailsExpensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15DFCF1B334D9B00CB365F /* ListDetailsExpensesTableViewController.swift */; };
 		1B80A5451B33BF19000351B6 /* DetailsExpensesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80A5431B33BF19000351B6 /* DetailsExpensesTableViewCell.swift */; };
@@ -215,6 +220,16 @@
 		02ECE4C01B31E8F7000FC6A0 /* ExpensesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesController.swift; sourceTree = "<group>"; };
 		02ECE4C31B31EC51000FC6A0 /* ListExpensesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListExpensesTableViewController.swift; sourceTree = "<group>"; };
 		02ECE4C51B31F7AD000FC6A0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		02ED375A1B35CEE1003E7A1C /* BEMSimpleLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMSimpleLineGraphView.h; sourceTree = "<group>"; };
+		02ED375B1B35CEE1003E7A1C /* BEMSimpleLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMSimpleLineGraphView.m; sourceTree = "<group>"; };
+		02ED375C1B35CEE1003E7A1C /* BEMCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMCircle.h; sourceTree = "<group>"; };
+		02ED375D1B35CEE1003E7A1C /* BEMCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMCircle.m; sourceTree = "<group>"; };
+		02ED375E1B35CEE1003E7A1C /* BEMLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMLine.h; sourceTree = "<group>"; };
+		02ED375F1B35CEE1003E7A1C /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMLine.m; sourceTree = "<group>"; };
+		02ED37601B35CEE1003E7A1C /* BEMAverageLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMAverageLine.h; sourceTree = "<group>"; };
+		02ED37611B35CEE1003E7A1C /* BEMAverageLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMAverageLine.m; sourceTree = "<group>"; };
+		02ED37621B35CEE1003E7A1C /* BEMPermanentPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMPermanentPopupView.h; sourceTree = "<group>"; };
+		02ED37631B35CEE1003E7A1C /* BEMPermanentPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMPermanentPopupView.m; sourceTree = "<group>"; };
 		04E4BB201B34C1980091D3FF /* QrCodeCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrCodeCreateViewController.swift; sourceTree = "<group>"; };
 		1B15DFCF1B334D9B00CB365F /* ListDetailsExpensesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailsExpensesTableViewController.swift; sourceTree = "<group>"; };
 		1B80A5431B33BF19000351B6 /* DetailsExpensesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsExpensesTableViewCell.swift; sourceTree = "<group>"; };
@@ -377,6 +392,7 @@
 			children = (
 				024157431B2DD083000ADCB5 /* Jawbone */,
 				024D32901B2CFEDC0061D518 /* Slack */,
+				02ED376A1B35CEEA003E7A1C /* BEMSimpleLineGraph */,
 				021544291B293A8D0057B176 /* PocketSVG.h */,
 				0215442A1B293A8D0057B176 /* PocketSVG.m */,
 				34AC95931B34ABBB0006FD17 /* MPGNotification.h */,
@@ -495,6 +511,23 @@
 				02ABC0171B2768BC00E0678B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		02ED376A1B35CEEA003E7A1C /* BEMSimpleLineGraph */ = {
+			isa = PBXGroup;
+			children = (
+				02ED375A1B35CEE1003E7A1C /* BEMSimpleLineGraphView.h */,
+				02ED375B1B35CEE1003E7A1C /* BEMSimpleLineGraphView.m */,
+				02ED375C1B35CEE1003E7A1C /* BEMCircle.h */,
+				02ED375D1B35CEE1003E7A1C /* BEMCircle.m */,
+				02ED375E1B35CEE1003E7A1C /* BEMLine.h */,
+				02ED375F1B35CEE1003E7A1C /* BEMLine.m */,
+				02ED37601B35CEE1003E7A1C /* BEMAverageLine.h */,
+				02ED37611B35CEE1003E7A1C /* BEMAverageLine.m */,
+				02ED37621B35CEE1003E7A1C /* BEMPermanentPopupView.h */,
+				02ED37631B35CEE1003E7A1C /* BEMPermanentPopupView.m */,
+			);
+			name = BEMSimpleLineGraph;
 			sourceTree = "<group>";
 		};
 		4249F60B1B2A127C00B9F861 /* SVGs */ = {
@@ -713,11 +746,13 @@
 				0215442D1B293C050057B176 /* VectorView.swift in Sources */,
 				02ECE4BD1B30B6E4000FC6A0 /* AddExpenseTableViewController.swift in Sources */,
 				02AD60571B28BD87000D5210 /* PostView.swift in Sources */,
+				02ED37681B35CEE1003E7A1C /* BEMPermanentPopupView.m in Sources */,
 				024D32AC1B2CFEDC0061D518 /* SLKTextView.m in Sources */,
 				0200C98D1B2B4EE4008ED219 /* ExpenseHeaderReusableView.swift in Sources */,
 				024D32AA1B2CFEDC0061D518 /* SLKInputAccessoryView.m in Sources */,
 				02ECE4BB1B30B6BE000FC6A0 /* SignUpViewController.swift in Sources */,
 				021544261B29298D0057B176 /* QuestionTableViewCell.swift in Sources */,
+				02ED37671B35CEE1003E7A1C /* BEMAverageLine.m in Sources */,
 				024D32A71B2CFEDC0061D518 /* UIResponder+SLKAdditions.m in Sources */,
 				024157521B2DF13F000ADCB5 /* ExpenseGraphViewController.swift in Sources */,
 				024D32A81B2CFEDC0061D518 /* UIScrollView+SLKAdditions.m in Sources */,
@@ -734,6 +769,7 @@
 				1B80A5451B33BF19000351B6 /* DetailsExpensesTableViewCell.swift in Sources */,
 				0241574B1B2DD083000ADCB5 /* JBChartView.m in Sources */,
 				0206D6181B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift in Sources */,
+				02ED37641B35CEE1003E7A1C /* BEMSimpleLineGraphView.m in Sources */,
 				34AC95951B34ABBB0006FD17 /* MPGNotification.m in Sources */,
 				024D32AB1B2CFEDC0061D518 /* SLKTextInputbar.m in Sources */,
 				02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */,
@@ -741,11 +777,13 @@
 				0241574A1B2DD083000ADCB5 /* JBBarChartView.m in Sources */,
 				024D32A61B2CFEDC0061D518 /* SLKTextView+SLKAdditions.m in Sources */,
 				021544191B29121A0057B176 /* CondoUtils.swift in Sources */,
+				02ED37661B35CEE1003E7A1C /* BEMLine.m in Sources */,
 				02ECE4B41B309070000FC6A0 /* PostDrawingProperties.swift in Sources */,
 				02ECE4B91B30B6B5000FC6A0 /* LoginViewController.swift in Sources */,
 				024157501B2DECB9000ADCB5 /* ExpensesViewController.swift in Sources */,
 				02ECE4C11B31E8F7000FC6A0 /* ExpensesController.swift in Sources */,
 				0241574C1B2DD083000ADCB5 /* JBLineChartView.m in Sources */,
+				02ED37651B35CEE1003E7A1C /* BEMCircle.m in Sources */,
 				024D32AE1B2CFEDC0061D518 /* SLKTypingIndicatorView.m in Sources */,
 				021544311B2943080057B176 /* VectorTestViewController.swift in Sources */,
 				1BF7C76C1B2A15FC00E9D231 /* NewPostViewController.swift in Sources */,

@@ -35,7 +35,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Yny-JA-hVm" kind="modal" id="4My-b6-0n9"/>
+                                    <segue destination="Yny-JA-hVm" kind="presentation" id="4My-b6-0n9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não tem conta?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8o-xy-dgX">
@@ -410,7 +410,7 @@
                         <outlet property="headerVector2" destination="GAt-c8-TDN" id="8Vh-ak-erj"/>
                         <outlet property="nome" destination="17z-Rs-Q2i" id="faX-6c-UIC"/>
                         <outlet property="senha" destination="jF4-XU-yih" id="LZn-u1-t36"/>
-                        <segue destination="ipB-KR-9YT" kind="show" id="3OF-jH-uO3"/>
+                        <segue destination="ipB-KR-9YT" kind="show" identifier="createCommunitySegue" id="3OF-jH-uO3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngh-3z-HbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -447,23 +447,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0fe-Ae-mJg" customClass="PFImageView">
-                                <rect key="frame" x="113" y="130" width="150" height="150"/>
+                                <rect key="frame" x="113" y="130.5" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="0Yp-qM-q8r"/>
                                     <constraint firstAttribute="height" constant="150" id="kp0-lZ-PjI"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJw-jW-Lo8">
-                                <rect key="frame" x="167" y="328" width="42" height="21"/>
+                                <rect key="frame" x="167" y="328" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baS-jJ-W9h">
-                                <rect key="frame" x="31" y="357" width="313" height="44"/>
+                                <rect key="frame" x="31" y="356.5" width="313" height="44.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdl-IL-wjM">
-                                        <rect key="frame" x="8" y="12" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdl-IL-wjM">
+                                        <rect key="frame" x="8" y="14" width="35.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -478,8 +478,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYI-vi-Ao3">
                                 <rect key="frame" x="31" y="409" width="313" height="44"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8R-Zi-Ud2">
-                                        <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8R-Zi-Ud2">
+                                        <rect key="frame" x="8" y="13" width="35.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -492,7 +492,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9X-aQ-dqP">
-                                <rect key="frame" x="167" y="299" width="42" height="21"/>
+                                <rect key="frame" x="167" y="299.5" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -519,7 +519,7 @@
                     <navigationItem key="navigationItem" title="Perfil" id="726-71-GuF">
                         <barButtonItem key="rightBarButtonItem" title="Editar" id="CTc-3e-gL5">
                             <connections>
-                                <segue destination="auI-Ak-21j" kind="modal" id="Zvm-Bg-zlA"/>
+                                <segue destination="auI-Ak-21j" kind="presentation" id="Zvm-Bg-zlA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -548,7 +548,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qEH-mU-MZc">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="editCellReuseIdentifier" id="qEH-mU-MZc">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qEH-mU-MZc" id="vkE-ue-awe">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -628,7 +628,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bHY-41-ceg">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="1CV-Bx-gor" kind="showDetail" id="41W-dE-kAp"/>
+                                <segue destination="1CV-Bx-gor" kind="showDetail" identifier="newPost" id="41W-dE-kAp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -733,7 +733,7 @@
         <!--Novo Post-->
         <scene sceneID="J5R-2m-UvW">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="1CV-Bx-gor" customClass="NewPostViewController" customModule="Condo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" hidesBottomBarWhenPushed="YES" id="1CV-Bx-gor" customClass="NewPostViewController" customModule="Condo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dqL-3a-U7o"/>
                         <viewControllerLayoutGuide type="bottom" id="1yE-Tw-WsR"/>
@@ -866,18 +866,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JT1-3Q-tbM" customClass="JBBarChartView">
-                                <rect key="frame" x="8" y="36" width="358" height="87"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JT1-3Q-tbM" customClass="BEMSimpleLineGraphView">
+                                <rect key="frame" x="8" y="33" width="358" height="89"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableBezierCurve" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableYAxisLabel" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorBottom">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorTop">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorLine">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorXaxisLabel">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorYaxisLabel">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sizePoint">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableXAxisLabel" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorPoint">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iHb-Vw-Tqu" id="IyO-dJ-auU"/>
+                                    <outlet property="delegate" destination="iHb-Vw-Tqu" id="l99-HN-Saf"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyT-Bw-y3o">
-                                <rect key="frame" x="8" y="8" width="40" height="20"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <rect key="frame" x="8" y="8" width="35.5" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atG-nA-fJM">
-                                <rect key="frame" x="331" y="8" width="36" height="17"/>
+                                <rect key="frame" x="330" y="8" width="35.5" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -897,9 +927,9 @@
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="barChartView" destination="JT1-3Q-tbM" id="yZ8-B0-an2"/>
                         <outlet property="detailLabel" destination="atG-nA-fJM" id="kjW-ch-sUg"/>
                         <outlet property="expenseNameLabel" destination="AyT-Bw-y3o" id="rdm-Mx-kf4"/>
+                        <outlet property="lineGraph" destination="JT1-3Q-tbM" id="A3W-L4-kay"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o8i-Oj-Lm5" userLabel="First Responder" sceneMemberID="firstResponder"/>

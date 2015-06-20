@@ -8,23 +8,47 @@
 
 import UIKit
 import CondoModel
-class ExpenseGraphViewController: UIViewController, JBBarChartViewDataSource, JBBarChartViewDelegate {
+class ExpenseGraphViewController: UIViewController, BEMSimpleLineGraphDataSource, BEMSimpleLineGraphDelegate{
     @IBOutlet weak var expenseNameLabel: UILabel!
 
     @IBOutlet weak var detailLabel: UILabel!
 
-    @IBOutlet weak var barChartView: JBBarChartView!
+    @IBOutlet weak var lineGraph: BEMSimpleLineGraphView!
+    let animationDuration = 0.7
+    
     
     let evenSelectionColor = UIColor(white: 1.0, alpha: 0.8)
     let oddSelectionColor = UIColor(white: 1.0, alpha: 0.5)
-    
+    var gradient  : CGGradient?
     let currentDate = NSDate()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.barChartView.delegate = self
-        self.barChartView.dataSource = self
+        self.lineGraph.positionYAxisRight = true
+        self.lineGraph.alwaysDisplayDots = true
+        self.lineGraph.enableBezierCurve = false
+        self.lineGraph.enablePopUpReport = true
+        self.lineGraph.enableReferenceYAxisLines = true
+        self.lineGraph.enableReferenceXAxisLines = true
+        self.lineGraph.labelFont = UIFont.systemFontOfSize(10.0)
+        self.lineGraph.widthLine = 1.0
+        self.lineGraph.animationGraphEntranceTime = CGFloat(self.animationDuration)
+        self.lineGraph.lineDashPatternForReferenceYAxisLines = [2, 2]
         
-        self.barChartView.reloadData()
+        var colorSpace = CGColorSpaceCreateDeviceRGB()
+        var components : [CGFloat] = [
+            1.0, 1.0, 1.0, 1.0,
+            1.0, 1.0, 1.0, 0.0
+        ]
+        
+        var locations : [CGFloat] = [0, 1.0]
+        //let gradient = CGGradientCreateWithColors(colorSpace, components, locations)
+        self.gradient = CGGradientCreateWithColorComponents(colorSpace, &components, &locations, 2)
+        //let gradient = CGGradientCreateWithColorComponents(colorSpace, components, locations, componentCount)
+        self.lineGraph.gradientBottom = self.gradient!
+//        self.barChartView.delegate = self
+//        self.barChartView.dataSource = self
+        
+       // self.barChartView.reloadData()
         self.detailLabel.hidden = true
         // Do any additional setup after loading the view.
     }
@@ -43,26 +67,24 @@ class ExpenseGraphViewController: UIViewController, JBBarChartViewDataSource, JB
     }
     
     var animating: Bool = false
+    let labelLeftTransform = CGAffineTransformMakeTranslation(-500, 0.0)
     var selectedType = ExpenseType.allValues[0] {
         didSet{
             var p = ExpenseDrawingProperties(type: self.selectedType)
-            UIView.animateWithDuration(0.5) {
+            self.expenseNameLabel.transform = self.labelLeftTransform
+            UIView.animateWithDuration(self.animationDuration, delay: 0.0, options: UIViewAnimationOptions.BeginFromCurrentState | UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                self.expenseNameLabel.transform = CGAffineTransformIdentity
                 self.view.backgroundColor = p.selectedBackgroundColor
-                self.barChartView.backgroundColor = p.selectedBackgroundColor
+            }) { (completed) -> Void in
+                
             }
+//            UIView.animateWithDuration(0.5) {
+//               
+//                //self.barChartView.backgroundColor = p.selectedBackgroundColor
+//            }
             
             self.expenseNameLabel.text = p.name
-            if self.animating {
-                self.barChartView.reloadData()
-            }else {
-                self.animating = true
-                self.barChartView.setState(JBChartViewState.Collapsed, animated: false) { () -> Void in
-                    self.barChartView.reloadData()
-                    self.barChartView.setState(JBChartViewState.Expanded, animated: true) { () -> Void in
-                        self.animating = false
-                    }
-                }
-            }
+            self.lineGraph.reloadGraph()
         }
     }
     
@@ -72,12 +94,30 @@ class ExpenseGraphViewController: UIViewController, JBBarChartViewDataSource, JB
         }
     }
     
+    //MARK: BEMSimpleGraphLineDataSource
+    
+    func numberOfPointsInLineGraph(graph: BEMSimpleLineGraphView) -> Int {
+        return 12
+    }
+    
+    func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: Int) -> CGFloat {
+        return self.getTotalExpenseForMonthIndex(index)
+    }
+
+    
+    func lineGraph(graph: BEMSimpleLineGraphView, labelOnXAxisForIndex index: Int) -> String? {
+
+        return self.month(index + 1)
+    }
+    
     //MARK: BarChartView Data Source
     func numberOfBarsInBarChartView(barChartView: JBBarChartView!) -> UInt {
         return 12//UInt(self.expenses.count)
     }
     
-    
+    func popUpPrefixForlineGraph(graph: BEMSimpleLineGraphView) -> String {
+        return "R$"
+    }
     
     func barChartView(barChartView: JBBarChartView!, didSelectBarAtIndex index: UInt, touchPoint: CGPoint) {
         
@@ -126,18 +166,18 @@ class ExpenseGraphViewController: UIViewController, JBBarChartViewDataSource, JB
     func month(int: Int) -> String{
         
         switch int {
-        case 1: return "Janeiro"
-        case 2: return "Fevereiro"
-        case 3: return "Março"
-        case 4: return "Abril"
-        case 5: return "Maio"
-        case 6: return "Junho"
-        case 7: return "Julho"
-        case 8: return "Agosto"
-        case 9: return "Setembro"
-        case 10: return "Outubro"
-        case 11: return "Novembro"
-        case 12: return "Dezembro"
+        case 1: return "jan"
+        case 2: return "fev"
+        case 3: return "mar"
+        case 4: return "abr"
+        case 5: return "mai"
+        case 6: return "jun"
+        case 7: return "jul"
+        case 8: return "ago"
+        case 9: return "set"
+        case 10: return "out"
+        case 11: return "nov"
+        case 12: return "dez"
         default: return ""
         }
     }

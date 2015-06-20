@@ -8,3 +8,4 @@
 #import "JBBarChartView.h"
 #import "JBLineChartView.h"
 #import "MPGNotification.h"
+#import "BEMSimpleLineGraphView.h"
