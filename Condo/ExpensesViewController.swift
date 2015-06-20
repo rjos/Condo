@@ -10,7 +10,9 @@ import UIKit
 import CondoModel
 
 class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
     let notificationManager = NotificationManager()
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var btnRefresh: UIBarButtonItem!

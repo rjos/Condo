@@ -17,7 +17,14 @@ class CondoApiMapper: NSObject {
             "id": object.objectId!,
             "name": object["fullname"]!,
             "imageName": "dummy-photo-pedro",
+            "email": object.username!
         ]
+        
+        if let apt = object["apt"] as? String {
+            dic["apt"] = apt
+        }else{
+            dic["apt"] = nil
+        }
         
         if let community = object["community"] as? PFObject {
             

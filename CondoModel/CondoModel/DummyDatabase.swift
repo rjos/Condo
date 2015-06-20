@@ -12,12 +12,12 @@ public class DummyDatabase: NSObject {
     
     var allUsers: Dictionary<String, User> {
         get {
-            let lucas = User(dictionary: ["id": "1", "name": "Lucas Tenório", "imageName": "dummy-photo-lucas"])
-            let guedes = User(dictionary: ["id": "2", "name": "Lucas Guedes", "imageName": "dummy-photo-guedes"])
-            let maria = User(dictionary: ["id": "3", "name": "Maria dos Santos", "imageName": "dummy-photo-maria"])
-            let pedro = User(dictionary: ["id": "4", "name": "Pedro Barrrrrcelah", "imageName": "dummy-photo-pedro"])
-            let hunka = User(dictionary: ["id": "5", "name": "Cecília Hunka", "imageName": "dummy-photo-hunka"])
-            let adm = User(dictionary: ["id":"6", "name": "Eduardo Leite", "imageName": "dummy-photo-adm"])
+            let lucas = User(dictionary: ["id": "1", "name": "Lucas Tenório", "imageName": "dummy-photo-lucas", "email": "lucas@gmail.com"])
+            let guedes = User(dictionary: ["id": "2", "name": "Lucas Guedes", "imageName": "dummy-photo-guedes", "email": "lucasguedes@gmail.com"])
+            let maria = User(dictionary: ["id": "3", "name": "Maria dos Santos", "imageName": "dummy-photo-maria", "email" : "maria@gmail.com"])
+            let pedro = User(dictionary: ["id": "4", "name": "Pedro Barrrrrcelah", "imageName": "dummy-photo-pedro", "email": "pedro@gmail.com"])
+            let hunka = User(dictionary: ["id": "5", "name": "Cecília Hunka", "imageName": "dummy-photo-hunka", "email": "cecilia@gmail.com"])
+            let adm = User(dictionary: ["id":"6", "name": "Eduardo Leite", "imageName": "dummy-photo-adm", "email": "eduardo@gmail.com"])
             return [
                 "lucas": lucas,
                 "guedes": guedes,
@@ -194,7 +194,7 @@ public class DummyDatabase: NSObject {
     }
 
     public func allPosts() -> ModelList {
-        return DummyModelList(data: self.allAnnouncements + self.allQuestions + self.allReports)
+        return DummyModelList(data: [])
     }
     
     public var community: Community {
