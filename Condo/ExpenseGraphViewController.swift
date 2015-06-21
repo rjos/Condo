@@ -33,6 +33,7 @@ class ExpenseGraphViewController: UIViewController, BEMSimpleLineGraphDataSource
         self.lineGraph.widthLine = 1.0
         self.lineGraph.animationGraphEntranceTime = CGFloat(self.animationDuration)
         self.lineGraph.lineDashPatternForReferenceYAxisLines = [2, 2]
+        self.lineGraph.animationGraphStyle = BEMLineAnimation.Draw
         
         var colorSpace = CGColorSpaceCreateDeviceRGB()
         var components : [CGFloat] = [

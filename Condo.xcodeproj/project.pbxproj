@@ -21,7 +21,6 @@
 		021544271B29298D0057B176 /* QuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021544251B29298D0057B176 /* QuestionTableViewCell.xib */; };
 		0215442B1B293A8D0057B176 /* PocketSVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 0215442A1B293A8D0057B176 /* PocketSVG.m */; };
 		0215442D1B293C050057B176 /* VectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215442C1B293C050057B176 /* VectorView.swift */; };
-		021544311B2943080057B176 /* VectorTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021544301B2943080057B176 /* VectorTestViewController.swift */; };
 		0241574A1B2DD083000ADCB5 /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024157451B2DD083000ADCB5 /* JBBarChartView.m */; };
 		0241574B1B2DD083000ADCB5 /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024157471B2DD083000ADCB5 /* JBChartView.m */; };
 		0241574C1B2DD083000ADCB5 /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024157491B2DD083000ADCB5 /* JBLineChartView.m */; };
@@ -171,7 +170,6 @@
 		021544291B293A8D0057B176 /* PocketSVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PocketSVG.h; sourceTree = "<group>"; };
 		0215442A1B293A8D0057B176 /* PocketSVG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PocketSVG.m; sourceTree = "<group>"; };
 		0215442C1B293C050057B176 /* VectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorView.swift; sourceTree = "<group>"; };
-		021544301B2943080057B176 /* VectorTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTestViewController.swift; sourceTree = "<group>"; };
 		024157441B2DD083000ADCB5 /* JBBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBarChartView.h; sourceTree = "<group>"; };
 		024157451B2DD083000ADCB5 /* JBBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBarChartView.m; sourceTree = "<group>"; };
 		024157461B2DD083000ADCB5 /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartView.h; sourceTree = "<group>"; };
@@ -366,7 +364,6 @@
 				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
 				02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */,
 				D1E279461B31FCCA00CB33FA /* Expenses */,
-				021544301B2943080057B176 /* VectorTestViewController.swift */,
 				1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */,
 				1BF5FAC01B34012100E78744 /* CreateCondoViewController.swift */,
 				1BC7D9681B34EB290089DEE6 /* ProfileViewController.swift */,
@@ -785,7 +782,6 @@
 				0241574C1B2DD083000ADCB5 /* JBLineChartView.m in Sources */,
 				02ED37651B35CEE1003E7A1C /* BEMCircle.m in Sources */,
 				024D32AE1B2CFEDC0061D518 /* SLKTypingIndicatorView.m in Sources */,
-				021544311B2943080057B176 /* VectorTestViewController.swift in Sources */,
 				1BF7C76C1B2A15FC00E9D231 /* NewPostViewController.swift in Sources */,
 				1BF5FAC11B34012100E78744 /* CreateCondoViewController.swift in Sources */,
 				04E4BB211B34C1980091D3FF /* QrCodeCreateViewController.swift in Sources */,
