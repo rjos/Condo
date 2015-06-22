@@ -21,7 +21,6 @@
 		021544271B29298D0057B176 /* QuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021544251B29298D0057B176 /* QuestionTableViewCell.xib */; };
 		0215442B1B293A8D0057B176 /* PocketSVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 0215442A1B293A8D0057B176 /* PocketSVG.m */; };
 		0215442D1B293C050057B176 /* VectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215442C1B293C050057B176 /* VectorView.swift */; };
-		021544311B2943080057B176 /* VectorTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021544301B2943080057B176 /* VectorTestViewController.swift */; };
 		0241574A1B2DD083000ADCB5 /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024157451B2DD083000ADCB5 /* JBBarChartView.m */; };
 		0241574B1B2DD083000ADCB5 /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024157471B2DD083000ADCB5 /* JBChartView.m */; };
 		0241574C1B2DD083000ADCB5 /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024157491B2DD083000ADCB5 /* JBLineChartView.m */; };
@@ -37,6 +36,7 @@
 		024D32AD1B2CFEDC0061D518 /* SLKTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D32A31B2CFEDC0061D518 /* SLKTextViewController.m */; };
 		024D32AE1B2CFEDC0061D518 /* SLKTypingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D32A51B2CFEDC0061D518 /* SLKTypingIndicatorView.m */; };
 		02529E241B276A09009CF624 /* CondoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; };
+		02A0D5301B37B15A0091D67A /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0D52F1B37B15A0091D67A /* AddExpenseViewController.swift */; };
 		02A9F8F51B28D8E700275606 /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */; };
 		02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABC0021B2768BC00E0678B /* AppDelegate.swift */; };
 		02ABC0081B2768BC00E0678B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02ABC0061B2768BC00E0678B /* Main.storyboard */; };
@@ -172,7 +172,6 @@
 		021544291B293A8D0057B176 /* PocketSVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PocketSVG.h; sourceTree = "<group>"; };
 		0215442A1B293A8D0057B176 /* PocketSVG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PocketSVG.m; sourceTree = "<group>"; };
 		0215442C1B293C050057B176 /* VectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorView.swift; sourceTree = "<group>"; };
-		021544301B2943080057B176 /* VectorTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTestViewController.swift; sourceTree = "<group>"; };
 		024157441B2DD083000ADCB5 /* JBBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBarChartView.h; sourceTree = "<group>"; };
 		024157451B2DD083000ADCB5 /* JBBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBarChartView.m; sourceTree = "<group>"; };
 		024157461B2DD083000ADCB5 /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartView.h; sourceTree = "<group>"; };
@@ -201,6 +200,7 @@
 		024D32A41B2CFEDC0061D518 /* SLKTypingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTypingIndicatorView.h; sourceTree = "<group>"; };
 		024D32A51B2CFEDC0061D518 /* SLKTypingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTypingIndicatorView.m; sourceTree = "<group>"; };
 		02529E191B276980009CF624 /* CondoModel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CondoModel.xcodeproj; path = CondoModel/CondoModel.xcodeproj; sourceTree = "<group>"; };
+		02A0D52F1B37B15A0091D67A /* AddExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
 		02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewController.swift; sourceTree = "<group>"; };
 		02ABBFFD1B2768BC00E0678B /* Condo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Condo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02ABC0011B2768BC00E0678B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -368,7 +368,6 @@
 				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
 				02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */,
 				D1E279461B31FCCA00CB33FA /* Expenses */,
-				021544301B2943080057B176 /* VectorTestViewController.swift */,
 				1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */,
 				1BF5FAC01B34012100E78744 /* CreateCondoViewController.swift */,
 				1BC7D9681B34EB290089DEE6 /* ProfileViewController.swift */,
@@ -591,6 +590,7 @@
 				0241574F1B2DECB9000ADCB5 /* ExpensesViewController.swift */,
 				024157511B2DF13F000ADCB5 /* ExpenseGraphViewController.swift */,
 				02ECE4C31B31EC51000FC6A0 /* ListExpensesTableViewController.swift */,
+				02A0D52F1B37B15A0091D67A /* AddExpenseViewController.swift */,
 				02ECE4BC1B30B6E4000FC6A0 /* AddExpenseTableViewController.swift */,
 				1B15DFCF1B334D9B00CB365F /* ListDetailsExpensesTableViewController.swift */,
 			);
@@ -789,12 +789,12 @@
 				0241574C1B2DD083000ADCB5 /* JBLineChartView.m in Sources */,
 				02ED37651B35CEE1003E7A1C /* BEMCircle.m in Sources */,
 				024D32AE1B2CFEDC0061D518 /* SLKTypingIndicatorView.m in Sources */,
-				021544311B2943080057B176 /* VectorTestViewController.swift in Sources */,
 				1BF7C76C1B2A15FC00E9D231 /* NewPostViewController.swift in Sources */,
 				1BF5FAC11B34012100E78744 /* CreateCondoViewController.swift in Sources */,
 				04E4BB211B34C1980091D3FF /* QrCodeCreateViewController.swift in Sources */,
 				024D32A91B2CFEDC0061D518 /* UIView+SLKAdditions.m in Sources */,
 				1BC7D9691B34EB290089DEE6 /* ProfileViewController.swift in Sources */,
+				02A0D5301B37B15A0091D67A /* AddExpenseViewController.swift in Sources */,
 				1BF5FABC1B33F9B800E78744 /* SelectCondoViewController.swift in Sources */,
 				02ECE4C61B31F7AD000FC6A0 /* MainViewController.swift in Sources */,
 			);

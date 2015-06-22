@@ -83,33 +83,35 @@ public class ParseDatabase: NSObject {
             let expense = CondoApiMapper.PFObjectFromExpenseDictionary(expenseDictionary, community: community)
             expensePFObjects.append(expense)
         }
-        
-        PFObject.pinAllInBackground(expensePFObjects, block: { (pinSuccess, pinError) -> Void in
-            if !pinSuccess {
-                completionBlock(expenses: nil, error: pinError)
+
+        PFObject.saveAllInBackground(expensePFObjects, block: { (success, error) -> Void in
+            if success {
+                PFObject.pinAllInBackground(expensePFObjects, block: { (pinSuccess, pinError) -> Void in
+                    if pinSuccess {
+                        var result: Array<Expense> = []
+                        for object in expensePFObjects {
+                            result.append(CondoApiMapper.expenseFromPFObject(object)!)
+                        }
+                        completionBlock(expenses: result, error: error)
+                    }
+                })
+                
             }else{
-                for expense in expensePFObjects {
-                    expense.saveEventually()
-                }
-                var result: Array<Expense> = []
-                for object in expensePFObjects {
-                    result.append(CondoApiMapper.expenseFromPFObject(object)!)
-                }
-                completionBlock(expenses: result, error: nil)
+                completionBlock(expenses: nil, error: error)
             }
         })
-        
-//        PFObject.saveAllInBackground(expensePFObjects, block: { (success, error) -> Void in
-//            if success {
-//                var result: Array<Expense> = []
-//                for object in expensePFObjects {
-//                    result.append(CondoApiMapper.expenseFromPFObject(object)!)
-//                }
-//                completionBlock(expenses: result, error: error)
-//            }else{
-//                completionBlock(expenses: nil, error: error)
-//            }
-//        })
+    }
+    
+    public func deleteExpense(#id: String, completionHandler: (Bool) -> ()) {
+        let expense = PFObject(withoutDataWithClassName: "Expense", objectId: id)
+        expense.unpinInBackgroundWithBlock { (success, error) -> Void in
+            if success {
+                expense.deleteEventually()
+                completionHandler(true)
+            }else{
+                completionHandler(false)
+            }
+        }
     }
     
     public func createExpense(#type: ExpenseType, date: NSDate, totalExpense: NSNumber, community: Community, completionBlock: (expense: Expense?, error: NSError?) -> ()){

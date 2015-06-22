@@ -14,11 +14,6 @@ import Parse
 
 
 class ExpensesController: NSObject {
-
-    enum ExpenseServerAction {
-        case Delete(id: String)
-        case Add(id: String, type: ExpenseType, totalExpense: NSNumber, date: NSDate)
-    }
     private var _hasData = false
     var expenseDictionary: Dictionary<ExpenseType, Array<Expense>> = [:]
     
@@ -30,6 +25,24 @@ class ExpensesController: NSObject {
         }
     }
     
+    private func appendExpenseToBuffer(expense: Expense) {
+        let type = expense.type
+        var expenseArray = Array<Expense>()
+        if let array = self.expenseDictionary[type] {
+            expenseArray += array
+        }
+        expenseArray.append(expense)
+        self.expenseDictionary[type] = expenseArray
+    }
+    
+    private func deleteExpenseFromBuffer(id: String) {
+        var newExpenseDictionary: Dictionary<ExpenseType, Array<Expense>> = [:]
+        for (type, expenses) in self.expenseDictionary {
+            newExpenseDictionary[type] = expenses.filter({$0.id != id})
+        }
+        self.expenseDictionary = newExpenseDictionary
+    }
+    
     func reloadData(#cached: Bool) {
         self._hasData = false
         let community = ParseDatabase.sharedDatabase.getCommunityUser()
@@ -37,15 +50,7 @@ class ExpensesController: NSObject {
             if let expenses = expenses {
                 self.expenseDictionary = [:]
                 for expense in expenses {
-                    let type = expense.type
-                    var expenseArray: Array<Expense>
-                    if let array = self.expenseDictionary[type] {
-                        expenseArray = Array<Expense>(array)
-                    } else {
-                        expenseArray = Array<Expense>()
-                    }
-                    expenseArray.append(expense)
-                    self.expenseDictionary[type] = expenseArray
+                    self.appendExpenseToBuffer(expense)
                 }
                 self._hasData = true
                 self.postDataChangedNotification()
@@ -64,12 +69,23 @@ class ExpensesController: NSObject {
         return Array<Expense>()
     }
     
-
+    func deleteExpense(#id: String) {
+        ParseDatabase.sharedDatabase.deleteExpense(id: id) {
+            (success) in
+            if success {
+                self.deleteExpenseFromBuffer(id)
+                self.postExpenseDeletedNotification()
+            }
+        }
+    }
     
     func addExpense(#type: ExpenseType, totalExpense: NSNumber, date: NSDate) {
         let community = ParseDatabase.sharedDatabase.getCommunityUser()
         ParseDatabase.sharedDatabase.createExpense(type: type, date: date, totalExpense: totalExpense, community: community) { (expenseRaw, error) -> () in
             if let expense = expenseRaw {
+                println("going to append expense \(expense) to buffer")
+                self.appendExpenseToBuffer(expense)
+                println("going to post notification")
                 self.postExpenseAddedNotification()
             }
         }
