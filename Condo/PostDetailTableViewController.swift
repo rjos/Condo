@@ -49,11 +49,11 @@ class PostDetailTableViewController: SLKTextViewController {
         
         switch type {
         case .Announcement:
-            color = UIColor.condoAnnouncementBackgroundColor()
+            color = UIColor.condoRed()
         case .Question:
-            color = UIColor.condoQuestionBackgroundColor()
+            color = UIColor.condoGreen()
         case .Report:
-            color = UIColor.condoReportBackgroundColor()
+            color = UIColor.condoBlue()
         }
         
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
@@ -129,8 +129,8 @@ class PostDetailTableViewController: SLKTextViewController {
         //self.post!.comments.modelAtIndex(indexPath.row) as? Comment
         cell.isEven = indexPath.row % 2 == 0
         let draw = PostDrawingProperties(type: self.post!.type)
-        cell.lbName.textColor = draw.outlineColor
-        cell.lbComment.textColor = draw.outlineColor
+        cell.lbName.textColor = UIColor.condoBlue()
+        cell.lbComment.textColor = UIColor.condoBlue()
         return cell
     }
     
