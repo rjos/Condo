@@ -40,7 +40,16 @@ class CommunityFeedTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Default
         self.navigationController?.navigationBar.barTintColor = UIColor.condoNavigationBarColor()
-        self.tabBarController?.tabBar.tintColor = UIColor.blueColor()
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.condoBlue()
+        self.tabBarController?.tabBar.tintColor = UIColor.condoBlue()
+        
+        let label = UILabel(frame: CGRectMake(0, 0, 150, 30))
+        
+        label.textColor = UIColor.condoBlue()
+        label.backgroundColor = UIColor.clearColor()
+        label.textAlignment = NSTextAlignment.Center
+        label.text = "Condo"
+        self.navigationItem.titleView = label
     }
     
     func refreshData(){
