@@ -12,9 +12,9 @@ import CondoModel
 class ListDetailsExpensesTableViewController: UITableViewController {
 
     private let controller = ExpensesController.sharedController
-    
+    private let notificationManager = NotificationManager()
     var database : Array<Array<Expense>> = []
-    var keys: Array<String> = []
+    //var keys: Array<String> = []
     
     var type: ExpenseType? {
         didSet{
@@ -29,18 +29,22 @@ class ListDetailsExpensesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
+        self.processEspenses()
+        self.tableView.allowsMultipleSelectionDuringEditing = false
         self.tableView.registerNib((UINib(nibName: "DetailsExpensesTableViewCell", bundle: NSBundle.mainBundle())), forCellReuseIdentifier: "DetailsExpenses")
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 50.0
+//        self.tableView.rowHeight = UITableViewAutomaticDimension
+//        self.tableView.estimatedRowHeight = 50.0
         self.tableView.reloadData()
-        
+        self.notificationManager.registerObserver(ExpensesController.ExpenseAddedNotification) {
+            (notification) in
+            println("received notification")
+            self.processEspenses()
+            self.tableView.reloadData()
+        }
+    }
+    
+    private func processEspenses() {
+        self.database = []
         var expenses = controller.getAllExpenses(type: self.type!)
         
         expenses.sort { (a, b) -> Bool in
@@ -54,25 +58,18 @@ class ListDetailsExpensesTableViewController: UITableViewController {
         
         var key: String = ""
         var index: Int = -1
-        
         for expense in (expenses as Array<Expense>) {
-            
             var currentKey = "\(expense.expenseDate.month)-\(expense.expenseDate.year)"
-            
             if key != currentKey {
-                
-                self.keys.append(currentKey)
                 key = currentKey
-                
                 index += 1
                 self.database.append(Array<Expense>())
-
+                
             }
-            
             self.database[index].append(expense)
         }
-        
     }
+
 
     override func viewWillAppear(animated: Bool) {
         let properties = ExpenseDrawingProperties(type: self.type!)
@@ -81,23 +78,15 @@ class ListDetailsExpensesTableViewController: UITableViewController {
         self.navigationController?.navigationBar.barTintColor = properties.backgroundColor
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return self.keys.count
+
+        return self.database.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
         return self.database[section].count
     }
 
@@ -117,15 +106,10 @@ class ListDetailsExpensesTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        let dateArr = split(self.keys[section]) {$0 == "-"}
-        
-        var monthToInt = dateArr[0].toInt()
-        let year  = dateArr[1]
-        
-        let month = self.month(monthToInt!)
-        
-        return "\(month) - \(year)"
+        if let first = self.database[section].first {
+            return "\(self.month(first.expenseDate.month)) - \(first.expenseDate.year)"
+        }
+        return nil
     }
     
     func month(int: Int) -> String{
@@ -147,49 +131,47 @@ class ListDetailsExpensesTableViewController: UITableViewController {
         }
     }
     
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    */
 
-    /*
+
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            if self.database[indexPath.section].count == 1 {
+                self.deleteExpenseAtIndexPath(indexPath)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                self.database.removeAtIndex(indexPath.section)
+                tableView.deleteSections(NSIndexSet(index: indexPath.section), withRowAnimation: UITableViewRowAnimation.Fade)
+                
+            }else{
+                self.deleteExpenseAtIndexPath(indexPath)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
+            
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    func deleteExpenseAtIndexPath(indexPath: NSIndexPath) {
+        let expenseID = self.database[indexPath.section][indexPath.row].id
+        self.database[indexPath.section].removeAtIndex(indexPath.row)
+        ExpensesController.sharedController.deleteExpense(id: expenseID)
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "addExpenseSegue" {
+            if let nav = segue.destinationViewController as? UINavigationController {
+                if let vc = nav.topViewController as? AddExpenseViewController {
+                    vc.type = self.type!
+                }
+            }
+        }
     }
-    */
+
 
 }

@@ -126,6 +126,15 @@ extension String{
 }
 
 extension NSDate{
+    
+    var lastyear: NSDate {
+        get{
+            let calendar = NSCalendar.currentCalendar()
+            let offsetComponents = NSDateComponents()
+            offsetComponents.year = -1
+            return calendar.dateByAddingComponents(offsetComponents, toDate: self, options: NSCalendarOptions.allZeros)!
+        }
+    }
     var month: Int {
         get{
             let calendar = NSCalendar.currentCalendar()
