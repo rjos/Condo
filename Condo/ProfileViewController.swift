@@ -42,6 +42,9 @@ class ProfileViewController: UIViewController {
         
         self.btnEditar.tintColor = UIColor.whiteColor()
         // Do any additional setup after loading the view.
+        
+        self.imgProfile.layer.cornerRadius = self.imgProfile.bounds.width / 2
+        self.imgProfile.clipsToBounds = true
     }
 
     var user : User? {

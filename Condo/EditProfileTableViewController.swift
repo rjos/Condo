@@ -26,6 +26,8 @@ class EditProfileTableViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
