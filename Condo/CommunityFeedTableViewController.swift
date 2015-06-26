@@ -128,6 +128,24 @@ class CommunityFeedTableViewController: UITableViewController {
         return cell
     }
 
+    @IBAction func newPostButtonPressed(sender: AnyObject) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        alert.addAction(UIAlertAction(title: "Nova pergunta", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            self.performSegueWithIdentifier("showNewQuestion", sender: self)
+        }))
+        alert.addAction(UIAlertAction(title: "Novo problema", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            self.performSegueWithIdentifier("showNewPost", sender: self)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Novo aviso", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            self.performSegueWithIdentifier("showNewAnnouncement", sender: self)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.Cancel, handler: { (action) -> Void in
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+
+    }
 
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -147,8 +165,17 @@ class CommunityFeedTableViewController: UITableViewController {
             let vc = segue.destinationViewController as! NewPostViewController
             vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
             vc.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+            vc.type = PostContentType.Report
+        }else if segue.identifier == "showNewAnnouncement" {
+            let vc = segue.destinationViewController as! NewPostViewController
+            vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+            vc.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+            vc.type = PostContentType.Announcement
+        }else if segue.identifier == "showNewQuestion" {
+            let vc = segue.destinationViewController as! NewPostViewController
+            vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+            vc.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+            vc.type = PostContentType.Question
         }
     }
-
-
 }

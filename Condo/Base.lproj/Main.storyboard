@@ -446,24 +446,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0fe-Ae-mJg" customClass="PFImageView">
-                                <rect key="frame" x="113" y="130.5" width="150" height="150"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0fe-Ae-mJg" customClass="PFImageView">
+                                <rect key="frame" x="113" y="131" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="0Yp-qM-q8r"/>
                                     <constraint firstAttribute="height" constant="150" id="kp0-lZ-PjI"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJw-jW-Lo8">
-                                <rect key="frame" x="167" y="328" width="42" height="20.5"/>
+                                <rect key="frame" x="167" y="328" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baS-jJ-W9h">
-                                <rect key="frame" x="31" y="356.5" width="313" height="44.5"/>
+                                <rect key="frame" x="31" y="357" width="313" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdl-IL-wjM">
-                                        <rect key="frame" x="8" y="14" width="35.5" height="17"/>
+                                        <rect key="frame" x="8" y="14" width="36" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -475,11 +475,11 @@
                                     <constraint firstAttribute="centerY" secondItem="Fdl-IL-wjM" secondAttribute="centerY" id="o97-W1-92V"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYI-vi-Ao3">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UYI-vi-Ao3">
                                 <rect key="frame" x="31" y="409" width="313" height="44"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8R-Zi-Ud2">
-                                        <rect key="frame" x="8" y="13" width="35.5" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8R-Zi-Ud2">
+                                        <rect key="frame" x="8" y="13" width="36" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -491,8 +491,8 @@
                                     <constraint firstItem="M8R-Zi-Ud2" firstAttribute="leading" secondItem="UYI-vi-Ao3" secondAttribute="leading" constant="8" id="cz6-0L-HzG"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9X-aQ-dqP">
-                                <rect key="frame" x="167" y="299.5" width="42" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9X-aQ-dqP">
+                                <rect key="frame" x="167" y="300" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -750,12 +750,15 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bHY-41-ceg">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="1CV-Bx-gor" kind="showDetail" identifier="newPost" id="41W-dE-kAp"/>
+                                <action selector="newPostButtonPressed:" destination="0ab-bg-CTn" id="KIV-QZ-Thk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="Iws-yC-cXh" kind="show" identifier="showPost" id="vf7-4n-kMm"/>
+                        <segue destination="1CV-Bx-gor" kind="presentation" identifier="showNewPost" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="ztf-EQ-ZTZ"/>
+                        <segue destination="1CV-Bx-gor" kind="presentation" identifier="showNewQuestion" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="rAj-Tq-fv2"/>
+                        <segue destination="1CV-Bx-gor" kind="presentation" identifier="showNewAnnouncement" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="Swf-Zh-Wsd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zms-lr-mmf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1023,13 +1026,13 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyT-Bw-y3o">
-                                <rect key="frame" x="8" y="8" width="35.5" height="17"/>
+                                <rect key="frame" x="8" y="8" width="36" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atG-nA-fJM">
-                                <rect key="frame" x="330" y="8" width="35.5" height="17"/>
+                                <rect key="frame" x="330" y="8" width="36" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1238,4 +1241,7 @@
         <image name="perfil" width="29" height="29"/>
         <image name="skyline" width="375" height="85"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Swf-Zh-Wsd"/>
+    </inferredMetricsTieBreakers>
 </document>

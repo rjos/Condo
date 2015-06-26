@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E36b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,43 +10,31 @@
             <rect key="frame" x="0.0" y="0.0" width="434" height="290"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zJK-En-qRr" userLabel="userImageView" customClass="PFImageView">
-                    <rect key="frame" x="8" y="8" width="40" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="40" id="hpX-E1-hay"/>
-                        <constraint firstAttribute="height" constant="40" id="oGU-Uu-I18"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljC-Xd-ZeF" userLabel="userNameLabel">
-                    <rect key="frame" x="56" y="18" width="41" height="20"/>
+                    <rect key="frame" x="46" y="13" width="41" height="20"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUq-xe-O3a" userLabel="commentCountLabel">
-                    <rect key="frame" x="360" y="267" width="36" height="17"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUq-xe-O3a" userLabel="commentCountLabel">
+                    <rect key="frame" x="46" y="267" width="31" height="15"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eR-zp-Qs3" userLabel="postTextLabel">
-                    <rect key="frame" x="8" y="56" width="418" height="196"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eR-zp-Qs3" userLabel="postTextLabel">
+                    <rect key="frame" x="46" y="38" width="380" height="227"/>
+                    <string key="text">Configuration. Configure segmented controls in Interface Builder, in the Segmented Control section of the Attributes Inspector. A few configurations cannot be made through the Attributes Inspector, so you must make them programmatically. You can set other configurations programmatically, too, if you prefer.
+
+</string>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I9z-be-Crx">
-                    <rect key="frame" x="396" y="260" width="30" height="30"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zJK-En-qRr" userLabel="userImageView" customClass="PFImageView">
+                    <rect key="frame" x="8" y="8" width="30" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="0ah-Pp-ZRi"/>
-                        <constraint firstAttribute="width" constant="30" id="6QS-XT-cTU"/>
-                    </constraints>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wTY-MI-KPf">
-                    <rect key="frame" x="396" y="8" width="30" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="30" id="5M6-QN-tcZ"/>
-                        <constraint firstAttribute="height" constant="30" id="EWp-B0-dht"/>
+                        <constraint firstAttribute="width" constant="30" id="hpX-E1-hay"/>
+                        <constraint firstAttribute="height" constant="30" id="oGU-Uu-I18"/>
                     </constraints>
                 </imageView>
             </subviews>
@@ -54,27 +42,20 @@
             <constraints>
                 <constraint firstItem="zJK-En-qRr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="0cX-tC-hD4"/>
                 <constraint firstItem="zJK-En-qRr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="4tO-rf-8j0"/>
-                <constraint firstItem="I9z-be-Crx" firstAttribute="leading" secondItem="PUq-xe-O3a" secondAttribute="trailing" id="8IE-NX-qNS"/>
-                <constraint firstItem="I9z-be-Crx" firstAttribute="centerY" secondItem="PUq-xe-O3a" secondAttribute="centerY" id="DNa-oY-Sb6"/>
-                <constraint firstAttribute="trailing" secondItem="wTY-MI-KPf" secondAttribute="trailing" constant="8" id="FHs-HL-cJa"/>
-                <constraint firstItem="I9z-be-Crx" firstAttribute="trailing" secondItem="1eR-zp-Qs3" secondAttribute="trailing" id="IZb-Ee-lNP"/>
-                <constraint firstItem="wTY-MI-KPf" firstAttribute="top" secondItem="zJK-En-qRr" secondAttribute="top" id="IjU-3v-seL"/>
-                <constraint firstItem="I9z-be-Crx" firstAttribute="top" secondItem="1eR-zp-Qs3" secondAttribute="bottom" constant="8" id="ORc-N2-zLA"/>
-                <constraint firstAttribute="bottom" secondItem="I9z-be-Crx" secondAttribute="bottom" id="Zbi-xd-vqU"/>
-                <constraint firstItem="1eR-zp-Qs3" firstAttribute="top" secondItem="zJK-En-qRr" secondAttribute="bottom" constant="8" id="bis-1x-1e3"/>
+                <constraint firstAttribute="bottom" secondItem="PUq-xe-O3a" secondAttribute="bottom" constant="8" id="CvW-qF-kyQ"/>
+                <constraint firstItem="PUq-xe-O3a" firstAttribute="top" secondItem="1eR-zp-Qs3" secondAttribute="bottom" constant="2" id="IsW-RT-qm1"/>
+                <constraint firstItem="1eR-zp-Qs3" firstAttribute="leading" secondItem="PUq-xe-O3a" secondAttribute="leading" id="aYU-cB-Rmb"/>
+                <constraint firstItem="1eR-zp-Qs3" firstAttribute="top" secondItem="zJK-En-qRr" secondAttribute="bottom" id="bis-1x-1e3"/>
                 <constraint firstItem="zJK-En-qRr" firstAttribute="centerY" secondItem="ljC-Xd-ZeF" secondAttribute="centerY" id="kwd-DC-rHB"/>
-                <constraint firstAttribute="trailing" secondItem="I9z-be-Crx" secondAttribute="trailing" constant="8" id="l2n-yZ-h7V"/>
+                <constraint firstItem="1eR-zp-Qs3" firstAttribute="leading" secondItem="ljC-Xd-ZeF" secondAttribute="leading" id="n35-Ux-WaX"/>
+                <constraint firstAttribute="trailing" secondItem="1eR-zp-Qs3" secondAttribute="trailing" constant="8" id="u2K-al-nHW"/>
                 <constraint firstItem="ljC-Xd-ZeF" firstAttribute="leading" secondItem="zJK-En-qRr" secondAttribute="trailing" constant="8" id="xxX-6f-crO"/>
-                <constraint firstItem="1eR-zp-Qs3" firstAttribute="leading" secondItem="zJK-En-qRr" secondAttribute="leading" id="zaI-R5-6ic"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="commentCountLabel" destination="PUq-xe-O3a" id="InV-Ub-k9n"/>
-                <outlet property="nextImageView" destination="I9z-be-Crx" id="XNh-TR-w4S"/>
-                <outlet property="nextImageViewWidth" destination="6QS-XT-cTU" id="h5i-im-ECn"/>
-                <outlet property="postIconImageView" destination="wTY-MI-KPf" id="sdc-A0-rfK"/>
                 <outlet property="postTextLabel" destination="1eR-zp-Qs3" id="Du7-00-05I"/>
                 <outlet property="userImageView" destination="zJK-En-qRr" id="2Rd-ou-SiA"/>
                 <outlet property="userNameLabel" destination="ljC-Xd-ZeF" id="omz-6f-GMO"/>

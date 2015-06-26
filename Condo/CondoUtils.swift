@@ -13,7 +13,7 @@ extension UIColor {
         return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a/255.0)
     }
     static func condoReportBackgroundColor() ->UIColor {
-        return UIColor.rgba(112, g: 77, b: 145, a: 255)
+        return UIColor.condoBlue()
     }
     static func condoQuestionBackgroundColor() ->UIColor {
         return UIColor.rgba(85, g: 196, b: 132, a: 255)
@@ -61,7 +61,7 @@ extension UIColor {
     }
     
     static func condoMainBackgroundColor() -> UIColor{
-        return UIColor.rgba(230, g: 230, b: 230, a: 255)
+        return UIColor.whiteColor()
     }
     
     static func condoNavigationBarColor() -> UIColor {

@@ -118,6 +118,7 @@ class PostDetailTableViewController: SLKTextViewController {
         case (.Question):
             let qCell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as! QuestionTableViewCell
             qCell.post = post
+            
             cell = qCell
         }
         return cell

@@ -35,3 +35,4 @@ class AnnouncementTableViewCell: UITableViewCell {
         }
     }
 }
+ 

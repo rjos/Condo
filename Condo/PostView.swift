@@ -14,27 +14,24 @@ import ParseUI
 class PostView: UIView {
     
     @IBOutlet weak var commentCountLabel: UILabel!
-    @IBOutlet weak var nextImageView: UIImageView!
     @IBOutlet weak var postTextLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userImageView: PFImageView!
-    
-    @IBOutlet weak var postIconImageView: UIImageView!
-    @IBOutlet weak var nextImageViewWidth: NSLayoutConstraint!
     static func instantiateWithOwner(owner: AnyObject!) ->PostView{
         let nib = UINib(nibName: "PostView", bundle: nil)
         let nibs = nib.instantiateWithOwner(owner, options:nil)
         return nibs.first as! PostView
     }
-    var nextImageHidden: Bool = true{
+    var commentCountHidden: Bool = false {
         didSet {
-            if self.nextImageHidden{
-                self.nextImageViewWidth.constant = 0.0
-            }else{
-                self.nextImageViewWidth.constant = 30.0
+            if self.commentCountHidden {
+                commentCountLabel.hidden = true
+            }else {
+                commentCountLabel.hidden = false
             }
         }
     }
+
     var textColor = UIColor.whiteColor() {
         didSet{
             self.postTextLabel.textColor = self.textColor
@@ -64,10 +61,8 @@ class PostView: UIView {
                 } else {
                     self.commentCountLabel.text = "\(post.totalComments) comentários"
                 }
-                self.nextImageHidden = true
                 let properties = PostDrawingProperties(type: self.post!.type)
                 let imageName = properties.imageIconName
-                self.postIconImageView.image = UIImage(named: imageName)
                 self.layoutSubviews()
             }
         }
