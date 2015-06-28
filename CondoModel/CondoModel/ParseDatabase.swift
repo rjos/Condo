@@ -65,9 +65,9 @@ public class ParseDatabase: NSObject {
         return CondoApiMapper.userFromPFObject(PFUser.currentUser()!)!
     }
     
-    public func testPost(user: User, community: Community) -> Post {
+    public func getPostTest(user: User, community: Community) -> Post {
         return PostReport(dictionary: [
-            "id": "wTVodyGdYU",
+            "id": "pLH3l1Fcmb",
             "owner": user,
             "community": community,
             "text": "teste 1",
@@ -177,6 +177,50 @@ public class ParseDatabase: NSObject {
                 }
             }else{
                 completionBlock(comment: nil, error: error)
+            }
+        }
+    }
+    
+    public func createAnswer(owner: User, typeAnswer: PostQuestionAnswer.PostQuestionAnswerStatus, post: Post, completionBlock: (answer: PostQuestionAnswer?, error: NSError?) -> ()){
+        
+        let answerObject = PFObject(className: "QuestionAnswer")
+        answerObject["owner"] = PFObject(withoutDataWithClassName: "_User", objectId: owner.id)
+        answerObject["typeAnswer"] = typeAnswer.rawValue
+        answerObject["post"] = PFObject(withoutDataWithClassName: "Post", objectId: post.id)
+        
+        answerObject.saveInBackgroundWithBlock { (sucess:Bool, error:NSError?) -> Void in
+            if sucess {
+                
+                print("sucess")
+                
+            }else{
+                completionBlock(answer: nil, error: error)
+            }
+        }
+    }
+    
+    public func getAllPostTest(user: User, community: Community) {
+        
+        PFCloud.callFunctionInBackground("allPosts", withParameters: ["user": user.id, "community": community.id]) {
+            (response: AnyObject?, error: NSError?) -> Void in
+            // ratings is 4.5
+            if let response = (response as? NSArray) {
+                
+                for resp in response {
+                    
+                    if let resp = (resp as? Dictionary<String, PFObject>) {
+                        
+                        if let post = resp["post"] {
+                            
+                            var user = CondoApiMapper.userFromPFObject(post["owner"] as! PFUser)
+                            
+                            if let user = user {
+                                
+                                println(user)
+                            }
+                        }
+                    }
+                }
             }
         }
     }
