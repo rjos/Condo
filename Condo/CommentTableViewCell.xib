@@ -14,8 +14,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3p0-Gs-5JH">
-                        <rect key="frame" x="8" y="8" width="404" height="340.5"/>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3p0-Gs-5JH">
+                        <rect key="frame" x="8" y="8" width="404" height="341"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4gX-y1-DT7" customClass="PFImageView">
                                 <rect key="frame" x="8" y="8" width="45" height="45"/>
@@ -25,13 +25,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpI-4w-int">
-                                <rect key="frame" x="61" y="20" width="41" height="19.5"/>
+                                <rect key="frame" x="61" y="20" width="41" height="20"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfL-O1-nZI">
-                                <rect key="frame" x="8" y="61" width="388" height="271.5"/>
+                                <rect key="frame" x="61" y="61" width="335" height="271"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -40,12 +40,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="dpI-4w-int" firstAttribute="leading" secondItem="tfL-O1-nZI" secondAttribute="leading" id="2wx-03-kRJ"/>
                             <constraint firstAttribute="trailing" secondItem="tfL-O1-nZI" secondAttribute="trailing" constant="8" id="6ye-Nw-iNJ"/>
                             <constraint firstItem="dpI-4w-int" firstAttribute="leading" secondItem="4gX-y1-DT7" secondAttribute="trailing" constant="8" id="7Er-Vf-jv9"/>
                             <constraint firstAttribute="bottom" secondItem="tfL-O1-nZI" secondAttribute="bottom" constant="8" id="Fia-PW-hSj"/>
                             <constraint firstItem="4gX-y1-DT7" firstAttribute="top" secondItem="3p0-Gs-5JH" secondAttribute="top" constant="8" id="M8Z-Ec-tO8"/>
                             <constraint firstItem="tfL-O1-nZI" firstAttribute="top" secondItem="4gX-y1-DT7" secondAttribute="bottom" constant="8" id="Y3W-ew-Tst"/>
-                            <constraint firstItem="tfL-O1-nZI" firstAttribute="leading" secondItem="3p0-Gs-5JH" secondAttribute="leading" constant="8" id="aa3-SC-X4J"/>
                             <constraint firstItem="4gX-y1-DT7" firstAttribute="leading" secondItem="3p0-Gs-5JH" secondAttribute="leading" constant="8" id="rqa-zc-J93"/>
                             <constraint firstItem="4gX-y1-DT7" firstAttribute="centerY" secondItem="dpI-4w-int" secondAttribute="centerY" id="whB-jq-bGs"/>
                         </constraints>

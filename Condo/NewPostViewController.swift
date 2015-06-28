@@ -24,30 +24,29 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
     
     var typesUserArray = ["Síndico", "Público"]
     
+    var type: PostContentType? = nil
+    
+    func setupWithType() {
+        if let t = self.type {
+            let p = PostDrawingProperties(type: t)
+            self.contentView.layer.cornerRadius = p.cornerRadius
+            self.view.tintColor = p.outlineColor
+            self.textReport.layer.cornerRadius = p.cornerRadius
+            self.textReport.layer.borderWidth = p.lineWidth
+            self.textReport.layer.borderColor = p.outlineColor.CGColor
+            self.textReport.tintColor = p.outlineColor
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.tintColor = UIColor.condoReportBackgroundColor()
-        self.contentView.layer.cornerRadius = 15.0
-        
         self.btnPublish.enabled = false
-        
-        //self.typeUser.delegate = self
         self.textReport.delegate = self
         
         self.pickerTypeUser = UIPickerView()
         self.pickerTypeUser.delegate = self
         
-        //self.typeUser.inputView = pickerTypeUser
-        
-//        self.toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 44))
-//        self.toolBar.barStyle = UIBarStyle.Default
-//        
-//        let btnDone : UIBarButtonItem! = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: Selector("SelectedItemPickerView"))
-//        let btnCancel : UIBarButtonItem! = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: Selector("CancelItemPickerView"))
-//        
-//        self.toolBar.setItems([btnCancel, UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil) , btnDone], animated: true)
-        
-        //self.typeUser.inputAccessoryView = self.toolBar
+
         let imageRect = CGRect(x: 4, y: 4, width: 40, height: 40)
         self.imgProfile = PFImageView(frame: imageRect)
         self.imgProfile.layer.cornerRadius = self.imgProfile.bounds.width / 2
@@ -68,16 +67,14 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
         self.textReport.textContainer.exclusionPaths = [bezierPath]
         self.textReport.addSubview(self.imgProfile)
         
-        self.textReport.layer.cornerRadius = 15.0
-        self.textReport.layer.borderWidth = 2.0
-        self.textReport.layer.borderColor = UIColor.condoReportBackgroundColor().CGColor
-        self.textReport.tintColor = UIColor.condoReportBackgroundColor()
+
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardWillShowNotification, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: UIKeyboardWillHideNotification, object: nil)
+        //self.type = PostContentType.Report
+        self.setupWithType()
         self.textReport.becomeFirstResponder()
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,9 +90,17 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
         let size = rect.size
         
         self.bottomConstraintTextView.constant = 32.0 + size.height
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
-            self.view.layoutIfNeeded()
-        })
+        self.contentView.transform = CGAffineTransformMakeScale(0.4, 0.4)
+        UIView.animateKeyframesWithDuration(1.0, delay: 0.0, options: UIViewKeyframeAnimationOptions.BeginFromCurrentState, animations: { () -> Void in
+            UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: 0.5, animations: { () -> Void in
+                self.view.layoutIfNeeded()
+            })
+            UIView.addKeyframeWithRelativeStartTime(0.5, relativeDuration: 0.5, animations: { () -> Void in
+                self.contentView.transform = CGAffineTransformIdentity
+            })
+        }) { (completed) -> Void in
+            
+        }
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -130,62 +135,36 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
         }
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.typesUserArray.count
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return self.typesUserArray[row]
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //self.typeUser.text = self.typesUserArray[row]
-    }
-    
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
-//        self.typeUser.resignFirstResponder()
-//        self.textReport.resignFirstResponder()
-    }
-    
     @IBAction func ShowBack(sender: AnyObject) {
-        self.dismissViewControllerAnimated(false, completion: nil)
+        //self.textReport.resignFirstResponder()
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     @IBAction func ShowPublish(sender: AnyObject) {
         let community = ParseDatabase.sharedDatabase.getCommunityUser()
         let user = ParseDatabase.sharedDatabase.getCurrentUser()
         let text = self.textReport.text
-        self.dismissViewControllerAnimated(true, completion: nil)
-        ParseDatabase.sharedDatabase.createPost(type: PostContentType.Report, owner: user, text: text, status: PostReport.PostReportStatus.Open, community: community) { (post, error) -> () in
-            let notification = MPGNotification(title: "Seu problema foi publicado", subtitle: nil, backgroundColor: UIColor.condoReportBackgroundColor(), iconImage: UIImage(named: "question"))
+        ParseDatabase.sharedDatabase.createPost(type: self.type!, owner: user, text: text, status: PostReport.PostReportStatus.Open, community: community) { (post, error) -> () in
+            let notification = MPGNotification(title: "Seu problema foi publicado!", subtitle: nil, backgroundColor: UIColor.condoBlue(), iconImage: nil)
             
             notification.duration = 4.0
             notification.animationType = MPGNotificationAnimationType.Drop
             notification.swipeToDismissEnabled = false
             notification.show()
         }
+        self.contentView.transform = CGAffineTransformIdentity
+        UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.BeginFromCurrentState, animations: { () -> Void in
+            
+            UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: 0.5){
+                self.contentView.transform = CGAffineTransformMakeScale(0.4, 0.4)
+            }
+            UIView.addKeyframeWithRelativeStartTime(0.5, relativeDuration: 0.5){
+                self.contentView.transform = CGAffineTransformTranslate(self.contentView.transform, 0.0, -self.view.frame.size.width)
+            }
+            
+            })
+            { (completed) -> Void in
+            self.dismissViewControllerAnimated(false, completion: nil)
+        }
     }
-    
-    func SelectedItemPickerView(){
-        //self.typeUser.resignFirstResponder()
-    }
-    
-    func CancelItemPickerView(){
-        //self.typeUser.resignFirstResponder()
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
