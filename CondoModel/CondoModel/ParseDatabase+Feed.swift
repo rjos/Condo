@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Condo. All rights reserved.
 //
 
+let feedPinName = "CondoFeedPinName"
 public extension ParseDatabase {
     public func createPost(#type: PostContentType, owner: User, text: String, status: PostReport.PostReportStatus, community: Community, completionBlock: (post: Post?, error: NSError?) -> ()) {
         
@@ -23,17 +24,20 @@ public extension ParseDatabase {
             postObject["status"] = ""
         }
         
-        postObject.saveInBackgroundWithBlock { (success:Bool, error:NSError?) -> Void in
-            
+        postObject.saveEventually { (success, error) -> Void in
             if success {
-                
-                let post = CondoApiMapper.postFromPFObject(postObject, user: owner, community: community)
-                
-                if let post = post {
-                    completionBlock(post: post, error: nil)
-                }else{
-                    completionBlock(post: nil, error: error)
-                }
+                postObject.pinInBackgroundWithName(feedPinName, block: { (pinSuccess, error) -> Void in
+                    if pinSuccess {
+                        let post = CondoApiMapper.postFromPFObject(postObject, user: owner, community: community)
+                        if let post = post {
+                            completionBlock(post: post, error: nil)
+                        }else{
+                            completionBlock(post: nil, error: error)
+                        }
+                    }else{
+                        completionBlock(post: nil, error: error)
+                    }
+                })
             }else{
                 completionBlock(post: nil, error: error)
             }

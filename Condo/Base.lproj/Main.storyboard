@@ -757,9 +757,9 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Iws-yC-cXh" kind="show" identifier="showPost" id="vf7-4n-kMm"/>
-                        <segue destination="1CV-Bx-gor" kind="presentation" identifier="showNewPost" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="ztf-EQ-ZTZ"/>
-                        <segue destination="1CV-Bx-gor" kind="presentation" identifier="showNewQuestion" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="rAj-Tq-fv2"/>
-                        <segue destination="1CV-Bx-gor" kind="presentation" identifier="showNewAnnouncement" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="Swf-Zh-Wsd"/>
+                        <segue destination="1CV-Bx-gor" kind="showDetail" identifier="showNewPost" id="ztf-EQ-ZTZ"/>
+                        <segue destination="1CV-Bx-gor" kind="showDetail" identifier="showNewQuestion" id="rAj-Tq-fv2"/>
+                        <segue destination="1CV-Bx-gor" kind="showDetail" identifier="showNewAnnouncement" id="Swf-Zh-Wsd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zms-lr-mmf" userLabel="First Responder" sceneMemberID="firstResponder"/>
