@@ -104,14 +104,22 @@ class CondoApiMapper: NSObject {
     }
     
     static func commentFromPFObject(object:PFObject, user:User, post: Post) -> Comment? {
-        
         let dic:Dictionary<String, AnyObject> = [
             "id": object.objectId!,
             "owner": user,
             "post": post,
             "text": object["text"]!
         ]
-        
         return Comment(dictionary: dic)
+    }
+    
+    static func questionAnswerFromPFObject(object: PFObject, user: User, post: Post) -> PostQuestionAnswer? {
+        let dic:Dictionary<String, AnyObject> = [
+            "id": object.objectId!,
+            "owner": user,
+            "post": post,
+            "status": object["typeAnswer"]!
+        ]
+        return PostQuestionAnswer(dictionary: dic)
     }
 }

@@ -28,7 +28,7 @@ class TesteViewController: UIViewController {
         
         let community = ParseDatabase.sharedDatabase.getCommunityUser()
         
-        let postTest = ParseDatabase.sharedDatabase.getPostTest(user, community: community)
+        //let postTest = ParseDatabase.sharedDatabase.getPostTest(user, community: community)
         
         //Chamar função para retornar todos os posts
         ParseDatabase.sharedDatabase.getAllPostTest(user, community: community)

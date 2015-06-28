@@ -65,11 +65,11 @@ public class PostQuestionAnswer: Model {
     }
     public let owner: User
     public let status: PostQuestionAnswerStatus
-    public let postId: String
+    public let post: Post
     public override init(dictionary: Dictionary<String, AnyObject>) {
         self.status = PostQuestionAnswerStatus(rawValue: dictionary["status"] as! String)!
         self.owner = dictionary["owner"] as! User
-        self.postId = dictionary["post"] as! String
+        self.post = dictionary["post"] as! Post
         super.init(dictionary: dictionary)
     }
 }

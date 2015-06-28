@@ -26,6 +26,8 @@
 		02891C7A1B28743300FFA118 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02529E271B276CB4009CF624 /* User.swift */; };
 		02891C7B1B28743300FFA118 /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02529E221B2769C5009CF624 /* Community.swift */; };
 		02891C7C1B28743300FFA118 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02529E2B1B2772E6009CF624 /* Post.swift */; };
+		028CEED21B405C9D007CA0C2 /* ParseDatabase+Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CEED11B405C9D007CA0C2 /* ParseDatabase+Expenses.swift */; };
+		028CEED41B406156007CA0C2 /* ParseDatabase+Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CEED31B406156007CA0C2 /* ParseDatabase+Feed.swift */; };
 		02F333371B2F5580003D84EC /* CondoApiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F333361B2F5580003D84EC /* CondoApiMapper.swift */; };
 		1B9CE3A11B2F3FA400866898 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9CE3A01B2F3FA400866898 /* Bolts.framework */; };
 		1B9CE3A31B2F3FAD00866898 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9CE3A21B2F3FAD00866898 /* Parse.framework */; };
@@ -74,6 +76,8 @@
 		02529E2B1B2772E6009CF624 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		02529E2D1B2779DA009CF624 /* DummyModelList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyModelList.swift; sourceTree = "<group>"; };
 		02529E2F1B277A6C009CF624 /* DummyDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyDatabase.swift; sourceTree = "<group>"; };
+		028CEED11B405C9D007CA0C2 /* ParseDatabase+Expenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ParseDatabase+Expenses.swift"; sourceTree = "<group>"; };
+		028CEED31B406156007CA0C2 /* ParseDatabase+Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ParseDatabase+Feed.swift"; sourceTree = "<group>"; };
 		02F333361B2F5580003D84EC /* CondoApiMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondoApiMapper.swift; sourceTree = "<group>"; };
 		1B9CE3A01B2F3FA400866898 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		1B9CE3A21B2F3FAD00866898 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				024D328E1B2CCE940061D518 /* CondoDatabase.swift */,
 				02F333361B2F5580003D84EC /* CondoApiMapper.swift */,
 				1B9CE3AD1B2F409F00866898 /* ParseDatabase.swift */,
+				028CEED11B405C9D007CA0C2 /* ParseDatabase+Expenses.swift */,
+				028CEED31B406156007CA0C2 /* ParseDatabase+Feed.swift */,
 				02529E2F1B277A6C009CF624 /* DummyDatabase.swift */,
 				02529E2D1B2779DA009CF624 /* DummyModelList.swift */,
 				02529E251B276B06009CF624 /* Model.swift */,
@@ -331,9 +337,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0206D6101B2A070A00CD3A0E /* Expense.swift in Sources */,
+				028CEED21B405C9D007CA0C2 /* ParseDatabase+Expenses.swift in Sources */,
 				02529E231B2769C5009CF624 /* Community.swift in Sources */,
 				02529E2E1B2779DA009CF624 /* DummyModelList.swift in Sources */,
 				02529E261B276B06009CF624 /* Model.swift in Sources */,
+				028CEED41B406156007CA0C2 /* ParseDatabase+Feed.swift in Sources */,
 				1BE0E2AE1B28B606002BF58E /* Comment.swift in Sources */,
 				02F333371B2F5580003D84EC /* CondoApiMapper.swift in Sources */,
 				02529E281B276CB4009CF624 /* User.swift in Sources */,
