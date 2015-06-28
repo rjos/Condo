@@ -726,6 +726,7 @@
                         <segue destination="xds-Eg-k5G" kind="relationship" relationship="viewControllers" id="mn7-eG-QHt"/>
                         <segue destination="l5O-86-n2Y" kind="relationship" relationship="viewControllers" id="FtO-nb-9zP"/>
                         <segue destination="cWp-gw-9T8" kind="relationship" relationship="viewControllers" id="1Ak-gs-el7"/>
+                        <segue destination="rO6-y5-oKi" kind="relationship" relationship="viewControllers" id="CX5-4C-7kc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXV-TB-t5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -764,6 +765,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zms-lr-mmf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-328.5" y="124.5"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="vcl-CY-kCy">
+            <objects>
+                <viewController id="rO6-y5-oKi" customClass="TesteViewController" customModule="Condo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I2M-YZ-33A"/>
+                        <viewControllerLayoutGuide type="bottom" id="6FJ-v6-mw8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ri1-IV-G6U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7J-Lf-47E">
+                                <rect key="frame" x="164" y="294" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendRequest:" destination="rO6-y5-oKi" eventType="touchUpInside" id="NdT-OZ-MhM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="ge7-ow-Klh"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Qo-Xi-SCK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1562.5" y="-2477.5"/>
         </scene>
         <!--Despesas-->
         <scene sceneID="zs7-58-UX3">
