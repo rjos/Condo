@@ -60,6 +60,7 @@
 		02ED37671B35CEE1003E7A1C /* BEMAverageLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED37611B35CEE1003E7A1C /* BEMAverageLine.m */; };
 		02ED37681B35CEE1003E7A1C /* BEMPermanentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED37631B35CEE1003E7A1C /* BEMPermanentPopupView.m */; };
 		04E4BB211B34C1980091D3FF /* QrCodeCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E4BB201B34C1980091D3FF /* QrCodeCreateViewController.swift */; };
+		04E7C58B1B419986007BBA74 /* QrCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7C58A1B419986007BBA74 /* QrCodeReaderViewController.swift */; };
 		1B15DFD01B334D9B00CB365F /* ListDetailsExpensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15DFCF1B334D9B00CB365F /* ListDetailsExpensesTableViewController.swift */; };
 		1B80A5451B33BF19000351B6 /* DetailsExpensesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B80A5431B33BF19000351B6 /* DetailsExpensesTableViewCell.swift */; };
 		1B80A5461B33BF19000351B6 /* DetailsExpensesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B80A5441B33BF19000351B6 /* DetailsExpensesTableViewCell.xib */; };
@@ -235,6 +236,7 @@
 		02ED37621B35CEE1003E7A1C /* BEMPermanentPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMPermanentPopupView.h; sourceTree = "<group>"; };
 		02ED37631B35CEE1003E7A1C /* BEMPermanentPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMPermanentPopupView.m; sourceTree = "<group>"; };
 		04E4BB201B34C1980091D3FF /* QrCodeCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrCodeCreateViewController.swift; sourceTree = "<group>"; };
+		04E7C58A1B419986007BBA74 /* QrCodeReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrCodeReaderViewController.swift; sourceTree = "<group>"; };
 		1B15DFCF1B334D9B00CB365F /* ListDetailsExpensesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailsExpensesTableViewController.swift; sourceTree = "<group>"; };
 		1B80A5431B33BF19000351B6 /* DetailsExpensesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsExpensesTableViewCell.swift; sourceTree = "<group>"; };
 		1B80A5441B33BF19000351B6 /* DetailsExpensesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsExpensesTableViewCell.xib; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				02ECE4B81B30B6B5000FC6A0 /* LoginViewController.swift */,
 				02ECE4BA1B30B6BE000FC6A0 /* SignUpViewController.swift */,
 				04E4BB201B34C1980091D3FF /* QrCodeCreateViewController.swift */,
+				04E7C58A1B419986007BBA74 /* QrCodeReaderViewController.swift */,
 				1BF5FAC01B34012100E78744 /* CreateCondoViewController.swift */,
 				1BC7D9681B34EB290089DEE6 /* ProfileViewController.swift */,
 				1B88347D1B37BCD8000337F0 /* EditProfileTableViewController.swift */,
@@ -786,6 +789,7 @@
 				024D32AD1B2CFEDC0061D518 /* SLKTextViewController.m in Sources */,
 				1B80A5451B33BF19000351B6 /* DetailsExpensesTableViewCell.swift in Sources */,
 				0241574B1B2DD083000ADCB5 /* JBChartView.m in Sources */,
+				04E7C58B1B419986007BBA74 /* QrCodeReaderViewController.swift in Sources */,
 				0206D6181B2A13A100CD3A0E /* ExpenseCollectionViewCell.swift in Sources */,
 				02ED37641B35CEE1003E7A1C /* BEMSimpleLineGraphView.m in Sources */,
 				34AC95951B34ABBB0006FD17 /* MPGNotification.m in Sources */,
