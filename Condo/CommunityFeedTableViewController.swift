@@ -43,6 +43,12 @@ class CommunityFeedTableViewController: UITableViewController {
             }
             self.tableView.reloadData()
         }
+        
+        self.notificationManager.registerObserver(FeedController.NotificationNewComment) {
+            (notification) in
+            self.database = FeedController.sharedController.posts
+            self.tableView.reloadData()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {

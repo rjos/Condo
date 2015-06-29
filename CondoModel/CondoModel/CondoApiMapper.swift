@@ -93,7 +93,7 @@ class CondoApiMapper: NSObject {
             case .Announcement:
                 return PostAnnouncement(dictionary: dic)
             case .Question:
-                if let agree = object["totalAgree"], disagree = object["totalAgree"] {
+                if let agree = object["totalAgree"], disagree = object["totalDisagree"] {
                     dic["totalAgree"] = agree
                     dic["totalDisagree"] = disagree
                 } else{

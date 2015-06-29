@@ -108,8 +108,8 @@ public extension ParseDatabase {
                         posts.append(post)
                         if let question = post as? PostQuestion,
                             answerString = dictionary["answer"] as? String, answer = PostQuestionAnswer.PostQuestionAnswerStatus(rawValue: answerString){
-                                if question.text.lowercaseString.rangeOfString("--debug--rodolfo--") != nil {
-                                    println("Question \(question) (\(question.totalAgree)) (\(question.totalDisagree))")
+                                if question.text.lowercaseString.rangeOfString("--debug--lucas") != nil {
+                                    println("Question(\(question.text)) Agree(\(question.totalAgree)) Disagree(\(question.totalDisagree))")
                                 }
                             answers[question.id] = answer
                         }

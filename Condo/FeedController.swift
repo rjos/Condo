@@ -34,11 +34,12 @@ class FeedController: NSObject {
     
     func setAnswerStatus(#question: PostQuestion, status: AnswerStatus) {
         self._answers[question.id] = status
+        
         let user = ParseDatabase.sharedDatabase.getCurrentUser()
         let community = ParseDatabase.sharedDatabase.getCommunityUser()
         ParseDatabase.sharedDatabase.createAnswer(user, typeAnswer: status, post: question) { (answer, error) -> () in
             if let error = error {
-                
+                self.postNotificationErrorFetching(error)
             }else{
                 self.postNotificationNewAnswer()
             }
@@ -69,6 +70,35 @@ class FeedController: NSObject {
                 self._hasData = true
                 self.postNotificationNewData()
             }
+        }
+    }
+    
+    func createPost(#text: String, type: PostContentType) {
+        let user = ParseDatabase.sharedDatabase.getCurrentUser()
+        let community = ParseDatabase.sharedDatabase.getCommunityUser()
+        ParseDatabase.sharedDatabase.createPost(type: type, owner: user, text: text, status: PostReport.PostReportStatus.Open, community: community) { (post, error) -> () in
+            if let error = error {
+                self.postNotificationErrorFetching(error)
+            } else if let post = post {
+                
+                let notification: MPGNotification
+                switch type {
+                case .Announcement:
+                    notification = MPGNotification(title: "Seu aviso foi publicado!", subtitle: nil, backgroundColor: UIColor.condoAnnouncementBackgroundColor(), iconImage: nil)
+                case .Question:
+                    notification = MPGNotification(title: "Sua pergunta foi publicada!", subtitle: nil, backgroundColor: UIColor.condoQuestionBackgroundColor(), iconImage: nil)
+                case .Report:
+                    notification = MPGNotification(title: "Seu problema foi publicado!", subtitle: nil, backgroundColor: UIColor.condoReportBackgroundColor(), iconImage: nil)
+                }
+                notification.duration = 3.0
+                notification.animationType = MPGNotificationAnimationType.Drop
+                notification.swipeToDismissEnabled = false
+                notification.show()
+                
+                self._posts.insert(post, atIndex: 0)
+                self.postNotificationNewComment()
+            }
+            
         }
     }
     

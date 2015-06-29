@@ -123,35 +123,23 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
         let textPost = self.textReport.text
         let countText = count(textPost)
         
-        if countText <= 500 {
-            if countText > 0 {
-                self.btnPublish.enabled = true
-            }else{
-                self.btnPublish.enabled = false
-            }
-            
-            let characters = 500 - countText
-            self.countLetter.text = "Max: \(characters)"
+        if countText > 0 && countText <= 500 {
+            self.btnPublish.enabled = true
+        }else{
+            self.btnPublish.enabled = false
         }
+        let characters = 500 - countText
+        self.countLetter.text = "Max: \(characters)"
+        self.countLetter.textColor =  self.btnPublish.enabled ? UIColor.lightGrayColor() : UIColor.redColor()
     }
     
     @IBAction func ShowBack(sender: AnyObject) {
-        //self.textReport.resignFirstResponder()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     @IBAction func ShowPublish(sender: AnyObject) {
-        let community = ParseDatabase.sharedDatabase.getCommunityUser()
-        let user = ParseDatabase.sharedDatabase.getCurrentUser()
         let text = self.textReport.text
-        ParseDatabase.sharedDatabase.createPost(type: self.type!, owner: user, text: text, status: PostReport.PostReportStatus.Open, community: community) { (post, error) -> () in
-            let notification = MPGNotification(title: "Seu problema foi publicado!", subtitle: nil, backgroundColor: UIColor.condoBlue(), iconImage: nil)
-            
-            notification.duration = 4.0
-            notification.animationType = MPGNotificationAnimationType.Drop
-            notification.swipeToDismissEnabled = false
-            notification.show()
-        }
+        FeedController.sharedController.createPost(text: text, type: self.type!)
         self.contentView.transform = CGAffineTransformIdentity
         UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.BeginFromCurrentState, animations: { () -> Void in
             
