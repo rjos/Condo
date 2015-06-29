@@ -51,8 +51,12 @@ public class PostReport: Post {
 }
 
 public class PostQuestion: Post {
+    public let totalAgree: Int
+    public let totalDisagree: Int
     public override init(var dictionary: Dictionary<String, AnyObject>) {
         dictionary["type"] = PostContentType.Question.rawValue
+        self.totalAgree = dictionary["totalAgree"] as! Int
+        self.totalDisagree = dictionary["totalDisagree"] as! Int
         super.init(dictionary: dictionary)
     }
 }

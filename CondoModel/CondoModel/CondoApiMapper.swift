@@ -93,6 +93,16 @@ class CondoApiMapper: NSObject {
             case .Announcement:
                 return PostAnnouncement(dictionary: dic)
             case .Question:
+                println(object.allKeys())
+                println(object["text"]!)
+                if let agree = object["totalAgree"], disagree = object["totalAgree"] {
+                    dic["totalAgree"] = agree
+                    dic["totalDisagree"] = disagree
+                } else{
+                    dic["totalAgree"] = 0
+                    dic["totalDisagree"] = 0
+                }
+                
                 return PostQuestion(dictionary: dic)
             case .Report:
                 dic["status"] = object["status"]!
@@ -113,13 +123,17 @@ class CondoApiMapper: NSObject {
         return Comment(dictionary: dic)
     }
     
-    static func questionAnswerFromPFObject(object: PFObject, user: User, post: Post) -> PostQuestionAnswer? {
-        let dic:Dictionary<String, AnyObject> = [
+    static func questionAnswerFromPFObject(object: PFObject, user: User, post: PostQuestion) -> PostQuestionAnswer? {
+        var dic:Dictionary<String, AnyObject> = [
             "id": object.objectId!,
             "owner": user,
-            "post": post,
-            "status": object["typeAnswer"]!
+            "post": post
         ]
+        if let answerString = object["typeAnswer"] as? String {
+            dic["status"] = answerString
+        }else{
+            dic["status"] = PostQuestionAnswer.PostQuestionAnswerStatus.NoAnswer.rawValue
+        }
         return PostQuestionAnswer(dictionary: dic)
     }
 }

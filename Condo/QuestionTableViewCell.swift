@@ -22,13 +22,9 @@ class QuestionTableViewCell: UITableViewCell {
     @IBOutlet weak var agreeLabel: UILabel!
     @IBOutlet weak var disagreeLabel: UILabel!
     
-    let deselectedImageViewTransform = CGAffineTransformMakeScale(0.0, 0.0)
-    let selectedImageViewTransform = CGAffineTransformIdentity
+    
     
     var postHolder: PostView? = nil
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -39,12 +35,60 @@ class QuestionTableViewCell: UITableViewCell {
         self.mainView.backgroundColor = UIColor.condoQuestionBackgroundColor()
         self.agreeButton.backgroundColor = UIColor.condoQuestionBackgroundColor()
         self.disagreeButton.backgroundColor = UIColor.condoQuestionBackgroundColor()
-        self.agreeImageView.transform = deselectedImageViewTransform
-        self.disagreeImageView.transform = deselectedImageViewTransform
-        // Initialization code
     }
 
-    var post: Post? = nil {
+    var answerStatus: AnswerStatus  = AnswerStatus.NoAnswer {
+        didSet{
+            let deselectedImageViewTransform = CGAffineTransformMakeScale(0.4, 0.4)
+            let selectedImageViewTransform = CGAffineTransformIdentity
+            switch self.answerStatus {
+            case .NoAnswer:
+                self.agreeImageView.transform = deselectedImageViewTransform
+                self.agreeImageView.alpha = 0.0
+                self.disagreeImageView.transform = deselectedImageViewTransform
+                self.disagreeImageView.alpha = 0.0
+            case .Agree:
+                self.agreeImageView.transform = selectedImageViewTransform
+                self.agreeImageView.alpha = 1.0
+                self.disagreeImageView.transform = deselectedImageViewTransform
+                self.disagreeImageView.alpha = 0.0
+            case .Disagree:
+                self.agreeImageView.transform = deselectedImageViewTransform
+                self.agreeImageView.alpha = 0.0
+                self.disagreeImageView.transform = selectedImageViewTransform
+                self.disagreeImageView.alpha = 1.0
+            }
+        }
+    }
+    
+    var agreeIncrement: Int {
+        get {
+            if self.answerStatus == AnswerStatus.Agree{
+                return 1
+            }else{
+                return 0
+            }
+        }
+    }
+    
+    var disagreeIncrement: Int {
+        get {
+            if self.answerStatus == AnswerStatus.Disagree{
+                return 1
+            }else{
+                return 0
+            }
+        }
+    }
+    
+    
+
+    func reloadCounters(){
+        self.disagreeLabel.text = "\(self.post!.totalDisagree + self.disagreeIncrement)"
+        self.agreeLabel.text = "\(self.post!.totalAgree + self.agreeIncrement)"
+    }
+    
+    var post: PostQuestion? = nil {
         didSet{
             let properties = PostDrawingProperties(type: self.post!.type)
             let outlineColor = properties.outlineColor
@@ -55,41 +99,36 @@ class QuestionTableViewCell: UITableViewCell {
             self.mainView.layer.borderWidth = properties.lineWidth
             self.mainView.layer.borderColor = UIColor.clearColor().CGColor
             self.mainView.layer.masksToBounds = true
-            
+            self.answerStatus = FeedController.sharedController.getAnswerStatus(question: self.post!)
+            self.reloadCounters()
             self.tintColor = outlineColor
         }
     }
-    
-    func showAgree(){
-        self.agreeImageView.transform = deselectedImageViewTransform
-        UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.4, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-            self.agreeImageView.transform = self.selectedImageViewTransform
-        }) { (completed) -> Void in
-            self.showingAgree = true
-        }
-    }
-    
-    func hideAgree() {
-        self.agreeImageView.transform = selectedImageViewTransform
-        UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.4, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-                self.agreeImageView.transform = self.deselectedImageViewTransform
-            }) { (completed) -> Void in
-                self.showingAgree = false
-        }
-    }
-    
-    
-    var showingAgree = false
+
     @IBAction func agreeButtonPressed(sender: AnyObject) {
-        if self.showingAgree {
-            hideAgree()
+        let nextStatus: AnswerStatus
+        if self.answerStatus == AnswerStatus.Agree {
+            nextStatus = AnswerStatus.NoAnswer
         }else{
-            self.showAgree()
+            nextStatus = AnswerStatus.Agree
         }
+        self.changeStatus(nextStatus)
     }
     
     @IBAction func disagreeButtonPressed(sender: AnyObject) {
-        
+        let nextStatus: AnswerStatus
+        if self.answerStatus == AnswerStatus.Disagree {
+            nextStatus = AnswerStatus.NoAnswer
+        }else{
+            nextStatus = AnswerStatus.Disagree
+        }
+        self.changeStatus(nextStatus)
     }
-    
+    func changeStatus(newStatus: AnswerStatus) {
+        FeedController.sharedController.setAnswerStatus(question: self.post!, status: newStatus)
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.4, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+            self.answerStatus = newStatus
+            self.reloadCounters()
+            }, completion: nil)
+    }
 }

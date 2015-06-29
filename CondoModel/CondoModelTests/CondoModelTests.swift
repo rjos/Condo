@@ -26,30 +26,30 @@ class CondoModelTests: XCTestCase {
         super.tearDown()
     }
     
-    func testCommunityPosts() {
-        XCTAssertNotNil(self.database, "Database is Nil")
-        let community = self.database!.community
-        let posts = community.posts
-        for x in 0 ..< posts.count() {
-            XCTAssertNotNil(posts.modelAtIndex(x), "Post is nil")
-        }
-    }
-    
-    func testCommunityAdministrators() {
-        XCTAssertNotNil(self.database, "Database is Nil")
-        let community = self.database!.community
-        let adms = community.administrators
-        for x in 0 ..< adms.count() {
-            XCTAssertNotNil(adms.modelAtIndex(x), "Adm is nil")
-        }
-    }
-    func testCommunityExpenses() {
-        XCTAssertNotNil(self.database, "Database is Nil")
-        let community = self.database!.community
-        let expenses = community.expenses
-        for x in 0 ..< expenses.count() {
-            XCTAssertNotNil(expenses.modelAtIndex(x), "Adm is nil")
-        }
-    }
+//    func testCommunityPosts() {
+//        XCTAssertNotNil(self.database, "Database is Nil")
+//        let community = self.database!.community
+//        let posts = community.posts
+//        for x in 0 ..< posts.count() {
+//            XCTAssertNotNil(posts.modelAtIndex(x), "Post is nil")
+//        }
+//    }
+//    
+//    func testCommunityAdministrators() {
+//        XCTAssertNotNil(self.database, "Database is Nil")
+//        let community = self.database!.community
+//        let adms = community.administrators
+//        for x in 0 ..< adms.count() {
+//            XCTAssertNotNil(adms.modelAtIndex(x), "Adm is nil")
+//        }
+//    }
+//    func testCommunityExpenses() {
+//        XCTAssertNotNil(self.database, "Database is Nil")
+//        let community = self.database!.community
+//        let expenses = community.expenses
+//        for x in 0 ..< expenses.count() {
+//            XCTAssertNotNil(expenses.modelAtIndex(x), "Adm is nil")
+//        }
+//    }
     
 }

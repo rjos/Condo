@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 public class User: Model {
     public let name: String
     //MARK: Tem que remover depois do dummy

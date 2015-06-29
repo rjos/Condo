@@ -36,6 +36,7 @@
 		024D32AD1B2CFEDC0061D518 /* SLKTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D32A31B2CFEDC0061D518 /* SLKTextViewController.m */; };
 		024D32AE1B2CFEDC0061D518 /* SLKTypingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D32A51B2CFEDC0061D518 /* SLKTypingIndicatorView.m */; };
 		02529E241B276A09009CF624 /* CondoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02529E1F1B276981009CF624 /* CondoModel.framework */; };
+		028CEED81B408398007CA0C2 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CEED71B408398007CA0C2 /* FeedController.swift */; };
 		02A0D5301B37B15A0091D67A /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0D52F1B37B15A0091D67A /* AddExpenseViewController.swift */; };
 		02A9F8F51B28D8E700275606 /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */; };
 		02ABC0031B2768BC00E0678B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABC0021B2768BC00E0678B /* AppDelegate.swift */; };
@@ -201,6 +202,7 @@
 		024D32A41B2CFEDC0061D518 /* SLKTypingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTypingIndicatorView.h; sourceTree = "<group>"; };
 		024D32A51B2CFEDC0061D518 /* SLKTypingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTypingIndicatorView.m; sourceTree = "<group>"; };
 		02529E191B276980009CF624 /* CondoModel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CondoModel.xcodeproj; path = CondoModel/CondoModel.xcodeproj; sourceTree = "<group>"; };
+		028CEED71B408398007CA0C2 /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		02A0D52F1B37B15A0091D67A /* AddExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
 		02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewController.swift; sourceTree = "<group>"; };
 		02ABBFFD1B2768BC00E0678B /* Condo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Condo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -362,15 +364,13 @@
 		021544331B294F140057B176 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				028CEED51B408380007CA0C2 /* Feed */,
+				D1E279461B31FCCA00CB33FA /* Expenses */,
 				1BF5FABB1B33F9B800E78744 /* SelectCondoViewController.swift */,
 				02ECE4C51B31F7AD000FC6A0 /* MainViewController.swift */,
 				02ECE4B81B30B6B5000FC6A0 /* LoginViewController.swift */,
 				02ECE4BA1B30B6BE000FC6A0 /* SignUpViewController.swift */,
 				04E4BB201B34C1980091D3FF /* QrCodeCreateViewController.swift */,
-				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
-				02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */,
-				D1E279461B31FCCA00CB33FA /* Expenses */,
-				1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */,
 				1BF5FAC01B34012100E78744 /* CreateCondoViewController.swift */,
 				1BC7D9681B34EB290089DEE6 /* ProfileViewController.swift */,
 				1B88347D1B37BCD8000337F0 /* EditProfileTableViewController.swift */,
@@ -455,6 +455,17 @@
 				02529E211B276981009CF624 /* CondoModelTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		028CEED51B408380007CA0C2 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				028CEED71B408398007CA0C2 /* FeedController.swift */,
+				02E06E011B27970900580B3D /* CommunityFeedTableViewController.swift */,
+				02A9F8F41B28D8E700275606 /* PostDetailTableViewController.swift */,
+				1BF7C76B1B2A15FC00E9D231 /* NewPostViewController.swift */,
+			);
+			name = Feed;
 			sourceTree = "<group>";
 		};
 		02ABBFF41B2768BC00E0678B = {
@@ -788,6 +799,7 @@
 				02ED37661B35CEE1003E7A1C /* BEMLine.m in Sources */,
 				02ECE4B41B309070000FC6A0 /* PostDrawingProperties.swift in Sources */,
 				02ECE4B91B30B6B5000FC6A0 /* LoginViewController.swift in Sources */,
+				028CEED81B408398007CA0C2 /* FeedController.swift in Sources */,
 				024157501B2DECB9000ADCB5 /* ExpensesViewController.swift in Sources */,
 				02ECE4C11B31E8F7000FC6A0 /* ExpensesController.swift in Sources */,
 				0241574C1B2DD083000ADCB5 /* JBLineChartView.m in Sources */,

@@ -16,14 +16,14 @@ public extension ParseDatabase {
         postObject["type"]          = type.rawValue
         postObject["text"]          = text
         postObject["totalComments"] = 0
-        
+        postObject["totalAgree"] = 0
+        postObject["totalDisagree"] = 0
         switch type {
         case .Report:
             postObject["status"] = status.rawValue
         default:
             postObject["status"] = ""
         }
-        
         postObject.saveEventually { (success, error) -> Void in
             if success {
                 postObject.pinInBackgroundWithName(feedPinName, block: { (pinSuccess, error) -> Void in
@@ -67,7 +67,7 @@ public extension ParseDatabase {
         }
     }
     
-    public func createAnswer(owner: User, typeAnswer: PostQuestionAnswer.PostQuestionAnswerStatus, post: Post, completionBlock: (answer: PostQuestionAnswer?, error: NSError?) -> ()){
+    public func createAnswer(owner: User, typeAnswer: PostQuestionAnswer.PostQuestionAnswerStatus, post: PostQuestion, completionBlock: (answer: PostQuestionAnswer?, error: NSError?) -> ()){
         
         let answerObject = PFObject(className: "QuestionAnswer")
         answerObject["owner"] = PFObject(withoutDataWithClassName: "_User", objectId: owner.id)
@@ -87,39 +87,34 @@ public extension ParseDatabase {
         }
     }
     
-    public func getAllPostTest(user: User, community: Community) {
+    public func getAllPostsAndAnswers(
+        #user: User,
+        community: Community,
+        completionBlock: (
+            posts: Array<Post>?,
+            answers: Dictionary<String, PostQuestionAnswer.PostQuestionAnswerStatus>?,
+            error: NSError?) -> ()){
         
         PFCloud.callFunctionInBackground("allPosts", withParameters: ["user": user.id, "community": community.id]) {
             (response: AnyObject?, error: NSError?) -> Void in
-            // ratings is 4.5
-            if let response = (response as? Array<AnyObject>) {
-                
-                for resp in response {
-                    
-                    if let resp = (resp as? Dictionary<String, PFObject>) {
-                        for (key, object) in resp {
-                            println("Key (\(key)),object(\(object))")
+            if let error = error {
+                completionBlock(posts: nil, answers: nil, error: error)
+            }else if let response = response as? Array<Dictionary<String, AnyObject>> {
+                var posts = Array<Post>()
+                var answers = Dictionary<String, PostQuestionAnswer.PostQuestionAnswerStatus>()
+                for dictionary in response {
+                    if let postObject = dictionary["post"] as? PFObject{
+                        let post = CondoApiMapper.postFromPFObject(postObject, user: user, community: community)!
+                        posts.append(post)
+                        if let question = post as? PostQuestion,
+                            answerString = dictionary["answer"] as? String, answer = PostQuestionAnswer.PostQuestionAnswerStatus(rawValue: answerString){
+                            answers[question.id] = answer
                         }
-                        if let post = resp["post"] {
-                            
-                            var user = CondoApiMapper.userFromPFObject(post["owner"] as! PFUser)
-                            
-                            if let user = user {
-                                
-                                println(user)
-                            }
-                        }
-                    }else {
-                        println("---------------------------------")
-                        println(resp)
-                        if let resp = resp as? Dictionary<String, AnyObject> {
-                            for (key, object) in resp {
-                                println("Key (\(key)),object(\(object))")
-                            }
-                        }
-                        println("---------------------------------")
                     }
                 }
+                completionBlock(posts: posts, answers: answers, error: nil)
+            }else{
+                assert(false, "\"getAllPostsAndAnswers\" received a malformed respose (\(response))")
             }
         }
     }

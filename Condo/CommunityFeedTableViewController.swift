@@ -11,6 +11,7 @@ import CondoModel
 
 
 class CommunityFeedTableViewController: UITableViewController {
+    let notificationManager = NotificationManager()
     var community: Community?
     
     var database: Array<Post> = []
@@ -20,7 +21,7 @@ class CommunityFeedTableViewController: UITableViewController {
     @IBOutlet weak var btnShowNewPost: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.community = ParseDatabase.sharedDatabase.getCommunityUser() //DummyDatabase().community
+        self.community = ParseDatabase.sharedDatabase.getCommunityUser()
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.tintColor = UIColor.condoBlue30()
@@ -33,8 +34,15 @@ class CommunityFeedTableViewController: UITableViewController {
         self.tableView.registerNib(UINib(nibName: "QuestionTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "question")
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 50.0
-        self.tableView.reloadData()
         
+        self.notificationManager.registerObserver(FeedController.NotificationNewData) {
+            (notification) in
+            self.database = FeedController.sharedController.posts
+            if let r = self.refreshControl where r.refreshing{
+                r.endRefreshing()
+            }
+            self.tableView.reloadData()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -42,35 +50,11 @@ class CommunityFeedTableViewController: UITableViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.condoNavigationBarColor()
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.condoBlue()
         self.tabBarController?.tabBar.tintColor = UIColor.condoBlue()
-        
-        let label = UILabel(frame: CGRectMake(0, 0, 150, 30))
-        
-        label.textColor = UIColor.condoBlue()
-        label.backgroundColor = UIColor.clearColor()
-        label.textAlignment = NSTextAlignment.Center
-        label.text = "Condo"
-        self.navigationItem.titleView = label
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.condoBlue()]
     }
     
     func refreshData(){
-        
-        if let refreshControll = self.refreshControl {
-            
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-            
-            if let community = self.community {
-                
-                ParseDatabase.sharedDatabase.getAllPosts(community: community, completionBlock: { (posts, error) -> () in
-                    if let posts = posts {
-                        self.database = posts
-                        self.tableView.reloadData()
-                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    }
-                })
-            }
-            
-            self.refreshControl?.endRefreshing()
-        }
+        FeedController.sharedController.reloadData()
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -78,18 +62,8 @@ class CommunityFeedTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        
-        if let community = self.community {
-            
-            ParseDatabase.sharedDatabase.getAllPosts(community: community) { (posts, error) -> () in
-                if let posts = posts {
-                    self.database = posts
-                    self.tableView.reloadData()
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                }
-            }
+        if !FeedController.sharedController.hasData {
+            self.refreshData()
         }
     }
     
@@ -99,17 +73,11 @@ class CommunityFeedTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        //if let db = self.database {
-            return database.count
-        //}
-        //return 0
+        return database.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCellWithIdentifier("post", forIndexPath: indexPath) as! CommunityFeedTableViewCell
-        let post: Post = self.database[indexPath.row]//self.database!.allPosts().modelAtIndex(indexPath.row) as! Post
+        let post: Post = self.database[indexPath.row]
         let cell: UITableViewCell
         switch (post.type) {
         case (.Announcement):
@@ -122,7 +90,7 @@ class CommunityFeedTableViewController: UITableViewController {
             cell = rCell
         case (.Question):
             let qCell = tableView.dequeueReusableCellWithIdentifier("question", forIndexPath: indexPath) as! QuestionTableViewCell
-            qCell.post = post
+            qCell.post = post as? PostQuestion
             cell = qCell
         }
         return cell
@@ -149,14 +117,12 @@ class CommunityFeedTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.selectedPost = self.database[indexPath.row] //self.database!.allPosts().modelAtIndex(indexPath.row) as? Post
+        self.selectedPost = self.database[indexPath.row]
         self.performSegueWithIdentifier("showPost", sender: self)
     }
     
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showPost" {
             let vc = segue.destinationViewController as! PostDetailTableViewController
