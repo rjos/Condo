@@ -10,10 +10,10 @@ import UIKit
 
 public class Community: Model {
     public let name: String
-    public let administratorID: String
+    public let administrator: User
     public override init(dictionary: Dictionary<String, AnyObject>) {
         self.name = dictionary["name"] as! String
-        self.administratorID = dictionary["administratorID"] as! String
+        self.administrator = dictionary["administrators"] as! User
         super.init(dictionary: dictionary)
     }
 }

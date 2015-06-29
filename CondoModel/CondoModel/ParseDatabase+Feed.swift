@@ -104,7 +104,8 @@ public extension ParseDatabase {
                 var answers = Dictionary<String, PostQuestionAnswer.PostQuestionAnswerStatus>()
                 for dictionary in response {
                     if let postObject = dictionary["post"] as? PFObject{
-                        let post = CondoApiMapper.postFromPFObject(postObject, user: user, community: community)!
+                        let userPost = CondoApiMapper.userFromPFObject(postObject["owner"]! as! PFUser)
+                        let post = CondoApiMapper.postFromPFObject(postObject, user: userPost!, community: community)!
                         posts.append(post)
                         if let question = post as? PostQuestion,
                             answerString = dictionary["answer"] as? String, answer = PostQuestionAnswer.PostQuestionAnswerStatus(rawValue: answerString){

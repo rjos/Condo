@@ -203,7 +203,7 @@ public class DummyDatabase: NSObject {
             let dic = [
                 "id": "1",
                 "name":"Edifício Santiago",
-                "administratorID": ""
+                "admnistrators": self.user
             ]
             return Community(dictionary: dic)
         }

@@ -62,7 +62,7 @@ class ProfileViewController: UIViewController {
                 let community = ParseDatabase.sharedDatabase.getCommunityUser()
                 var typeResidents : String = ""
                 
-                if community.administratorID == user.id {
+                if community.administrator.id == user.id {
                     typeResidents = "Síndico"
                 }else{
                     typeResidents = "Morador"

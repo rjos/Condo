@@ -25,11 +25,11 @@ public class ParseDatabase: NSObject {
             clientKey: "EC0xXL6isxFFX64o8sDFREmRHZ6nBe0kJlZ76Al2")
     }
     
-    public func createCommunity(name: String, administratorID: String ,completionBlock: (community: Community?, error: NSError?) -> ()){
+    public func createCommunity(name: String, administrators: User ,completionBlock: (community: Community?, error: NSError?) -> ()){
         
         let testObject = PFObject(className: "Community")
         testObject["name"] = name
-        testObject["administratorID"] = administratorID
+        testObject["administrators"] = PFObject(withoutDataWithClassName: "_User", objectId: administrators.id)
         testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             println(testObject.objectId)
             if success {
@@ -53,7 +53,7 @@ public class ParseDatabase: NSObject {
         
         return user.community*/
         
-        return Community(dictionary: ["id":"GpMV5wxc37", "name":"Ed. Santiago", "administratorID":"1234"])
+        return Community(dictionary: ["id":"GpMV5wxc37", "name":"Ed. Santiago", "administrators": self.getCurrentUser()])
     }
     
     public func getCurrentUser() -> User {

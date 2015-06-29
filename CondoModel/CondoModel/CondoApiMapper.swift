@@ -48,7 +48,7 @@ class CondoApiMapper: NSObject {
         let dictionary: Dictionary<String, AnyObject> = [
             "id": object.objectId!,
             "name": object["name"]!,
-            "administratorID": object["administrator"]!
+            "administrators": object["administrators"]!
         ]
         
         return Community(dictionary: dictionary)
