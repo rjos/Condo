@@ -143,11 +143,11 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UIPickerView
         self.contentView.transform = CGAffineTransformIdentity
         UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: UIViewKeyframeAnimationOptions.BeginFromCurrentState, animations: { () -> Void in
             
-            UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: 0.5){
+            UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: 0.7){
                 self.contentView.transform = CGAffineTransformMakeScale(0.4, 0.4)
             }
-            UIView.addKeyframeWithRelativeStartTime(0.5, relativeDuration: 0.5){
-                self.contentView.transform = CGAffineTransformTranslate(self.contentView.transform, 0.0, -self.view.frame.size.width)
+            UIView.addKeyframeWithRelativeStartTime(0.3, relativeDuration: 0.7){
+                self.contentView.transform = CGAffineTransformTranslate(self.contentView.transform, 0.0, -self.view.frame.size.height)
             }
             
             })
