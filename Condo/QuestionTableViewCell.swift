@@ -80,8 +80,6 @@ class QuestionTableViewCell: UITableViewCell {
             }
         }
     }
-    
-    
 
     func reloadCounters(){
         self.disagreeLabel.text = "\(self.post!.totalDisagree + self.disagreeIncrement)"
