@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>30250095-6CE0-451D-B743-900983807B82</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Condo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>53F17F941CB49D8CD956647E00A56566F48534F7</key>
 		<string>https://github.com/rjos/Condo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Condo.xcodeproj/project.xcworkspace</string>
+	<string>Condo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>53F17F941CB49D8CD956647E00A56566F48534F7</key>
