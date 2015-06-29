@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var lblType: UILabel!
     @IBOutlet weak var aptView: UIView!
     @IBOutlet weak var emailView: UIView!
-    @IBOutlet weak var btnEditar: UIBarButtonItem!
+    @IBOutlet weak var btnLogout: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class ProfileViewController: UIViewController {
         self.lblName.textColor = UIColor.condoBlue60()
         self.lblType.textColor = UIColor.condoBlue60()
         
-        self.btnEditar.tintColor = UIColor.whiteColor()
+        self.btnLogout.tintColor = UIColor.whiteColor()
         // Do any additional setup after loading the view.
         
         self.imgProfile.layer.cornerRadius = self.imgProfile.bounds.width / 2
@@ -94,11 +94,16 @@ class ProfileViewController: UIViewController {
     /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // In a storyboard-based application, you will often want to do a little preparation before navigation */
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "Logout" {
+            var mainViewController = (segue.destinationViewController as! MainViewController)
+            mainViewController.logoutUser()
+            mainViewController.logout = true
+        }
     }
-    */
-
 }

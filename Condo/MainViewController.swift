@@ -10,10 +10,12 @@ import UIKit
 import CondoModel
 
 class MainViewController: UIViewController {
-
+    
+    var logout: Bool = false
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if self.loggedIn() {
+        if self.loggedIn() && !self.logout {
             self.performSegueWithIdentifier("loggedInSegue", sender: self)
         }else{
             self.performSegueWithIdentifier("logSegue", sender: self)
@@ -34,7 +36,9 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func logoutUser() {
+        PFUser.logOut()
+    }
     
     // MARK: - Navigation
 

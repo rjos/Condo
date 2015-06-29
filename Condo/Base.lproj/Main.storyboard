@@ -518,10 +518,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="Perfil" id="726-71-GuF">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="VJy-Ee-PAd"/>
+                        <barButtonItem key="leftBarButtonItem" title="Sair" id="A56-FM-er6">
+                            <connections>
+                                <segue destination="wge-ar-enn" kind="showDetail" identifier="Logout" id="zur-lC-fjE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="aptView" destination="baS-jJ-W9h" id="zli-XE-Vm7"/>
+                        <outlet property="btnLogout" destination="A56-FM-er6" id="fKt-vq-Rp1"/>
                         <outlet property="emailView" destination="UYI-vi-Ao3" id="Zq6-MW-qL5"/>
                         <outlet property="imgProfile" destination="0fe-Ae-mJg" id="j3p-8p-ma1"/>
                         <outlet property="lblApt" destination="Fdl-IL-wjM" id="kvn-tI-x5H"/>
