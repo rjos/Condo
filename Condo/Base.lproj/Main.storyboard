@@ -437,6 +437,7 @@
         <!--Perfil-->
         <scene sceneID="9Ta-js-Qbo">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ok-3D-yW7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="aNn-rG-qNQ" customClass="ProfileViewController" customModule="Condo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hIW-Rr-a9c"/>
@@ -518,16 +519,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Perfil" id="726-71-GuF">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="VJy-Ee-PAd"/>
-                        <barButtonItem key="leftBarButtonItem" title="Sair" id="A56-FM-er6">
-                            <connections>
-                                <segue destination="wge-ar-enn" kind="showDetail" identifier="Logout" id="zur-lC-fjE"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="aptView" destination="baS-jJ-W9h" id="zli-XE-Vm7"/>
-                        <outlet property="btnLogout" destination="A56-FM-er6" id="fKt-vq-Rp1"/>
                         <outlet property="emailView" destination="UYI-vi-Ao3" id="Zq6-MW-qL5"/>
                         <outlet property="imgProfile" destination="0fe-Ae-mJg" id="j3p-8p-ma1"/>
                         <outlet property="lblApt" destination="Fdl-IL-wjM" id="kvn-tI-x5H"/>
@@ -536,7 +531,6 @@
                         <outlet property="lblType" destination="UJw-jW-Lo8" id="XRP-hO-TIK"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2ok-3D-yW7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2066.5" y="-902.5"/>
         </scene>
@@ -727,7 +721,6 @@
                         <segue destination="xds-Eg-k5G" kind="relationship" relationship="viewControllers" id="mn7-eG-QHt"/>
                         <segue destination="l5O-86-n2Y" kind="relationship" relationship="viewControllers" id="FtO-nb-9zP"/>
                         <segue destination="cWp-gw-9T8" kind="relationship" relationship="viewControllers" id="1Ak-gs-el7"/>
-                        <segue destination="rO6-y5-oKi" kind="relationship" relationship="viewControllers" id="CX5-4C-7kc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXV-TB-t5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -776,7 +769,7 @@
                         <viewControllerLayoutGuide type="bottom" id="6FJ-v6-mw8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ri1-IV-G6U">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7J-Lf-47E">

@@ -40,7 +40,7 @@ class ProfileViewController: UIViewController {
         self.lblName.textColor = UIColor.condoBlue60()
         self.lblType.textColor = UIColor.condoBlue60()
         
-        self.btnLogout.tintColor = UIColor.whiteColor()
+        //self.btnLogout.tintColor = UIColor.whiteColor()
         // Do any additional setup after loading the view.
         
         self.imgProfile.layer.cornerRadius = self.imgProfile.bounds.width / 2

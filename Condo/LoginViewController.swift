@@ -47,10 +47,7 @@ class LoginViewController:UIViewController{
     var loginCallback: (PFUser) -> () = {
         (user) in
         //nothing
-
-        
     }
-    
     
     
     @IBAction func login(sender: UIButton) {
