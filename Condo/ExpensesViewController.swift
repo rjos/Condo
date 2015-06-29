@@ -42,6 +42,7 @@ class ExpensesViewController: UIViewController, UICollectionViewDataSource, UICo
         self.titleView.font = UIFont.boldSystemFontOfSize(18)
         self.titleView.backgroundColor = UIColor.clearColor()
         self.titleView.text = ParseDatabase.sharedDatabase.getCommunityUser().name //DummyDatabase().community.name
+        
         self.titleView.textAlignment = NSTextAlignment.Center
     }
     
