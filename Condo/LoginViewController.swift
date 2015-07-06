@@ -8,6 +8,7 @@
 
 import UIKit
 import CondoModel
+import Foundation
 
 class LoginViewController:UIViewController{
     
@@ -57,30 +58,32 @@ class LoginViewController:UIViewController{
         
         loginaux = login.text!
         passwordaux = password.text!
-        
-        PFUser.logInWithUsernameInBackground(loginaux as String, password:passwordaux as String) {
-            (user: PFUser?, error: NSError?) -> Void in
-            if let processedUser = user {
-                // Do stuff after successful login.
-                self.loginCallback(processedUser)
-                
-            } else {
-                self.displayAlertWithLoginError(error)
-                // The login failed. Check error to see why.
-                var alert = UIAlertController(title: "Tente Novamente", message: "Email e/ou Senha Incorretos", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
-                    switch action.style{
-                    case .Default:
-                        println("default")
-                        
-                    case .Cancel:
-                        println("cancel")
-                        
-                    case .Destructive:
-                        println("destructive")
-                    }
-                }))
-                self.presentViewController(alert, animated: true, completion: nil)
+        if Reachability.isConnectedToNetwork() == true {
+            println("Internet connection OK")
+            PFUser.logInWithUsernameInBackground(loginaux as String, password:passwordaux as String) {
+                (user: PFUser?, error: NSError?) -> Void in
+                if let processedUser = user {
+                    // Do stuff after successful login.
+                    self.loginCallback(processedUser)
+                    
+                } else {
+                    self.displayAlertWithLoginError(error)
+                    // The login failed. Check error to see why.
+                    var alert = UIAlertController(title: "Tente Novamente", message: "Email e/ou Senha Incorretos", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+                        switch action.style{
+                        case .Default:
+                            println("default")
+                            
+                        case .Cancel:
+                            println("cancel")
+                            
+                        case .Destructive:
+                            println("destructive")
+                        }
+                    }))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
             }
             
         }
@@ -89,5 +92,30 @@ class LoginViewController:UIViewController{
     func displayAlertWithLoginError(error: NSError?) {
         //dasd
     }
- 
+    
+}
+
+public class Reachability {
+    
+    class func isConnectedToNetwork()->Bool{
+        
+        var Status:Bool = false
+        let url = NSURL(string: "http://google.com/")
+        let request = NSMutableURLRequest(URL: url!)
+        request.HTTPMethod = "HEAD"
+        request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData
+        request.timeoutInterval = 10.0
+        
+        var response: NSURLResponse?
+        
+        var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: nil) as NSData?
+        
+        if let httpResponse = response as? NSHTTPURLResponse {
+            if httpResponse.statusCode == 200 {
+                Status = true
+            }
+        }
+        
+        return Status
+    }
 }
