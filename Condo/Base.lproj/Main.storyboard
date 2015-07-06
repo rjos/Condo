@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wge-ar-enn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wge-ar-enn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -65,7 +65,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="login:" destination="r17-vA-uzz" eventType="touchUpInside" id="4a0-So-wL8"/>
+                                    <action selector="login:" destination="r17-vA-uzz" eventType="touchUpInside" id="pKq-Id-OWY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -97,9 +97,9 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="headerVector" destination="N8A-b2-xFh" id="ITT-Y3-a7s"/>
-                        <outlet property="login" destination="GxP-qe-PVW" id="t67-u4-2Vl"/>
-                        <outlet property="loginbutton" destination="uD5-Tp-ju8" id="L9l-39-ezS"/>
-                        <outlet property="password" destination="P7Y-4A-olL" id="PN3-mR-eQs"/>
+                        <outlet property="login" destination="GxP-qe-PVW" id="8hK-CF-oHn"/>
+                        <outlet property="loginbutton" destination="uD5-Tp-ju8" id="Uby-Uj-Xuv"/>
+                        <outlet property="password" destination="P7Y-4A-olL" id="Ut9-Ho-ooV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKf-Js-cbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -437,7 +437,6 @@
         <!--Perfil-->
         <scene sceneID="9Ta-js-Qbo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2ok-3D-yW7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="aNn-rG-qNQ" customClass="ProfileViewController" customModule="Condo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hIW-Rr-a9c"/>
@@ -460,7 +459,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baS-jJ-W9h">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baS-jJ-W9h">
                                 <rect key="frame" x="31" y="357" width="313" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdl-IL-wjM">
@@ -476,10 +475,10 @@
                                     <constraint firstAttribute="centerY" secondItem="Fdl-IL-wjM" secondAttribute="centerY" id="o97-W1-92V"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UYI-vi-Ao3">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYI-vi-Ao3">
                                 <rect key="frame" x="31" y="409" width="313" height="44"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8R-Zi-Ud2">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8R-Zi-Ud2">
                                         <rect key="frame" x="8" y="13" width="36" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -531,6 +530,7 @@
                         <outlet property="lblType" destination="UJw-jW-Lo8" id="XRP-hO-TIK"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ok-3D-yW7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2066.5" y="-902.5"/>
         </scene>
